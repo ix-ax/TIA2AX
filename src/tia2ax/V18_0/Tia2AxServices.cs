@@ -2,7 +2,6 @@
 using Tia2Ax.DTOs;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -62,27 +61,6 @@ namespace Tia2Ax.Services
         #region methods
 
         #region TIA Portal
-
-        //public bool IsCurrentlyOpen(string tiaProject)
-        //{
-        //    bool result = false;
-        //    var methodBase = MethodBase.GetCurrentMethod();
-        //    _traceWriter.WriteLine(methodBase.Name);
-
-        //    IList<TiaPortalProcess> tiaProcesses = GetTiaPortalProcesses();
-        //    if (tiaProcesses != null && tiaProcesses.Count > 0)
-        //    {
-        //        foreach (TiaPortalProcess tiaProces in tiaProcesses)
-        //        {
-        //            if (tiaProces.ProjectPath != null && tiaProces.ProjectPath.ToString().Replace(@"\", "").Equals(tiaProject.ToString().Replace(@"\", "")))
-        //            {
-        //                result = true;
-        //                break;
-        //            }
-        //        }
-        //    }
-        //    return result;
-        //}
 
         /// <summary>
         /// Open a TIA Portal instance
