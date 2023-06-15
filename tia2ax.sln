@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "V18_0_tia2ax", "src\tia2ax\V18_0\V18_0_tia2ax.csproj", "{E0FA7C6F-5A26-4FB1-9F1F-D53ECEB9CB62}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B6DE5B3E-1E94-4825-859A-752BA1CF2295}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{4DAFC1C8-8C9D-4C09-B287-3AA671AB9D15}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E0FA7C6F-5A26-4FB1-9F1F-D53ECEB9CB62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0FA7C6F-5A26-4FB1-9F1F-D53ECEB9CB62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0FA7C6F-5A26-4FB1-9F1F-D53ECEB9CB62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0FA7C6F-5A26-4FB1-9F1F-D53ECEB9CB62}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E0FA7C6F-5A26-4FB1-9F1F-D53ECEB9CB62} = {B6DE5B3E-1E94-4825-859A-752BA1CF2295}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BFE61C61-D703-4343-B099-70039C12462B}
+	EndGlobalSection
+EndGlobal
