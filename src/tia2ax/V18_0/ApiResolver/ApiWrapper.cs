@@ -220,8 +220,6 @@ namespace Tia2Ax.Interfaces
                     {
                         processId = item.Id;
                         loadOpenProject = true;     
-                        //TODO: Check that the project is saved and compiled;
-
                         accessGranted = true;                        
                         break;
                     }
@@ -229,14 +227,25 @@ namespace Tia2Ax.Interfaces
             }
             if (!loadOpenProject)
             {
-                DoOpenTiaPortal();
-                var newProject = TiaPortal.Projects.Open(new FileInfo(path));
-                _traceWriter.WriteLine($"TiaPortal.Projects.Open({path}");
-                if (newProject != null)
+                FileInfo fi = new FileInfo(path);
+                if (fi.Extension.Equals(".ap18"))
                 {
-                    CurrentProject = newProject;
-                    result = true;
+                    DoOpenTiaPortal();
+                    var newProject = TiaPortal.Projects.Open(new FileInfo(path));
+                    _traceWriter.WriteLine($"TiaPortal.Projects.Open({path}");
+                    if (newProject != null)
+                    {
+                        CurrentProject = newProject;
+                        result = true;
+                    }
                 }
+                else
+                {
+                    _traceWriter.WriteLine(path + " version not supported.");
+                    Console.ReadKey();
+                    Environment.Exit(0);
+                }
+
             }
             if (loadOpenProject && accessGranted && processId != -1)
             {
