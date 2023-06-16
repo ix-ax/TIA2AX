@@ -563,26 +563,13 @@ namespace Tia2Ax.Interfaces
         /// </summary>
         public void ExportAllPLCs(string exportDirectory, ProjectItem projectItem)
         {
+            DeleteFolder(exportDirectory);
+            Directory.CreateDirectory(exportDirectory);
             foreach (PlcItem plcItem in projectItem.PlcItems)
             {
                 string exportDir = String.IsNullOrEmpty(exportDirectory) ? Path.Combine(Environment.CurrentDirectory, plcItem.Name) : Path.Combine(exportDirectory, plcItem.Name);
-                if (Directory.Exists(exportDir))
-                {
-                    string[] files = Directory.GetFiles(exportDir);
-                    foreach (string file in files)
-                    {
-                        File.Delete(file);
-                    }
-                    string[] dirs = Directory.GetDirectories(exportDir);
-                    foreach (string dir in dirs)
-                    {
-                        Directory.Delete(dir, true);
-                    }
-                }
-                else
-                {
-                    Directory.CreateDirectory(exportDir);
-                }
+                Directory.CreateDirectory(exportDir);
+                
 
                 ExportMappingItems(plcItem, exportDir, ExportItemType.HwInput);
                 ExportMappingItems(plcItem, exportDir, ExportItemType.HwOutput);
@@ -847,6 +834,23 @@ namespace Tia2Ax.Interfaces
             HwOutput,
             PlcInput,
             PlcOutput
+        }
+
+        private static void DeleteFolder(string folderPath)
+        {
+            if (!Directory.Exists(folderPath))
+                return;
+
+            foreach (string file in Directory.GetFiles(folderPath))
+            {
+                File.Delete(file);
+            }
+
+            foreach (string dir in Directory.GetDirectories(folderPath))
+            {
+                DeleteFolder(dir);
+            }
+            Directory.Delete(folderPath);
         }
 
         #endregion // Device
