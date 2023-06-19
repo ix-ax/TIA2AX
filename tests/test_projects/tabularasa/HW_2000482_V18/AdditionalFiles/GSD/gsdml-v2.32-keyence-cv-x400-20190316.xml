@@ -1,0 +1,690 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-V2.32.xsd">
+  <ProfileHeader>
+    <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+    <ProfileRevision>1.00</ProfileRevision>
+    <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+    <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+    <ProfileClassID>Device</ProfileClassID>
+    <ISO15745Reference>
+      <ISO15745Part>4</ISO15745Part>
+      <ISO15745Edition>1</ISO15745Edition>
+      <ProfileTechnology>GSDML</ProfileTechnology>
+    </ISO15745Reference>
+  </ProfileHeader>
+  <ProfileBody>
+
+    <DeviceIdentity VendorID="0x01FD" DeviceID="0x138E">
+      <InfoText TextId="s_top_information"/>
+      <VendorName Value="KEYENCE CORPORATION."/>
+    </DeviceIdentity>
+    <DeviceFunction>
+      <Family MainFamily="Sensors" ProductFamily="Keyence Machine Vision System"/>
+    </DeviceFunction>
+    <ApplicationProcess>
+      <DeviceAccessPointList>
+
+        <DeviceAccessPointItem ExtendedAddressAssignmentSupported="true" AddressAssignment="DCP;LOCAL" PhysicalSlots="0..22" ModuleIdentNumber="0x00000001" MinDeviceInterval="128" DNS_CompatibleName="cv-x400" FixedInSlots="0" ObjectUUID_LocalIndex="1" ID="DAP1" RequiredSchemaVersion="V2.32" DeviceAccessSupported="true" PNIO_Version="V2.32" CheckDeviceID_Allowed="true" NameOfStationNotTransferable="false" MultipleWriteSupported="true" LLDP_NoD_Supported="true" ResetToFactoryModes="2">
+          <ModuleInfo>
+            <Name TextId="CV-X4XX_"/>
+            <InfoText TextId="s_CV-X400_series"/>
+            <VendorName Value="Keyence"/>
+            <OrderNumber Value="CV-X4XX"/>
+            <HardwareRelease Value="1.0"/>
+            <SoftwareRelease Value="5.1"/>
+          </ModuleInfo>
+          <CertificationInfo ConformanceClass="A" ApplicationClass="" NetloadClass="I"/>
+          <SubslotList>
+            <SubslotItem SubslotNumber="32768" TextId="s_x1"/>
+            <SubslotItem SubslotNumber="32769" TextId="s_x1_p1"/>
+          </SubslotList>
+          <IOConfigData MaxInputLength="1440" MaxOutputLength="1440"/>
+          <UseableModules>
+            <ModuleItemRef ModuleItemTarget="101" AllowedInSlots="1" UsedInSlots="1"/>
+            <ModuleItemRef ModuleItemTarget="102" AllowedInSlots="2" UsedInSlots="2"/>
+            <ModuleItemRef ModuleItemTarget="103" AllowedInSlots="3" UsedInSlots="3"/>
+            <ModuleItemRef ModuleItemTarget="104" AllowedInSlots="4" UsedInSlots="4"/>
+            <ModuleItemRef ModuleItemTarget="105" AllowedInSlots="5" UsedInSlots="5"/>
+            <ModuleItemRef ModuleItemTarget="106" AllowedInSlots="6..11"/>
+            <ModuleItemRef ModuleItemTarget="107" AllowedInSlots="6..11" UsedInSlots="7..11"/>
+            <ModuleItemRef ModuleItemTarget="108" AllowedInSlots="6..11"/>
+            <ModuleItemRef ModuleItemTarget="109" AllowedInSlots="6..11" UsedInSlots="6"/>
+            <ModuleItemRef ModuleItemTarget="110" AllowedInSlots="6..11"/>
+            <ModuleItemRef ModuleItemTarget="111" AllowedInSlots="6..11"/>
+
+            <ModuleItemRef ModuleItemTarget="201" AllowedInSlots="12" UsedInSlots="12"/>
+            <ModuleItemRef ModuleItemTarget="202" AllowedInSlots="13" UsedInSlots="13"/>
+            <ModuleItemRef ModuleItemTarget="203" AllowedInSlots="14" UsedInSlots="14"/>
+            <ModuleItemRef ModuleItemTarget="204" AllowedInSlots="15" UsedInSlots="15"/>
+            <ModuleItemRef ModuleItemTarget="205" AllowedInSlots="16" UsedInSlots="16"/>
+            <ModuleItemRef ModuleItemTarget="206" AllowedInSlots="17..22"/>
+            <ModuleItemRef ModuleItemTarget="207" AllowedInSlots="17..22" UsedInSlots="18..22"/>
+            <ModuleItemRef ModuleItemTarget="208" AllowedInSlots="17..22"/>
+            <ModuleItemRef ModuleItemTarget="209" AllowedInSlots="17..22" UsedInSlots="17"/>
+            <ModuleItemRef ModuleItemTarget="210" AllowedInSlots="17..22"/>
+            <ModuleItemRef ModuleItemTarget="211" AllowedInSlots="17..22"/>
+
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DIM 2" SubmoduleIdentNumber="0x00000000" Writeable_IM_Records="1 2 3" MayIssueProcessAlarm="true">
+              <IOData/>
+              <ModuleInfo>
+                <Name TextId="CV-X4XX_"/>
+                <InfoText TextId="s_CV-X400_series"/>
+                <SoftwareRelease Value="5.1"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem ID="IDS_DAP1I" SubslotNumber="32768" SubmoduleIdentNumber="0x0001" SupportedRT_Class="Class1" SupportedRT_Classes="RT_CLASS_1" TextId="s_interface" IsochroneModeSupported="false" SupportedProtocols="LLDP" SupportedMibs="" PTP_BoundarySupported="true" DCP_BoundarySupported="true">
+              <ApplicationRelations StartupMode="Legacy;Advanced" NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0">
+                <TimingProperties SendClock="32 64 128" ReductionRatio="1 2 4 8 16 32 64 128 256 512"/>
+              </ApplicationRelations>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem ID="IDS_DAP1P" SubslotNumber="32769" SubmoduleIdentNumber="0x0002" MAUType="100BASETXFD" MAUTypes="16 30" TextId="s_Port1">
+<MAUTypeList>
+<MAUTypeItem Value="16" AdjustSupported="true"/>
+<MAUTypeItem Value="30" AdjustSupported="true"/>
+</MAUTypeList>
+</PortSubmoduleItem>
+          </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+          </Graphics>
+        </DeviceAccessPointItem>
+
+
+      </DeviceAccessPointList>
+      <ModuleList>
+
+        <ModuleItem ID="101" ModuleIdentNumber="0x00000101">
+          <ModuleInfo CategoryRef="output_bit_modules">
+            <Name TextId="s_command_result_status"/>
+            <InfoText TextId="s_command_result_status_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="true">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="s_command_result_status_register" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_command_complete_flag"/>
+                    <BitDataItem BitOffset="1" TextId="s_command_error_flag"/>
+                    <BitDataItem BitOffset="2" TextId="s_command_ready_flag"/>
+                    <BitDataItem BitOffset="3" TextId="s_result_ready_flag"/>
+                    <BitDataItem BitOffset="4" TextId="s_result_or_flag"/>
+                  </DataItem>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_command_result_status"/>
+                <InfoText TextId="s_command_result_status_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="102" ModuleIdentNumber="0x00000102">
+          <ModuleInfo CategoryRef="output_bit_modules">
+            <Name TextId="s_trg_ready_status"/>
+            <InfoText TextId="s_trg_ready_status_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="2" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="true">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="s_trg_ready_status_register" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_trg1_ready"/>
+                    <BitDataItem BitOffset="1" TextId="s_trg2_ready"/>
+                    <BitDataItem BitOffset="2" TextId="s_trg3_ready"/>
+                    <BitDataItem BitOffset="3" TextId="s_trg4_ready"/>
+                  </DataItem>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_trg_ready_status"/>
+                <InfoText TextId="s_trg_ready_status_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="103" ModuleIdentNumber="0x00000103">
+          <ModuleInfo CategoryRef="output_bit_modules">
+            <Name TextId="s_trg_ack_status"/>
+            <InfoText TextId="s_trg_ack_status_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="3" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="true">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="s_trg_ack_status_register" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_trg1_ack"/>
+                    <BitDataItem BitOffset="1" TextId="s_trg2_ack"/>
+                    <BitDataItem BitOffset="2" TextId="s_trg3_ack"/>
+                    <BitDataItem BitOffset="3" TextId="s_trg4_ack"/>
+                  </DataItem>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_trg_ack_status"/>
+                <InfoText TextId="s_trg_ack_status_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="104" ModuleIdentNumber="0x00000104">
+          <ModuleInfo CategoryRef="output_bit_modules">
+            <Name TextId="s_misc_status"/>
+            <InfoText TextId="s_misc_status_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="4" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="true">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="s_misc_status_register" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_busy"/>
+                    <BitDataItem BitOffset="1" TextId="s_error0_status_flag"/>
+                    <BitDataItem BitOffset="3" TextId="s_remote_ready_flag"/>
+                    <BitDataItem BitOffset="6" TextId="s_ouput_img_busy"/>
+                    <BitDataItem BitOffset="7" TextId="s_output_img_status"/>
+                  </DataItem>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_misc_status"/>
+                <InfoText TextId="s_misc_status_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="105" ModuleIdentNumber="0x00000105">
+          <ModuleInfo CategoryRef="output_bit_modules">
+            <Name TextId="s_tool_judge_value"/>
+            <InfoText TextId="s_tool_judge_value_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="5" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="true">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString" TextId="s_tool_judge_value_register" Length="8"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_tool_judge_value"/>
+                <InfoText TextId="s_tool_judge_value_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="106" ModuleIdentNumber="0x00000106">
+          <ModuleInfo CategoryRef="output_byte_modules">
+            <Name TextId="s_result_data_16"/>
+            <InfoText TextId="s_result_data_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="6" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="true">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString" TextId="s_result" Length="16"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_result_data_16"/>
+                <InfoText TextId="s_result_data_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="107" ModuleIdentNumber="0x00000107">
+          <ModuleInfo CategoryRef="output_byte_modules">
+            <Name TextId="s_result_data_32"/>
+            <InfoText TextId="s_result_data_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="7" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="true">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString" TextId="s_result" Length="32"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_result_data_32"/>
+                <InfoText TextId="s_result_data_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="108" ModuleIdentNumber="0x00000108">
+          <ModuleInfo CategoryRef="output_byte_modules">
+            <Name TextId="s_result_data_64"/>
+            <InfoText TextId="s_result_data_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="8" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="true">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString" TextId="s_result" Length="64"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_result_data_64"/>
+                <InfoText TextId="s_result_data_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="109" ModuleIdentNumber="0x00000109">
+          <ModuleInfo CategoryRef="output_byte_modules">
+            <Name TextId="s_result_data_128"/>
+            <InfoText TextId="s_result_data_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="9" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="true">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString" TextId="s_result" Length="128"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_result_data_128"/>
+                <InfoText TextId="s_result_data_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="110" ModuleIdentNumber="0x00000110">
+          <ModuleInfo CategoryRef="output_byte_modules">
+            <Name TextId="s_result_data_248"/>
+            <InfoText TextId="s_result_data_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="10" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="true">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString" TextId="s_result" Length="248"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_result_data_248"/>
+                <InfoText TextId="s_result_data_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="111" ModuleIdentNumber="0x00000111">
+          <ModuleInfo CategoryRef="output_byte_modules">
+            <Name TextId="s_result_data_156"/>
+            <InfoText TextId="s_result_data_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="11" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="true">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString" TextId="s_result" Length="156"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_result_data_156"/>
+                <InfoText TextId="s_result_data_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="201" ModuleIdentNumber="0x00000201">
+          <ModuleInfo CategoryRef="control_bit_modules">
+            <Name TextId="s_command_result_control"/>
+            <InfoText TextId="s_command_result_control_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="14" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="true">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="s_command_result_control_register" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_command_request_flag"/>
+                    <BitDataItem BitOffset="3" TextId="s_result_ack_flag"/>
+                    <BitDataItem BitOffset="4" TextId="s_error0_reset_request_flag"/>
+                  </DataItem>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_command_result_control"/>
+                <InfoText TextId="s_command_result_control_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="202" ModuleIdentNumber="0x00000202">
+          <ModuleInfo CategoryRef="control_bit_modules">
+            <Name TextId="s_trg_control"/>
+            <InfoText TextId="s_trg_control_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="15" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="true">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="s_trg_control_register" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_trg1"/>
+                    <BitDataItem BitOffset="1" TextId="s_trg2"/>
+                    <BitDataItem BitOffset="2" TextId="s_trg3"/>
+                    <BitDataItem BitOffset="3" TextId="s_trg4"/>
+                  </DataItem>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_trg_control"/>
+                <InfoText TextId="s_trg_control_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="203" ModuleIdentNumber="0x00000203">
+          <ModuleInfo CategoryRef="control_bit_modules">
+            <Name TextId="s_miscellaneous_control"/>
+            <InfoText TextId="s_miscellaneous_control_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="16" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="true">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="s_miscellaneous_control_register" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_reset"/>
+                    <BitDataItem BitOffset="1" TextId="s_ext"/>
+                    <BitDataItem BitOffset="2" TextId="s_test"/>
+                  </DataItem>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_miscellaneous_control"/>
+                <InfoText TextId="s_miscellaneous_control_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="204" ModuleIdentNumber="0x00000204">
+          <ModuleInfo CategoryRef="control_bit_modules">
+            <Name TextId="s_reserved_control"/>
+            <InfoText TextId="s_reserved_control_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="17" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="true">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="s_reserved_control_register" UseAsBits="true"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_reserved_control"/>
+                <InfoText TextId="s_reserved_control_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="205" ModuleIdentNumber="0x00000205">
+          <ModuleInfo CategoryRef="control_bit_modules">
+            <Name TextId="s_reserved_control"/>
+            <InfoText TextId="s_reserved_control_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="18" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="true">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString" TextId="s_parameter" Length="8"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_reserved_control"/>
+                <InfoText TextId="s_reserved_control_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="206" ModuleIdentNumber="0x00000206">
+          <ModuleInfo CategoryRef="parameter_byte_modules">
+            <Name TextId="s_parameter_16"/>
+            <InfoText TextId="s_parameter_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="19" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="true">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString" TextId="s_parameter" Length="16"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_parameter_16"/>
+                <InfoText TextId="s_parameter_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="207" ModuleIdentNumber="0x00000207">
+          <ModuleInfo CategoryRef="parameter_byte_modules">
+            <Name TextId="s_parameter_32"/>
+            <InfoText TextId="s_parameter_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="20" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="true">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString" TextId="s_parameter" Length="32"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_parameter_32"/>
+                <InfoText TextId="s_parameter_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="208" ModuleIdentNumber="0x00000208">
+          <ModuleInfo CategoryRef="parameter_byte_modules">
+            <Name TextId="s_parameter_64"/>
+            <InfoText TextId="s_parameter_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="21" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="true">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString" TextId="s_parameter" Length="64"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_parameter_64"/>
+                <InfoText TextId="s_parameter_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="209" ModuleIdentNumber="0x00000209">
+          <ModuleInfo CategoryRef="parameter_byte_modules">
+            <Name TextId="s_parameter_128"/>
+            <InfoText TextId="s_parameter_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="22" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="true">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString" TextId="s_parameter" Length="128"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_parameter_128"/>
+                <InfoText TextId="s_parameter_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="210" ModuleIdentNumber="0x00000210">
+          <ModuleInfo CategoryRef="parameter_byte_modules">
+            <Name TextId="s_parameter_248"/>
+            <InfoText TextId="s_parameter_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="23" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="true">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString" TextId="s_parameter" Length="248"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_parameter_248"/>
+                <InfoText TextId="s_parameter_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="211" ModuleIdentNumber="0x00000211">
+          <ModuleInfo CategoryRef="parameter_byte_modules">
+            <Name TextId="s_parameter_156"/>
+            <InfoText TextId="s_parameter_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="24" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="true">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString" TextId="s_parameter" Length="156"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_parameter_156"/>
+                <InfoText TextId="s_parameter_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+      </ModuleList>
+
+      <GraphicsList>
+        <GraphicItem ID="1" GraphicFile="GSDML-01FD-CV-X400"/>
+      </GraphicsList>
+      <CategoryList>
+        <CategoryItem TextId="s_control_bit_modules" ID="control_bit_modules"/>
+        <CategoryItem TextId="s_status_bit_modules" ID="output_bit_modules"/>
+        <CategoryItem TextId="s_parameter_byte_modules" ID="parameter_byte_modules"/>
+        <CategoryItem TextId="s_result_byte_modules" ID="output_byte_modules"/>
+      </CategoryList>
+
+      <ExternalTextList>
+        <PrimaryLanguage>
+          <!-- General Text -->
+          <Text TextId="s_top_information" Value="CV-X Series Machine Vision System"/>
+          <Text TextId="CV-X4XX_" Value="CV-X4XX"/>
+          <Text TextId="s_CV-X400_series" Value="CV-X400 Series Machine Vision System"/>
+          <Text TextId="s_x1" Value="X1"/>
+          <Text TextId="s_x1_p1" Value="X1 P1"/>
+          <Text TextId="s_interface" Value="Interface"/>
+          <Text TextId="s_Port1" Value="Port 1"/>
+          <!-- Module Info -->
+          <Text TextId="s_command_result_status" Value="Command and Result Status"/>
+          <Text TextId="s_command_result_status_info" Value="Status of command and result"/>
+          <Text TextId="s_command_result_status_register" Value="Command and Result Status Register"/>
+          <Text TextId="s_command_complete_flag" Value="Command complete flag"/>
+          <Text TextId="s_command_error_flag" Value="Command error flag"/>
+          <Text TextId="s_command_ready_flag" Value="Command ready flag"/>
+          <Text TextId="s_result_ready_flag" Value="Result ready flag"/>
+          <Text TextId="s_result_or_flag" Value="Result OR flag"/>
+
+          <Text TextId="s_trg_ready_status" Value="Trg Ready Status"/>
+          <Text TextId="s_trg_ready_status_info" Value="Status of trigger ready"/>
+          <Text TextId="s_trg_ready_status_register" Value="Trg Ready Status Register"/>
+          <Text TextId="s_trg1_ready" Value="Trg1 Ready"/>
+          <Text TextId="s_trg2_ready" Value="Trg2 Ready"/>
+          <Text TextId="s_trg3_ready" Value="Trg3 Ready"/>
+          <Text TextId="s_trg4_ready" Value="Trg4 Ready"/>
+
+          <Text TextId="s_trg_ack_status" Value="Trg Ack Status"/>
+          <Text TextId="s_trg_ack_status_info" Value="Status of trigger ack"/>
+          <Text TextId="s_trg_ack_status_register" Value="Trg Ack Status Register"/>
+          <Text TextId="s_trg1_ack" Value="Trg1 Ack"/>
+          <Text TextId="s_trg2_ack" Value="Trg2 Ack"/>
+          <Text TextId="s_trg3_ack" Value="Trg3 Ack"/>
+          <Text TextId="s_trg4_ack" Value="Trg4 Ack"/>
+
+          <Text TextId="s_misc_status" Value="Miscellaneous Status"/>
+          <Text TextId="s_misc_status_info" Value="Miscellaneous status of CV-X"/>
+          <Text TextId="s_misc_status_register" Value="Miscellaneous Status Register"/>
+
+          <Text TextId="s_busy" Value="Busy"/>
+          <Text TextId="s_error0_status_flag" Value="Error Status Flag"/>
+          <Text TextId="s_remote_ready_flag" Value="RUN"/>
+          <Text TextId="s_ouput_img_busy" Value="Outputting image signal"/>
+          <Text TextId="s_output_img_status" Value="Remaining Output Data of Image Output"/>
+
+          <Text TextId="s_tool_judge_value" Value="Tool Judge Value"/>
+          <Text TextId="s_tool_judge_value_info" Value="Value of Tool Judge"/>
+          <Text TextId="s_tool_judge_value_register" Value="Tool Judge Value 0-63"/>
+
+          <Text TextId="s_result_data_16" Value="Result Data 16Byte"/>
+          <Text TextId="s_result_data_32" Value="Result Data 32Byte"/>
+          <Text TextId="s_result_data_64" Value="Result Data 64Byte"/>
+          <Text TextId="s_result_data_128" Value="Result Data 128Byte"/>
+          <Text TextId="s_result_data_248" Value="Result Data 248Byte"/>
+          <Text TextId="s_result_data_156" Value="Result Data 156Byte"/>
+
+          <Text TextId="s_result_data_info" Value="Reads result data from CV-X"/>
+          <Text TextId="s_result" Value="Result"/>
+
+          <Text TextId="s_command_result_control" Value="Command and Result Control"/>
+          <Text TextId="s_command_result_control_info" Value="Controlls command and result"/>
+          <Text TextId="s_command_result_control_register" Value="Command and Result Control Register"/>
+          <Text TextId="s_command_request_flag" Value="Command Request Flag"/>
+          <Text TextId="s_result_ack_flag" Value="Result Ack Flag"/>
+          <Text TextId="s_error0_reset_request_flag" Value="Error Reset Request Flag"/>
+
+          <Text TextId="s_trg_control" Value="Trg Control"/>
+          <Text TextId="s_trg_control_info" Value="Controlls trigger"/>
+          <Text TextId="s_trg_control_register" Value="Trg Control Register"/>
+          <Text TextId="s_trg1" Value="TRG1"/>
+          <Text TextId="s_trg2" Value="TRG2"/>
+          <Text TextId="s_trg3" Value="TRG3"/>
+          <Text TextId="s_trg4" Value="TRG4"/>
+
+          <Text TextId="s_miscellaneous_control" Value="Miscellaneous Control"/>
+          <Text TextId="s_miscellaneous_control_info" Value="Controlls miscellaneous function"/>
+          <Text TextId="s_miscellaneous_control_register" Value="Miscellaneous Control Register"/>
+          <Text TextId="s_reset" Value="RESET"/>
+          <Text TextId="s_ext" Value="EXT"/>
+          <Text TextId="s_test" Value="TEST"/>
+
+          <Text TextId="s_reserved_control" Value="Reserved Control"/>
+          <Text TextId="s_reserved_control_info" Value="Reserved control register"/>
+          <Text TextId="s_reserved_control_register" Value="Reserved Control Register"/>
+
+          <Text TextId="s_parameter" Value="Parameter"/>
+          <Text TextId="s_parameter_16" Value="Parameter 16Byte"/>
+          <Text TextId="s_parameter_32" Value="Parameter 32Byte"/>
+          <Text TextId="s_parameter_64" Value="Parameter 64Byte"/>
+          <Text TextId="s_parameter_128" Value="Parameter 128Byte"/>
+          <Text TextId="s_parameter_248" Value="Parameter 248Byte"/>
+          <Text TextId="s_parameter_156" Value="Parameter 156Byte"/>
+          <Text TextId="s_parameter_info" Value="Writes data to CV-X"/>
+
+          <Text TextId="s_status_bit_modules" Value="Status Bit Modules"/>
+          <Text TextId="s_result_byte_modules" Value="Result Byte Modules"/>
+          <Text TextId="s_control_bit_modules" Value="Control Bit Modules"/>
+          <Text TextId="s_parameter_byte_modules" Value="Parameter Byte Modules"/>
+
+        </PrimaryLanguage>
+      </ExternalTextList>
+    </ApplicationProcess>
+  </ProfileBody>
+</ISO15745Profile>

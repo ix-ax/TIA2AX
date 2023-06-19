@@ -1,7 +1,5 @@
-﻿using CommandLine.Text;
-using CommandLine;
+﻿using CommandLine;
 using Tia2Ax.Services;
-using System.Collections.Generic;
 using System;
 
 namespace tia2ax

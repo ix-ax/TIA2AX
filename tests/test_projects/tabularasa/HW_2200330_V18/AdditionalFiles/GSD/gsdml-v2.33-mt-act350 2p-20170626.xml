@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- **********
+This file has been upgraded automatically by UpgradeGSDML V2.33!
+Please check the following changes and remove this comment afterwards:
+Read from C:\UpgradeGSDML_2.33\GSDML-V2.32-MT-ACT350 2P-20170111.xml
+Set xsi:schemaLocation to http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-V2.33.xsd
+Add ../DeviceAccessPointList/DeviceAccessPointItem[@ID="ID_MODULE_Dap1Block"]/@NumberOfDeviceAccessAR="1"
+Add ../DeviceAccessPointList/DeviceAccessPointItem[@ID="ID_MODULE_Dap2Block"]/@NumberOfDeviceAccessAR="1"
+Del ../DeviceAccessPointList/DeviceAccessPointItem[@ID="ID_MODULE_Dap1Block"]/SystemDefinedSubmoduleList/InterfaceSubmoduleItem/@SupportedMibs
+Del ../DeviceAccessPointList/DeviceAccessPointItem[@ID="ID_MODULE_Dap2Block"]/SystemDefinedSubmoduleList/InterfaceSubmoduleItem/@SupportedMibs
+Del ../ModuleList/ModuleItem[@ID="ID_MODULE_MeasuringBlock1"]/VirtualSubmoduleList/VirtualSubmoduleItem[@ID="ID_SUBMODULE_MB1CommandValue"]/IOData/@IOPS_Length
+Del ../ModuleList/ModuleItem[@ID="ID_MODULE_MeasuringBlock1"]/VirtualSubmoduleList/VirtualSubmoduleItem[@ID="ID_SUBMODULE_MB1CommandValue"]/IOData/@IOCS_Length
+Del ../ModuleList/ModuleItem[@ID="ID_MODULE_MeasuringBlock1"]/VirtualSubmoduleList/VirtualSubmoduleItem[@ID="ID_SUBMODULE_MB1ChannelMask"]/IOData/@IOPS_Length
+Del ../ModuleList/ModuleItem[@ID="ID_MODULE_MeasuringBlock1"]/VirtualSubmoduleList/VirtualSubmoduleItem[@ID="ID_SUBMODULE_MB1ChannelMask"]/IOData/@IOCS_Length
+Del ../ModuleList/ModuleItem[@ID="ID_MODULE_MeasuringBlock1"]/VirtualSubmoduleList/VirtualSubmoduleItem[@ID="ID_SUBMODLUE_MB1Command"]/IOData/@IOPS_Length
+Del ../ModuleList/ModuleItem[@ID="ID_MODULE_MeasuringBlock1"]/VirtualSubmoduleList/VirtualSubmoduleItem[@ID="ID_SUBMODLUE_MB1Command"]/IOData/@IOCS_Length
+Del ../ModuleList/ModuleItem[@ID="ID_MODULE_MeasuringBlock1"]/VirtualSubmoduleList/VirtualSubmoduleItem[@ID="ID_SUBMODULE_MB1MeasuringValue"]/IOData/@IOPS_Length
+Del ../ModuleList/ModuleItem[@ID="ID_MODULE_MeasuringBlock1"]/VirtualSubmoduleList/VirtualSubmoduleItem[@ID="ID_SUBMODULE_MB1MeasuringValue"]/IOData/@IOCS_Length
+Del ../ModuleList/ModuleItem[@ID="ID_MODULE_MeasuringBlock1"]/VirtualSubmoduleList/VirtualSubmoduleItem[@ID="ID_SUBMODULE_MB1DeviceStatus"]/IOData/@IOPS_Length
+Del ../ModuleList/ModuleItem[@ID="ID_MODULE_MeasuringBlock1"]/VirtualSubmoduleList/VirtualSubmoduleItem[@ID="ID_SUBMODULE_MB1DeviceStatus"]/IOData/@IOCS_Length
+Del ../ModuleList/ModuleItem[@ID="ID_MODULE_MeasuringBlock1"]/VirtualSubmoduleList/VirtualSubmoduleItem[@ID="ID_SUBMODULE_MB1Response"]/IOData/@IOPS_Length
+Del ../ModuleList/ModuleItem[@ID="ID_MODULE_MeasuringBlock1"]/VirtualSubmoduleList/VirtualSubmoduleItem[@ID="ID_SUBMODULE_MB1Response"]/IOData/@IOCS_Length
+Del ../ModuleList/ModuleItem[@ID="ID_MODULE_StatusBlock1"]/VirtualSubmoduleList/VirtualSubmoduleItem[@ID="ID_SUBMODULE_SB1Reserved1"]/IOData/@IOPS_Length
+Del ../ModuleList/ModuleItem[@ID="ID_MODULE_StatusBlock1"]/VirtualSubmoduleList/VirtualSubmoduleItem[@ID="ID_SUBMODULE_SB1Reserved1"]/IOData/@IOCS_Length
+Del ../ModuleList/ModuleItem[@ID="ID_MODULE_StatusBlock1"]/VirtualSubmoduleList/VirtualSubmoduleItem[@ID="ID_SUBMODULE_SB1Reserved2"]/IOData/@IOPS_Length
+Del ../ModuleList/ModuleItem[@ID="ID_MODULE_StatusBlock1"]/VirtualSubmoduleList/VirtualSubmoduleItem[@ID="ID_SUBMODULE_SB1Reserved2"]/IOData/@IOCS_Length
+Del ../ModuleList/ModuleItem[@ID="ID_MODULE_StatusBlock1"]/VirtualSubmoduleList/VirtualSubmoduleItem[@ID="ID_SUBMODULE_SB1Reserved3"]/IOData/@IOPS_Length
+Del ../ModuleList/ModuleItem[@ID="ID_MODULE_StatusBlock1"]/VirtualSubmoduleList/VirtualSubmoduleItem[@ID="ID_SUBMODULE_SB1Reserved3"]/IOData/@IOCS_Length
+Del ../ModuleList/ModuleItem[@ID="ID_MODULE_StatusBlock1"]/VirtualSubmoduleList/VirtualSubmoduleItem[@ID="ID_SUBMODULE_SB1Command"]/IOData/@IOPS_Length
+Del ../ModuleList/ModuleItem[@ID="ID_MODULE_StatusBlock1"]/VirtualSubmoduleList/VirtualSubmoduleItem[@ID="ID_SUBMODULE_SB1Command"]/IOData/@IOCS_Length
+Del ../ModuleList/ModuleItem[@ID="ID_MODULE_StatusBlock1"]/VirtualSubmoduleList/VirtualSubmoduleItem[@ID="ID_SUBMODULE_SB1StatusGroup1"]/IOData/@IOPS_Length
+Del ../ModuleList/ModuleItem[@ID="ID_MODULE_StatusBlock1"]/VirtualSubmoduleList/VirtualSubmoduleItem[@ID="ID_SUBMODULE_SB1StatusGroup1"]/IOData/@IOCS_Length
+Del ../ModuleList/ModuleItem[@ID="ID_MODULE_StatusBlock1"]/VirtualSubmoduleList/VirtualSubmoduleItem[@ID="ID_SUBMODULE_SB1StatusGroup2"]/IOData/@IOPS_Length
+Del ../ModuleList/ModuleItem[@ID="ID_MODULE_StatusBlock1"]/VirtualSubmoduleList/VirtualSubmoduleItem[@ID="ID_SUBMODULE_SB1StatusGroup2"]/IOData/@IOCS_Length
+Del ../ModuleList/ModuleItem[@ID="ID_MODULE_StatusBlock1"]/VirtualSubmoduleList/VirtualSubmoduleItem[@ID="ID_SUBMODULE_SB1StatusGroup3"]/IOData/@IOPS_Length
+Del ../ModuleList/ModuleItem[@ID="ID_MODULE_StatusBlock1"]/VirtualSubmoduleList/VirtualSubmoduleItem[@ID="ID_SUBMODULE_SB1StatusGroup3"]/IOData/@IOCS_Length
+Del ../ModuleList/ModuleItem[@ID="ID_MODULE_StatusBlock1"]/VirtualSubmoduleList/VirtualSubmoduleItem[@ID="ID_SUBMODULE_SB1Response"]/IOData/@IOPS_Length
+Del ../ModuleList/ModuleItem[@ID="ID_MODULE_StatusBlock1"]/VirtualSubmoduleList/VirtualSubmoduleItem[@ID="ID_SUBMODULE_SB1Response"]/IOData/@IOCS_Length
+Write to C:\UpgradeGSDML_2.33\GSDML-V2.33-MT-ACT350 2P-20170626.xml
+********** -->
+<!-- 
+ ****************************************************************************
+ 								METTLER TOLEDO  
+ ****************************************************************************  
+
+ Product: ACT350-2P
+ DeviceID: 0x3302
+
+ (c) Copyright 2016 Mettler-Toledo AG. All Rights Reserved.
+
+ Author: Flammer Markus
+ Date:   03-15-2016
+  
+ ****************************************************************************
+  
+ ATTENTION:
+ Changes in this file can cause configuration or communication problems.
+  
+ ****************************************************************************
+  
+ Changes:
+ Version  Date       Name   			Description
+ 1.00     03-15-2016 Flammer Markus		Initial Version
+ ****************************************************************************
+-->
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-V2.33.xsd">
+	<!-- ProfileHeader Definition as defined in ISO15745-1. Please do not change the content. -->
+	<ProfileHeader>
+		<ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+		<ProfileRevision>1.00</ProfileRevision>
+		<ProfileName>Device Profile for PROFINET Devices</ProfileName>
+		<ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+		<ProfileClassID>Device</ProfileClassID>
+		<ISO15745Reference>
+			<ISO15745Part>4</ISO15745Part>
+			<ISO15745Edition>1</ISO15745Edition>
+			<ProfileTechnology>GSDML</ProfileTechnology>
+		</ISO15745Reference>
+	</ProfileHeader>
+	<ProfileBody>
+		<DeviceIdentity VendorID="0x029B" DeviceID="0x3302">
+			<InfoText TextId="IDT_DEVICE_IDENTITY_INFO_TEXT"/>
+			<VendorName Value="METTLER TOLEDO"/>
+		</DeviceIdentity>
+		<DeviceFunction>
+			<Family MainFamily="General" ProductFamily="ACT350"/>
+		</DeviceFunction>
+		<ApplicationProcess>
+			<DeviceAccessPointList>
+				<!-- Use also numbers including in Dap ID and TextID since more than one Dap may be used -->
+				<!-- Block 1 Format -->
+				<DeviceAccessPointItem ID="ID_MODULE_Dap1Block" ModuleIdentNumber="0x00000001" PNIO_Version="V2.32" PhysicalSlots="0..1" MinDeviceInterval="32" ImplementationType="netX" DNS_CompatibleName="ACT350" AddressAssignment="DCP;LOCAL" FixedInSlots="0" ObjectUUID_LocalIndex="1" MultipleWriteSupported="true" NameOfStationNotTransferable="true" SharedDeviceSupported="false" SharedInputSupported="false" DeviceAccessSupported="true" NumberOfDeviceAccessAR="1" PrmBeginPrmEndSequenceSupported="false" ResetToFactoryModes="2" LLDP_NoD_Supported="true" IO_SupervisorSupported="false" CheckDeviceID_Allowed="false">				
+					<!-- edit: DNS_CompatibleName Default Name of the Device -->
+					<!-- edit: PowerOnToCommReady has to be adapted to the real start-up time dependent on the system architecture of the netX (serial flash type) and the host controller (power on time - supervisory circuit). -->
+					<ModuleInfo>
+							<Name TextId="IDT_MODULE_Dap1Block_NAME"/>
+							<InfoText TextId="IDT_MODULE_Dap1Block_INFO_TEXT"/>
+							<VendorName Value="METTLER TOLEDO"/>
+							<OrderNumber Value="MT-ACT30XXXXXX"/>
+							<!-- Edit: OrderNumber <Optional> -->
+							<HardwareRelease Value="0x0100"/>
+							<SoftwareRelease Value="V2.6.1"/>
+							<!-- Edit: SoftwareRelease <Optional> -->
+					</ModuleInfo>
+					<CertificationInfo ConformanceClass="B" ApplicationClass="" NetloadClass="I"/>
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="IDT_SUBSLOT_DapInterface_NAME"/>
+						<SubslotItem SubslotNumber="32769" TextId="IDT_SUBSLOT_DapPort1_NAME"/>
+						<SubslotItem SubslotNumber="32770" TextId="IDT_SUBSLOT_DapPort2_NAME"/>
+					</SubslotList>
+					<IOConfigData MaxInputLength="40" MaxOutputLength="40"/>
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_MeasuringBlock1" FixedInSlots="1"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMODULE_Dap1BlockParameter" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4" MayIssueProcessAlarm="false" IM5_Supported="true">
+							<IOData/>
+							<RecordDataList/>
+							<ModuleInfo>
+								<Name TextId="IDT_SUBMODULE_Dap1BlockParameter_NAME"/>
+								<InfoText TextId="IDT_SUBMODULE_Dap1BlockParameter_INFO_TEXT"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="ID_SUBMODULE_Dap1BlockInterface" SubmoduleIdentNumber="0x00000100" IM5_Supported="true" TextId="IDT_SUBMODULE_DapInterface_NAME" SubslotNumber="32768" SupportedRT_Classes="RT_CLASS_1" DelayMeasurementSupported="true" SupportedProtocols="SNMP;LLDP" NetworkComponentDiagnosisSupported="false" DCP_HelloSupported="false" PTP_BoundarySupported="true" DCP_BoundarySupported="true">
+							<ApplicationRelations NumberOfAR="1" StartupMode="Advanced;Legacy">
+								<TimingProperties SendClock="32 64 128" ReductionRatio="1 2 4 8 16 32 64 128 256 512"/>
+							</ApplicationRelations>
+							<MediaRedundancy SupportedRole="Client"/>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="ID_SUBMODULE_Dap1BlockPort1" SubmoduleIdentNumber="0x00000110" IM5_Supported="true" MAUTypes="16" PortDeactivationSupported="true" LinkStateDiagnosisCapability="Up+Down" IsDefaultRingport="true" CheckMAUTypeSupported="true" SubslotNumber="32769" TextId="IDT_SUBMODULE_DapPort1_NAME">
+							<MAUTypeList>
+								<MAUTypeItem Value="16" AdjustSupported="true"/>
+							</MAUTypeList>
+						</PortSubmoduleItem>
+						<PortSubmoduleItem ID="ID_SUBMODULE_Dap1BlockPort2" SubmoduleIdentNumber="0x00000120" IM5_Supported="true" MAUTypes="16" PortDeactivationSupported="true" LinkStateDiagnosisCapability="Up+Down" IsDefaultRingport="true" CheckMAUTypeSupported="true" SubslotNumber="32770" TextId="IDT_SUBMODULE_DapPort2_NAME">
+							<MAUTypeList>
+								<MAUTypeItem Value="16" AdjustSupported="true"/>
+							</MAUTypeList>
+						</PortSubmoduleItem>
+					</SystemDefinedSubmoduleList>
+					<Graphics>
+						<GraphicItemRef GraphicItemTarget="ID_GRAPHIC_DeviceSymbol" Type="DeviceSymbol"/>
+						<GraphicItemRef GraphicItemTarget="ID_GRAPHIC_DeviceIcon" Type="DeviceIcon"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+				<!-- Block 2 Format -->
+				<DeviceAccessPointItem ID="ID_MODULE_Dap2Block" ModuleIdentNumber="0x00000002" PNIO_Version="V2.32" PhysicalSlots="0..2" MinDeviceInterval="32" ImplementationType="netX" DNS_CompatibleName="ACT350" AddressAssignment="DCP;LOCAL" FixedInSlots="0" ObjectUUID_LocalIndex="1" MultipleWriteSupported="true" NameOfStationNotTransferable="true" SharedDeviceSupported="false" SharedInputSupported="false" DeviceAccessSupported="true" NumberOfDeviceAccessAR="1" PrmBeginPrmEndSequenceSupported="false" ResetToFactoryModes="2" LLDP_NoD_Supported="true" IO_SupervisorSupported="false" CheckDeviceID_Allowed="false">				
+					<!-- edit: DNS_CompatibleName Default Name of the Device -->
+					<!-- edit: PowerOnToCommReady has to be adapted to the real start-up time dependent on the system architecture of the netX (serial flash type) and the host controller (power on time - supervisory circuit). -->
+					<ModuleInfo>
+							<Name TextId="IDT_MODULE_Dap2Block_NAME"/>
+							<InfoText TextId="IDT_MODULE_Dap2Block_INFO_TEXT"/>
+							<VendorName Value="METTLER TOLEDO"/>
+							<OrderNumber Value="MT-ACT30XXXXXX"/>
+							<!-- Edit: OrderNumber <Optional> -->
+							<HardwareRelease Value="0x0100"/>
+							<SoftwareRelease Value="V2.6.1"/>
+							<!-- Edit: SoftwareRelease <Optional> -->
+					</ModuleInfo>
+					<CertificationInfo ConformanceClass="B" ApplicationClass="" NetloadClass="I"/>
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="IDT_SUBSLOT_DapInterface_NAME"/>
+						<SubslotItem SubslotNumber="32769" TextId="IDT_SUBSLOT_DapPort1_NAME"/>
+						<SubslotItem SubslotNumber="32770" TextId="IDT_SUBSLOT_DapPort2_NAME"/>
+					</SubslotList>
+					<IOConfigData MaxInputLength="40" MaxOutputLength="40"/>
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_MeasuringBlock1" FixedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_StatusBlock1" FixedInSlots="2"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMODULE_Dap2BlockParameter" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4" MayIssueProcessAlarm="false" IM5_Supported="true">
+							<IOData/>
+							<RecordDataList/>
+							<ModuleInfo>
+								<Name TextId="IDT_SUBMODULE_Dap2BlockParameter_NAME"/>
+								<InfoText TextId="IDT_SUBMODULE_Dap2BlockParameter_INFO_TEXT"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="ID_SUBMODULE_Dap2BlockInterface" SubmoduleIdentNumber="0x00000100" IM5_Supported="true" TextId="IDT_SUBMODULE_DapInterface_NAME" SubslotNumber="32768" SupportedRT_Classes="RT_CLASS_1" DelayMeasurementSupported="true" SupportedProtocols="SNMP;LLDP" NetworkComponentDiagnosisSupported="false" DCP_HelloSupported="false" PTP_BoundarySupported="true" DCP_BoundarySupported="true">
+							<ApplicationRelations NumberOfAR="1" StartupMode="Advanced;Legacy">
+								<TimingProperties SendClock="32 64 128" ReductionRatio="1 2 4 8 16 32 64 128 256 512"/>
+							</ApplicationRelations>
+							<MediaRedundancy SupportedRole="Client"/>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="ID_SUBMODULE_Dap2BlockPort1" SubmoduleIdentNumber="0x00000110" IM5_Supported="true" MAUTypes="16" PortDeactivationSupported="true" LinkStateDiagnosisCapability="Up+Down" IsDefaultRingport="true" CheckMAUTypeSupported="true" SubslotNumber="32769" TextId="IDT_SUBMODULE_DapPort1_NAME">
+							<MAUTypeList>
+								<MAUTypeItem Value="16" AdjustSupported="true"/>
+							</MAUTypeList>
+						</PortSubmoduleItem>
+						<PortSubmoduleItem ID="ID_SUBMODULE_Dap2BlockPort2" SubmoduleIdentNumber="0x00000120" IM5_Supported="true" MAUTypes="16" PortDeactivationSupported="true" LinkStateDiagnosisCapability="Up+Down" IsDefaultRingport="true" CheckMAUTypeSupported="true" SubslotNumber="32770" TextId="IDT_SUBMODULE_DapPort2_NAME">
+							<MAUTypeList>
+								<MAUTypeItem Value="16" AdjustSupported="true"/>
+							</MAUTypeList>
+						</PortSubmoduleItem>
+					</SystemDefinedSubmoduleList>
+					<Graphics>
+						<GraphicItemRef GraphicItemTarget="ID_GRAPHIC_DeviceSymbol" Type="DeviceSymbol"/>
+						<GraphicItemRef GraphicItemTarget="ID_GRAPHIC_DeviceIcon" Type="DeviceIcon"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+			</DeviceAccessPointList>
+			<ModuleList>
+				<ModuleItem ID="ID_MODULE_MeasuringBlock1" ModuleIdentNumber="0x00001000">
+					<ModuleInfo>
+						<Name TextId="IDT_MODULE_MeasuringBlock1_NAME"/>
+						<InfoText TextId="IDT_MODULE_MeasuringBlock1_INFO_TEXT"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMODULE_MeasuringBlock1_ParamAP" SubmoduleIdentNumber="0x00000001" IM5_Supported="true" FixedInSubslots="1" MayIssueProcessAlarm="false">
+							<IOData/>
+							<ModuleInfo>
+								<Name TextId="IDT_SUBMODULE_MeasuringBlock1_ParamAP_NAME"/>
+								<InfoText TextId="IDT_SUBMODULE_MeasuringBlock1_ParamAP_INFO_TEXT"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+				<!-- Write / Output -->
+				<!-- MB1 Command Value -->
+					<VirtualSubmoduleItem ID="ID_SUBMODULE_MB1CommandValue" SubmoduleIdentNumber="0x00011000" IM5_Supported="true" FixedInSubslots="2" MayIssueProcessAlarm="false">
+						<IOData>
+							<Output Consistency="All items consistency">
+								<DataItem DataType="Float32" TextId="IDT_DATAITEM_MB1CommandValue_NAME"/>
+							</Output>
+						</IOData>
+						<ModuleInfo>
+							<Name TextId="IDT_SUBMODULE_MB1CommandValue_NAME"/>
+							<InfoText TextId="IDT_SUBMODULE_MB1CommandValue_INFO_TEXT"/>
+						</ModuleInfo>
+					</VirtualSubmoduleItem>
+					<!-- MB1 Channel Mask -->
+					<VirtualSubmoduleItem ID="ID_SUBMODULE_MB1ChannelMask" SubmoduleIdentNumber="0x00011001" IM5_Supported="true" FixedInSubslots="3" MayIssueProcessAlarm="false">
+						<IOData>
+							<Output Consistency="All items consistency">
+								<DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_MB1ChannelMask_NAME"/>
+							</Output>
+						</IOData>
+						<ModuleInfo>
+							<Name TextId="IDT_SUBMODULE_MB1ChannelMask_NAME"/>
+							<InfoText TextId="IDT_SUBMODULE_MB1ChannelMask_INFO_TEXT"/>
+						</ModuleInfo>
+					</VirtualSubmoduleItem>
+					<!-- MB1 Command -->
+					<VirtualSubmoduleItem ID="ID_SUBMODLUE_MB1Command" SubmoduleIdentNumber="0x00011002" IM5_Supported="true" FixedInSubslots="4" MayIssueProcessAlarm="false">
+						<IOData>
+							<Output Consistency="All items consistency">
+								<DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_MB1Command_NAME"/>
+							</Output>
+						</IOData>
+						<ModuleInfo>
+							<Name TextId="IDT_SUBMODULE_MB1Command_NAME"/>
+							<InfoText TextId="IDT_SUBMODULE_MB1Command_INFO_TEXT"/>
+						</ModuleInfo>
+					</VirtualSubmoduleItem>	
+					<!-- Read / Input -->					
+					<!-- MB1 Measuring Value -->
+					<VirtualSubmoduleItem ID="ID_SUBMODULE_MB1MeasuringValue" SubmoduleIdentNumber="0x00012000" IM5_Supported="true" FixedInSubslots="5" MayIssueProcessAlarm="false">
+						<IOData>
+							<Input Consistency="All items consistency">
+								<DataItem DataType="Float32" TextId="IDT_DATAITEM_MB1MeasuringValue_NAME"/>
+							</Input>
+						</IOData>
+						<ModuleInfo>
+							<Name TextId="IDT_SUBMODULE_MB1MeasuringValue_NAME"/>
+							<InfoText TextId="IDT_SUBMODULE_MB1MeasuringValue_INFO_TEXT"/>
+						</ModuleInfo>
+					</VirtualSubmoduleItem>
+					<!-- MB1 Device Status -->
+					<VirtualSubmoduleItem ID="ID_SUBMODULE_MB1DeviceStatus" SubmoduleIdentNumber="0x00012001" IM5_Supported="true" FixedInSubslots="6" MayIssueProcessAlarm="false">
+						<IOData>
+							<Input Consistency="All items consistency">
+								<DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_MB1DeviceStatus_NAME"/>
+							</Input>
+						</IOData>
+						<ModuleInfo>
+							<Name TextId="IDT_SUBMODULE_MB1DeviceStatus_NAME"/>
+							<InfoText TextId="IDT_SUBMODULE_MB1DeviceStatus_INFO_TEXT"/>
+						</ModuleInfo>
+					</VirtualSubmoduleItem>
+					<!-- MB1 Response -->
+					<VirtualSubmoduleItem ID="ID_SUBMODULE_MB1Response" SubmoduleIdentNumber="0x00012002" IM5_Supported="true" FixedInSubslots="7" MayIssueProcessAlarm="false">
+						<IOData>
+							<Input Consistency="All items consistency">
+								<DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_MB1Response_NAME"/>
+							</Input>
+						</IOData>
+						<ModuleInfo>
+							<Name TextId="IDT_SUBMODULE_MB1Response_NAME"/>
+							<InfoText TextId="IDT_SUBMODULE_MB1Response_INFO_TEXT"/>
+						</ModuleInfo>
+					</VirtualSubmoduleItem>
+				</VirtualSubmoduleList>
+		</ModuleItem>
+
+		<ModuleItem ID="ID_MODULE_StatusBlock1" ModuleIdentNumber="0x00002000">
+					<ModuleInfo>
+						<Name TextId="IDT_MODULE_StatusBlock1_NAME"/>
+						<InfoText TextId="IDT_MODULE_StatusBlock1_INFO_TEXT"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMODULE_StatusBlock1_ParamAP" SubmoduleIdentNumber="0x00000001" IM5_Supported="true" FixedInSubslots="1" MayIssueProcessAlarm="false">
+						<!--Use the first Subslot - Subslot 1 - as a virtual one without IOData as "Access Point" for Parameters. Place Submodules with IOData in the following ones - starting with Subslot 2 -->
+							<IOData/>
+							<ModuleInfo>
+								<Name TextId="IDT_SUBMODULE_StatusBlock1_ParamAP_NAME"/>
+								<InfoText TextId="IDT_SUBMODULE_StatusBlock1_ParamAP_INFO_TEXT"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>					
+				<!-- SB1 -->
+				<!-- Write / Output -->	
+				<!-- SB1 Reserved1-->
+				<VirtualSubmoduleItem ID="ID_SUBMODULE_SB1Reserved1" SubmoduleIdentNumber="0x00021000" IM5_Supported="true" FixedInSubslots="2" MayIssueProcessAlarm="false">
+					<IOData>
+						<Output Consistency="All items consistency">
+							<DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_SB1Reserved1_NAME"/>
+						</Output>
+					</IOData>
+					<ModuleInfo>
+						<Name TextId="IDT_SUBMODULE_SB1Reserved1_NAME"/>
+						<InfoText TextId="IDT_SUBMODULE_SB1Reserved1_INFO_TEXT"/>
+					</ModuleInfo>
+				</VirtualSubmoduleItem>
+				<!-- SB1 Reserved2-->
+				<VirtualSubmoduleItem ID="ID_SUBMODULE_SB1Reserved2" SubmoduleIdentNumber="0x00021001" IM5_Supported="true" FixedInSubslots="3" MayIssueProcessAlarm="false">
+					<IOData>
+						<Output Consistency="All items consistency">
+							<DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_SB1Reserved2_NAME"/>
+						</Output>
+					</IOData>
+					<ModuleInfo>
+						<Name TextId="IDT_SUBMODULE_SB1Reserved2_NAME"/>
+						<InfoText TextId="IDT_SUBMODULE_SB1Reserved2_INFO_TEXT"/>
+					</ModuleInfo>
+				</VirtualSubmoduleItem>				
+				<!-- SB1 Reserved3-->
+				<VirtualSubmoduleItem ID="ID_SUBMODULE_SB1Reserved3" SubmoduleIdentNumber="0x00021002" IM5_Supported="true" FixedInSubslots="4" MayIssueProcessAlarm="false">
+					<IOData>
+						<Output Consistency="All items consistency">
+							<DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_SB1Reserved3_NAME"/>
+						</Output>
+					</IOData>
+					<ModuleInfo>
+						<Name TextId="IDT_SUBMODULE_SB1Reserved3_NAME"/>
+						<InfoText TextId="IDT_SUBMODULE_SB1Reserved3_INFO_TEXT"/>
+					</ModuleInfo>
+				</VirtualSubmoduleItem>
+				<!-- SB1 Command-->
+				<VirtualSubmoduleItem ID="ID_SUBMODULE_SB1Command" SubmoduleIdentNumber="0x00021003" IM5_Supported="true" FixedInSubslots="5" MayIssueProcessAlarm="false">
+					<IOData>
+						<Output Consistency="All items consistency">
+							<DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_SB1Command_NAME"/>
+						</Output>
+					</IOData>
+					<ModuleInfo>
+						<Name TextId="IDT_SUBMODULE_SB1Command_NAME"/>
+						<InfoText TextId="IDT_SUBMODULE_SB1Command_INFO_TEXT"/>
+					</ModuleInfo>
+				</VirtualSubmoduleItem>
+				<!-- Read / Input -->					
+				<!-- SB1 Status Group 1-->
+				<VirtualSubmoduleItem ID="ID_SUBMODULE_SB1StatusGroup1" SubmoduleIdentNumber="0x00022000" IM5_Supported="true" FixedInSubslots="6" MayIssueProcessAlarm="false">
+					<IOData>
+						<Input Consistency="All items consistency">
+							<DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_SB1StatusGroup1_NAME"/>
+						</Input>
+					</IOData>
+					<ModuleInfo>
+						<Name TextId="IDT_SUBMODULE_SB1StatusGroup1_NAME"/>
+						<InfoText TextId="IDT_SUBMODULE_SB1StatusGroup1_INFO_TEXT"/>
+					</ModuleInfo>
+				</VirtualSubmoduleItem>
+				<!-- SB1 Status Group 2-->
+				<VirtualSubmoduleItem ID="ID_SUBMODULE_SB1StatusGroup2" SubmoduleIdentNumber="0x00022001" IM5_Supported="true" FixedInSubslots="7" MayIssueProcessAlarm="false">
+					<IOData>
+						<Input Consistency="All items consistency">
+							<DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_SB1StatusGroup2_NAME"/>
+						</Input>
+					</IOData>
+					<ModuleInfo>
+						<Name TextId="IDT_SUBMODULE_SB1StatusGroup2_NAME"/>
+						<InfoText TextId="IDT_SUBMODULE_SB1StatusGroup2_INFO_TEXT"/>
+					</ModuleInfo>
+				</VirtualSubmoduleItem>
+				<!-- SB1 Status Group 3-->
+				<VirtualSubmoduleItem ID="ID_SUBMODULE_SB1StatusGroup3" SubmoduleIdentNumber="0x00022002" IM5_Supported="true" FixedInSubslots="8" MayIssueProcessAlarm="false">
+					<IOData>
+						<Input Consistency="All items consistency">
+							<DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_SB1StatusGroup3_NAME"/>
+						</Input>
+					</IOData>
+					<ModuleInfo>
+						<Name TextId="IDT_SUBMODULE_SB1StatusGroup3_NAME"/>
+						<InfoText TextId="IDT_SUBMODULE_SB1StatusGroup3_INFO_TEXT"/>
+					</ModuleInfo>
+				</VirtualSubmoduleItem>
+				<!-- SB1 Response-->
+				<VirtualSubmoduleItem ID="ID_SUBMODULE_SB1Response" SubmoduleIdentNumber="0x00022003" IM5_Supported="true" FixedInSubslots="9" MayIssueProcessAlarm="false">
+					<IOData>
+						<Input Consistency="All items consistency">
+							<DataItem DataType="Unsigned16" TextId="IDT_DATAITEM_SB1Response_NAME"/>
+						</Input>
+					</IOData>
+					<ModuleInfo>
+						<Name TextId="IDT_SUBMODULE_SB1Response_NAME"/>
+						<InfoText TextId="IDT_SUBMODULE_SB1Response_INFO_TEXT"/>
+					</ModuleInfo>
+				</VirtualSubmoduleItem>
+			</VirtualSubmoduleList>
+		</ModuleItem>
+	</ModuleList>
+			<GraphicsList>
+				<GraphicItem GraphicFile="GSDML-029B-3302-ACT350-2P" ID="ID_GRAPHIC_DeviceSymbol"/>
+				<!-- edit: Bitmap 70*40 pixels (width*height) in 16 colors -->
+				<GraphicItem GraphicFile="GSDML-029B-3302-ACT350-2P" ID="ID_GRAPHIC_DeviceIcon"/>
+				<!-- edit: Bitmap 32*32 pixels (width*height) ICON Format -->
+			</GraphicsList>
+			<ExternalTextList>
+				<PrimaryLanguage>
+					<!--DAP-->
+					<!-- edit: Change Information-->
+					<Text TextId="IDT_DEVICE_IDENTITY_INFO_TEXT" Value="ACT350"/>
+					<Text TextId="IDT_MODULE_Dap1Block_NAME" Value="ACT350 2P 1 Block Format"/>
+					<Text TextId="IDT_MODULE_Dap1Block_INFO_TEXT" Value="ACT350 2P 1 Block Format with PROFINET IO interface (RT, cyclic and acyclic communication)"/>
+					<Text TextId="IDT_SUBMODULE_Dap1BlockParameter_NAME" Value="DAP 1 Block Parameter"/>
+					<Text TextId="IDT_SUBMODULE_Dap1BlockParameter_INFO_TEXT" Value=""/>
+					<Text TextId="IDT_MODULE_Dap2Block_NAME" Value="ACT350 2P 2 Block Format"/>
+					<Text TextId="IDT_MODULE_Dap2Block_INFO_TEXT" Value="ACT350 2P 2 Block Format with PROFINET IO interface (RT, cyclic and acyclic communication)"/>
+					<Text TextId="IDT_SUBMODULE_Dap2BlockParameter_NAME" Value="DAP 2 Block Parameter"/>
+					<Text TextId="IDT_SUBMODULE_Dap2BlockParameter_INFO_TEXT" Value=""/>
+			
+					<!-- Do not change anything below this line -->
+					<Text TextId="IDT_SUBSLOT_DapInterface_NAME" Value="X1"/>
+					<Text TextId="IDT_SUBMODULE_DapInterface_NAME" Value="PROFINET"/>	
+					<Text TextId="IDT_SUBSLOT_DapPort1_NAME" Value="P1"/>
+					<Text TextId="IDT_SUBMODULE_DapPort1_NAME" Value="Port 1"/>		
+					<Text TextId="IDT_SUBSLOT_DapPort2_NAME" Value="P2"/>
+					<Text TextId="IDT_SUBMODULE_DapPort2_NAME" Value="Port 2"/>	
+
+					<!--Modules-->								
+					<Text TextId="IDT_MODULE_MeasuringBlock1_NAME" Value="Measuring Block"/>
+					<Text TextId="IDT_MODULE_MeasuringBlock1_INFO_TEXT" Value="Measuring Block (Write) - 4 Words + Measuring Block (Read) - 4 Words"/>
+
+					<Text TextId="IDT_MODULE_StatusBlock1_NAME" Value="Status Block"/>
+					<Text TextId="IDT_MODULE_StatusBlock1_INFO_TEXT" Value="Status Block (Write) - 4 Words + Status Block (Read) - 4 Words"/>
+
+					<!--Submodules-->
+					<Text TextId="IDT_SUBMODULE_MeasuringBlock1_ParamAP_NAME" Value="Parameter Access Point"/>				
+					<Text TextId="IDT_SUBMODULE_MeasuringBlock1_ParamAP_INFO_TEXT" Value="Access Point to parameters of module Measuring Block"/>
+					<Text TextId="IDT_SUBMODULE_StatusBlock1_ParamAP_NAME" Value="Parameter Access Point"/>				
+					<Text TextId="IDT_SUBMODULE_StatusBlock1_ParamAP_INFO_TEXT" Value="Access Point to parameters of module Status Block"/>
+					<!--MB1-->	
+					<Text TextId="IDT_SUBMODULE_MB1CommandValue_NAME" Value="MB Command Value"/>				
+					<Text TextId="IDT_SUBMODULE_MB1CommandValue_INFO_TEXT" Value="MB Command Value - 32bit"/>
+					<Text TextId="IDT_SUBMODULE_MB1ChannelMask_NAME" Value="MB Channel Mask"/>				
+					<Text TextId="IDT_SUBMODULE_MB1ChannelMask_INFO_TEXT" Value="MB Channel Mask - 16bit"/>
+					<Text TextId="IDT_SUBMODULE_MB1Command_NAME" Value="MB Command"/>				
+					<Text TextId="IDT_SUBMODULE_MB1Command_INFO_TEXT" Value="MB Command - 16bit"/>					
+					<Text TextId="IDT_SUBMODULE_MB1MeasuringValue_NAME" Value="MB Measuring Value"/>				
+					<Text TextId="IDT_SUBMODULE_MB1MeasuringValue_INFO_TEXT" Value="MB Measuring Value - 32bit"/>							
+					<Text TextId="IDT_SUBMODULE_MB1DeviceStatus_NAME" Value="MB Device Status"/>				
+					<Text TextId="IDT_SUBMODULE_MB1DeviceStatus_INFO_TEXT" Value="MB Device Status - 16bit"/>
+					<Text TextId="IDT_SUBMODULE_MB1Response_NAME" Value="MB Response"/>				
+					<Text TextId="IDT_SUBMODULE_MB1Response_INFO_TEXT" Value="MB Response - 16bit"/>
+					<!--SB1-->	
+					<Text TextId="IDT_SUBMODULE_SB1Reserved1_NAME" Value="SB Reserved 1"/>				
+					<Text TextId="IDT_SUBMODULE_SB1Reserved1_INFO_TEXT" Value="SB Reserved 1 - 16bit"/>	
+					<Text TextId="IDT_SUBMODULE_SB1Reserved2_NAME" Value="SB Reserved 2"/>				
+					<Text TextId="IDT_SUBMODULE_SB1Reserved2_INFO_TEXT" Value="SB Reserved 2 - 16bit"/>	
+					<Text TextId="IDT_SUBMODULE_SB1Reserved3_NAME" Value="SB Reserved 3"/>				
+					<Text TextId="IDT_SUBMODULE_SB1Reserved3_INFO_TEXT" Value="SB Reserved 3 - 16bit"/>						
+					<Text TextId="IDT_SUBMODULE_SB1Command_NAME" Value="SB Command"/>				
+					<Text TextId="IDT_SUBMODULE_SB1Command_INFO_TEXT" Value="SB  Command - 16bit"/>	
+					<Text TextId="IDT_SUBMODULE_SB1StatusGroup1_NAME" Value="SB Status Group 1"/>				
+					<Text TextId="IDT_SUBMODULE_SB1StatusGroup1_INFO_TEXT" Value="SB Status Group 1 - 16bit"/>					
+					<Text TextId="IDT_SUBMODULE_SB1StatusGroup2_NAME" Value="SB Status Group 2"/>				
+					<Text TextId="IDT_SUBMODULE_SB1StatusGroup2_INFO_TEXT" Value="SB Status Group 2 - 16bit"/>						
+					<Text TextId="IDT_SUBMODULE_SB1StatusGroup3_NAME" Value="SB Status Group 3"/>				
+					<Text TextId="IDT_SUBMODULE_SB1StatusGroup3_INFO_TEXT" Value="SB Status Group 3 - 16bit"/>	
+					<Text TextId="IDT_SUBMODULE_SB1Response_NAME" Value="SB Response"/>				
+					<Text TextId="IDT_SUBMODULE_SB1Response_INFO_TEXT" Value="SB Response - 16bit"/>				
+					<!--Submodules - Data Items-->
+					<!--MB1-->	
+					<Text TextId="IDT_DATAITEM_MB1MeasuringValue_NAME" Value="MB Measuring Value - Data"/>					
+					<Text TextId="IDT_DATAITEM_MB1DeviceStatus_NAME" Value="MB Device Status - Data"/>
+					<Text TextId="IDT_DATAITEM_MB1Response_NAME" Value="MB Response - Data"/>	
+					<Text TextId="IDT_DATAITEM_MB1CommandValue_NAME" Value="MB Command Value - Data"/>					
+					<Text TextId="IDT_DATAITEM_MB1ChannelMask_NAME" Value="MB Channel Mask - Data"/>
+					<Text TextId="IDT_DATAITEM_MB1Command_NAME" Value="MB Command - Data"/>	
+					<!--SB1-->						
+					<Text TextId="IDT_DATAITEM_SB1StatusGroup1_NAME" Value="SB Status Group1 - Data"/>
+					<Text TextId="IDT_DATAITEM_SB1StatusGroup2_NAME" Value="SB Status Group2 - Data"/>
+					<Text TextId="IDT_DATAITEM_SB1StatusGroup3_NAME" Value="SB Status Group3 - Data"/>
+					<Text TextId="IDT_DATAITEM_SB1Response_NAME" Value="SB Response - Data"/>					
+					<Text TextId="IDT_DATAITEM_SB1Reserved1_NAME" Value="SB Reserved 1 - Data"/>
+					<Text TextId="IDT_DATAITEM_SB1Reserved2_NAME" Value="SB SReserved 2 - Data"/>
+					<Text TextId="IDT_DATAITEM_SB1Reserved3_NAME" Value="SB Reserved 3 - Data"/>
+					<Text TextId="IDT_DATAITEM_SB1Command_NAME" Value="SB Command - Data"/>
+				</PrimaryLanguage>
+			</ExternalTextList>
+		</ApplicationProcess>
+	</ProfileBody>
+</ISO15745Profile>

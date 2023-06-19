@@ -461,7 +461,6 @@ namespace Tia2Ax.Interfaces
                     if (module.AddressItems.Count > 0)
                     {
                         int index = projectItem.PlcItems.IndexOf(plcItem);
-                        string s = projectItem.PlcItems[index].Name;
                         if(projectItem.PlcItems[index].DistributedModules != null)
                         {
                             projectItem.PlcItems[index].DistributedModules.Add(module);
@@ -564,7 +563,7 @@ namespace Tia2Ax.Interfaces
                     throw;
                 }
             }
-            return localModules;
+            return localModules.OrderBy(p=>p.PositionNumber).ToList();
         }
 
         /// <summary>
@@ -623,33 +622,38 @@ namespace Tia2Ax.Interfaces
             {
                 sw.WriteLine("TYPE");
                 sw.WriteLine("\t" + structname + " : STRUCT");
-
-                foreach (ModuleItem module in plcItem.LocalModules)
+                if (plcItem.LocalModules != null)
                 {
-                    foreach (AddressItem addressItem in module.AddressItems)
+                    foreach (ModuleItem module in plcItem.LocalModules)
                     {
-                        if (exportItemType == ExportItemType.HwInput && addressItem.IoType.Equals(AddressIoType.Input) || exportItemType == ExportItemType.HwOutput && addressItem.IoType.Equals(AddressIoType.Output))
+                        foreach (AddressItem addressItem in module.AddressItems)
                         {
-                            sw.WriteLine(GetHwItem(module, addressItem));
-                        }
-                        if (exportItemType == ExportItemType.PlcInput && addressItem.IoType.Equals(AddressIoType.Input) || exportItemType == ExportItemType.PlcOutput && addressItem.IoType.Equals(AddressIoType.Output))
-                        {
-                            sw.WriteLine(GetPlcItem(module, addressItem));
+                            if (exportItemType == ExportItemType.HwInput && addressItem.IoType.Equals(AddressIoType.Input) || exportItemType == ExportItemType.HwOutput && addressItem.IoType.Equals(AddressIoType.Output))
+                            {
+                                sw.WriteLine(GetHwItem(module, addressItem));
+                            }
+                            if (exportItemType == ExportItemType.PlcInput && addressItem.IoType.Equals(AddressIoType.Input) || exportItemType == ExportItemType.PlcOutput && addressItem.IoType.Equals(AddressIoType.Output))
+                            {
+                                sw.WriteLine(GetPlcItem(module, addressItem));
+                            }
                         }
                     }
                 }
 
-                foreach (ModuleItem module in plcItem.DistributedModules)
+                if (plcItem.DistributedModules != null)
                 {
-                    foreach (AddressItem addressItem in module.AddressItems)
+                    foreach (ModuleItem module in plcItem.DistributedModules)
                     {
-                        if (exportItemType == ExportItemType.HwInput && addressItem.IoType.Equals(AddressIoType.Input) || exportItemType == ExportItemType.HwOutput && addressItem.IoType.Equals(AddressIoType.Output))
+                        foreach (AddressItem addressItem in module.AddressItems)
                         {
-                            sw.WriteLine(GetHwItem(module, addressItem));
-                        }
-                        if (exportItemType == ExportItemType.PlcInput && addressItem.IoType.Equals(AddressIoType.Input) || exportItemType == ExportItemType.PlcOutput && addressItem.IoType.Equals(AddressIoType.Output))
-                        {
-                            sw.WriteLine(GetPlcItem(module, addressItem));
+                            if (exportItemType == ExportItemType.HwInput && addressItem.IoType.Equals(AddressIoType.Input) || exportItemType == ExportItemType.HwOutput && addressItem.IoType.Equals(AddressIoType.Output))
+                            {
+                                sw.WriteLine(GetHwItem(module, addressItem));
+                            }
+                            if (exportItemType == ExportItemType.PlcInput && addressItem.IoType.Equals(AddressIoType.Input) || exportItemType == ExportItemType.PlcOutput && addressItem.IoType.Equals(AddressIoType.Output))
+                            {
+                                sw.WriteLine(GetPlcItem(module, addressItem));
+                            }
                         }
                     }
                 }
@@ -695,42 +699,48 @@ namespace Tia2Ax.Interfaces
                 sw.WriteLine("\t\t" + Constants.PlcInputsStructName + " : " + Constants.PlcInputsStructName + "; ");
                 sw.WriteLine("\tEND_VAR");
 
-                foreach (ModuleItem module in plcItem.LocalModules)
+                if (plcItem.LocalModules != null)
                 {
-                    foreach (AddressItem addressItem in module.AddressItems)
+                    foreach (ModuleItem module in plcItem.LocalModules)
                     {
-                        if (addressItem.IoType.Equals(AddressIoType.Input))
+                        foreach (AddressItem addressItem in module.AddressItems)
                         {
-                            if (addressItem.ByteLength == 1 || addressItem.ByteLength == 2 || addressItem.ByteLength == 4)
+                            if (addressItem.IoType.Equals(AddressIoType.Input))
                             {
-                                sw.WriteLine("\t" + Constants.PlcInputsStructName + "." + ValidatePlcItem.Name(module.FullName) + " := " + Constants.HwInputsStructName + "." + ValidatePlcItem.Name(module.FullName) + ";");
-                            }
-                            else
-                            {
-                                for (int i = 0; i < addressItem.ByteLength; i++)
+                                if (addressItem.ByteLength == 1 || addressItem.ByteLength == 2 || addressItem.ByteLength == 4)
                                 {
-                                    sw.WriteLine("\t" + Constants.PlcInputsStructName + "." + ValidatePlcItem.Name(module.FullName) + "[" + i.ToString() + "] := " + Constants.HwInputsStructName + "." + ValidatePlcItem.Name(module.FullName) + "[" + i.ToString() + "];");
+                                    sw.WriteLine("\t" + Constants.PlcInputsStructName + "." + ValidatePlcItem.Name(module.FullName) + " := " + Constants.HwInputsStructName + "." + ValidatePlcItem.Name(module.FullName) + ";");
+                                }
+                                else
+                                {
+                                    for (int i = 0; i < addressItem.ByteLength; i++)
+                                    {
+                                        sw.WriteLine("\t" + Constants.PlcInputsStructName + "." + ValidatePlcItem.Name(module.FullName) + "[" + i.ToString() + "] := " + Constants.HwInputsStructName + "." + ValidatePlcItem.Name(module.FullName) + "[" + i.ToString() + "];");
+                                    }
                                 }
                             }
                         }
                     }
                 }
 
-                foreach (ModuleItem module in plcItem.DistributedModules)
+                if (plcItem.DistributedModules != null)
                 {
-                    foreach (AddressItem addressItem in module.AddressItems)
+                    foreach (ModuleItem module in plcItem.DistributedModules)
                     {
-                        if (addressItem.IoType.Equals(AddressIoType.Input))
+                        foreach (AddressItem addressItem in module.AddressItems)
                         {
-                            if (addressItem.ByteLength == 1 || addressItem.ByteLength == 2 || addressItem.ByteLength == 4)
+                            if (addressItem.IoType.Equals(AddressIoType.Input))
                             {
-                                sw.WriteLine("\t" + Constants.PlcInputsStructName + "." + ValidatePlcItem.Name(module.FullName) + " := " + Constants.HwInputsStructName + "." + ValidatePlcItem.Name(module.FullName) + ";");
-                            }
-                            else
-                            {
-                                for (int i = 0; i < addressItem.ByteLength; i++)
+                                if (addressItem.ByteLength == 1 || addressItem.ByteLength == 2 || addressItem.ByteLength == 4)
                                 {
-                                    sw.WriteLine("\t" + Constants.PlcInputsStructName + "." + ValidatePlcItem.Name(module.FullName) + "[" + i.ToString() + "] := " + Constants.HwInputsStructName + "." + ValidatePlcItem.Name(module.FullName) + "[" + i.ToString() + "];");
+                                    sw.WriteLine("\t" + Constants.PlcInputsStructName + "." + ValidatePlcItem.Name(module.FullName) + " := " + Constants.HwInputsStructName + "." + ValidatePlcItem.Name(module.FullName) + ";");
+                                }
+                                else
+                                {
+                                    for (int i = 0; i < addressItem.ByteLength; i++)
+                                    {
+                                        sw.WriteLine("\t" + Constants.PlcInputsStructName + "." + ValidatePlcItem.Name(module.FullName) + "[" + i.ToString() + "] := " + Constants.HwInputsStructName + "." + ValidatePlcItem.Name(module.FullName) + "[" + i.ToString() + "];");
+                                    }
                                 }
                             }
                         }
@@ -752,42 +762,47 @@ namespace Tia2Ax.Interfaces
                 sw.WriteLine("\t\t" + Constants.PlcOutputsStructName + " : " + Constants.PlcOutputsStructName + "; ");
                 sw.WriteLine("\tEND_VAR");
 
-                foreach (ModuleItem module in plcItem.LocalModules)
+                if (plcItem.LocalModules != null)
                 {
-                    foreach (AddressItem addressItem in module.AddressItems)
+                    foreach (ModuleItem module in plcItem.LocalModules)
                     {
-                        if (addressItem.IoType.Equals(AddressIoType.Output))
+                        foreach (AddressItem addressItem in module.AddressItems)
                         {
-                            if (addressItem.ByteLength == 1 || addressItem.ByteLength == 2 || addressItem.ByteLength == 4)
+                            if (addressItem.IoType.Equals(AddressIoType.Output))
                             {
-                                sw.WriteLine("\t" + Constants.HwOutputsStructName + "." + ValidatePlcItem.Name(module.FullName) + " := " + Constants.PlcOutputsStructName + "." + ValidatePlcItem.Name(module.FullName) + ";");
-                            }
-                            else
-                            {
-                                for (int i = 0; i < addressItem.ByteLength; i++)
+                                if (addressItem.ByteLength == 1 || addressItem.ByteLength == 2 || addressItem.ByteLength == 4)
                                 {
-                                    sw.WriteLine("\t" + Constants.HwOutputsStructName + "." + ValidatePlcItem.Name(module.FullName) + "[" + i.ToString() + "] := " + Constants.PlcOutputsStructName + "." + ValidatePlcItem.Name(module.FullName) + "[" + i.ToString() + "];");
+                                    sw.WriteLine("\t" + Constants.HwOutputsStructName + "." + ValidatePlcItem.Name(module.FullName) + " := " + Constants.PlcOutputsStructName + "." + ValidatePlcItem.Name(module.FullName) + ";");
+                                }
+                                else
+                                {
+                                    for (int i = 0; i < addressItem.ByteLength; i++)
+                                    {
+                                        sw.WriteLine("\t" + Constants.HwOutputsStructName + "." + ValidatePlcItem.Name(module.FullName) + "[" + i.ToString() + "] := " + Constants.PlcOutputsStructName + "." + ValidatePlcItem.Name(module.FullName) + "[" + i.ToString() + "];");
+                                    }
                                 }
                             }
                         }
                     }
                 }
-
-                foreach (ModuleItem module in plcItem.DistributedModules)
+                if (plcItem.DistributedModules != null)
                 {
-                    foreach (AddressItem addressItem in module.AddressItems)
+                    foreach (ModuleItem module in plcItem.DistributedModules)
                     {
-                        if (addressItem.IoType.Equals(AddressIoType.Output))
+                        foreach (AddressItem addressItem in module.AddressItems)
                         {
-                            if (addressItem.ByteLength == 1 || addressItem.ByteLength == 2 || addressItem.ByteLength == 4)
+                            if (addressItem.IoType.Equals(AddressIoType.Output))
                             {
-                                sw.WriteLine("\t" + Constants.HwOutputsStructName + "." + ValidatePlcItem.Name(module.FullName) + " := " + Constants.PlcOutputsStructName + "." + ValidatePlcItem.Name(module.FullName) + ";");
-                            }
-                            else
-                            {
-                                for (int i = 0; i < addressItem.ByteLength; i++)
+                                if (addressItem.ByteLength == 1 || addressItem.ByteLength == 2 || addressItem.ByteLength == 4)
                                 {
-                                    sw.WriteLine("\t" + Constants.HwOutputsStructName + "." + ValidatePlcItem.Name(module.FullName) + "[" + i.ToString() + "] := " + Constants.PlcOutputsStructName + "." + ValidatePlcItem.Name(module.FullName) + "[" + i.ToString() + "];");
+                                    sw.WriteLine("\t" + Constants.HwOutputsStructName + "." + ValidatePlcItem.Name(module.FullName) + " := " + Constants.PlcOutputsStructName + "." + ValidatePlcItem.Name(module.FullName) + ";");
+                                }
+                                else
+                                {
+                                    for (int i = 0; i < addressItem.ByteLength; i++)
+                                    {
+                                        sw.WriteLine("\t" + Constants.HwOutputsStructName + "." + ValidatePlcItem.Name(module.FullName) + "[" + i.ToString() + "] := " + Constants.PlcOutputsStructName + "." + ValidatePlcItem.Name(module.FullName) + "[" + i.ToString() + "];");
+                                    }
                                 }
                             }
                         }
