@@ -21,12 +21,12 @@ If neccessary there could be released a new version for newer version of TiaPort
 - V18_0_tia2ax.exe -x "D:\_tmp\S7_1516_example\S7_1516_example.ap18" -o "D:\_tmp\Export"
 - In case that you are prompted to grant the access, click `Yes to all`.
 
-![Alt text](images\GrantAccess.png)
+![Alt text](images/GrantAccess.png)
 - after export is finished, navigate to the output folder. Depending on the number of the PLCs used inside the TiaPortal project, respective number of subfolders named by each PLC name should be created.
 
 Each folder should have following content:
 
-![Alt text](images\ExportedStructure.png)
+![Alt text](images/ExportedStructure.png)
 
 All the files with the extension `.st` need to be copied into respective AX project.
 
