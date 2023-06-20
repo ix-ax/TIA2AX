@@ -31,11 +31,4 @@ jobs:
           GH_TOKEN : ${{ secrets.GH_TOKEN }}
           GH_USER : ${{ secrets.GH_USER }}
       run: dotnet run --project cake/Build.csproj --do-pack --do-publish --do-publish-release
-    - name: Test Report
-      uses: dorny/test-reporter@v1
-      if: success() || failure()
-      with:
-        name: Test report
-        path: 'TestResults/*.xml'     
-        reporter: dotnet-trx
 
