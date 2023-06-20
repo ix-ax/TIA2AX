@@ -1,0 +1,8 @@
+{
+  "solution": {
+    "path": "tia2ax.sln",
+    "projects": [
+      "src\\tia2axtool\\tia2axtool.csproj"
+    ]
+  }
+}

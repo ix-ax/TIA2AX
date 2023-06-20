@@ -1,12 +1,14 @@
 ﻿using CommandLine;
 using Tia2Ax.Services;
 using System;
+using System.Resources;
+using Tia2Ax.Utils;
 
 namespace tia2ax
 {
-    internal class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
 
             Parser.Default.ParseArguments<Options>(args)
@@ -34,13 +36,19 @@ namespace tia2ax
 
         private static void GoAhead(Options options)
         {
-            var traceWriter = new Tia2Ax.Interfaces.TraceWriter();
-            var apiWrapper = new Tia2Ax.Interfaces.ApiWrapper(traceWriter);
-            var creator = new Tia2AxServices(traceWriter, apiWrapper);
-            creator.OpenProject(options.TiaSourceProject);
-            creator.GetPlcList(options.OutputProjectFolder);
+            if (TiaOpeness.CheckPrerequisities())
+            {
+                var traceWriter = new Tia2Ax.Interfaces.TraceWriter();
+                var apiWrapper = new Tia2Ax.Interfaces.ApiWrapper(traceWriter);
+
+                var creator = new Tia2AxServices(traceWriter, apiWrapper);
+                creator.OpenProject(options.TiaSourceProject);
+                creator.GetPlcList(options.OutputProjectFolder);
+            }
         }
+
     }
+
 
     internal class Options 
     {

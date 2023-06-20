@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tia2axTestHelper", "tests\t
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tia2axIntegrationTests", "tests\tia2axIntegrationTests\tia2axIntegrationTests.csproj", "{B5A9991C-2932-4133-8951-C98ABC7BFAC3}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tia2axtool", "src\tia2axtool\tia2axtool.csproj", "{670187E5-1C07-4C45-9C53-CD3D7E4697DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{B5A9991C-2932-4133-8951-C98ABC7BFAC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5A9991C-2932-4133-8951-C98ABC7BFAC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5A9991C-2932-4133-8951-C98ABC7BFAC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{670187E5-1C07-4C45-9C53-CD3D7E4697DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{670187E5-1C07-4C45-9C53-CD3D7E4697DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{670187E5-1C07-4C45-9C53-CD3D7E4697DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{670187E5-1C07-4C45-9C53-CD3D7E4697DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 		{E0FA7C6F-5A26-4FB1-9F1F-D53ECEB9CB62} = {B6DE5B3E-1E94-4825-859A-752BA1CF2295}
 		{7BBCC800-65E6-4907-B016-9752FF8D9960} = {4DAFC1C8-8C9D-4C09-B287-3AA671AB9D15}
 		{B5A9991C-2932-4133-8951-C98ABC7BFAC3} = {4DAFC1C8-8C9D-4C09-B287-3AA671AB9D15}
+		{670187E5-1C07-4C45-9C53-CD3D7E4697DF} = {B6DE5B3E-1E94-4825-859A-752BA1CF2295}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BFE61C61-D703-4343-B099-70039C12462B}

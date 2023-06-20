@@ -3,14 +3,29 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net4.8</TargetFramework>
+    <!--<PackAsTool>True</PackAsTool>
+    <ToolCommandName>tiax</ToolCommandName>-->
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="Siemens.Engineering">
+    <Reference Include="Siemens.Engineering" Pack="true">
       <HintPath>..\..\..\third\V18\Siemens.Engineering.dll</HintPath>
-      <Private>True</Private>
+      <Pack>true</Pack>
+      <Private>True</Private>      
     </Reference>
-    <PackageReference Include="CommandLineParser" Version="2.9.1" />
+    <PackageReference Include="CommandLineParser" Version="2.9.1">
+      <Pack>true</Pack>
+      <IncludeAssets>All</IncludeAssets>
+      <IncludeInPackage>true</IncludeInPackage>
+      <PackagePath>lib\net48</PackagePath>
+    </PackageReference>
+    <PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="..\..\..\third\V18\Siemens.Engineering.dll" IncludeInPackage="true" Pack="true" PackagePath="lib\net48"/>
+  </ItemGroup>
 </Project>

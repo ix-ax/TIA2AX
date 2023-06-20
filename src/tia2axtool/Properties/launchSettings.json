@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "tia2ax": {
+      "commandName": "Project",
+      "commandLineArgs": "-x D:\\_mts\\2023\\TiaPortalProjects\\HW\\HW_1516\\HW_1516.ap18 -o D:\\_mts\\2023\\Export"
+    }
+  }
+}
