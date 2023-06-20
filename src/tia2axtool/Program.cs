@@ -7,6 +7,7 @@ namespace tia2axtool
     {
         static void Main(string[] args)
         {
+            // This is a workaround to make a .net48 assembly work as dotnet tool
             var entry = new FileInfo(Assembly.GetEntryAssembly().Location);
             var folder = entry.Directory.FullName;
 
