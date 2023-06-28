@@ -58,7 +58,7 @@ PROGRAM YourProgram
 
     //Place your logic here
 
-    //This must be very first
+    //This must be very last
     CopyOutputs();
 END_PROGRAM
 
