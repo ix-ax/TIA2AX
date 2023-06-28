@@ -1,5 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net4.8</TargetFramework>
@@ -24,8 +23,12 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-
   <ItemGroup>
-    <Content Include="..\..\..\third\V18\Siemens.Engineering.dll" IncludeInPackage="true" Pack="true" PackagePath="lib\net48"/>
+    <Content Include="..\..\..\third\V18\dllFromKytka\Siemens.Engineering.dll" IncludeInPackage="true" Pack="true" PackagePath="lib\net48" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

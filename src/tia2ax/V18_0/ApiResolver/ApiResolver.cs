@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Resources;
+using System.Security.AccessControl;
 using System.Text;
 
 namespace Tia2Ax.Utils
@@ -15,16 +16,14 @@ namespace Tia2Ax.Utils
     /// </summary>
     public static class ApiResolver
     {
-
         /// <summary>
         /// Required min version of engineering dll
         /// </summary>
         public const string StrRequiredVersion = "V18.0";
         private const string BasePath = "SOFTWARE\\Siemens\\Automation\\Openness\\";
-        private const string ReferencedAssembly = "Siemens.Engineering";
-        private const string ReferencedHmiAssembly = "Siemens.Engineering.Hmi";
         private static string _assemblyPath = "";
-        private static string _assemblyPathHmi = "";
+        private const string LibraryKey = "SOFTWARE\\Siemens\\Automation\\Openness\\18.0\\PublicAPI\\18.0.0.0";
+        private const string LibraryName = "Siemens.Engineering";
 
         /// <summary>
         /// Get version info from registry key
@@ -109,13 +108,18 @@ namespace Tia2Ax.Utils
 
         private static string GetLibraryFilePath()
         {
-            var engineeringVersion = GetEngineeringVersions();
-
-            var requiredVersion = (from version in engineeringVersion
-                                   where Convert.ToDecimal(version) >= Convert.ToDecimal(StrRequiredVersion.Substring(1, 4))
-                                   select version).FirstOrDefault();
-
-            return requiredVersion;
+            using (var baseKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64))
+            {
+                using (var registryKey = baseKey.OpenSubKey(LibraryKey, RegistryKeyPermissionCheck.ReadSubTree, RegistryRights.ReadKey))
+                {
+                    var libraryFilePath = registryKey?.GetValue(LibraryName) as string;
+                    if (!string.IsNullOrWhiteSpace(libraryFilePath) && File.Exists(libraryFilePath))
+                    {
+                        return libraryFilePath;
+                    }
+                }
+            }
+            return null;
         }
 
 
@@ -132,7 +136,7 @@ namespace Tia2Ax.Utils
                 {
                     foreach (var version in EngineeringVersions)
                     {
-                        if(version == StrRequiredVersion)
+                        if(version == StrRequiredVersion.Substring(1, 4))
                         {
                             return true;
                         }
@@ -147,5 +151,33 @@ namespace Tia2Ax.Utils
             }
             return false;
         }
+
+        public static Assembly AssemblyResolver(object sender, ResolveEventArgs args)
+        {
+            var lookupName = new AssemblyName(args.Name);
+            if (lookupName.Name.Equals(LibraryName, StringComparison.OrdinalIgnoreCase))
+            {
+                var libraryFilePath = GetLibraryFilePath();
+                if (!string.IsNullOrWhiteSpace(libraryFilePath))
+                {
+                    var suggestedName = AssemblyName.GetAssemblyName(libraryFilePath);
+                    return Assembly.Load(suggestedName);
+                }
+            }
+            return null;
+        }
+        public static Assembly LoadOpenessAssembly()
+        {
+            var libraryFilePath = GetLibraryFilePath();
+            if (!string.IsNullOrWhiteSpace(libraryFilePath))
+            {
+                var suggestedName = AssemblyName.GetAssemblyName(libraryFilePath);
+                Assembly assembly = Assembly.Load(suggestedName);
+                return assembly;
+            }
+            return null;
+        }
+ 
+
     }
 }

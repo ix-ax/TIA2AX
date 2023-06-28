@@ -3,6 +3,7 @@ using Tia2Ax.Services;
 using System;
 using System.Resources;
 using Tia2Ax.Utils;
+using System.Reflection;
 
 namespace tia2ax
 {
@@ -38,6 +39,10 @@ namespace tia2ax
         {
             if (TiaOpeness.CheckPrerequisities())
             {
+                AppDomain.CurrentDomain.AssemblyResolve += ApiResolver.AssemblyResolver;
+
+                ApiResolver.LoadOpenessAssembly();
+
                 var traceWriter = new Tia2Ax.Interfaces.TraceWriter();
                 var apiWrapper = new Tia2Ax.Interfaces.ApiWrapper(traceWriter);
 
