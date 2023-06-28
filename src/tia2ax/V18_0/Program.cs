@@ -3,6 +3,7 @@ using Tia2Ax.Services;
 using System;
 using System.Resources;
 using Tia2Ax.Utils;
+using System.Reflection;
 
 namespace tia2ax
 {

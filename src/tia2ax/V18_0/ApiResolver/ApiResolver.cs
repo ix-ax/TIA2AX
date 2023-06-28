@@ -4,9 +4,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Resources;
-using System.Text;
+using System.Security.AccessControl;
 
 namespace Tia2Ax.Utils
 {
@@ -15,16 +13,13 @@ namespace Tia2Ax.Utils
     /// </summary>
     public static class ApiResolver
     {
-
         /// <summary>
         /// Required min version of engineering dll
         /// </summary>
         public const string StrRequiredVersion = "V18.0";
         private const string BasePath = "SOFTWARE\\Siemens\\Automation\\Openness\\";
-        private const string ReferencedAssembly = "Siemens.Engineering";
-        private const string ReferencedHmiAssembly = "Siemens.Engineering.Hmi";
-        private static string _assemblyPath = "";
-        private static string _assemblyPathHmi = "";
+        private const string LibraryKey = "SOFTWARE\\Siemens\\Automation\\Openness\\18.0\\PublicAPI\\18.0.0.0";
+        private const string LibraryName = "Siemens.Engineering";
 
         /// <summary>
         /// Get version info from registry key
@@ -55,25 +50,6 @@ namespace Tia2Ax.Utils
             }
 
             return new List<string>();
-        }
-
-
-        /// <summary>
-        /// Retrieve the path from assembly by version
-        /// </summary>
-        /// <param name="version"></param>
-        /// <param name="assembly"></param>
-        /// <returns></returns>
-        public static string GetAssemblyPath(string version, string assembly)
-        {
-            var libraries = OpennessLibraries.GetOpennessLibraries();
-            var portalVersion = new Version(version);
-            var apiVersion = new Version(assembly);
-            _assemblyPath = libraries.Where(e => e.TiaPortalVersion.Major == portalVersion.Major &&
-                                                     e.TiaPortalVersion.Minor == portalVersion.Minor).SingleOrDefault(e => e.PublicApiVersion.Major == apiVersion.Major &&
-                                                                                                                           e.PublicApiVersion.Minor == apiVersion.Minor)?.LibraryFilePath;
-
-            return null;
         }
 
         private static RegistryKey GetRegistryKey(string keyName)
@@ -109,13 +85,18 @@ namespace Tia2Ax.Utils
 
         private static string GetLibraryFilePath()
         {
-            var engineeringVersion = GetEngineeringVersions();
-
-            var requiredVersion = (from version in engineeringVersion
-                                   where Convert.ToDecimal(version) >= Convert.ToDecimal(StrRequiredVersion.Substring(1, 4))
-                                   select version).FirstOrDefault();
-
-            return requiredVersion;
+            using (var baseKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64))
+            {
+                using (var registryKey = baseKey.OpenSubKey(LibraryKey, RegistryKeyPermissionCheck.ReadSubTree, RegistryRights.ReadKey))
+                {
+                    var libraryFilePath = registryKey?.GetValue(LibraryName) as string;
+                    if (!string.IsNullOrWhiteSpace(libraryFilePath) && File.Exists(libraryFilePath))
+                    {
+                        return libraryFilePath;
+                    }
+                }
+            }
+            return null;
         }
 
 
@@ -132,7 +113,7 @@ namespace Tia2Ax.Utils
                 {
                     foreach (var version in EngineeringVersions)
                     {
-                        if(version == StrRequiredVersion)
+                        if(version == StrRequiredVersion.Substring(1, 4))
                         {
                             return true;
                         }
