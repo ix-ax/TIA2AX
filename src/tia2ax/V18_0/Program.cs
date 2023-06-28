@@ -39,10 +39,6 @@ namespace tia2ax
         {
             if (TiaOpeness.CheckPrerequisities())
             {
-                AppDomain.CurrentDomain.AssemblyResolve += ApiResolver.AssemblyResolver;
-
-                ApiResolver.LoadOpenessAssembly();
-
                 var traceWriter = new Tia2Ax.Interfaces.TraceWriter();
                 var apiWrapper = new Tia2Ax.Interfaces.ApiWrapper(traceWriter);
 

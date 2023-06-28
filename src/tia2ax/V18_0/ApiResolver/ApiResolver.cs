@@ -4,10 +4,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Resources;
 using System.Security.AccessControl;
-using System.Text;
 
 namespace Tia2Ax.Utils
 {
@@ -21,7 +18,6 @@ namespace Tia2Ax.Utils
         /// </summary>
         public const string StrRequiredVersion = "V18.0";
         private const string BasePath = "SOFTWARE\\Siemens\\Automation\\Openness\\";
-        private static string _assemblyPath = "";
         private const string LibraryKey = "SOFTWARE\\Siemens\\Automation\\Openness\\18.0\\PublicAPI\\18.0.0.0";
         private const string LibraryName = "Siemens.Engineering";
 
@@ -54,25 +50,6 @@ namespace Tia2Ax.Utils
             }
 
             return new List<string>();
-        }
-
-
-        /// <summary>
-        /// Retrieve the path from assembly by version
-        /// </summary>
-        /// <param name="version"></param>
-        /// <param name="assembly"></param>
-        /// <returns></returns>
-        public static string GetAssemblyPath(string version, string assembly)
-        {
-            var libraries = OpennessLibraries.GetOpennessLibraries();
-            var portalVersion = new Version(version);
-            var apiVersion = new Version(assembly);
-            _assemblyPath = libraries.Where(e => e.TiaPortalVersion.Major == portalVersion.Major &&
-                                                     e.TiaPortalVersion.Minor == portalVersion.Minor).SingleOrDefault(e => e.PublicApiVersion.Major == apiVersion.Major &&
-                                                                                                                           e.PublicApiVersion.Minor == apiVersion.Minor)?.LibraryFilePath;
-
-            return null;
         }
 
         private static RegistryKey GetRegistryKey(string keyName)
@@ -151,33 +128,5 @@ namespace Tia2Ax.Utils
             }
             return false;
         }
-
-        public static Assembly AssemblyResolver(object sender, ResolveEventArgs args)
-        {
-            var lookupName = new AssemblyName(args.Name);
-            if (lookupName.Name.Equals(LibraryName, StringComparison.OrdinalIgnoreCase))
-            {
-                var libraryFilePath = GetLibraryFilePath();
-                if (!string.IsNullOrWhiteSpace(libraryFilePath))
-                {
-                    var suggestedName = AssemblyName.GetAssemblyName(libraryFilePath);
-                    return Assembly.Load(suggestedName);
-                }
-            }
-            return null;
-        }
-        public static Assembly LoadOpenessAssembly()
-        {
-            var libraryFilePath = GetLibraryFilePath();
-            if (!string.IsNullOrWhiteSpace(libraryFilePath))
-            {
-                var suggestedName = AssemblyName.GetAssemblyName(libraryFilePath);
-                Assembly assembly = Assembly.Load(suggestedName);
-                return assembly;
-            }
-            return null;
-        }
- 
-
     }
 }
