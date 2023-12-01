@@ -4,6 +4,7 @@
     {
         public const string HwInputsStructName = "HwInputs";
         public const string HwOutputsStructName = "HwOutputs";
+        public const string HwIdentifiersStructName = "HwIdentifiers";
         public const string PlcInputsStructName =  "PlcInputs";
         public const string PlcOutputsStructName = "PlcOutputs";
         public const string CopyInputsFunctionName = "CopyInputs";

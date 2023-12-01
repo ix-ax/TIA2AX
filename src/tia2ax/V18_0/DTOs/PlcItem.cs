@@ -46,6 +46,11 @@ namespace Tia2Ax.DTOs
             get;
             set;
         }
+        public IList<HwIdentifierItem> HwIdentifiers
+        {
+            get;
+            set;
+        }
         #endregion // properties
     }
 }

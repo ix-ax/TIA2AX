@@ -12,6 +12,8 @@ using System.Diagnostics;
 using Tia2Ax.DTOs;
 using Tia2Ax.Utils;
 using Tia2Ax.Setup;
+using System.Net;
+using System.Runtime.InteropServices;
 
 namespace Tia2Ax.Interfaces
 {
@@ -318,6 +320,8 @@ namespace Tia2Ax.Interfaces
                 {
                     PlcItem plc = new PlcItem() {Name = name, DeviceName = device.Name, Classification = "CPU", GroupPathInProject = "" , ConfiguredSubnets = GetAllNetworkInterfaces(device), LocalModules = GetAllLocalModules(device, name) };
                     projectItem.PlcItems.Add(plc);
+                    IList<HwIdentifierItem> hwIdentifiers = GetAllHwIdentifiers(device, name);
+                    AssignToPlc(hwIdentifiers, projectItem);
                 }
             }
 
@@ -334,6 +338,8 @@ namespace Tia2Ax.Interfaces
                 {
                     IList<ModuleItem> localModules = GetAllLocalModules(device, name);
                     AssignToPlc(localModules, projectItem);
+                    IList<HwIdentifierItem> hwIdentifiers = GetAllHwIdentifiers(device, name);
+                    AssignToPlc(hwIdentifiers, projectItem);
                 }
             }
 
@@ -344,6 +350,8 @@ namespace Tia2Ax.Interfaces
                 {
                     IList<ModuleItem> localModules = GetAllLocalModules(device , name);
                     AssignToPlc(localModules, projectItem);
+                    IList<HwIdentifierItem> hwIdentifiers = GetAllHwIdentifiers(device, name);
+                    AssignToPlc(hwIdentifiers, projectItem);
                 }
             }
 
@@ -368,6 +376,8 @@ namespace Tia2Ax.Interfaces
                 {
                     PlcItem plc = new PlcItem() { Name = name, DeviceName = device.Name, Classification = "CPU", GroupPathInProject = path, ConfiguredSubnets = GetAllNetworkInterfaces(device) , LocalModules = GetAllLocalModules(device, name), DistributedModules = new List<ModuleItem>() };
                     projectItem.PlcItems.Add(plc);
+                    IList<HwIdentifierItem> hwIdentifiers = GetAllHwIdentifiers(device, name);
+                    AssignToPlc(hwIdentifiers, projectItem);
                 }
             }
 
@@ -429,6 +439,8 @@ namespace Tia2Ax.Interfaces
                 {
                     IList<ModuleItem> localModules = GetAllLocalModules(device, name);
                     AssignToPlc(localModules, projectItem);
+                    IList<HwIdentifierItem> hwIdentifiers = GetAllHwIdentifiers(device, name);
+                    AssignToPlc(hwIdentifiers, projectItem);
                 }
             }
 
@@ -477,6 +489,35 @@ namespace Tia2Ax.Interfaces
         }
 
         /// <summary>
+        /// Assigned HwIdentifier items to the master PLC
+        /// </summary>
+        private void AssignToPlc(IList<HwIdentifierItem> HwIdentifiers, ProjectItem projectItem)
+        {
+            foreach (HwIdentifierItem HwIdentifier in HwIdentifiers)
+            {
+                foreach (var plcItem in projectItem.PlcItems)
+                {
+
+                    if (plcItem.Name.Equals(HwIdentifier.Controller))
+                    {
+                        int index = projectItem.PlcItems.IndexOf(plcItem);
+                        if (projectItem.PlcItems[index].HwIdentifiers != null)
+                        {
+                            projectItem.PlcItems[index].HwIdentifiers.Add(HwIdentifier);
+                        }
+                        else
+                        {
+                            List<HwIdentifierItem> hwIdentifierItems = new List<HwIdentifierItem>
+                            {
+                                HwIdentifier
+                            };
+                            projectItem.PlcItems[index].HwIdentifiers = hwIdentifierItems;
+                        }
+                    }
+                }
+            }
+        }
+        /// <summary>
         /// Get NetworkInterfaces
         /// </summary>
         public IList<string> GetAllNetworkInterfaces(Device device)
@@ -504,7 +545,7 @@ namespace Tia2Ax.Interfaces
         /// <summary>
         /// Get all local modules
         /// </summary>
-        public IList<ModuleItem> GetAllLocalModules(Device device ,string name)
+        public IList<ModuleItem> GetAllLocalModules(Device device, string name)
         {
             IList<ModuleItem> localModules = new List<ModuleItem>();
 
@@ -535,7 +576,7 @@ namespace Tia2Ax.Interfaces
 
                         foreach (var deviceSubItem in deviceItem.DeviceItems)
                         {
-                            ModuleItem localModule = new ModuleItem() { Name = deviceItem.Name, FullName = name + "_" + deviceItem.Name , OrderNumber = _orderNumber , FirmwareVersion = _firmware, PositionNumber = deviceItem.PositionNumber ,  AddressItems = new List<AddressItem>()    };
+                            ModuleItem localModule = new ModuleItem() { Name = deviceSubItem.Name, FullName = name + "_" + deviceSubItem.Name, OrderNumber = _orderNumber, FirmwareVersion = _firmware, PositionNumber = deviceSubItem.PositionNumber, AddressItems = new List<AddressItem>() };
 
                             foreach (Address address in deviceSubItem.Addresses)
                             {
@@ -550,7 +591,30 @@ namespace Tia2Ax.Interfaces
                                     }
                                 }
                             }
-                            if(localModule.AddressItems.Count > 0)
+
+                            foreach (DeviceItem deviceSubSubItem in deviceSubItem.Items)
+                            {
+                                localModule = new ModuleItem() { Name = deviceSubSubItem.Name, FullName = name + "_" + deviceSubItem.Name + "_" + deviceSubSubItem.Name, OrderNumber = _orderNumber, FirmwareVersion = _firmware, PositionNumber = deviceSubItem.PositionNumber, AddressItems = new List<AddressItem>() };
+
+                                foreach (Address address in deviceSubSubItem.Addresses)
+                                {
+                                    if (address != null && (address.IoType.Equals(AddressIoType.Input) || address.IoType.Equals(AddressIoType.Output)))
+                                    {
+                                        if (address.AddressControllers != null && address.AddressControllers.FirstOrDefault() != null)
+                                        {
+                                            string _controller = address.AddressControllers.FirstOrDefault().GetAttribute("Name").ToString();
+
+                                            AddressItem addressItem = new AddressItem() { Controller = _controller, IoType = address.IoType, StartAddress = address.StartAddress, BitLength = address.Length, ByteLength = address.Length / 8 };
+                                            localModule.AddressItems.Add(addressItem);
+                                        }
+                                    }
+                                }
+                                if (localModule.AddressItems.Count > 0 )
+                                {
+                                    localModules.Add(localModule);
+                                }
+                            }
+                            if (localModule.AddressItems.Count > 0 && deviceSubItem.Items.Count == 0) 
                             {
                                 localModules.Add(localModule);
                             }
@@ -563,7 +627,78 @@ namespace Tia2Ax.Interfaces
                     throw;
                 }
             }
-            return localModules.OrderBy(p=>p.PositionNumber).ToList();
+            return localModules.OrderBy(p => p.PositionNumber).ToList();
+        }
+
+        /// <summary>
+        /// Get all local modules
+        /// </summary>
+        public IList<HwIdentifierItem> GetAllHwIdentifiers(Device device, string name)
+        {
+            IList<HwIdentifierItem> HwIdentifiers = new List<HwIdentifierItem>();
+
+            foreach (DeviceItem deviceItem in device.DeviceItems)
+            {
+                try
+                {
+                    if (deviceItem != null)
+                    {
+                        string controller = "";
+                        foreach (HwIdentifier HwIdentifier in deviceItem.HwIdentifiers)
+                        {
+                            controller = HwIdentifier.HwIdentifierControllers != null ? HwIdentifier.HwIdentifierControllers.FirstOrDefault() != null ? HwIdentifier.HwIdentifierControllers.FirstOrDefault().GetAttribute("Name") != null ? HwIdentifier.HwIdentifierControllers.FirstOrDefault().GetAttribute("Name").ToString() : "" : "" :"";
+                            HwIdentifierItem hwIdentifierItem = new HwIdentifierItem(){Controller = controller, Name = name + "_" + deviceItem.Name , Identifier = HwIdentifier.Identifier};
+                            if (IsNewHardwareId(hwIdentifierItem.Name, HwIdentifiers))
+                            {
+                                HwIdentifiers.Add(hwIdentifierItem);
+                            }
+                        }
+                        foreach (var deviceSubItem in deviceItem.DeviceItems)
+                        {
+                            foreach (HwIdentifier HwIdentifier in deviceSubItem.HwIdentifiers)
+                            {
+                                controller = HwIdentifier.HwIdentifierControllers != null ? HwIdentifier.HwIdentifierControllers.FirstOrDefault() != null ? HwIdentifier.HwIdentifierControllers.FirstOrDefault().GetAttribute("Name") != null ? HwIdentifier.HwIdentifierControllers.FirstOrDefault().GetAttribute("Name").ToString() : "" : "" : "";
+                                HwIdentifierItem hwIdentifierItem = new HwIdentifierItem() { Controller = controller, Name = name + "_" + deviceSubItem.Name, Identifier = HwIdentifier.Identifier };
+                                if (IsNewHardwareId(hwIdentifierItem.Name, HwIdentifiers))
+                                {
+                                    HwIdentifiers.Add(hwIdentifierItem);
+                                }
+                            }
+                            foreach (DeviceItem deviceSubSubItem in deviceSubItem.Items)
+                            {
+                                foreach (HwIdentifier HwIdentifier in deviceSubSubItem.HwIdentifiers)
+                                {
+                                    controller = HwIdentifier.HwIdentifierControllers != null ? HwIdentifier.HwIdentifierControllers.FirstOrDefault() != null ? HwIdentifier.HwIdentifierControllers.FirstOrDefault().GetAttribute("Name") != null ? HwIdentifier.HwIdentifierControllers.FirstOrDefault().GetAttribute("Name").ToString() : "" : "" : "";
+                                    HwIdentifierItem hwIdentifierItem = new HwIdentifierItem() { Controller = controller, Name = name + "_" + deviceSubSubItem.Name, Identifier = HwIdentifier.Identifier };
+                                    if (IsNewHardwareId(hwIdentifierItem.Name, HwIdentifiers))
+                                    {
+                                        HwIdentifiers.Add(hwIdentifierItem);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                    throw;
+                }
+            }
+            return HwIdentifiers;
+        }
+        public bool IsNewHardwareId(string name, IList<HwIdentifierItem> HwIdentifiers)
+        {
+            bool isNew = true;
+            foreach (HwIdentifierItem hwIdentifierItem in HwIdentifiers)
+            {
+                if (hwIdentifierItem.Name.Equals(name))
+                {
+                    isNew = false;
+                    break;
+                }
+            }
+            return isNew;
         }
 
         /// <summary>
@@ -583,6 +718,7 @@ namespace Tia2Ax.Interfaces
                 ExportMappingItems(plcItem, exportDir, ExportItemType.HwOutput);
                 ExportMappingItems(plcItem, exportDir, ExportItemType.PlcInput);
                 ExportMappingItems(plcItem, exportDir, ExportItemType.PlcOutput);
+                ExportHwIdentifiers(plcItem, exportDir);
                 ExportCopyInputs(plcItem, exportDir);
                 ExportCopyOutputs(plcItem, exportDir);
                 ExportConfiguration(exportDir);
@@ -664,6 +800,62 @@ namespace Tia2Ax.Interfaces
             string GetHwItem(ModuleItem module, AddressItem addressItem)
             {
                 return "\t\t" + ValidatePlcItem.Name(module.FullName) + " AT %B" + addressItem.StartAddress + " : " + GetDataType(addressItem) + ";";
+            }
+
+            string GetPlcItem(ModuleItem module, AddressItem addressItem)
+            {
+                return "\t\t" + ValidatePlcItem.Name(module.FullName) + " : " + GetDataType(addressItem) + ";";
+            }
+
+            string GetDataType(AddressItem addressItem)
+            {
+                switch (addressItem.ByteLength)
+                {
+                    case 1:
+                        return "BYTE";
+                    case 2:
+                        return "WORD";
+                    case 4:
+                        return "DWORD";
+                    default:
+                        return "ARRAY[0.." + (addressItem.ByteLength - 1) + "] OF BYTE";
+                }
+            }
+        }
+
+        /// <summary>
+        /// Export mapping items
+        /// </summary>
+        private static void ExportHwIdentifiers(PlcItem plcItem, string exportDir)
+        {
+            string filename = Path.Combine(exportDir, Constants.HwIdentifiersStructName + ".st");
+ 
+            using (StreamWriter sw = new StreamWriter(filename))
+            {
+                sw.WriteLine("TYPE");
+                sw.WriteLine("\t" + Constants.HwIdentifiersStructName + " : ULINT");
+                sw.WriteLine("\t(");
+        
+                if (plcItem.HwIdentifiers != null)
+                    {
+                        foreach (HwIdentifierItem hwIdItem in plcItem.HwIdentifiers)
+                        {
+                            sw.WriteLine(GetHwIdentItem(hwIdItem));
+                        }
+                    }
+                sw.WriteLine("\t\tNONE:= ULINT#0");
+                sw.WriteLine("\t);");
+                sw.WriteLine("END_TYPE");
+            }
+
+            string GetHwItem(ModuleItem module, AddressItem addressItem)
+            {
+                return "\t\t" + ValidatePlcItem.Name(module.FullName) + " AT %B" + addressItem.StartAddress + " : " + GetDataType(addressItem) + ";";
+            }
+
+            string GetHwIdentItem(HwIdentifierItem  hwIdItem)
+            {
+                return "\t\t" + ValidatePlcItem.Name(hwIdItem.Name) + " :=\tULINT#" + hwIdItem.Identifier.ToString() + ",";
             }
 
             string GetPlcItem(ModuleItem module, AddressItem addressItem)
@@ -852,6 +1044,7 @@ namespace Tia2Ax.Interfaces
                 sw.WriteLine("\t" + Constants.CopyOutputsFunctionName + "();");
             }
         }
+
         enum ExportItemType
         {
             HwInput,
