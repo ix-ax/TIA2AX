@@ -833,7 +833,7 @@ namespace Tia2Ax.Interfaces
             using (StreamWriter sw = new StreamWriter(filename))
             {
                 sw.WriteLine("TYPE");
-                sw.WriteLine("\t" + Constants.HwIdentifiersStructName + " : ULINT");
+                sw.WriteLine("\t" + Constants.HwIdentifiersStructName + " : WORD");
                 sw.WriteLine("\t(");
         
                 if (plcItem.HwIdentifiers != null)
@@ -843,7 +843,7 @@ namespace Tia2Ax.Interfaces
                             sw.WriteLine(GetHwIdentItem(hwIdItem));
                         }
                     }
-                sw.WriteLine("\t\tNONE:= ULINT#0");
+                sw.WriteLine("\t\tNONE:= WORD#0");
                 sw.WriteLine("\t);");
                 sw.WriteLine("END_TYPE");
             }
@@ -855,7 +855,7 @@ namespace Tia2Ax.Interfaces
 
             string GetHwIdentItem(HwIdentifierItem  hwIdItem)
             {
-                return "\t\t" + ValidatePlcItem.Name(hwIdItem.Name) + " :=\tULINT#" + hwIdItem.Identifier.ToString() + ",";
+                return "\t\t" + ValidatePlcItem.Name(hwIdItem.Name) + " :=\tWORD#" + hwIdItem.Identifier.ToString() + ",";
             }
 
             string GetPlcItem(ModuleItem module, AddressItem addressItem)
