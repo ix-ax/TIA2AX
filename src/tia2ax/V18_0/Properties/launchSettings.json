@@ -2,8 +2,10 @@
   "profiles": {
     "tia2ax": {
       "commandName": "Project",
-      "commandLineArgs": "-x D:\\github\\ix-ax\\TiaProjects\\AX_Plc1518V3_CmmtAs\\AX_Plc1518V3_CmmtAs.ap18 -o D:\\github\\ix-ax\\TiaProjects\\Export"
-      //"commandLineArgs": "-x D:\\_mts\\2023\\TiaPortalProjects\\Complete\\2000482_V18\\2000482_V18.ap18 -o D:\\_mts\\2023\\Export"
+      //"commandLineArgs": "-x D:\\github\\ix-ax\\TiaProjects\\AX_Plc1518V3_CognexDataman\\AX_Plc1518V3_CognexDataman.ap18 -o D:\\github\\ix-ax\\TiaProjects\\Export"
+      //"commandLineArgs": "-x D:\\github\\ix-ax\\TiaProjects\\AX_Plc1518V3_CmmtAs\\AX_Plc1518V3_CmmtAs.ap18 -o D:\\github\\ix-ax\\TiaProjects\\Export"
+      //"commandLineArgs": "-x D:\\github\\ix-ax\\TiaProjects\\AX_Plc1518V3_IndraDrive\\AX_Plc1518V3_IndraDrive.ap18 -o D:\\github\\ix-ax\\TiaProjects\\Export"
+      "commandLineArgs": "-x D:\\github\\ix-ax\\TiaProjects\\AX_Plc1518V3_Desoutter\\AX_Plc1518V3_Desoutter.ap18 -o D:\\github\\ix-ax\\TiaProjects\\Export"
     }
   }
 }

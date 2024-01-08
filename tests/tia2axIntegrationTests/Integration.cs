@@ -41,8 +41,8 @@ namespace tia2axIntegrationTests
         [OneTimeTearDown]
         public void OneTimeTearDown()
         {
-            creator.CloseTiaPortal();
             TestsCommon.OneTimeTearDown();
+            creator.CloseTiaPortal();
         }
 
         [TearDown]
@@ -115,6 +115,34 @@ namespace tia2axIntegrationTests
         }
 
         [Test, Order(110)]
+        public void HW_Plc1518V3_CmmtAs()
+        {
+            string TestCaseFolder = "HW_Plc1518V3_CmmtAs";
+            TestRun(TestCaseFolder);
+        }
+
+        [Test, Order(111)]
+        public void HW_Plc1518V3_Cognex()
+        {
+            string TestCaseFolder = "HW_Plc1518V3_Cognex";
+            TestRun(TestCaseFolder);
+        }
+
+        [Test, Order(112)]
+        public void HW_Plc1518V3_Desoutter()
+        {
+            string TestCaseFolder = "HW_Plc1518V3_Desoutter";
+            TestRun(TestCaseFolder);
+        }
+
+        [Test, Order(113)]
+        public void HW_Plc1518V3_IndraDrive()
+        {
+            string TestCaseFolder = "HW_Plc1518V3_IndraDrive";
+            TestRun(TestCaseFolder);
+        }
+
+        [Test, Order(114)]
         public void HW_Shared()
         {
             string TestCaseFolder = "HW_Shared";

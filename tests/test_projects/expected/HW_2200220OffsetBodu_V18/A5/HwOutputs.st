@@ -13,6 +13,7 @@ TYPE
 		VI_13_MPA1S_VMPA1_FB_EMS_8_8DO_6 AT %B12 : BYTE;
 		VI_13_MPA1S_VMPA1_FB_EMS_8_8DO_7 AT %B13 : BYTE;
 		VI_13_MPA1S_VMPA1_FB_EMS_8_8DO_8 AT %B18 : BYTE;
+		AxisLinear_DO_SERVO_1_Siemens_telegram_111_PZD_12_12 AT %B123 : ARRAY[0..23] OF BYTE;
 		Bash_Output_1_byte_1 AT %B5300 : BYTE;
 		Bash_Output_1_byte_2 AT %B5301 : BYTE;
 		AEBDown_Output_1_byte_1 AT %B5302 : BYTE;

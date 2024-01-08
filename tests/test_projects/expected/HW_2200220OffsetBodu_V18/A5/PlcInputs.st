@@ -4,6 +4,7 @@ TYPE
 		A6_15A3 : WORD;
 		A6_15A4 : WORD;
 		A6_15A9 : ARRAY[0..7] OF BYTE;
+		AxisLinear_DO_SERVO_1_Siemens_telegram_111_PZD_12_12 : ARRAY[0..23] OF BYTE;
 		_52K1_53AB1 : BYTE;
 		_52K1_54AB2 : BYTE;
 		_52K1_55AB3 : BYTE;

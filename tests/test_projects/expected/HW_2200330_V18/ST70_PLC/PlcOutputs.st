@@ -17,6 +17,8 @@ TYPE
 		ST70_2_DM260_PB_Results_Control_1 : BYTE;
 		ST70_2_DM260_PB_Soft_Event_Control_1 : BYTE;
 		ST70_2_DM260_PB_User_Data_64_bytes_1 : ARRAY[0..67] OF BYTE;
+		ST70_1_CMMT_3GF1_DO_SERVO_1_Siemens_telegram_111_PZD_12_12 : ARRAY[0..23] OF BYTE;
+		ST70_1_CMMT_3GF2_DO_SERVO_1_Siemens_telegram_111_PZD_12_12 : ARRAY[0..23] OF BYTE;
 		ST70_3_DM260_PB_Acquisition_Control_1 : BYTE;
 		ST70_3_DM260_PB_Results_Control_1 : BYTE;
 		ST70_3_DM260_PB_Soft_Event_Control_1 : BYTE;
@@ -33,5 +35,6 @@ TYPE
 		ST70_3_DM260_EB_Results_Control_1 : BYTE;
 		ST70_3_DM260_EB_Soft_Event_Control_1 : BYTE;
 		ST70_3_DM260_EB_User_Data_64_bytes_1 : ARRAY[0..67] OF BYTE;
+		ST70_1_CMMT_3GF3_DO_SERVO_1_Siemens_telegram_111_PZD_12_12 : ARRAY[0..23] OF BYTE;
 	END_STRUCT;
 END_TYPE

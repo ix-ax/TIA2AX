@@ -4,6 +4,8 @@ TYPE
 		ST80_1_DM260_EB_Box_Results_Control_1 : BYTE;
 		ST80_1_DM260_EB_Box_Soft_Event_Control_1 : BYTE;
 		ST80_1_DM260_EB_Box_User_Data_64_bytes_1 : ARRAY[0..67] OF BYTE;
+		ST80_1_CMMT_1GF1_DO_SERVO_1_Siemens_telegram_111_PZD_12_12 : ARRAY[0..23] OF BYTE;
+		ST80_1_CMMT_1GF2_DO_SERVO_1_Siemens_telegram_111_PZD_12_12 : ARRAY[0..23] OF BYTE;
 		ST80_1_DM260_PB_Box_Acquisition_Control_1 : BYTE;
 		ST80_1_DM260_PB_Box_Results_Control_1 : BYTE;
 		ST80_1_DM260_PB_Box_Soft_Event_Control_1 : BYTE;
@@ -25,6 +27,7 @@ TYPE
 		ST80_1_DM260_Housing_Results_Control_1 : BYTE;
 		ST80_1_DM260_Housing_Soft_Event_Control_1 : BYTE;
 		ST80_1_DM260_Housing_User_Data_64_bytes_1 : ARRAY[0..67] OF BYTE;
+		ST80_1_CMMT_3GF1_DO_SERVO_1_Siemens_telegram_111_PZD_12_12 : ARRAY[0..23] OF BYTE;
 		ST80_CPX_MPA1S_VMPA1_FB_EMS_8_8DO_1 : BYTE;
 		ST80_CPX_MPA1S_VMPA1_FB_EMS_8_8DO_2 : BYTE;
 		ST80_CPX_MPA2S_VMPA2_FB_EMS_4_4DO_1 : BYTE;

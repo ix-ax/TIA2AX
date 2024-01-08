@@ -558,6 +558,9 @@ namespace Tia2Ax.Interfaces
                         string _classification = "";
                         string _orderNumber = "";
                         string _firmware = "";
+                        string deviceItemName = deviceItem.Name;
+                        string deviceSubItemName = "";
+                        string deviceSubSubItemName = "";
                         try
                         {
                             _classification = deviceItem.GetAttribute("Classification").ToString();
@@ -576,7 +579,10 @@ namespace Tia2Ax.Interfaces
 
                         foreach (var deviceSubItem in deviceItem.DeviceItems)
                         {
-                            ModuleItem localModule = new ModuleItem() { Name = deviceSubItem.Name, FullName = name + "_" + deviceSubItem.Name, OrderNumber = _orderNumber, FirmwareVersion = _firmware, PositionNumber = deviceSubItem.PositionNumber, AddressItems = new List<AddressItem>() };
+                            deviceSubItemName = deviceSubItem.Name;
+                            deviceSubSubItemName = "";
+                            //ModuleItem localModule = new ModuleItem() { Name = deviceSubItem.Name, FullName = name + "_" + deviceSubItem.Name, OrderNumber = _orderNumber, FirmwareVersion = _firmware, PositionNumber = deviceSubItem.PositionNumber, AddressItems = new List<AddressItem>() };
+                            ModuleItem localModule = new ModuleItem() { Name = deviceItem.Name, FullName = name + "_" + deviceItem.Name, OrderNumber = _orderNumber, FirmwareVersion = _firmware, PositionNumber = deviceItem.PositionNumber, AddressItems = new List<AddressItem>() };
 
                             foreach (Address address in deviceSubItem.Addresses)
                             {
@@ -594,6 +600,7 @@ namespace Tia2Ax.Interfaces
 
                             foreach (DeviceItem deviceSubSubItem in deviceSubItem.Items)
                             {
+                                deviceSubSubItemName = deviceSubSubItem.Name;
                                 localModule = new ModuleItem() { Name = deviceSubSubItem.Name, FullName = name + "_" + deviceSubItem.Name + "_" + deviceSubSubItem.Name, OrderNumber = _orderNumber, FirmwareVersion = _firmware, PositionNumber = deviceSubItem.PositionNumber, AddressItems = new List<AddressItem>() };
 
                                 foreach (Address address in deviceSubSubItem.Addresses)
@@ -644,21 +651,25 @@ namespace Tia2Ax.Interfaces
                     if (deviceItem != null)
                     {
                         string controller = "";
-                        foreach (HwIdentifier HwIdentifier in deviceItem.HwIdentifiers)
+
+                        if (deviceItem.HwIdentifiers != null && deviceItem.HwIdentifiers.Count > 0 && deviceItem.HwIdentifiers[0] != null)
                         {
-                            controller = HwIdentifier.HwIdentifierControllers != null ? HwIdentifier.HwIdentifierControllers.FirstOrDefault() != null ? HwIdentifier.HwIdentifierControllers.FirstOrDefault().GetAttribute("Name") != null ? HwIdentifier.HwIdentifierControllers.FirstOrDefault().GetAttribute("Name").ToString() : "" : "" :"";
-                            HwIdentifierItem hwIdentifierItem = new HwIdentifierItem(){Controller = controller, Name = name + "_" + deviceItem.Name , Identifier = HwIdentifier.Identifier};
+                            HwIdentifier HwIdentifier = deviceItem.HwIdentifiers[0];
+                            controller = HwIdentifier.HwIdentifierControllers != null ? HwIdentifier.HwIdentifierControllers.FirstOrDefault() != null ? HwIdentifier.HwIdentifierControllers.FirstOrDefault().GetAttribute("Name") != null ? HwIdentifier.HwIdentifierControllers.FirstOrDefault().GetAttribute("Name").ToString() : "" : "" : "";
+                            HwIdentifierItem hwIdentifierItem = new HwIdentifierItem() { Controller = controller, Name = name.Equals(deviceItem.Name) ? name : name + "_" + deviceItem.Name, Identifier = HwIdentifier.Identifier };
                             if (IsNewHardwareId(hwIdentifierItem.Name, HwIdentifiers))
                             {
                                 HwIdentifiers.Add(hwIdentifierItem);
                             }
                         }
+
                         foreach (var deviceSubItem in deviceItem.DeviceItems)
                         {
                             foreach (HwIdentifier HwIdentifier in deviceSubItem.HwIdentifiers)
                             {
                                 controller = HwIdentifier.HwIdentifierControllers != null ? HwIdentifier.HwIdentifierControllers.FirstOrDefault() != null ? HwIdentifier.HwIdentifierControllers.FirstOrDefault().GetAttribute("Name") != null ? HwIdentifier.HwIdentifierControllers.FirstOrDefault().GetAttribute("Name").ToString() : "" : "" : "";
-                                HwIdentifierItem hwIdentifierItem = new HwIdentifierItem() { Controller = controller, Name = name + "_" + deviceSubItem.Name, Identifier = HwIdentifier.Identifier };
+                                string _name = name.Equals(deviceItem.Name) ? name + "_" + deviceSubItem.Name : name + "_" + deviceItem.Name;
+                                HwIdentifierItem hwIdentifierItem = new HwIdentifierItem() { Controller = controller, Name = _name, Identifier = HwIdentifier.Identifier };
                                 if (IsNewHardwareId(hwIdentifierItem.Name, HwIdentifiers))
                                 {
                                     HwIdentifiers.Add(hwIdentifierItem);
@@ -669,7 +680,8 @@ namespace Tia2Ax.Interfaces
                                 foreach (HwIdentifier HwIdentifier in deviceSubSubItem.HwIdentifiers)
                                 {
                                     controller = HwIdentifier.HwIdentifierControllers != null ? HwIdentifier.HwIdentifierControllers.FirstOrDefault() != null ? HwIdentifier.HwIdentifierControllers.FirstOrDefault().GetAttribute("Name") != null ? HwIdentifier.HwIdentifierControllers.FirstOrDefault().GetAttribute("Name").ToString() : "" : "" : "";
-                                    HwIdentifierItem hwIdentifierItem = new HwIdentifierItem() { Controller = controller, Name = name + "_" + deviceSubSubItem.Name, Identifier = HwIdentifier.Identifier };
+                                    string _name = name.Equals(deviceItem.Name) ? deviceItem.Name + "_" + deviceSubItem.Name + "_" + deviceSubSubItem.Name : deviceItem.Name + "_" + deviceSubItem.Name + "_" + deviceSubSubItem.Name;
+                                    HwIdentifierItem hwIdentifierItem = new HwIdentifierItem() { Controller = controller, Name = _name, Identifier = HwIdentifier.Identifier };
                                     if (IsNewHardwareId(hwIdentifierItem.Name, HwIdentifiers))
                                     {
                                         HwIdentifiers.Add(hwIdentifierItem);

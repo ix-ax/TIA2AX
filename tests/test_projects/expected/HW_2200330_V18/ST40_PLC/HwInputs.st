@@ -12,6 +12,7 @@ TYPE
 		ST40_1_DM260_Results_Status_1 AT %B1603 : BYTE;
 		ST40_1_DM260_Soft_Event_Control_1 AT %B1604 : BYTE;
 		ST40_1_DM260_Result_Data_64_bytes_1 AT %B1610 : ARRAY[0..71] OF BYTE;
+		ST40_2_CMMT_2GF2_Promess_DO_SERVO_1_Siemens_telegram_111_PZD_12_12 AT %B1100 : ARRAY[0..23] OF BYTE;
 		ST40_2_Promess_Menu_30_01_In_1 AT %B2100 : WORD;
 		ST40_2_Promess_Menu_30_02_In_1 AT %B2102 : WORD;
 		ST40_2_Promess_Menu_30_03_In_1 AT %B2104 : WORD;

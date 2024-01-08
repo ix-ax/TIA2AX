@@ -37,6 +37,7 @@ TYPE
 		ST20_6_Promess_Menu_30_62_Out_1 : WORD;
 		ST20_6_Promess_Menu_30_63_Out_1 : WORD;
 		ST20_6_Promess_Menu_30_64_Out_1 : WORD;
+		ST20_7_CMMT_3GF1_DO_SERVO_1_Siemens_telegram_111_PZD_12_12 : ARRAY[0..23] OF BYTE;
 		ST20_1_DM260_Acquisition_Control_1 : BYTE;
 		ST20_1_DM260_Results_Control_1 : BYTE;
 		ST20_1_DM260_Soft_Event_Control_1 : BYTE;
