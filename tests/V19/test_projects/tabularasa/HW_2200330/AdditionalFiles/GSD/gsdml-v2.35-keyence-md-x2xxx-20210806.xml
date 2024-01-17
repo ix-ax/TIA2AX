@@ -1,0 +1,1473 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-V2.35.xsd">
+  <ProfileHeader>
+    <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+    <ProfileRevision>1.00</ProfileRevision>
+    <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+    <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+    <ProfileClassID>Device</ProfileClassID>
+    <ISO15745Reference>
+      <ISO15745Part>4</ISO15745Part>
+      <ISO15745Edition>1</ISO15745Edition>
+      <ProfileTechnology>GSDML</ProfileTechnology>
+    </ISO15745Reference>
+  </ProfileHeader>
+  <ProfileBody>
+    <DeviceIdentity VendorID="0x01FD" DeviceID="0x1B5D">
+      <InfoText TextId="s_top_information"/>
+      <VendorName Value="KEYENCE CORPORATION"/>
+    </DeviceIdentity>
+    <DeviceFunction>
+      <Family MainFamily="General" ProductFamily="Laser Marker"/>
+    </DeviceFunction>
+    <ApplicationProcess>
+      <!-- ============================================================================================ -->
+      <!--   List of Device Access Points (DAP)                 										-->
+      <!-- ============================================================================================ -->
+      <DeviceAccessPointList>
+        <DeviceAccessPointItem AddressAssignment="DCP;LOCAL" PhysicalSlots="0..14" ModuleIdentNumber="0x00000001" MinDeviceInterval="256" DNS_CompatibleName="md-x2xxx" FixedInSlots="0" ObjectUUID_LocalIndex="1" ID="DAP1" PNIO_Version="V2.34" DeviceAccessSupported="false" CheckDeviceID_Allowed="true" NameOfStationNotTransferable="false" MultipleWriteSupported="true" LLDP_NoD_Supported="true" ResetToFactoryModes="2 4 8">
+          <ModuleInfo>
+            <Name TextId="s_device_name"/>
+            <InfoText TextId="s_series_name"/>
+            <OrderNumber Value="MD-X2XXX"/>
+            <HardwareRelease Value="1.0"/>
+            <SoftwareRelease Value="1.0"/>
+          </ModuleInfo>
+          <CertificationInfo ConformanceClass="A" ApplicationClass="" NetloadClass="I"/>
+          <SubslotList>
+            <SubslotItem SubslotNumber="32768" TextId="s_x1"/>
+            <SubslotItem SubslotNumber="32769" TextId="s_x1_p1"/>
+          </SubslotList>
+          <IOConfigData MaxInputLength="1440" MaxOutputLength="1440"/>
+          <UseableModules>
+            <ModuleItemRef ModuleItemTarget="101" AllowedInSlots="1" UsedInSlots="1"/>
+            <ModuleItemRef ModuleItemTarget="102" AllowedInSlots="2" UsedInSlots="2"/>
+            <ModuleItemRef ModuleItemTarget="103" AllowedInSlots="3" UsedInSlots="3"/>
+            <ModuleItemRef ModuleItemTarget="104" AllowedInSlots="4" UsedInSlots="4"/>
+            <ModuleItemRef ModuleItemTarget="105" AllowedInSlots="5" UsedInSlots="5"/>
+            <ModuleItemRef ModuleItemTarget="106" AllowedInSlots="6" UsedInSlots="6"/>
+            <ModuleItemRef ModuleItemTarget="107" AllowedInSlots="7" UsedInSlots="7"/>
+            <ModuleItemRef ModuleItemTarget="108" AllowedInSlots="8" UsedInSlots="8"/>
+            <ModuleItemRef ModuleItemTarget="109" AllowedInSlots="9"/>
+            <ModuleItemRef ModuleItemTarget="110" AllowedInSlots="9"/>
+            <ModuleItemRef ModuleItemTarget="111" AllowedInSlots="9" UsedInSlots="9"/>
+            <ModuleItemRef ModuleItemTarget="112" AllowedInSlots="9"/>
+
+            <ModuleItemRef ModuleItemTarget="201" AllowedInSlots="10" UsedInSlots="10"/>
+            <ModuleItemRef ModuleItemTarget="202" AllowedInSlots="11" UsedInSlots="11"/>
+            <ModuleItemRef ModuleItemTarget="203" AllowedInSlots="12" UsedInSlots="12"/>
+            <ModuleItemRef ModuleItemTarget="204" AllowedInSlots="13" UsedInSlots="13"/>
+            <ModuleItemRef ModuleItemTarget="205" AllowedInSlots="14"/>
+            <ModuleItemRef ModuleItemTarget="206" AllowedInSlots="14"/>
+            <ModuleItemRef ModuleItemTarget="207" AllowedInSlots="14" UsedInSlots="14"/>
+            <ModuleItemRef ModuleItemTarget="208" AllowedInSlots="14"/>
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DIM 1" SubmoduleIdentNumber="0x80000000" MayIssueProcessAlarm="false" Writeable_IM_Records="1 2 3">
+              <IOData/>
+              <ModuleInfo>
+                <Name TextId="s_device_name"/>
+                <InfoText TextId="s_series_name"/>
+                <SoftwareRelease Value="1.0"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem ID="IDS_DAP1I" SubslotNumber="32768" SubmoduleIdentNumber="0x0001" SupportedRT_Class="Class1" SupportedRT_Classes="RT_CLASS_1" TextId="s_interface" IsochroneModeSupported="false" SupportedProtocols="LLDP" PTP_BoundarySupported="true" DCP_BoundarySupported="true">
+              <ApplicationRelations StartupMode="Legacy;Advanced" NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0">
+                <TimingProperties SendClock="32 64 128" ReductionRatio="1 2 4 8 16 32 64 128 256 512"/>
+              </ApplicationRelations>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem ID="IDS_DAP1P" SubslotNumber="32769" SubmoduleIdentNumber="0x0002" MAUType="100BASETXFD" MAUTypes="16" TextId="s_Port1">
+              <MAUTypeList>
+                <MAUTypeItem Value="16" AdjustSupported="true"/>
+              </MAUTypeList>
+            </PortSubmoduleItem>			
+          </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+          </Graphics>
+        </DeviceAccessPointItem>
+      </DeviceAccessPointList>
+      <ModuleList>
+
+
+        <ModuleItem ID="101" ModuleIdentNumber="0x00000101">
+          <ModuleInfo CategoryRef="status_modules">
+            <Name TextId="s_module_input_101"/>
+            <InfoText TextId="s_module_input_101_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1" SubmoduleIdentNumber="0x80000000" MayIssueProcessAlarm="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="s_input_1_0_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_input_1_0_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_input_1_0_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_input_1_0_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_input_1_0_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_input_1_0_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_input_1_0_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_input_1_0_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_input_1_0_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_input_1_1_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_input_1_1_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_input_1_1_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_input_1_1_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_input_1_1_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_input_1_1_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_input_1_1_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_input_1_1_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_input_1_1_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_input_1_2_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_input_1_2_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_input_1_2_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_input_1_2_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_input_1_2_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_input_1_2_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_input_1_2_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_input_1_2_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_input_1_2_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_input_1_3_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_input_1_3_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_input_1_3_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_input_1_3_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_input_1_3_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_input_1_3_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_input_1_3_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_input_1_3_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_input_1_3_bit7"/>
+                  </DataItem>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_module_input_101"/>
+                <InfoText TextId="s_module_input_101_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        
+        <ModuleItem ID="102" ModuleIdentNumber="0x00000102">
+          <ModuleInfo CategoryRef="status_modules">
+            <Name TextId="s_module_input_102"/>
+            <InfoText TextId="s_module_input_102_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="2" SubmoduleIdentNumber="0x80000000" MayIssueProcessAlarm="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="s_input_2_0_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_input_2_0_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_input_2_0_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_input_2_0_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_input_2_0_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_input_2_0_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_input_2_0_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_input_2_0_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_input_2_0_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_input_2_1_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_input_2_1_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_input_2_1_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_input_2_1_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_input_2_1_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_input_2_1_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_input_2_1_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_input_2_1_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_input_2_1_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_input_2_2_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_input_2_2_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_input_2_2_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_input_2_2_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_input_2_2_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_input_2_2_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_input_2_2_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_input_2_2_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_input_2_2_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_input_2_3_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_input_2_3_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_input_2_3_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_input_2_3_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_input_2_3_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_input_2_3_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_input_2_3_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_input_2_3_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_input_2_3_bit7"/>
+                  </DataItem>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_module_input_102"/>
+                <InfoText TextId="s_module_input_102_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        
+        
+        <ModuleItem ID="103" ModuleIdentNumber="0x00000103">
+          <ModuleInfo CategoryRef="status_modules">
+            <Name TextId="s_module_input_103"/>
+            <InfoText TextId="s_module_input_103_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="3" SubmoduleIdentNumber="0x80000000" MayIssueProcessAlarm="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="s_input_3_0_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_input_3_0_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_input_3_0_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_input_3_0_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_input_3_0_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_input_3_0_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_input_3_0_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_input_3_0_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_input_3_0_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_input_3_1_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_input_3_1_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_input_3_1_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_input_3_1_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_input_3_1_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_input_3_1_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_input_3_1_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_input_3_1_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_input_3_1_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_input_3_2_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_input_3_2_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_input_3_2_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_input_3_2_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_input_3_2_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_input_3_2_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_input_3_2_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_input_3_2_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_input_3_2_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_input_3_3_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_input_3_3_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_input_3_3_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_input_3_3_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_input_3_3_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_input_3_3_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_input_3_3_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_input_3_3_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_input_3_3_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_input_3_4_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_input_3_4_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_input_3_4_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_input_3_4_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_input_3_4_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_input_3_4_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_input_3_4_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_input_3_4_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_input_3_4_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_input_3_5_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_input_3_5_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_input_3_5_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_input_3_5_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_input_3_5_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_input_3_5_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_input_3_5_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_input_3_5_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_input_3_5_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_input_3_6_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_input_3_6_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_input_3_6_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_input_3_6_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_input_3_6_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_input_3_6_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_input_3_6_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_input_3_6_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_input_3_6_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_input_3_7_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_input_3_7_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_input_3_7_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_input_3_7_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_input_3_7_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_input_3_7_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_input_3_7_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_input_3_7_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_input_3_7_bit7"/>
+                  </DataItem>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_module_input_103"/>
+                <InfoText TextId="s_module_input_103_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+ 
+        
+        <ModuleItem ID="104" ModuleIdentNumber="0x00000104">
+          <ModuleInfo CategoryRef="status_modules">
+            <Name TextId="s_module_input_104"/>
+            <InfoText TextId="s_module_input_104_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="4" SubmoduleIdentNumber="0x80000000" MayIssueProcessAlarm="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="s_input_4_0_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_input_4_0_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_input_4_0_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_input_4_0_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_input_4_0_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_input_4_0_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_input_4_0_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_input_4_0_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_input_4_0_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_input_4_1_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_input_4_1_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_input_4_1_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_input_4_1_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_input_4_1_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_input_4_1_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_input_4_1_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_input_4_1_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_input_4_1_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_input_4_2_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_input_4_2_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_input_4_2_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_input_4_2_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_input_4_2_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_input_4_2_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_input_4_2_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_input_4_2_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_input_4_2_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_input_4_3_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_input_4_3_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_input_4_3_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_input_4_3_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_input_4_3_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_input_4_3_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_input_4_3_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_input_4_3_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_input_4_3_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_input_4_4_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_input_4_4_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_input_4_4_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_input_4_4_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_input_4_4_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_input_4_4_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_input_4_4_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_input_4_4_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_input_4_4_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_input_4_5_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_input_4_5_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_input_4_5_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_input_4_5_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_input_4_5_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_input_4_5_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_input_4_5_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_input_4_5_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_input_4_5_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_input_4_6_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_input_4_6_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_input_4_6_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_input_4_6_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_input_4_6_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_input_4_6_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_input_4_6_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_input_4_6_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_input_4_6_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_input_4_7_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_input_4_7_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_input_4_7_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_input_4_7_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_input_4_7_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_input_4_7_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_input_4_7_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_input_4_7_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_input_4_7_bit7"/>
+                  </DataItem>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_module_input_104"/>
+                <InfoText TextId="s_module_input_104_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+ 
+        <ModuleItem ID="105" ModuleIdentNumber="0x00000105">
+          <ModuleInfo CategoryRef="status_modules">
+            <Name TextId="s_module_input_105"/>
+            <InfoText TextId="s_module_input_105_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="5" SubmoduleIdentNumber="0x80000000" MayIssueProcessAlarm="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem TextId="s_error_code" DataType="Unsigned16"/>
+                  <DataItem TextId="s_error_code" DataType="Unsigned16"/>
+                  <DataItem TextId="s_reserved" DataType="Unsigned16"/>
+                  <DataItem TextId="s_reserved" DataType="Unsigned16"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_module_input_105"/>
+                <InfoText TextId="s_module_input_105_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="106" ModuleIdentNumber="0x00000106">
+          <ModuleInfo CategoryRef="status_modules">
+            <Name TextId="s_module_input_106"/>
+            <InfoText TextId="s_module_input_106_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="6" SubmoduleIdentNumber="0x80000000" MayIssueProcessAlarm="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem TextId="s_current_program_number" DataType="Unsigned16"/>
+                  <DataItem TextId="s_counter_number" DataType="Unsigned16"/>
+                  <DataItem TextId="s_counter_value" DataType="Unsigned32"/>
+                  <DataItem TextId="s_rank_value" DataType="Unsigned16"/>
+                  <DataItem TextId="s_sysinfo_id" DataType="Unsigned16"/>
+                  <DataItem TextId="s_sysinfo_value" DataType="Unsigned32"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_module_input_106"/>
+                <InfoText TextId="s_module_input_106_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="107" ModuleIdentNumber="0x00000107">
+          <ModuleInfo CategoryRef="status_modules">
+            <Name TextId="s_module_input_107"/>
+            <InfoText TextId="s_module_input_107_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="7" SubmoduleIdentNumber="0x80000000" MayIssueProcessAlarm="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem TextId="s_aim_dpm_grade" DataType="Unsigned16"/>
+                  <DataItem TextId="s_2dc_result_update_count" DataType="Unsigned16"/>
+                  <DataItem TextId="s_aim_dpm_grade2" DataType="Unsigned16"/>
+                  <DataItem TextId="s_2dc_result_update_count2" DataType="Unsigned16"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_module_input_107"/>
+                <InfoText TextId="s_module_input_107_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+
+        <ModuleItem ID="108" ModuleIdentNumber="0x00000108">
+          <ModuleInfo CategoryRef="status_modules">
+            <Name TextId="s_module_input_108"/>
+            <InfoText TextId="s_module_input_108_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="8" SubmoduleIdentNumber="0x80000000" MayIssueProcessAlarm="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem TextId="s_print_count_result" DataType="Unsigned32"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_module_input_108"/>
+                <InfoText TextId="s_module_input_108_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+
+        <ModuleItem ID="109" ModuleIdentNumber="0x00000109">
+          <ModuleInfo CategoryRef="status_modules">
+            <Name TextId="s_module_input_109"/>
+            <InfoText TextId="s_module_input_109_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="9" SubmoduleIdentNumber="0x80000000" MayIssueProcessAlarm="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem TextId="s_result_data_size" DataType="Unsigned16"/>
+                  <DataItem DataType="OctetString" TextId="s_result_data" Length="32"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_module_input_109"/>
+                <InfoText TextId="s_module_input_109_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="110" ModuleIdentNumber="0x0000010A">
+          <ModuleInfo CategoryRef="status_modules">
+            <Name TextId="s_module_input_110"/>
+            <InfoText TextId="s_module_input_110_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="10" SubmoduleIdentNumber="0x80000000" MayIssueProcessAlarm="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem TextId="s_result_data_size" DataType="Unsigned16"/>
+                  <DataItem DataType="OctetString" TextId="s_result_data" Length="64"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_module_input_110"/>
+                <InfoText TextId="s_module_input_110_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="111" ModuleIdentNumber="0x0000010B">
+          <ModuleInfo CategoryRef="status_modules">
+            <Name TextId="s_module_input_111"/>
+            <InfoText TextId="s_module_input_111_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="11" SubmoduleIdentNumber="0x80000000" MayIssueProcessAlarm="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem TextId="s_result_data_size" DataType="Unsigned16"/>
+                  <DataItem DataType="OctetString" TextId="s_result_data" Length="128"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_module_input_111"/>
+                <InfoText TextId="s_module_input_111_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="112" ModuleIdentNumber="0x0000010C">
+          <ModuleInfo CategoryRef="status_modules">
+            <Name TextId="s_module_input_112"/>
+            <InfoText TextId="s_module_input_112_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="12" SubmoduleIdentNumber="0x80000000" MayIssueProcessAlarm="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem TextId="s_result_data_size" DataType="Unsigned16"/>
+                  <DataItem DataType="OctetString" TextId="s_result_data" Length="252"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_module_input_112"/>
+                <InfoText TextId="s_module_input_112_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+
+        <ModuleItem ID="201" ModuleIdentNumber="0x00000201">
+          <ModuleInfo CategoryRef="control_modules">
+            <Name TextId="s_module_output_201"/>
+            <InfoText TextId="s_module_output_201_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="13" SubmoduleIdentNumber="0x80000000" MayIssueProcessAlarm="false">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="s_output_0_0_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_output_0_0_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_output_0_0_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_output_0_0_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_output_0_0_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_output_0_0_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_output_0_0_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_output_0_0_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_output_0_0_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_output_0_1_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_output_0_1_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_output_0_1_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_output_0_1_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_output_0_1_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_output_0_1_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_output_0_1_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_output_0_1_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_output_0_1_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_output_0_2_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_output_0_2_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_output_0_2_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_output_0_2_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_output_0_2_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_output_0_2_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_output_0_2_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_output_0_2_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_output_0_2_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_output_0_3_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_output_0_3_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_output_0_3_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_output_0_3_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_output_0_3_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_output_0_3_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_output_0_3_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_output_0_3_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_output_0_3_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_output_0_4_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_output_0_4_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_output_0_4_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_output_0_4_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_output_0_4_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_output_0_4_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_output_0_4_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_output_0_4_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_output_0_4_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_output_0_5_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_output_0_5_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_output_0_5_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_output_0_5_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_output_0_5_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_output_0_5_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_output_0_5_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_output_0_5_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_output_0_5_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_output_0_6_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_output_0_6_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_output_0_6_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_output_0_6_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_output_0_6_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_output_0_6_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_output_0_6_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_output_0_6_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_output_0_6_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_output_0_7_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_output_0_7_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_output_0_7_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_output_0_7_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_output_0_7_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_output_0_7_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_output_0_7_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_output_0_7_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_output_0_7_bit7"/>
+                  </DataItem>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_module_output_201"/>
+                <InfoText TextId="s_module_output_201_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+
+        <ModuleItem ID="202" ModuleIdentNumber="0x00000202">
+          <ModuleInfo CategoryRef="control_modules">
+            <Name TextId="s_module_output_202"/>
+            <InfoText TextId="s_module_output_202_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="14" SubmoduleIdentNumber="0x80000000" MayIssueProcessAlarm="false">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="s_output_1_0_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_output_1_0_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_output_1_0_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_output_1_0_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_output_1_0_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_output_1_0_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_output_1_0_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_output_1_0_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_output_1_0_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_output_1_1_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_output_1_1_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_output_1_1_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_output_1_1_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_output_1_1_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_output_1_1_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_output_1_1_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_output_1_1_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_output_1_1_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_output_1_2_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_output_1_2_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_output_1_2_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_output_1_2_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_output_1_2_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_output_1_2_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_output_1_2_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_output_1_2_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_output_1_2_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_output_1_3_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_output_1_3_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_output_1_3_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_output_1_3_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_output_1_3_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_output_1_3_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_output_1_3_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_output_1_3_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_output_1_3_bit7"/>
+                  </DataItem>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_module_output_202"/>
+                <InfoText TextId="s_module_output_202_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+
+        <ModuleItem ID="203" ModuleIdentNumber="0x00000203">
+          <ModuleInfo CategoryRef="control_modules">
+            <Name TextId="s_module_output_203"/>
+            <InfoText TextId="s_module_output_203_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="15" SubmoduleIdentNumber="0x80000000" MayIssueProcessAlarm="false">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="s_output_2_0_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_output_2_0_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_output_2_0_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_output_2_0_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_output_2_0_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_output_2_0_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_output_2_0_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_output_2_0_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_output_2_0_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_output_2_1_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_output_2_1_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_output_2_1_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_output_2_1_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_output_2_1_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_output_2_1_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_output_2_1_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_output_2_1_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_output_2_1_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_output_2_2_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_output_2_2_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_output_2_2_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_output_2_2_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_output_2_2_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_output_2_2_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_output_2_2_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_output_2_2_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_output_2_2_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_output_2_3_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_output_2_3_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_output_2_3_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_output_2_3_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_output_2_3_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_output_2_3_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_output_2_3_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_output_2_3_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_output_2_3_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_output_2_4_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_output_2_4_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_output_2_4_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_output_2_4_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_output_2_4_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_output_2_4_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_output_2_4_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_output_2_4_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_output_2_4_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_output_2_5_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_output_2_5_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_output_2_5_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_output_2_5_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_output_2_5_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_output_2_5_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_output_2_5_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_output_2_5_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_output_2_5_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_output_2_6_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_output_2_6_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_output_2_6_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_output_2_6_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_output_2_6_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_output_2_6_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_output_2_6_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_output_2_6_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_output_2_6_bit7"/>
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_output_2_7_byte_unit" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_output_2_7_bit0"/>
+                    <BitDataItem BitOffset="1" TextId="s_output_2_7_bit1"/>
+                    <BitDataItem BitOffset="2" TextId="s_output_2_7_bit2"/>
+                    <BitDataItem BitOffset="3" TextId="s_output_2_7_bit3"/>
+                    <BitDataItem BitOffset="4" TextId="s_output_2_7_bit4"/>
+                    <BitDataItem BitOffset="5" TextId="s_output_2_7_bit5"/>
+                    <BitDataItem BitOffset="6" TextId="s_output_2_7_bit6"/>
+                    <BitDataItem BitOffset="7" TextId="s_output_2_7_bit7"/>
+                  </DataItem>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_module_output_203"/>
+                <InfoText TextId="s_module_output_203_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="204" ModuleIdentNumber="0x00000204">
+          <ModuleInfo CategoryRef="control_modules">
+            <Name TextId="s_module_output_204"/>
+            <InfoText TextId="s_module_output_204_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="16" SubmoduleIdentNumber="0x80000000" MayIssueProcessAlarm="false">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem TextId="s_user_data_parameter" DataType="Unsigned32"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_module_output_204"/>
+                <InfoText TextId="s_module_output_204_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="205" ModuleIdentNumber="0x00000205">
+          <ModuleInfo CategoryRef="control_modules">
+            <Name TextId="s_module_output_205"/>
+            <InfoText TextId="s_module_output_205_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="17" SubmoduleIdentNumber="0x80000000" MayIssueProcessAlarm="false">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem TextId="s_user_data_size" DataType="Unsigned16"/>
+                  <DataItem TextId="s_user_data" DataType="OctetString" Length="32"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_module_output_205"/>
+                <InfoText TextId="s_module_output_205_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="206" ModuleIdentNumber="0x00000206">
+          <ModuleInfo CategoryRef="control_modules">
+            <Name TextId="s_module_output_206"/>
+            <InfoText TextId="s_module_output_206_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="18" SubmoduleIdentNumber="0x80000000" MayIssueProcessAlarm="false">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem TextId="s_user_data_size" DataType="Unsigned16"/>
+                  <DataItem TextId="s_user_data" DataType="OctetString" Length="64"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_module_output_206"/>
+                <InfoText TextId="s_module_output_206_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="207" ModuleIdentNumber="0x00000207">
+          <ModuleInfo CategoryRef="control_modules">
+            <Name TextId="s_module_output_207"/>
+            <InfoText TextId="s_module_output_207_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="19" SubmoduleIdentNumber="0x80000000" MayIssueProcessAlarm="false">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem TextId="s_user_data_size" DataType="Unsigned16"/>
+                  <DataItem TextId="s_user_data" DataType="OctetString" Length="128"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_module_output_207"/>
+                <InfoText TextId="s_module_output_207_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="208" ModuleIdentNumber="0x00000208">
+          <ModuleInfo CategoryRef="control_modules">
+            <Name TextId="s_module_output_208"/>
+            <InfoText TextId="s_module_output_208_info"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="20" SubmoduleIdentNumber="0x80000000" MayIssueProcessAlarm="false">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem TextId="s_user_data_size" DataType="Unsigned16"/>
+                  <DataItem TextId="s_user_data" DataType="OctetString" Length="252"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_module_output_208"/>
+                <InfoText TextId="s_module_output_208_info"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+
+      </ModuleList>
+      <GraphicsList>
+        <GraphicItem ID="1" GraphicFile="GSDML-01FD-1B5D-MD-X2XXX"/>
+      </GraphicsList>
+      <CategoryList>
+        <CategoryItem TextId="s_status_modules" ID="status_modules"/>
+        <CategoryItem TextId="s_control_modules" ID="control_modules"/>
+      </CategoryList>
+      <ExternalTextList>
+        <PrimaryLanguage>
+          <!-- General Text -->
+          <Text TextId="s_top_information" Value="MD-X2000 Series Laser Marker"/>
+          <Text TextId="s_device_name" Value="MD-X2XXX"/>
+          <Text TextId="s_series_name" Value="MD-X2000 Series Laser Marker"/>
+          <Text TextId="s_x1" Value="X1"/>
+          <Text TextId="s_x1_p1" Value="X1 P1"/>
+          <Text TextId="s_interface" Value="Interface"/>
+          <Text TextId="s_Port1" Value="Port 1"/>
+          <!-- Module Info -->
+          <!-- 101 -->
+          <Text TextId="s_module_input_101" Value="Machine Status"/>
+          <Text TextId="s_module_input_101_info" Value="Status of Laser Marker"/>
+          <Text TextId="s_input_1_0_byte_unit" Value="General Status"/>
+          <Text TextId="s_input_1_0_bit0" Value="Ready Status Bit"/>
+          <Text TextId="s_input_1_0_bit1" Value="Error Status Bit"/>
+          <Text TextId="s_input_1_0_bit2" Value="Warning Status Bit"/>
+          <Text TextId="s_input_1_0_bit3" Value="Notice Status Bit"/>
+          <Text TextId="s_input_1_0_bit4" Value="Shutter Status Bit"/>
+          <Text TextId="s_input_1_0_bit5" Value="StartUp Status Bit"/>
+          <Text TextId="s_input_1_0_bit6" Value="Job Change Ready Bit"/>
+          <Text TextId="s_input_1_0_bit7" Value="Ztracking Func Ready Bit"/>
+          <Text TextId="s_input_1_1_byte_unit" Value="I/O Status"/>
+          <Text TextId="s_input_1_1_bit0" Value="Laser Emit Status Bit"/>
+          <Text TextId="s_input_1_1_bit1" Value="Shutter Control Status Bit"/>
+          <Text TextId="s_input_1_1_bit2" Value="Remote Interlock Status Bit"/>
+          <Text TextId="s_input_1_1_bit3" Value="Laser Safety Module Status Bit"/>
+          <Text TextId="s_input_1_1_bit4" Value="Logging Trigger Status Bit"/>
+          <Text TextId="s_input_1_1_bit5" Value="External Lighting Control Status Bit"/>
+          <Text TextId="s_input_1_1_bit6" Value=" "/>
+          <Text TextId="s_input_1_1_bit7" Value=" "/>
+          <Text TextId="s_input_1_2_byte_unit" Value="Running Status"/>
+          <Text TextId="s_input_1_2_bit0" Value="Busy Status Bit"/>
+          <Text TextId="s_input_1_2_bit1" Value="Print Busy Status Bit"/>
+          <Text TextId="s_input_1_2_bit2" Value="Guide Print Busy Status Bit"/>
+          <Text TextId="s_input_1_2_bit3" Value="Job Change Busy Status Bit"/>
+          <Text TextId="s_input_1_2_bit4" Value="Lock Busy Status Bit"/>
+          <Text TextId="s_input_1_2_bit5" Value="Edit Busy Status Bit"/>
+          <Text TextId="s_input_1_2_bit6" Value="2DC Read Busy Status Bit"/>
+          <Text TextId="s_input_1_2_bit7" Value="Window Maintenance Busy Status Bit"/>
+          <Text TextId="s_input_1_3_byte_unit" Value="Reserved"/>
+          <Text TextId="s_input_1_3_bit0" Value=" "/>
+          <Text TextId="s_input_1_3_bit1" Value=" "/>
+          <Text TextId="s_input_1_3_bit2" Value=" "/>
+          <Text TextId="s_input_1_3_bit3" Value=" "/>
+          <Text TextId="s_input_1_3_bit4" Value=" "/>
+          <Text TextId="s_input_1_3_bit5" Value=" "/>
+          <Text TextId="s_input_1_3_bit6" Value=" "/>
+          <Text TextId="s_input_1_3_bit7" Value=" "/>
+
+          <!-- 102 -->
+          <Text TextId="s_module_input_102" Value="Function Status"/>
+          <Text TextId="s_module_input_102_info" Value="Status of Function"/>
+          <Text TextId="s_input_2_0_byte_unit" Value="Function Status"/>
+          <Text TextId="s_input_2_0_bit0" Value="Trigger Inhibit Function Status"/>
+          <Text TextId="s_input_2_0_bit1" Value="Machinery Operation Mode Disable Function Status"/>
+          <Text TextId="s_input_2_0_bit2" Value="Marking Laser Control Function Status"/>
+          <Text TextId="s_input_2_0_bit3" Value="Date Hold Function Status"/>
+          <Text TextId="s_input_2_0_bit4" Value="Internal Lighting Status"/>
+          <Text TextId="s_input_2_0_bit5" Value="Measurement Laser Stop Status"/>
+          <Text TextId="s_input_2_0_bit6" Value=" "/>
+          <Text TextId="s_input_2_0_bit7" Value=" "/>
+          <Text TextId="s_input_2_1_byte_unit" Value="Control Status 1"/>
+          <Text TextId="s_input_2_1_bit0" Value="Date Hold Bit"/>
+          <Text TextId="s_input_2_1_bit1" Value="Counter End 1 Bit"/>
+          <Text TextId="s_input_2_1_bit2" Value="Counter End 2 Bit"/>
+          <Text TextId="s_input_2_1_bit3" Value="Counter End 3 Bit"/>
+          <Text TextId="s_input_2_1_bit4" Value="Counter End 4 Bit"/>
+          <Text TextId="s_input_2_1_bit5" Value="2D Code Read OK 1 Bit"/>
+          <Text TextId="s_input_2_1_bit6" Value="2D Code Read NG 1 Bit"/>
+          <Text TextId="s_input_2_1_bit7" Value="Marking Complete 1 Bit"/>
+          <Text TextId="s_input_2_2_byte_unit" Value="Control Status 2"/>
+          <Text TextId="s_input_2_2_bit0" Value="2D Code Read OK 2 Bit"/>
+          <Text TextId="s_input_2_2_bit1" Value="2D Code Read NG 2 Bit"/>
+          <Text TextId="s_input_2_2_bit2" Value="3-axis Tracking OK Bit"/>
+          <Text TextId="s_input_2_2_bit3" Value="3-axis Tracking NG Bit"/>
+          <Text TextId="s_input_2_2_bit4" Value=" "/>
+          <Text TextId="s_input_2_2_bit5" Value=" "/>
+          <Text TextId="s_input_2_2_bit6" Value=" "/>
+          <Text TextId="s_input_2_2_bit7" Value=" "/>
+          <Text TextId="s_input_2_3_byte_unit" Value="Reserved"/>
+          <Text TextId="s_input_2_3_bit0" Value=" "/>
+          <Text TextId="s_input_2_3_bit1" Value=" "/>
+          <Text TextId="s_input_2_3_bit2" Value=" "/>
+          <Text TextId="s_input_2_3_bit3" Value=" "/>
+          <Text TextId="s_input_2_3_bit4" Value=" "/>
+          <Text TextId="s_input_2_3_bit5" Value=" "/>
+          <Text TextId="s_input_2_3_bit6" Value=" "/>
+          <Text TextId="s_input_2_3_bit7" Value=" "/>
+
+          <!-- 103 -->
+          <Text TextId="s_module_input_103" Value="Completion Status"/>
+          <Text TextId="s_module_input_103_info" Value="Status of Completion"/>
+          <Text TextId="s_input_3_0_byte_unit" Value="General Request Completion Status"/>
+          <Text TextId="s_input_3_0_bit0" Value="Marking Complete 2 Bit"/>
+          <Text TextId="s_input_3_0_bit1" Value="Guide Pirnt Complete Bit"/>
+          <Text TextId="s_input_3_0_bit2" Value="Print Stop Complete Bit"/>
+          <Text TextId="s_input_3_0_bit3" Value="Error Clear Complete Bit"/>
+          <Text TextId="s_input_3_0_bit4" Value="2DC Read Complete Bit"/>
+          <Text TextId="s_input_3_0_bit5" Value="Window Maintenance Complete Bit"/>
+          <Text TextId="s_input_3_0_bit6" Value=" "/>
+          <Text TextId="s_input_3_0_bit7" Value=" "/>
+          <Text TextId="s_input_3_1_byte_unit" Value="Edit Request Completion Status"/>
+          <Text TextId="s_input_3_1_bit0" Value="Edit Complete Bit"/>
+          <Text TextId="s_input_3_1_bit1" Value=" "/>
+          <Text TextId="s_input_3_1_bit2" Value=" "/>
+          <Text TextId="s_input_3_1_bit3" Value=" "/>
+          <Text TextId="s_input_3_1_bit4" Value=" "/>
+          <Text TextId="s_input_3_1_bit5" Value=" "/>
+          <Text TextId="s_input_3_1_bit6" Value=" "/>
+          <Text TextId="s_input_3_1_bit7" Value=" "/>
+          <Text TextId="s_input_3_2_byte_unit" Value="Operation Request Completion Status"/>
+          <Text TextId="s_input_3_2_bit0" Value="Job Change Complete Bit"/>
+          <Text TextId="s_input_3_2_bit1" Value="Rank Value Change Complete Bit"/>
+          <Text TextId="s_input_3_2_bit2" Value="Counter Number Change Complete Bit"/>
+          <Text TextId="s_input_3_2_bit3" Value="Counter Value Change Complete Bit"/>
+          <Text TextId="s_input_3_2_bit4" Value="Counter Up Complete Bit"/>
+          <Text TextId="s_input_3_2_bit5" Value="Counter Down Complete Bit"/>
+          <Text TextId="s_input_3_2_bit6" Value="Counter Reset Complete Bit"/>
+          <Text TextId="s_input_3_2_bit7" Value=" "/>
+          <Text TextId="s_input_3_3_byte_unit" Value="Reserved"/>
+          <Text TextId="s_input_3_3_bit0" Value="System Info ID Change Complete Bit"/>
+          <Text TextId="s_input_3_3_bit1" Value=" "/>
+          <Text TextId="s_input_3_3_bit2" Value=" "/>
+          <Text TextId="s_input_3_3_bit3" Value=" "/>
+          <Text TextId="s_input_3_3_bit4" Value=" "/>
+          <Text TextId="s_input_3_3_bit5" Value=" "/>
+          <Text TextId="s_input_3_3_bit6" Value=" "/>
+          <Text TextId="s_input_3_3_bit7" Value=" "/>
+          <Text TextId="s_input_3_4_byte_unit" Value="Block Edit Request Completion Status"/>
+          <Text TextId="s_input_3_4_bit0" Value="Character String (Setting) Read Complete Bit"/>
+          <Text TextId="s_input_3_4_bit1" Value="Character String (Printed) Read Complete Bit"/>
+          <Text TextId="s_input_3_4_bit2" Value="Character String Change Complete Bit"/>
+          <Text TextId="s_input_3_4_bit3" Value=" "/>
+          <Text TextId="s_input_3_4_bit4" Value=" "/>
+          <Text TextId="s_input_3_4_bit5" Value=" "/>
+          <Text TextId="s_input_3_4_bit6" Value=" "/>
+          <Text TextId="s_input_3_4_bit7" Value=" "/>
+          <Text TextId="s_input_3_5_byte_unit" Value="Reserved"/>
+          <Text TextId="s_input_3_5_bit0" Value=" "/>
+          <Text TextId="s_input_3_5_bit1" Value=" "/>
+          <Text TextId="s_input_3_5_bit2" Value=" "/>
+          <Text TextId="s_input_3_5_bit3" Value=" "/>
+          <Text TextId="s_input_3_5_bit4" Value=" "/>
+          <Text TextId="s_input_3_5_bit5" Value=" "/>
+          <Text TextId="s_input_3_5_bit6" Value=" "/>
+          <Text TextId="s_input_3_5_bit7" Value=" "/>
+          <Text TextId="s_input_3_6_byte_unit" Value="Reserved"/>
+          <Text TextId="s_input_3_6_bit0" Value=" "/>
+          <Text TextId="s_input_3_6_bit1" Value=" "/>
+          <Text TextId="s_input_3_6_bit2" Value=" "/>
+          <Text TextId="s_input_3_6_bit3" Value=" "/>
+          <Text TextId="s_input_3_6_bit4" Value=" "/>
+          <Text TextId="s_input_3_6_bit5" Value=" "/>
+          <Text TextId="s_input_3_6_bit6" Value=" "/>
+          <Text TextId="s_input_3_6_bit7" Value=" "/>
+          <Text TextId="s_input_3_7_byte_unit" Value="Command Request Completion Status"/>
+          <Text TextId="s_input_3_7_bit0" Value="Command Request Complete Bit"/>
+          <Text TextId="s_input_3_7_bit1" Value="XY Tracking Result Read Complete Bit"/>
+          <Text TextId="s_input_3_7_bit2" Value="Z Tracking Result Read Complete Bit"/>
+          <Text TextId="s_input_3_7_bit3" Value=" "/>
+          <Text TextId="s_input_3_7_bit4" Value=" "/>
+          <Text TextId="s_input_3_7_bit5" Value=" "/>
+          <Text TextId="s_input_3_7_bit6" Value=" "/>
+          <Text TextId="s_input_3_7_bit7" Value=" "/>
+
+          <!-- 104 -->
+          <Text TextId="s_module_input_104" Value="Error Status"/>
+          <Text TextId="s_module_input_104_info" Value="Status of Errors"/>
+          <Text TextId="s_input_4_0_byte_unit" Value="General Request Error Status"/>
+          <Text TextId="s_input_4_0_bit0" Value="Print Error Bit"/>
+          <Text TextId="s_input_4_0_bit1" Value="Guide Pirnt Error Bit"/>
+          <Text TextId="s_input_4_0_bit2" Value="Print Stop Error Bit"/>
+          <Text TextId="s_input_4_0_bit3" Value="Error Clear Error Bit"/>
+          <Text TextId="s_input_4_0_bit4" Value="2DC Read Error Bit"/>
+          <Text TextId="s_input_4_0_bit5" Value="Window Maintenance Request Error Bit"/>
+          <Text TextId="s_input_4_0_bit6" Value=" "/>
+          <Text TextId="s_input_4_0_bit7" Value=" "/>
+          <Text TextId="s_input_4_1_byte_unit" Value="Edit Request Error Status"/>
+          <Text TextId="s_input_4_1_bit0" Value="Edit Error Bit"/>
+          <Text TextId="s_input_4_1_bit1" Value=" "/>
+          <Text TextId="s_input_4_1_bit2" Value=" "/>
+          <Text TextId="s_input_4_1_bit3" Value=" "/>
+          <Text TextId="s_input_4_1_bit4" Value=" "/>
+          <Text TextId="s_input_4_1_bit5" Value=" "/>
+          <Text TextId="s_input_4_1_bit6" Value=" "/>
+          <Text TextId="s_input_4_1_bit7" Value=" "/>
+          <Text TextId="s_input_4_2_byte_unit" Value="Operation Request Error Status"/>
+          <Text TextId="s_input_4_2_bit0" Value="Job Change Error Bit"/>
+          <Text TextId="s_input_4_2_bit1" Value="Rank Value Change Error Bit"/>
+          <Text TextId="s_input_4_2_bit2" Value="Counter Number Change Error Bit"/>
+          <Text TextId="s_input_4_2_bit3" Value="Counter Value Change Error Bit"/>
+          <Text TextId="s_input_4_2_bit4" Value="Counter Up Error Bit"/>
+          <Text TextId="s_input_4_2_bit5" Value="Counter Down Error Bit"/>
+          <Text TextId="s_input_4_2_bit6" Value="Counter Reset Error Bit"/>
+          <Text TextId="s_input_4_2_bit7" Value=" "/>
+          <Text TextId="s_input_4_3_byte_unit" Value="Reserved"/>
+          <Text TextId="s_input_4_3_bit0" Value="System Info ID Change Error Bit"/>
+          <Text TextId="s_input_4_3_bit1" Value=" "/>
+          <Text TextId="s_input_4_3_bit2" Value=" "/>
+          <Text TextId="s_input_4_3_bit3" Value=" "/>
+          <Text TextId="s_input_4_3_bit4" Value=" "/>
+          <Text TextId="s_input_4_3_bit5" Value=" "/>
+          <Text TextId="s_input_4_3_bit6" Value=" "/>
+          <Text TextId="s_input_4_3_bit7" Value=" "/>
+          <Text TextId="s_input_4_4_byte_unit" Value="Block Edit Request Error Status"/>
+          <Text TextId="s_input_4_4_bit0" Value="Character String (Setting) Read Error Bit"/>
+          <Text TextId="s_input_4_4_bit1" Value="Character String (Printed) Read Error Bit"/>
+          <Text TextId="s_input_4_4_bit2" Value="Character String Change Error Bit"/>
+          <Text TextId="s_input_4_4_bit3" Value=" "/>
+          <Text TextId="s_input_4_4_bit4" Value=" "/>
+          <Text TextId="s_input_4_4_bit5" Value=" "/>
+          <Text TextId="s_input_4_4_bit6" Value=" "/>
+          <Text TextId="s_input_4_4_bit7" Value=" "/>
+          <Text TextId="s_input_4_5_byte_unit" Value="Reserved"/>
+          <Text TextId="s_input_4_5_bit0" Value=" "/>
+          <Text TextId="s_input_4_5_bit1" Value=" "/>
+          <Text TextId="s_input_4_5_bit2" Value=" "/>
+          <Text TextId="s_input_4_5_bit3" Value=" "/>
+          <Text TextId="s_input_4_5_bit4" Value=" "/>
+          <Text TextId="s_input_4_5_bit5" Value=" "/>
+          <Text TextId="s_input_4_5_bit6" Value=" "/>
+          <Text TextId="s_input_4_5_bit7" Value=" "/>
+          <Text TextId="s_input_4_6_byte_unit" Value="Reserved"/>
+          <Text TextId="s_input_4_6_bit0" Value=" "/>
+          <Text TextId="s_input_4_6_bit1" Value=" "/>
+          <Text TextId="s_input_4_6_bit2" Value=" "/>
+          <Text TextId="s_input_4_6_bit3" Value=" "/>
+          <Text TextId="s_input_4_6_bit4" Value=" "/>
+          <Text TextId="s_input_4_6_bit5" Value=" "/>
+          <Text TextId="s_input_4_6_bit6" Value=" "/>
+          <Text TextId="s_input_4_6_bit7" Value=" "/>
+          <Text TextId="s_input_4_7_byte_unit" Value="Command Request Error Status"/>
+          <Text TextId="s_input_4_7_bit0" Value="Command Request Error Bit"/>
+          <Text TextId="s_input_4_7_bit1" Value="XY Tracking Result Request Error Bit"/>
+          <Text TextId="s_input_4_7_bit2" Value="Z Tracking Result Request Error Bit"/>
+          <Text TextId="s_input_4_7_bit3" Value=" "/>
+          <Text TextId="s_input_4_7_bit4" Value=" "/>
+          <Text TextId="s_input_4_7_bit5" Value=" "/>
+          <Text TextId="s_input_4_7_bit6" Value=" "/>
+          <Text TextId="s_input_4_7_bit7" Value=" "/>
+
+          <!-- 105 -->
+          <Text TextId="s_module_input_105" Value="Error Codes"/>
+          <Text TextId="s_module_input_105_info" Value="Information about errors"/>
+          <Text TextId="s_error_code" Value="Error Code"/>
+          
+          <!-- 106 -->
+          <Text TextId="s_module_input_106" Value="Operate Parametere"/>
+          <Text TextId="s_module_input_106_info" Value="Information about operation values"/>
+          
+          
+          <Text TextId="s_current_program_number" Value="Current Job Number"/>
+          <Text TextId="s_counter_number" Value="Counter Number"/>
+          <Text TextId="s_counter_value" Value="Coutner Value"/>
+          <Text TextId="s_rank_value" Value="Rank Value"/>
+          <Text TextId="s_sysinfo_id" Value="System Info ID"/>
+          <Text TextId="s_sysinfo_value" Value="System Info Value"/>
+          <!-- 107 -->
+          <Text TextId="s_module_input_107" Value="2D Code Read Result"/>
+          <Text TextId="s_module_input_107_info" Value="Information about 2D Code Reader"/>
+          <Text TextId="s_aim_dpm_grade" Value="ISO/IEC TR 29158(AIM DPM-1-2006) Grade1"/>
+          <Text TextId="s_2dc_result_update_count" Value="2D Code Result Update Count1"/>
+          <Text TextId="s_aim_dpm_grade2" Value="ISO/IEC TR 29158(AIM DPM-1-2006) Grade2"/>
+          <Text TextId="s_2dc_result_update_count2" Value="2D Code Result Update Count2"/>
+          <!-- 108 -->
+          <Text TextId="s_module_input_108" Value="Count Result Data"/>
+          <Text TextId="s_module_input_108_info" Value="Information about result data"/>
+          
+          
+          <Text TextId="s_print_count_result" Value="Print Count"/>
+          <Text TextId="s_result_data_size" Value="Result Data Sizet"/>
+          <!-- 109 -->
+          <Text TextId="s_module_input_109" Value="Result Data 32byte"/>
+          <Text TextId="s_module_input_109_info" Value="Read Result Data 32byte"/>
+          <!-- 110 -->
+          <Text TextId="s_module_input_110" Value="Result Data 64byte"/>
+          <Text TextId="s_module_input_110_info" Value="Read Result Data 64byte"/>
+          <!-- 111 -->
+          <Text TextId="s_module_input_111" Value="Result Data 128byte"/>
+          <Text TextId="s_module_input_111_info" Value="Read Result Data 128byte"/>
+          <!-- 112 -->
+          <Text TextId="s_module_input_112" Value="Result Data 252byte"/>
+          <Text TextId="s_module_input_112_info" Value="Read Result Data 252byte"/>
+
+          <Text TextId="s_result_data" Value="Result Data"/>
+
+          <!-- 201 -->
+          <Text TextId="s_module_output_201" Value="General Request"/>
+          <Text TextId="s_module_output_201_info" Value="Request of general control"/>
+          <Text TextId="s_output_0_0_byte_unit" Value="General Request"/>
+          <Text TextId="s_output_0_0_bit0" Value="Print Start Request Bit"/>
+          <Text TextId="s_output_0_0_bit1" Value="Guide Print Start Request Bit"/>
+          <Text TextId="s_output_0_0_bit2" Value="Print Stop Request Bit"/>
+          <Text TextId="s_output_0_0_bit3" Value="Error Clear Request Bit"/>
+          <Text TextId="s_output_0_0_bit4" Value="2D Code Read Request Bit"/>
+          <Text TextId="s_output_0_0_bit5" Value="Window Maintenance Request Bit"/>
+          <Text TextId="s_output_0_0_bit6" Value=" "/>
+          <Text TextId="s_output_0_0_bit7" Value=" "/>
+          <Text TextId="s_output_0_1_byte_unit" Value="Edit Request"/>
+          <Text TextId="s_output_0_1_bit0" Value="Edit Start Request Bit"/>
+          <Text TextId="s_output_0_1_bit1" Value=" "/>
+          <Text TextId="s_output_0_1_bit2" Value=" "/>
+          <Text TextId="s_output_0_1_bit3" Value=" "/>
+          <Text TextId="s_output_0_1_bit4" Value=" "/>
+          <Text TextId="s_output_0_1_bit5" Value=" "/>
+          <Text TextId="s_output_0_1_bit6" Value=" "/>
+          <Text TextId="s_output_0_1_bit7" Value=" "/>
+          <Text TextId="s_output_0_2_byte_unit" Value="Operating Request"/>
+          <Text TextId="s_output_0_2_bit0" Value="Job Change Request Bit"/>
+          <Text TextId="s_output_0_2_bit1" Value="Rank Value Change Request Bit"/>
+          <Text TextId="s_output_0_2_bit2" Value="Counter Number Change Request Bit"/>
+          <Text TextId="s_output_0_2_bit3" Value="Counter Value Change Request Bit"/>
+          <Text TextId="s_output_0_2_bit4" Value="Counter Up Request Bit"/>
+          <Text TextId="s_output_0_2_bit5" Value="Counter Down Request Bit"/>
+          <Text TextId="s_output_0_2_bit6" Value="Counter Reset Request Bit"/>
+          <Text TextId="s_output_0_2_bit7" Value=" "/>
+          <Text TextId="s_output_0_3_byte_unit" Value="Reserved"/>
+          <Text TextId="s_output_0_3_bit0" Value="System Info ID Change Request Bit"/>
+          <Text TextId="s_output_0_3_bit1" Value=" "/>
+          <Text TextId="s_output_0_3_bit2" Value=" "/>
+          <Text TextId="s_output_0_3_bit3" Value=" "/>
+          <Text TextId="s_output_0_3_bit4" Value=" "/>
+          <Text TextId="s_output_0_3_bit5" Value=" "/>
+          <Text TextId="s_output_0_3_bit6" Value=" "/>
+          <Text TextId="s_output_0_3_bit7" Value=" "/>
+          <Text TextId="s_output_0_4_byte_unit" Value="Reserved"/>
+          <Text TextId="s_output_0_4_bit0" Value=" "/>
+          <Text TextId="s_output_0_4_bit1" Value=" "/>
+          <Text TextId="s_output_0_4_bit2" Value=" "/>
+          <Text TextId="s_output_0_4_bit3" Value=" "/>
+          <Text TextId="s_output_0_4_bit4" Value=" "/>
+          <Text TextId="s_output_0_4_bit5" Value=" "/>
+          <Text TextId="s_output_0_4_bit6" Value=" "/>
+          <Text TextId="s_output_0_4_bit7" Value=" "/>
+          <Text TextId="s_output_0_5_byte_unit" Value="Block Edit Request"/>
+          <Text TextId="s_output_0_5_bit0" Value="Character String (Setting) Read Request Bit"/>
+          <Text TextId="s_output_0_5_bit1" Value="Character String (Printed) Read Request Bit"/>
+          <Text TextId="s_output_0_5_bit2" Value="Character String Change Request Bit"/>
+          <Text TextId="s_output_0_5_bit3" Value=" "/>
+          <Text TextId="s_output_0_5_bit4" Value=" "/>
+          <Text TextId="s_output_0_5_bit5" Value=" "/>
+          <Text TextId="s_output_0_5_bit6" Value=" "/>
+          <Text TextId="s_output_0_5_bit7" Value=" "/>
+          <Text TextId="s_output_0_6_byte_unit" Value="Reserved"/>
+          <Text TextId="s_output_0_6_bit0" Value=" "/>
+          <Text TextId="s_output_0_6_bit1" Value=" "/>
+          <Text TextId="s_output_0_6_bit2" Value=" "/>
+          <Text TextId="s_output_0_6_bit3" Value=" "/>
+          <Text TextId="s_output_0_6_bit4" Value=" "/>
+          <Text TextId="s_output_0_6_bit5" Value=" "/>
+          <Text TextId="s_output_0_6_bit6" Value=" "/>
+          <Text TextId="s_output_0_6_bit7" Value=" "/>
+          <Text TextId="s_output_0_7_byte_unit" Value="Command Request"/>
+          <Text TextId="s_output_0_7_bit0" Value="Command Request Bit"/>
+          <Text TextId="s_output_0_7_bit1" Value="XY Tracking Result Request Bit"/>
+          <Text TextId="s_output_0_7_bit2" Value="Z Tracking Result Request Bit"/>
+          <Text TextId="s_output_0_7_bit3" Value=" "/>
+          <Text TextId="s_output_0_7_bit4" Value=" "/>
+          <Text TextId="s_output_0_7_bit5" Value=" "/>
+          <Text TextId="s_output_0_7_bit6" Value=" "/>
+          <Text TextId="s_output_0_7_bit7" Value=" "/>
+
+          <!-- 202 -->
+          <Text TextId="s_module_output_202" Value="Function Request"/>
+          <Text TextId="s_module_output_202_info" Value="Request of function"/>
+          <Text TextId="s_output_1_0_byte_unit" Value="Function Request"/>
+          <Text TextId="s_output_1_0_bit0" Value="Trigger Inhibit Function Request Bit"/>
+          <Text TextId="s_output_1_0_bit1" Value="Machinery Operation Mode Disable Function Request Bit"/>
+          <Text TextId="s_output_1_0_bit2" Value="Marking Laser Control Function Request Bit"/>
+          <Text TextId="s_output_1_0_bit3" Value="Date Hold Function Request Bit"/>
+          <Text TextId="s_output_1_0_bit4" Value="Internal Lighting Request Bit"/>
+          <Text TextId="s_output_1_0_bit5" Value="Measurement Laser Stop Request Bit"/>
+          <Text TextId="s_output_1_0_bit6" Value=" "/>
+          <Text TextId="s_output_1_0_bit7" Value=" "/>
+          <Text TextId="s_output_1_1_byte_unit" Value="Reserved"/>
+          <Text TextId="s_output_1_1_bit0" Value=" "/>
+          <Text TextId="s_output_1_1_bit1" Value=" "/>
+          <Text TextId="s_output_1_1_bit2" Value=" "/>
+          <Text TextId="s_output_1_1_bit3" Value=" "/>
+          <Text TextId="s_output_1_1_bit4" Value=" "/>
+          <Text TextId="s_output_1_1_bit5" Value=" "/>
+          <Text TextId="s_output_1_1_bit6" Value=" "/>
+          <Text TextId="s_output_1_1_bit7" Value=" "/>
+          <Text TextId="s_output_1_2_byte_unit" Value="Reserved"/>
+          <Text TextId="s_output_1_2_bit0" Value=" "/>
+          <Text TextId="s_output_1_2_bit1" Value=" "/>
+          <Text TextId="s_output_1_2_bit2" Value=" "/>
+          <Text TextId="s_output_1_2_bit3" Value=" "/>
+          <Text TextId="s_output_1_2_bit4" Value=" "/>
+          <Text TextId="s_output_1_2_bit5" Value=" "/>
+          <Text TextId="s_output_1_2_bit6" Value=" "/>
+          <Text TextId="s_output_1_2_bit7" Value=" "/>
+          <Text TextId="s_output_1_3_byte_unit" Value="Reserved"/>
+          <Text TextId="s_output_1_3_bit0" Value=" "/>
+          <Text TextId="s_output_1_3_bit1" Value=" "/>
+          <Text TextId="s_output_1_3_bit2" Value=" "/>
+          <Text TextId="s_output_1_3_bit3" Value=" "/>
+          <Text TextId="s_output_1_3_bit4" Value=" "/>
+          <Text TextId="s_output_1_3_bit5" Value=" "/>
+          <Text TextId="s_output_1_3_bit6" Value=" "/>
+          <Text TextId="s_output_1_3_bit7" Value=" "/>
+
+          <!-- 203 -->
+          <Text TextId="s_module_output_203" Value="Request Completion Clear"/>
+          <Text TextId="s_module_output_203_info" Value="Request of Completion Clear"/>
+          <Text TextId="s_output_2_0_byte_unit" Value="General Request Completion Clear"/>
+          <Text TextId="s_output_2_0_bit0" Value="Print Conmplete Clear Bit"/>
+          <Text TextId="s_output_2_0_bit1" Value="Guide Print Conmplete Clear Bit"/>
+          <Text TextId="s_output_2_0_bit2" Value="Print Stop Conmplete Clear Bit"/>
+          <Text TextId="s_output_2_0_bit3" Value="Error Clear Conmplete Clear Bit"/>
+          <Text TextId="s_output_2_0_bit4" Value="2D Code Read Conmplete Clear Bit"/>
+          <Text TextId="s_output_2_0_bit5" Value="Window Maintenance Complete Clear Bit"/>
+          <Text TextId="s_output_2_0_bit6" Value=" "/>
+          <Text TextId="s_output_2_0_bit7" Value=" "/>
+          <Text TextId="s_output_2_1_byte_unit" Value="Edit Request Completion Clear"/>
+          <Text TextId="s_output_2_1_bit0" Value="Edit Complete Clear Bit"/>
+          <Text TextId="s_output_2_1_bit1" Value=" "/>
+          <Text TextId="s_output_2_1_bit2" Value=" "/>
+          <Text TextId="s_output_2_1_bit3" Value=" "/>
+          <Text TextId="s_output_2_1_bit4" Value=" "/>
+          <Text TextId="s_output_2_1_bit5" Value=" "/>
+          <Text TextId="s_output_2_1_bit6" Value=" "/>
+          <Text TextId="s_output_2_1_bit7" Value=" "/>
+          <Text TextId="s_output_2_2_byte_unit" Value="Operation Request Completion Clear"/>
+          <Text TextId="s_output_2_2_bit0" Value="Job Change Complete Clear Bit"/>
+          <Text TextId="s_output_2_2_bit1" Value="Rank Value Change Complete Clear Bit"/>
+          <Text TextId="s_output_2_2_bit2" Value="Counter Number Change Complete Clear Bit"/>
+          <Text TextId="s_output_2_2_bit3" Value="Counter Value Change Complete Clear Bit"/>
+          <Text TextId="s_output_2_2_bit4" Value="Counter Up Complete Clear Bit"/>
+          <Text TextId="s_output_2_2_bit5" Value="Counter Down Complete Clear Bit"/>
+          <Text TextId="s_output_2_2_bit6" Value="Counter Reset Complete Clear Bit"/>
+          <Text TextId="s_output_2_2_bit7" Value=" "/>
+          <Text TextId="s_output_2_3_byte_unit" Value="Reserved"/>
+          <Text TextId="s_output_2_3_bit0" Value="System Info ID Change Complete Clear Bit"/>
+          <Text TextId="s_output_2_3_bit1" Value=" "/>
+          <Text TextId="s_output_2_3_bit2" Value=" "/>
+          <Text TextId="s_output_2_3_bit3" Value=" "/>
+          <Text TextId="s_output_2_3_bit4" Value=" "/>
+          <Text TextId="s_output_2_3_bit5" Value=" "/>
+          <Text TextId="s_output_2_3_bit6" Value=" "/>
+          <Text TextId="s_output_2_3_bit7" Value=" "/>
+          <Text TextId="s_output_2_4_byte_unit" Value="Block Edit Request Completion Clear"/>
+          <Text TextId="s_output_2_4_bit0" Value="Character String (Setting) Read Complete Clear Bit"/>
+          <Text TextId="s_output_2_4_bit1" Value="Character String (Printed) Read Complete Clear Bit"/>
+          <Text TextId="s_output_2_4_bit2" Value="Character String Change Complete Clear Bit"/>
+          <Text TextId="s_output_2_4_bit3" Value=" "/>
+          <Text TextId="s_output_2_4_bit4" Value=" "/>
+          <Text TextId="s_output_2_4_bit5" Value=" "/>
+          <Text TextId="s_output_2_4_bit6" Value=" "/>
+          <Text TextId="s_output_2_4_bit7" Value=" "/>
+          <Text TextId="s_output_2_5_byte_unit" Value="Reserved"/>
+          <Text TextId="s_output_2_5_bit0" Value=" "/>
+          <Text TextId="s_output_2_5_bit1" Value=" "/>
+          <Text TextId="s_output_2_5_bit2" Value=" "/>
+          <Text TextId="s_output_2_5_bit3" Value=" "/>
+          <Text TextId="s_output_2_5_bit4" Value=" "/>
+          <Text TextId="s_output_2_5_bit5" Value=" "/>
+          <Text TextId="s_output_2_5_bit6" Value=" "/>
+          <Text TextId="s_output_2_5_bit7" Value=" "/>
+          <Text TextId="s_output_2_6_byte_unit" Value="Reserved"/>
+          <Text TextId="s_output_2_6_bit0" Value=" "/>
+          <Text TextId="s_output_2_6_bit1" Value=" "/>
+          <Text TextId="s_output_2_6_bit2" Value=" "/>
+          <Text TextId="s_output_2_6_bit3" Value=" "/>
+          <Text TextId="s_output_2_6_bit4" Value=" "/>
+          <Text TextId="s_output_2_6_bit5" Value=" "/>
+          <Text TextId="s_output_2_6_bit6" Value=" "/>
+          <Text TextId="s_output_2_6_bit7" Value=" "/>
+          <Text TextId="s_output_2_7_byte_unit" Value="Command Request Completion Clear"/>
+          <Text TextId="s_output_2_7_bit0" Value="Command Request Complete Clear Bit"/>
+          <Text TextId="s_output_2_7_bit1" Value="3-axis Tracking Result Read Complete Clear Bit"/>
+          <Text TextId="s_output_2_7_bit2" Value=" "/>
+          <Text TextId="s_output_2_7_bit3" Value=" "/>
+          <Text TextId="s_output_2_7_bit4" Value=" "/>
+          <Text TextId="s_output_2_7_bit5" Value=" "/>
+          <Text TextId="s_output_2_7_bit6" Value=" "/>
+          <Text TextId="s_output_2_7_bit7" Value=" "/>
+
+          <!-- 204 -->
+          <Text TextId="s_module_output_204" Value="Request Parameter"/>
+          <Text TextId="s_module_output_204_info" Value="Parameter of Request command"/>
+          
+          
+          <Text TextId="s_user_data_parameter" Value="parameter"/>
+
+          <!-- 205 -->
+          <Text TextId="s_module_output_205" Value="Request Data 32byte"/>
+          <Text TextId="s_module_output_205_info" Value="Request Parameters for String Data 32byte"/>
+
+          <!-- 206 -->
+          <Text TextId="s_module_output_206" Value="Request Data 64byte"/>
+          <Text TextId="s_module_output_206_info" Value="Request Parameters for String Data 64byte"/>
+
+          <!-- 207 -->
+          <Text TextId="s_module_output_207" Value="Request Data 128byte"/>
+          <Text TextId="s_module_output_207_info" Value="Request Parameters for String Data 128byte"/>
+
+          <!-- 208 -->
+          <Text TextId="s_module_output_208" Value="Request Data 252byte"/>
+          <Text TextId="s_module_output_208_info" Value="Request Parameters for String Data 252byte"/>
+
+          <Text TextId="s_user_data_size" Value="User Data Size"/>
+          <Text TextId="s_user_data" Value="User Data"/>
+
+          <!-- Common -->
+
+          <Text TextId="s_reserved" Value="Reserved"/>
+
+          <Text TextId="s_status_modules" Value="Status Modules"/>
+          <Text TextId="s_control_modules" Value="Control Modules"/>
+        </PrimaryLanguage>
+      </ExternalTextList>
+    </ApplicationProcess>
+  </ProfileBody>
+</ISO15745Profile>

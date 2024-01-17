@@ -1,0 +1,46 @@
+TYPE
+	HwOutputs : STRUCT
+		AS10DES1_Output_1_byte_1 AT %B5300 : BYTE;
+		AS10DES1_Output_1_byte_2 AT %B5301 : BYTE;
+		AS10DES2_Output_1_byte_1 AT %B5304 : BYTE;
+		AS10DES2_Output_1_byte_2 AT %B5305 : BYTE;
+		CPX_PneuOst_AS10_MPA1S_VMPA1_FB_EMS_8_8DO_12 AT %B170 : BYTE;
+		CPX_PneuOst_AS10_MPA1S_VMPA1_FB_EMS_8_8DO_1 AT %B135 : BYTE;
+		CPX_PneuOst_AS10_MPA1S_VMPA1_FB_EMS_8_8DO_2 AT %B136 : BYTE;
+		CPX_PneuOst_AS10_MPA1S_VMPA1_FB_EMS_8_8DO_3 AT %B137 : BYTE;
+		CPX_PneuOst_AS10_MPA1S_VMPA1_FB_EMS_8_8DO_4 AT %B138 : BYTE;
+		CPX_PneuOst_AS10_MPA1S_VMPA1_FB_EMS_8_8DO_5 AT %B139 : BYTE;
+		CPX_PneuOst_AS10_MPA1G_VMPA1_FB_EMG_8_8DO_1 AT %B140 : BYTE;
+		CPX_PneuOst_AS10_MPA1G_VMPA1_FB_EMG_8_8DO_2 AT %B141 : BYTE;
+		CPX_PneuOst_AS10_MPA1G_VMPA1_FB_EMG_8_8DO_3 AT %B142 : BYTE;
+		CPX_PneuOst_AS10_MPA1G_VMPA1_FB_EMG_8_8DO_4 AT %B143 : BYTE;
+		CPX_PneuOst_AS10_MPA1G_VMPA1_FB_EMG_8_8DO_5 AT %B144 : BYTE;
+		CPX_PneuOst_AS10_MPA1G_VMPA1_FB_EMG_8_8DO_6 AT %B145 : BYTE;
+		CPX_PneuOst_AS10_MPA1G_VMPA1_FB_EMG_8_8DO_7 AT %B171 : BYTE;
+		AS10DES11_Output_1_byte_1 AT %B5302 : BYTE;
+		AS10DES11_Output_1_byte_2 AT %B5303 : BYTE;
+		_6A2_AS10_6A5 AT %B146 : WORD;
+		_6A2_AS10_6A13 AT %B189 : ARRAY[0..31] OF BYTE;
+		_6A2_AS10_6A13_1 AT %B811 : ARRAY[0..31] OF BYTE;
+		_6A2_AS10_6A20 AT %B148 : DWORD;
+		AS10DES3_Output_1_byte_1 AT %B5306 : BYTE;
+		AS10DES3_Output_1_byte_2 AT %B5307 : BYTE;
+		HousingReader_AS10_Latch_and_Error_Clear_Control_Bits_1 AT %B0 : BYTE;
+		HousingReader_AS10_Operation_instruction_Control_Bits_1 AT %B1 : BYTE;
+		HousingReader_AS10_Completion_Clear_Control_Bits_1 AT %B2 : BYTE;
+		HousingReader_AS10_Parameter_Bank_Number_1 AT %B3 : WORD;
+		HousingReader_AS10_User_Data_128Byte_1 AT %B5 : ARRAY[0..129] OF BYTE;
+		AS10flashing_Out_64_Byte_1 AT %B523 : ARRAY[0..63] OF BYTE;
+		AS10Cam_Command_and_Result_Control_1 AT %B152 : BYTE;
+		AS10Cam_Trg_Control_1 AT %B153 : BYTE;
+		AS10Cam_Miscellaneous_Control_1 AT %B154 : BYTE;
+		AS10Cam_Reserved_Control_1 AT %B155 : BYTE;
+		AS10Cam_Reserved_Control_2 AT %B156 : ARRAY[0..7] OF BYTE;
+		AS10Cam_Parameter_128Byte_1 AT %B221 : ARRAY[0..127] OF BYTE;
+		AS10Cam_Parameter_32Byte_1 AT %B349 : ARRAY[0..31] OF BYTE;
+		AS10Cam_Parameter_32Byte_2 AT %B381 : ARRAY[0..31] OF BYTE;
+		AS10Cam_Parameter_32Byte_3 AT %B413 : ARRAY[0..31] OF BYTE;
+		AS10Cam_Parameter_32Byte_4 AT %B445 : ARRAY[0..31] OF BYTE;
+		AS10Cam_Parameter_32Byte_5 AT %B477 : ARRAY[0..31] OF BYTE;
+	END_STRUCT;
+END_TYPE

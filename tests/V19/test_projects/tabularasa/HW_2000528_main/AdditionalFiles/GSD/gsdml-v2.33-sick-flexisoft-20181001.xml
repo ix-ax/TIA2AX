@@ -1,0 +1,2084 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-V2.33.xsd">
+
+  <!-- ProfileHeader Definition as defined in ISO15745-1. Please do not change the content. -->
+  <ProfileHeader>
+    <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+    <ProfileRevision>1.00</ProfileRevision>
+    <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+    <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+    <ProfileClassID>Device</ProfileClassID>
+    <ISO15745Reference>
+      <ISO15745Part>4</ISO15745Part>
+      <ISO15745Edition>1</ISO15745Edition>
+      <ProfileTechnology>GSDML</ProfileTechnology>
+    </ISO15745Reference>
+  </ProfileHeader>
+
+  <ProfileBody>
+    <DeviceIdentity VendorID="0x0101" DeviceID="0x2302">
+      <InfoText TextId="T_DevDescription" />
+      <VendorName Value="SICK AG" />
+    </DeviceIdentity>
+    <DeviceFunction>
+      <Family MainFamily="Gateway" ProductFamily="FlexiSoft" />
+    </DeviceFunction>
+    <ApplicationProcess>
+      <DeviceAccessPointList>
+		<!--  DAP1: FX0-GPNT -->
+        <DeviceAccessPointItem ID="FX0-GPNT V2" PhysicalSlots="0..10" ModuleIdentNumber="0xA0000000"
+                               MinDeviceInterval="2048" ImplementationType="FX0-GPNT"
+                               DNS_CompatibleName="fx0-gpnt" AddressAssignment="DCP;LOCAL"
+                               FixedInSlots="0" ObjectUUID_LocalIndex="1" RequiredSchemaVersion="V2.25"
+                               DeviceAccessSupported="true" NumberOfDeviceAccessAR="1" CheckDeviceID_Allowed="true" PNIO_Version="V2.0"
+                               NameOfStationNotTransferable="false" MultipleWriteSupported="false"
+                               SharedDeviceSupported="true" ParameterizationSpeedupSupported="false"
+                               ResetToFactoryModes="2" >
+          <ModuleInfo>
+            <Name TextId="T_DevType1" />
+            <InfoText TextId="T_DevDescription" />
+            <VendorName Value="SICK AG" />
+            <OrderNumber Value="1044074" />
+            <HardwareRelease Value="V1.0" />
+            <SoftwareRelease Value="V2.12.00" />
+          </ModuleInfo>
+          <SubslotList>
+            <SubslotItem SubslotNumber="32768" TextId="T_SS_Interface" />
+            <SubslotItem SubslotNumber="32769" TextId="T_SS_Port1" />
+            <SubslotItem SubslotNumber="32770" TextId="T_SS_Port2" />
+          </SubslotList>
+          <IOConfigData MaxInputLength="128" MaxOutputLength="128" />
+          <UseableModules>
+            <!--References to the ModuleList-->
+            <ModuleItemRef ModuleItemTarget="1" UsedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="2" UsedInSlots="2" />
+            <ModuleItemRef ModuleItemTarget="3" UsedInSlots="3" />
+            <ModuleItemRef ModuleItemTarget="4" UsedInSlots="4" />
+            <ModuleItemRef ModuleItemTarget="5" UsedInSlots="5" />
+            <ModuleItemRef ModuleItemTarget="6" UsedInSlots="6" />
+            <ModuleItemRef ModuleItemTarget="7" UsedInSlots="7" />
+            <ModuleItemRef ModuleItemTarget="8" UsedInSlots="8" />
+            <ModuleItemRef ModuleItemTarget="9" UsedInSlots="9" />
+            <ModuleItemRef ModuleItemTarget="10" UsedInSlots="10" />
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="FX0-GPNT V2" SubmoduleIdentNumber="0x00000000" Writeable_IM_Records="1 2 3 4" MayIssueProcessAlarm="false">
+              <IOData/>
+              <ModuleInfo>
+                <Name TextId="T_DevType1" />
+                <InfoText TextId="T_DevDescription" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem ID="IDS_FX0-GPNT_I" SupportedRT_Classes="RT_CLASS_1" SupportedProtocols="SNMP;LLDP"
+                                    SubslotNumber="32768" TextId="T_DevType1" SubmoduleIdentNumber="0x00000001" >
+              <ApplicationRelations NumberOfAR="2" StartupMode="Legacy" NumberOfAdditionalInputCR="0" 
+                                    NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" 
+                                    NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="true">
+                <TimingProperties SendClock="32" ReductionRatio="1 2 4 8 16 32 64 128 256 512" />
+              </ApplicationRelations>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem ID="IDS_FX0-GPNT_P1" SubslotNumber="32769" TextId="T_Port1" SubmoduleIdentNumber="0x00000002">
+            <MAUTypeList>
+              <MAUTypeItem Value="16"/>
+            </MAUTypeList>
+			</PortSubmoduleItem>
+            <PortSubmoduleItem ID="IDS_FX0-GPNT_P2" SubslotNumber="32770" TextId="T_Port2" SubmoduleIdentNumber="0x00000002">
+            <MAUTypeList>
+              <MAUTypeItem Value="16"/>
+            </MAUTypeList>
+			</PortSubmoduleItem>
+          </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="ID_GPNT_SYM" />
+          </Graphics>
+        </DeviceAccessPointItem>
+            
+		<!--  DAP2: FX0-GPNT -->
+        <DeviceAccessPointItem ID="FX0-GPNT V3" PhysicalSlots="0..10" ModuleIdentNumber="0xB0000000"
+                               MinDeviceInterval="128" ImplementationType="FX0-GPNT"
+                               DNS_CompatibleName="fx0-gpnt" AddressAssignment="DCP;LOCAL"
+                               FixedInSlots="0" LLDP_NoD_Supported="true" 
+							   ObjectUUID_LocalIndex="1" RequiredSchemaVersion="V2.31"
+                               DeviceAccessSupported="true" NumberOfDeviceAccessAR="1" CheckDeviceID_Allowed="true" PNIO_Version="V2.33"
+                               NameOfStationNotTransferable="false" MultipleWriteSupported="true"
+                               SharedDeviceSupported="true" ParameterizationSpeedupSupported="false"
+                               ResetToFactoryModes="2" >
+          <ModuleInfo>
+            <Name TextId="T_DevType2" />
+            <InfoText TextId="T_DevDescription" />
+            <VendorName Value="SICK AG" />
+            <OrderNumber Value="1044074" />
+            <HardwareRelease Value="V2.0" />
+            <SoftwareRelease Value="V3.04.00" />
+          </ModuleInfo>
+		  <CertificationInfo ConformanceClass="B" NetloadClass="I" ApplicationClass=""></CertificationInfo>
+          <SubslotList>
+            <SubslotItem SubslotNumber="32768" TextId="T_SS_Interface" />
+            <SubslotItem SubslotNumber="32769" TextId="T_SS_Port1" />
+            <SubslotItem SubslotNumber="32770" TextId="T_SS_Port2" />
+          </SubslotList>
+          <IOConfigData MaxInputLength="128" MaxOutputLength="128" />
+          <UseableModules>
+            <!--References to the ModuleList-->
+            <ModuleItemRef ModuleItemTarget="11" UsedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="12" UsedInSlots="2" />
+            <ModuleItemRef ModuleItemTarget="13" UsedInSlots="3" />
+            <ModuleItemRef ModuleItemTarget="14" UsedInSlots="4" />
+            <ModuleItemRef ModuleItemTarget="15" UsedInSlots="5" />
+            <ModuleItemRef ModuleItemTarget="16" UsedInSlots="6" />
+            <ModuleItemRef ModuleItemTarget="17" UsedInSlots="7" />
+            <ModuleItemRef ModuleItemTarget="18" UsedInSlots="8" />
+            <ModuleItemRef ModuleItemTarget="19" UsedInSlots="9" />
+            <ModuleItemRef ModuleItemTarget="20" UsedInSlots="10" />
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="FX0-GPNT V3" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3" MayIssueProcessAlarm="false">
+              <IOData/>
+              <ModuleInfo>
+                <Name TextId="T_DevType2" />
+                <InfoText TextId="T_DevDescription" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem ID="IDS_FX0-GPNT_II" SupportedRT_Classes="RT_CLASS_1" SupportedProtocols="SNMP;LLDP"
+                                    DCP_BoundarySupported="true" PTP_BoundarySupported="true" SubslotNumber="32768" TextId="T_DevType2" SubmoduleIdentNumber="0x00000002" >
+              <ApplicationRelations NumberOfAR="2" StartupMode="Legacy;Advanced" NumberOfAdditionalInputCR="0" 
+                                    NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" 
+                                    NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="true">
+                <TimingProperties SendClock="32" ReductionRatio="1 2 4 8 16 32 64 128 256 512" />
+              </ApplicationRelations>
+			  <MediaRedundancy SupportedRole="Client" AdditionalProtocolsSupported="false" MaxMRP_Instances="1" MRPD_Supported="false"
+                MRT_Supported="false"></MediaRedundancy> <!-- Using MaxMRP_Instances forces the IO-Controller to issue PDxxxMRPDatayyy
+                in V1.1 instead of V1.0! -->
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem ID="IDS_FX0-GPNT_P3" SubslotNumber="32769" TextId="T_Port1" SubmoduleIdentNumber="0x00000003"
+			IsDefaultRingport="true" SupportsRingportConfig="false">
+            <MAUTypeList>
+              <MAUTypeItem Value="16"/>
+            </MAUTypeList>
+			</PortSubmoduleItem>
+            <PortSubmoduleItem ID="IDS_FX0-GPNT_P4" SubslotNumber="32770" TextId="T_Port2" SubmoduleIdentNumber="0x00000003"
+			IsDefaultRingport="true" SupportsRingportConfig="false">
+            <MAUTypeList>
+              <MAUTypeItem Value="16"/>
+            </MAUTypeList>
+			</PortSubmoduleItem>
+          </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="ID_GPNT_SYM" />
+          </Graphics>
+        </DeviceAccessPointItem>
+      </DeviceAccessPointList>
+
+      <ModuleList>
+        <!--Input modules DAP V2-->
+        <ModuleItem ID="1" ModuleIdentNumber="0x00000001">
+          <ModuleInfo CategoryRef="Gateway_V2" SubCategory1Ref="InputsModule_V2">
+            <Name TextId="T_InputsModuleName1" />
+            <InfoText TextId="T_InputsModuleInfo1" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString" Length="12" TextId="T_INPUT_DATA_BYTES" />
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_InputsModuleName1" />
+                <InfoText TextId="T_InputsModuleInfo1" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="2" ModuleIdentNumber="0x00000002">
+          <ModuleInfo CategoryRef="Gateway_V2" SubCategory1Ref="InputsModule_V2">
+            <Name TextId="T_InputsModuleName2" />
+            <InfoText TextId="T_InputsModuleInfo2" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="2" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString" Length="12" TextId="T_INPUT_DATA_BYTES" />
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_InputsModuleName2" />
+                <InfoText TextId="T_InputsModuleInfo2" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="3" ModuleIdentNumber="0x00000003">
+          <ModuleInfo CategoryRef="Gateway_V2" SubCategory1Ref="InputsModule_V2">
+            <Name TextId="T_InputsModuleName3" />
+            <InfoText TextId="T_InputsModuleInfo3" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="3" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString" Length="12" TextId="T_INPUT_DATA_BYTES" />
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_InputsModuleName3" />
+                <InfoText TextId="T_InputsModuleInfo3" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="4" ModuleIdentNumber="0x00000004">
+          <ModuleInfo CategoryRef="Gateway_V2" SubCategory1Ref="InputsModule_V2">
+            <Name TextId="T_InputsModuleName4" />
+            <InfoText TextId="T_InputsModuleInfo4" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="4" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString" Length="12" TextId="T_INPUT_DATA_BYTES" />
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_InputsModuleName4" />
+                <InfoText TextId="T_InputsModuleInfo4" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="5" ModuleIdentNumber="0x00000005">
+          <ModuleInfo CategoryRef="Gateway_V2" SubCategory1Ref="InputsModule_V2">
+            <Name TextId="T_InputsModuleName5" />
+            <InfoText TextId="T_InputsModuleInfo5" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="5" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString" Length="2" TextId="T_INPUT_DATA_BYTES" />
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_InputsModuleName5" />
+                <InfoText TextId="T_InputsModuleInfo5" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+	    <!--Output modules DAP V2-->
+        <ModuleItem ID="6" ModuleIdentNumber="0x00000006">
+          <ModuleInfo CategoryRef="Gateway_V2" SubCategory1Ref="OutputsModule_V2">
+            <Name TextId="T_OutputsModuleName1" />
+            <InfoText TextId="T_OutputsModuleInfo1" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="6" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="false">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString" Length="10" TextId="T_OUTPUT_DATA_BYTES" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_OutputsModuleName1" />
+                <InfoText TextId="T_OutputsModuleInfo1" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="7" ModuleIdentNumber="0x00000007">
+          <ModuleInfo CategoryRef="Gateway_V2" SubCategory1Ref="OutputsModule_V2">
+            <Name TextId="T_OutputsModuleName2" />
+            <InfoText TextId="T_OutputsModuleInfo2" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="7" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="false">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString" Length="10" TextId="T_OUTPUT_DATA_BYTES" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_OutputsModuleName2" />
+                <InfoText TextId="T_OutputsModuleInfo2" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="8" ModuleIdentNumber="0x00000008">
+          <ModuleInfo CategoryRef="Gateway_V2" SubCategory1Ref="OutputsModule_V2">
+            <Name TextId="T_OutputsModuleName3" />
+            <InfoText TextId="T_OutputsModuleInfo3" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="8" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="false">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString" Length="10" TextId="T_OUTPUT_DATA_BYTES" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_OutputsModuleName3" />
+                <InfoText TextId="T_OutputsModuleInfo3" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="9" ModuleIdentNumber="0x00000009">
+          <ModuleInfo CategoryRef="Gateway_V2" SubCategory1Ref="OutputsModule_V2">
+            <Name TextId="T_OutputsModuleName4" />
+            <InfoText TextId="T_OutputsModuleInfo4" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="9" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="false">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString" Length="10" TextId="T_OUTPUT_DATA_BYTES" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_OutputsModuleName4" />
+                <InfoText TextId="T_OutputsModuleInfo4" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="10" ModuleIdentNumber="0x0000000A">
+          <ModuleInfo CategoryRef="Gateway_V2" SubCategory1Ref="OutputsModule_V2">
+            <Name TextId="T_OutputsModuleName5" />
+            <InfoText TextId="T_OutputsModuleInfo5" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="10" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="false">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString" Length="10" TextId="T_OUTPUT_DATA_BYTES" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_OutputsModuleName5" />
+                <InfoText TextId="T_OutputsModuleInfo5" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+		<!--Input modules DAP V3-->
+        <ModuleItem ID="11" ModuleIdentNumber="0x00000011">
+          <ModuleInfo CategoryRef="Gateway_V3" SubCategory1Ref="InputsModule_V3">
+            <Name TextId="T_InputsModuleName11" />
+            <InfoText TextId="T_InputsModuleInfo11" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="11" SubmoduleIdentNumber="0x00000001" MayIssueProcessAlarm="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString" Length="12" TextId="T_INPUT_DATA_BYTES" />
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_InputsModuleName11" />
+                <InfoText TextId="T_InputsModuleInfo11" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="12" ModuleIdentNumber="0x00000012">
+          <ModuleInfo CategoryRef="Gateway_V3" SubCategory1Ref="InputsModule_V3">
+            <Name TextId="T_InputsModuleName12" />
+            <InfoText TextId="T_InputsModuleInfo12" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="12" SubmoduleIdentNumber="0x00000001" MayIssueProcessAlarm="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString" Length="12" TextId="T_INPUT_DATA_BYTES" />
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_InputsModuleName12" />
+                <InfoText TextId="T_InputsModuleInfo12" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="13" ModuleIdentNumber="0x00000013">
+          <ModuleInfo CategoryRef="Gateway_V3" SubCategory1Ref="InputsModule_V3">
+            <Name TextId="T_InputsModuleName13" />
+            <InfoText TextId="T_InputsModuleInfo13" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="13" SubmoduleIdentNumber="0x00000001" MayIssueProcessAlarm="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString" Length="12" TextId="T_INPUT_DATA_BYTES" />
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_InputsModuleName13" />
+                <InfoText TextId="T_InputsModuleInfo13" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="14" ModuleIdentNumber="0x00000014">
+          <ModuleInfo CategoryRef="Gateway_V3" SubCategory1Ref="InputsModule_V3">
+            <Name TextId="T_InputsModuleName14" />
+            <InfoText TextId="T_InputsModuleInfo14" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="14" SubmoduleIdentNumber="0x00000001" MayIssueProcessAlarm="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString" Length="12" TextId="T_INPUT_DATA_BYTES" />
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_InputsModuleName14" />
+                <InfoText TextId="T_InputsModuleInfo14" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="15" ModuleIdentNumber="0x00000015">
+          <ModuleInfo CategoryRef="Gateway_V3" SubCategory1Ref="InputsModule_V3">
+            <Name TextId="T_InputsModuleName15" />
+            <InfoText TextId="T_InputsModuleInfo15" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="15" SubmoduleIdentNumber="0x00000001" MayIssueProcessAlarm="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString" Length="2" TextId="T_INPUT_DATA_BYTES" />
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_InputsModuleName15" />
+                <InfoText TextId="T_InputsModuleInfo15" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <!--Output modules DAP V3-->
+        <ModuleItem ID="16" ModuleIdentNumber="0x00000016">
+          <ModuleInfo CategoryRef="Gateway_V3" SubCategory1Ref="OutputsModule_V3">
+            <Name TextId="T_OutputsModuleName11" />
+            <InfoText TextId="T_OutputsModuleInfo11" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="16" SubmoduleIdentNumber="0x00000001" MayIssueProcessAlarm="false">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString" Length="10" TextId="T_OUTPUT_DATA_BYTES" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_OutputsModuleName11" />
+                <InfoText TextId="T_OutputsModuleInfo11" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="17" ModuleIdentNumber="0x00000017">
+          <ModuleInfo CategoryRef="Gateway_V3" SubCategory1Ref="OutputsModule_V3">
+            <Name TextId="T_OutputsModuleName12" />
+            <InfoText TextId="T_OutputsModuleInfo12" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="17" SubmoduleIdentNumber="0x00000001" MayIssueProcessAlarm="false">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString" Length="10" TextId="T_OUTPUT_DATA_BYTES" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_OutputsModuleName12" />
+                <InfoText TextId="T_OutputsModuleInfo12" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="18" ModuleIdentNumber="0x00000018">
+          <ModuleInfo CategoryRef="Gateway_V3" SubCategory1Ref="OutputsModule_V3">
+            <Name TextId="T_OutputsModuleName13" />
+            <InfoText TextId="T_OutputsModuleInfo13" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="18" SubmoduleIdentNumber="0x00000001" MayIssueProcessAlarm="false">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString" Length="10" TextId="T_OUTPUT_DATA_BYTES" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_OutputsModuleName13" />
+                <InfoText TextId="T_OutputsModuleInfo13" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="19" ModuleIdentNumber="0x00000019">
+          <ModuleInfo CategoryRef="Gateway_V3" SubCategory1Ref="OutputsModule_V3">
+            <Name TextId="T_OutputsModuleName14" />
+            <InfoText TextId="T_OutputsModuleInfo14" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="19" SubmoduleIdentNumber="0x00000001" MayIssueProcessAlarm="false">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString" Length="10" TextId="T_OUTPUT_DATA_BYTES" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_OutputsModuleName14" />
+                <InfoText TextId="T_OutputsModuleInfo14" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="20" ModuleIdentNumber="0x0000001A">
+          <ModuleInfo CategoryRef="Gateway_V3" SubCategory1Ref="OutputsModule_V3">
+            <Name TextId="T_OutputsModuleName15" />
+            <InfoText TextId="T_OutputsModuleInfo15" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="20" SubmoduleIdentNumber="0x00000001" MayIssueProcessAlarm="false">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString" Length="10" TextId="T_OUTPUT_DATA_BYTES" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="T_OutputsModuleName15" />
+                <InfoText TextId="T_OutputsModuleInfo15" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+      </ModuleList>
+      <!-- here are placed the diagnosis text messages -->
+      <ChannelDiagList>
+        <ChannelDiagItem ErrorType="0101">
+          <Name TextId="T_ErrText0101" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0102">
+          <Name TextId="T_ErrText0102" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0104">
+          <Name TextId="T_ErrText0104" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0105">
+          <Name TextId="T_ErrText0105" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0106">
+          <Name TextId="T_ErrText0106" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0107">
+          <Name TextId="T_ErrText0107" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0201">
+          <Name TextId="T_ErrText0201" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0203">
+          <Name TextId="T_ErrText0203" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0204">
+          <Name TextId="T_ErrText0204" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0205">
+          <Name TextId="T_ErrText0205" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0208">
+          <Name TextId="T_ErrText0208" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0209">
+          <Name TextId="T_ErrText0209" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0210">
+          <Name TextId="T_ErrText0210" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0211">
+          <Name TextId="T_ErrText0211" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0212">
+          <Name TextId="T_ErrText0212" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0213">
+          <Name TextId="T_ErrText0213" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0214">
+          <Name TextId="T_ErrText0214" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0215">
+          <Name TextId="T_ErrText0215" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0216">
+          <Name TextId="T_ErrText0216" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0217">
+          <Name TextId="T_ErrText0217" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0218">
+          <Name TextId="T_ErrText0218" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0219">
+          <Name TextId="T_ErrText0219" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0220">
+          <Name TextId="T_ErrText0220" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0221">
+          <Name TextId="T_ErrText0221" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0222">
+          <Name TextId="T_ErrText0222" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0223">
+          <Name TextId="T_ErrText0223" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0224">
+          <Name TextId="T_ErrText0224" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0225">
+          <Name TextId="T_ErrText0225" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0226">
+          <Name TextId="T_ErrText0226" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0227">
+          <Name TextId="T_ErrText0227" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0228">
+          <Name TextId="T_ErrText0228" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0229">
+          <Name TextId="T_ErrText0229" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0230">
+          <Name TextId="T_ErrText0230" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0231">
+          <Name TextId="T_ErrText0231" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0301">
+          <Name TextId="T_ErrText0301" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0304">
+          <Name TextId="T_ErrText0304" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0401">
+          <Name TextId="T_ErrText0401" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0404">
+          <Name TextId="T_ErrText0404" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0501">
+          <Name TextId="T_ErrText0501" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0504">
+          <Name TextId="T_ErrText0504" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0601">
+          <Name TextId="T_ErrText0601" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0604">
+          <Name TextId="T_ErrText0604" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0701">
+          <Name TextId="T_ErrText0701" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0704">
+          <Name TextId="T_ErrText0704" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0801">
+          <Name TextId="T_ErrText0801" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0804">
+          <Name TextId="T_ErrText0804" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0901">
+          <Name TextId="T_ErrText0901" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="0904">
+          <Name TextId="T_ErrText0904" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="1001">
+          <Name TextId="T_ErrText1001" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="1004">
+          <Name TextId="T_ErrText1004" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="1101">
+          <Name TextId="T_ErrText1101" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="1104">
+          <Name TextId="T_ErrText1104" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="1201">
+          <Name TextId="T_ErrText1201" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="1204">
+          <Name TextId="T_ErrText1204" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="1301">
+          <Name TextId="T_ErrText1301" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="1304">
+          <Name TextId="T_ErrText1304" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="1401">
+          <Name TextId="T_ErrText1401" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="1404">
+          <Name TextId="T_ErrText1404" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="1501">
+          <Name TextId="T_ErrText1501" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="1504">
+          <Name TextId="T_ErrText1504" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="1601">
+          <Name TextId="T_ErrText1601" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="1604">
+          <Name TextId="T_ErrText1604" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="1701">
+          <Name TextId="T_ErrText1701" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="1704">
+          <Name TextId="T_ErrText1704" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="1801">
+          <Name TextId="T_ErrText1801" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="1804">
+          <Name TextId="T_ErrText1804" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="1901">
+          <Name TextId="T_ErrText1901" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="1904">
+          <Name TextId="T_ErrText1904" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="2001">
+          <Name TextId="T_ErrText2001" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="2004">
+          <Name TextId="T_ErrText2004" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="2101">
+          <Name TextId="T_ErrText2101" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="2104">
+          <Name TextId="T_ErrText2104" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="2201">
+          <Name TextId="T_ErrText2201" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="2204">
+          <Name TextId="T_ErrText2204" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="2301">
+          <Name TextId="T_ErrText2301" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="2304">
+          <Name TextId="T_ErrText2304" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="2401">
+          <Name TextId="T_ErrText2401" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="2404">
+          <Name TextId="T_ErrText2404" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="2501">
+          <Name TextId="T_ErrText2501" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="2504">
+          <Name TextId="T_ErrText2504" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="2601">
+          <Name TextId="T_ErrText2601" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="2604">
+          <Name TextId="T_ErrText2604" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="2701">
+          <Name TextId="T_ErrText2701" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="2704">
+          <Name TextId="T_ErrText2704" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="2801">
+          <Name TextId="T_ErrText2801" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="2804">
+          <Name TextId="T_ErrText2804" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="2901">
+          <Name TextId="T_ErrText2901" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="2904">
+          <Name TextId="T_ErrText2904" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3001">
+          <Name TextId="T_ErrText3001" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3004">
+          <Name TextId="T_ErrText3004" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3101">
+          <Name TextId="T_ErrText3101" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3104">
+          <Name TextId="T_ErrText3104" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3201">
+          <Name TextId="T_ErrText3201" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3204">
+          <Name TextId="T_ErrText3204" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3205">
+          <Name TextId="T_ErrText3205" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3207">
+          <Name TextId="T_ErrText3207" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3301">
+          <Name TextId="T_ErrText3301" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3302">
+          <Name TextId="T_ErrText3302" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3304">
+          <Name TextId="T_ErrText3304" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3306">
+          <Name TextId="T_ErrText3306" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3307">
+          <Name TextId="T_ErrText3307" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3308">
+          <Name TextId="T_ErrText3308" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3309">
+          <Name TextId="T_ErrText3309" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3312">
+          <Name TextId="T_ErrText3312" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3313">
+          <Name TextId="T_ErrText3313" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3314">
+          <Name TextId="T_ErrText3314" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3315">
+          <Name TextId="T_ErrText3315" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+         <ChannelDiagItem ErrorType="3316">
+          <Name TextId="T_ErrText3316" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+         <ChannelDiagItem ErrorType="3317">
+          <Name TextId="T_ErrText3317" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+         <ChannelDiagItem ErrorType="3318">
+          <Name TextId="T_ErrText3318" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+         <ChannelDiagItem ErrorType="3319">
+          <Name TextId="T_ErrText3319" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+         <ChannelDiagItem ErrorType="3320">
+          <Name TextId="T_ErrText3320" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+         <ChannelDiagItem ErrorType="3321">
+          <Name TextId="T_ErrText3321" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+         <ChannelDiagItem ErrorType="3322">
+          <Name TextId="T_ErrText3322" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+         <ChannelDiagItem ErrorType="3323">
+          <Name TextId="T_ErrText3323" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+         <ChannelDiagItem ErrorType="3324">
+          <Name TextId="T_ErrText3324" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+         <ChannelDiagItem ErrorType="3325">
+          <Name TextId="T_ErrText3325" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+         <ChannelDiagItem ErrorType="3326">
+          <Name TextId="T_ErrText3326" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+         <ChannelDiagItem ErrorType="3327">
+          <Name TextId="T_ErrText3327" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+         <ChannelDiagItem ErrorType="3328">
+          <Name TextId="T_ErrText3328" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+         <ChannelDiagItem ErrorType="3329">
+          <Name TextId="T_ErrText3329" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+         <ChannelDiagItem ErrorType="3330">
+          <Name TextId="T_ErrText3330" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+         <ChannelDiagItem ErrorType="3331">
+          <Name TextId="T_ErrText3331" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3401">
+          <Name TextId="T_ErrText3401" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3402">
+          <Name TextId="T_ErrText3402" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3404">
+          <Name TextId="T_ErrText3404" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3405">
+          <Name TextId="T_ErrText3405" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3407">
+          <Name TextId="T_ErrText3407" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3408">
+          <Name TextId="T_ErrText3408" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3409">
+          <Name TextId="T_ErrText3409" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3410">
+          <Name TextId="T_ErrText3410" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3411">
+          <Name TextId="T_ErrText3411" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3416">
+          <Name TextId="T_ErrText3416" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3417">
+          <Name TextId="T_ErrText3417" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3418">
+          <Name TextId="T_ErrText3418" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3419">
+          <Name TextId="T_ErrText3419" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3420">
+          <Name TextId="T_ErrText3420" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3421">
+          <Name TextId="T_ErrText3421" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3422">
+          <Name TextId="T_ErrText3422" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3423">
+          <Name TextId="T_ErrText3423" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        
+        <ChannelDiagItem ErrorType="3501">
+          <Name TextId="T_ErrText3501" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3502">
+          <Name TextId="T_ErrText3502" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3503">
+          <Name TextId="T_ErrText3503" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3504">
+          <Name TextId="T_ErrText3504" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3505">
+          <Name TextId="T_ErrText3505" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3506">
+          <Name TextId="T_ErrText3506" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3507">
+          <Name TextId="T_ErrText3507" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3508">
+          <Name TextId="T_ErrText3508" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3509">
+          <Name TextId="T_ErrText3509" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3510">
+          <Name TextId="T_ErrText3510" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3511">
+          <Name TextId="T_ErrText3511" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3512">
+          <Name TextId="T_ErrText3512" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3513">
+          <Name TextId="T_ErrText3513" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3514">
+          <Name TextId="T_ErrText3514" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3515">
+          <Name TextId="T_ErrText3515" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3516">
+          <Name TextId="T_ErrText3516" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3517">
+          <Name TextId="T_ErrText3517" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3518">
+          <Name TextId="T_ErrText3518" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3519">
+          <Name TextId="T_ErrText3519" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3520">
+          <Name TextId="T_ErrText3520" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3521">
+          <Name TextId="T_ErrText3521" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3522">
+          <Name TextId="T_ErrText3522" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3523">
+          <Name TextId="T_ErrText3523" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3524">
+          <Name TextId="T_ErrText3524" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3525">
+          <Name TextId="T_ErrText3525" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3526">
+          <Name TextId="T_ErrText3526" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3527">
+          <Name TextId="T_ErrText3527" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3528">
+          <Name TextId="T_ErrText3528" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3529">
+          <Name TextId="T_ErrText3529" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3530">
+          <Name TextId="T_ErrText3530" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3531">
+          <Name TextId="T_ErrText3531" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3601">
+          <Name TextId="T_ErrText3601" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3604">
+          <Name TextId="T_ErrText3604" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3701">
+          <Name TextId="T_ErrText3701" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3704">
+          <Name TextId="T_ErrText3704" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3801">
+          <Name TextId="T_ErrText3801" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3804">
+          <Name TextId="T_ErrText3804" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3901">
+          <Name TextId="T_ErrText3901" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="3904">
+          <Name TextId="T_ErrText3904" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="4001">
+          <Name TextId="T_ErrText4001" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="4004">
+          <Name TextId="T_ErrText4004" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="4101">
+          <Name TextId="T_ErrText4101" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="4104">
+          <Name TextId="T_ErrText4104" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="4201">
+          <Name TextId="T_ErrText4201" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="4204">
+          <Name TextId="T_ErrText4204" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="4301">
+          <Name TextId="T_ErrText4301" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="4304">
+          <Name TextId="T_ErrText4304" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="4401">
+          <Name TextId="T_ErrText4401" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="4404">
+          <Name TextId="T_ErrText4404" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="4501">
+          <Name TextId="T_ErrText4501" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="4504">
+          <Name TextId="T_ErrText4504" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="4601">
+          <Name TextId="T_ErrText4601" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="4604">
+          <Name TextId="T_ErrText4604" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="4701">
+          <Name TextId="T_ErrText4701" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="4704">
+          <Name TextId="T_ErrText4704" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="4801">
+          <Name TextId="T_ErrText4801" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="4804">
+          <Name TextId="T_ErrText4804" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="4901">
+          <Name TextId="T_ErrText4901" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="4904">
+          <Name TextId="T_ErrText4904" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="5001">
+          <Name TextId="T_ErrText5001" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="5004">
+          <Name TextId="T_ErrText5004" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="5101">
+          <Name TextId="T_ErrText5101" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="5104">
+          <Name TextId="T_ErrText5104" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="5201">
+          <Name TextId="T_ErrText5201" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="5204">
+          <Name TextId="T_ErrText5204" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="5301">
+          <Name TextId="T_ErrText5301" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="5304">
+          <Name TextId="T_ErrText5304" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="5401">
+          <Name TextId="T_ErrText5401" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="5404">
+          <Name TextId="T_ErrText5404" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="5501">
+          <Name TextId="T_ErrText5501" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="5504">
+          <Name TextId="T_ErrText5504" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="5601">
+          <Name TextId="T_ErrText5601" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="5604">
+          <Name TextId="T_ErrText5604" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="5701">
+          <Name TextId="T_ErrText5701" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="5704">
+          <Name TextId="T_ErrText5704" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="5801">
+          <Name TextId="T_ErrText5801" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="5804">
+          <Name TextId="T_ErrText5804" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="5901">
+          <Name TextId="T_ErrText5901" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="5904">
+          <Name TextId="T_ErrText5904" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="6001">
+          <Name TextId="T_ErrText6001" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="6004">
+          <Name TextId="T_ErrText6004" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="6101">
+          <Name TextId="T_ErrText6101" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="6104">
+          <Name TextId="T_ErrText6104" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="6201">
+          <Name TextId="T_ErrText6201" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="6204">
+          <Name TextId="T_ErrText6204" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="6301">
+          <Name TextId="T_ErrText6301" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="6304">
+          <Name TextId="T_ErrText6304" />
+          <Help TextId="T_HelpChanSlot" />
+        </ChannelDiagItem>
+      </ChannelDiagList>
+      <GraphicsList>
+        <GraphicItem ID="ID_GPNT_SYM" GraphicFile="GSDML-0101-2302-FX0GPNT" />
+      </GraphicsList>
+      <CategoryList>
+        <CategoryItem ID="InputsModule_V2" TextId="T_InputsModule" />
+		<CategoryItem ID="InputsModule_V3" TextId="T_InputsModule" />
+        <CategoryItem ID="OutputsModule_V2" TextId="T_OutputsModule" />
+		<CategoryItem ID="OutputsModule_V3" TextId="T_OutputsModule" />
+		<CategoryItem ID="Gateway_V2" TextId="T_Gateway_V2" />
+		<CategoryItem ID="Gateway_V3" TextId="T_Gateway_V3" />
+      </CategoryList>
+
+      <ExternalTextList>
+        <PrimaryLanguage>
+          <!--Identification-->
+          <Text TextId="T_DevType1" Value="FX0-GPNT V2" />
+		  <Text TextId="T_DevType2" Value="FX0-GPNT V3" />
+		  <Text TextId="T_DevDescription" Value="Flexi Soft PROFINET IO Gateway" />
+          <Text TextId="T_SS_Interface" Value="X1" />
+          <Text TextId="T_SS_Port1" Value="X1 P1" />
+          <Text TextId="T_SS_Port2" Value="X1 P2" />
+          <Text TextId="T_Port1" Value="Port 1" />
+          <Text TextId="T_Port2" Value="Port 2" />
+          <!--Module category-->
+          <Text TextId="T_InputsModule" Value="Input modules" />		  
+          <Text TextId="T_OutputsModule" Value="Output modules" />		  
+		  <Text TextId="T_Gateway_V2" Value="FX0-GPNT V2" />
+		  <Text TextId="T_Gateway_V3" Value="FX0-GPNT V3" />
+          <!-- Modules-->
+          <Text TextId="T_InputsModuleName1" Value="Input Data Block 1" />
+		  <Text TextId="T_InputsModuleInfo1" Value="Input Data Block One for Flexi Soft System" />
+		  <Text TextId="T_InputsModuleName11" Value="Input Data Block 1" />
+		  <Text TextId="T_InputsModuleInfo11" Value="Input Data Block One for Flexi Soft System" />
+          <Text TextId="T_InputsModuleName2" Value="Input Data Block 2" />
+		  <Text TextId="T_InputsModuleInfo2" Value="Input Data Block Two for Flexi Soft System" />
+		  <Text TextId="T_InputsModuleName12" Value="Input Data Block 2" />
+		  <Text TextId="T_InputsModuleInfo12" Value="Input Data Block Two for Flexi Soft System" />
+          <Text TextId="T_InputsModuleName3" Value="Input Data Block 3" />
+		  <Text TextId="T_InputsModuleInfo3" Value="Input Data Block Three for Flexi Soft System" />
+		  <Text TextId="T_InputsModuleName13" Value="Input Data Block 3" />
+		  <Text TextId="T_InputsModuleInfo13" Value="Input Data Block Three for Flexi Soft System" />
+          <Text TextId="T_InputsModuleName4" Value="Input Data Block 4" />
+		  <Text TextId="T_InputsModuleInfo4" Value="Input Data Block Four for Flexi Soft System" />
+		  <Text TextId="T_InputsModuleName14" Value="Input Data Block 4" />
+		  <Text TextId="T_InputsModuleInfo14" Value="Input Data Block Four for Flexi Soft System" />
+          <Text TextId="T_InputsModuleName5" Value="Input Data Block 5" />
+		  <Text TextId="T_InputsModuleInfo5" Value="Input Data Block Five for Flexi Soft System" />
+		  <Text TextId="T_InputsModuleName15" Value="Input Data Block 5" />
+		  <Text TextId="T_InputsModuleInfo15" Value="Input Data Block Five for Flexi Soft System" />
+          <Text TextId="T_OutputsModuleName1" Value="Output Data Block 1" />
+		  <Text TextId="T_OutputsModuleName11" Value="Output Data Block 1" />
+          <Text TextId="T_OutputsModuleInfo1" Value="Output Data Block One for Flexi Soft System" />
+		  <Text TextId="T_OutputsModuleInfo11" Value="Output Data Block One for Flexi Soft System" />
+          <Text TextId="T_OutputsModuleName2" Value="Output Data Block 2" />
+		  <Text TextId="T_OutputsModuleName12" Value="Output Data Block 2" />
+          <Text TextId="T_OutputsModuleInfo2" Value="Output Data Block Two for Flexi Soft System" />
+		  <Text TextId="T_OutputsModuleInfo12" Value="Output Data Block Two for Flexi Soft System" />
+          <Text TextId="T_OutputsModuleName3" Value="Output Data Block 3" />
+		  <Text TextId="T_OutputsModuleName13" Value="Output Data Block 3" />
+          <Text TextId="T_OutputsModuleInfo3" Value="Output Data Block Three for Flexi Soft System" />
+		  <Text TextId="T_OutputsModuleInfo13" Value="Output Data Block Three for Flexi Soft System" />
+          <Text TextId="T_OutputsModuleName4" Value="Output Data Block 4" />
+		  <Text TextId="T_OutputsModuleName14" Value="Output Data Block 4" />
+          <Text TextId="T_OutputsModuleInfo4" Value="Output Data Block Four for Flexi Soft System" />
+		  <Text TextId="T_OutputsModuleInfo14" Value="Output Data Block Four for Flexi Soft System" />
+          <Text TextId="T_OutputsModuleName5" Value="Output Data Block 5" />
+		  <Text TextId="T_OutputsModuleName15" Value="Output Data Block 5" />
+          <Text TextId="T_OutputsModuleInfo5" Value="Output Data Block Five for Flexi Soft System" />
+		  <Text TextId="T_OutputsModuleInfo15" Value="Output Data Block Five for Flexi Soft System" />
+          <!-- Data Types -->
+          <Text TextId="T_OUTPUT_DATA_BYTES" Value="Output data bytes for the FlexiSoft System." />
+          <Text TextId="T_INPUT_DATA_BYTES" Value="Input data bytes for the FlexiSoft System." />
+          <Text TextId="T_HelpChanSlot" Value="Channel number reflects slot number where error was discovered." />
+          <!-- error text for IO-Modules, T_ErrTextXXBB where XX ist the Module diagnosis ID decimal (9120057 last page) and BB is bit position -->
+          <Text TextId="T_ErrText0101" Value="Internal Error: Internal tests failed." />
+          <Text TextId="T_ErrText0102" Value="External Error" />
+          <Text TextId="T_ErrText0104" Value="Configuration of a module within the system is incompatible or invalid." />
+          <Text TextId="T_ErrText0105" Value="Power supply out of specified range." />
+          <Text TextId="T_ErrText0106" Value="EFI 1 communication failure." />
+          <Text TextId="T_ErrText0107" Value="EFI 2 communication failure." />
+          <Text TextId="T_ErrText0201" Value="Internal Error: Internal tests failed." />
+          <Text TextId="T_ErrText0203" Value="Reserved." />
+          <Text TextId="T_ErrText0204" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText0205" Value="Output power supply out of range." />
+          <Text TextId="T_ErrText0208" Value="Input 1-2 dual channel input evaluation: error detected." />
+          <Text TextId="T_ErrText0209" Value="Input 3-4 dual channel input evaluation: error detected." />
+          <Text TextId="T_ErrText0210" Value="Input 5-6 dual channel input evaluation: error detected." />
+          <Text TextId="T_ErrText0211" Value="Input 7-8 dual channel input evaluation: error detected." />
+          <Text TextId="T_ErrText0212" Value="Reserved " />
+          <Text TextId="T_ErrText0213" Value="Reserved" />
+          <Text TextId="T_ErrText0214" Value="Reserved" />
+          <Text TextId="T_ErrText0215" Value="Reserved" />
+          <Text TextId="T_ErrText0216" Value="Input 1 external test signal failure. Check for stuck-at-high or cabling." />
+          <Text TextId="T_ErrText0217" Value="Input 2 external test signal failure. Check for stuck-at-high or cabling." />
+          <Text TextId="T_ErrText0218" Value="Input 3 external test signal failure. Check for stuck-at-high or cabling." />
+          <Text TextId="T_ErrText0219" Value="Input 4 external test signal failure. Check for stuck-at-high or cabling." />
+          <Text TextId="T_ErrText0220" Value="Input 5 external test signal failure. Check for stuck-at-high or cabling." />
+          <Text TextId="T_ErrText0221" Value="Input 6 external test signal failure. Check for stuck-at-high or cabling." />
+          <Text TextId="T_ErrText0222" Value="Input 7 external test signal failure. Check for stuck-at-high or cabling." />
+          <Text TextId="T_ErrText0223" Value="Input 8 external test signal failure. Check for stuck-at-high or cabling." />
+          <Text TextId="T_ErrText0224" Value="Output 1 test evaluation stuck-at-high error." />
+          <Text TextId="T_ErrText0225" Value="Output 1 test evaluation stuck-at-low error." />
+          <Text TextId="T_ErrText0226" Value="Output 2 test evaluation stuck-at-high error." />
+          <Text TextId="T_ErrText0227" Value="Output 2 test evaluation stuck-at-low error." />
+          <Text TextId="T_ErrText0228" Value="Output 3 test evaluation stuck-at-high error." />
+          <Text TextId="T_ErrText0229" Value="Output 3 test evaluation stuck-at-low error." />
+          <Text TextId="T_ErrText0230" Value="Output 4 test evaluation stuck-at-high error." />
+          <Text TextId="T_ErrText0231" Value="Output 4 test evaluation stuck-at-low error." />
+          <Text TextId="T_ErrText0301" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText0304" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText0401" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText0404" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText0501" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText0504" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText0601" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText0604" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText0701" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText0704" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText0801" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText0804" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText0901" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText0904" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText1001" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText1004" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText1101" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText1104" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText1201" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText1204" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText1301" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText1304" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText1401" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText1404" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText1501" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText1504" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText1601" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText1604" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText1701" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText1704" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText1801" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText1804" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText1901" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText1904" Value="Configuration is incompatible or invalid." />
+          
+          <Text TextId="T_ErrText2001" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText2004" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText2101" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText2104" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText2201" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText2204" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText2301" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText2304" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText2401" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText2404" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText2501" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText2504" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText2601" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText2604" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText2701" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText2704" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText2801" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText2804" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText2901" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText2904" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText3001" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText3004" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText3101" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText3104" Value="Configuration is incompatible or invalid." />
+
+          <!-- error text for IO-Modules, 0x32 ff-->
+          <Text TextId="T_ErrText3201" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText3202" Value="External Error" />
+          <Text TextId="T_ErrText3204" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText3205" Value="Output power supply out of range." />
+          <Text TextId="T_ErrText3207" Value="Status Output Power Overcurrent." />
+          
+          <Text TextId="T_ErrText3301" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText3302" Value="External Error" />
+          <Text TextId="T_ErrText3304" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText3306" Value="Encoder 1 Status." />
+          <Text TextId="T_ErrText3307" Value="Encoder 2 Status." />
+          <Text TextId="T_ErrText3308" Value="Encoder 1 Teach Status." />
+          <Text TextId="T_ErrText3309" Value="Encoder 2 Teach Status." />
+          <Text TextId="T_ErrText3312" Value="User defined status bit 1." />
+          <Text TextId="T_ErrText3313" Value="User defined status bit 2." />
+          <Text TextId="T_ErrText3314" Value="User defined status bit 3." />
+          <Text TextId="T_ErrText3315" Value="User defined status bit 4." />
+      	   <Text TextId="T_ErrText3316" Value="User defined monitor bit 1." />
+          <Text TextId="T_ErrText3317" Value="User defined monitor bit 2." />
+          <Text TextId="T_ErrText3318" Value="User defined monitor bit 3." />
+          <Text TextId="T_ErrText3319" Value="User defined monitor bit 4." />
+          <Text TextId="T_ErrText3320" Value="User defined monitor bit 5." />
+          <Text TextId="T_ErrText3321" Value="User defined monitor bit 6." />
+          <Text TextId="T_ErrText3322" Value="User defined monitor bit 7." />
+          <Text TextId="T_ErrText3323" Value="User defined monitor bit 8." />
+          <Text TextId="T_ErrText3324" Value="User defined monitor bit 9." />
+          <Text TextId="T_ErrText3325" Value="User defined monitor bit 10." />
+          <Text TextId="T_ErrText3326" Value="User defined monitor bit 11." />
+          <Text TextId="T_ErrText3327" Value="User defined monitor bit 12." />
+          <Text TextId="T_ErrText3328" Value="User defined monitor bit 13." />
+          <Text TextId="T_ErrText3329" Value="User defined monitor bit 14." />
+ 	   <Text TextId="T_ErrText3330" Value="User defined monitor bit 15." />
+          <Text TextId="T_ErrText3331" Value="User defined monitor bit 16." />
+
+	   <Text TextId="T_ErrText3401" Value="Internal Error: Internal tests failed" />
+	   <Text TextId="T_ErrText3402" Value="External Error" />
+          <Text TextId="T_ErrText3404" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText3405" Value="Output power supply out of range." />
+          <Text TextId="T_ErrText3407" Value="Status Output Power Overcurrent." />
+          <Text TextId="T_ErrText3408" Value="Input 1-2 dual channel input evaluation: error detected." />
+          <Text TextId="T_ErrText3409" Value="Input 3-4 dual channel input evaluation: error detected." />
+          <Text TextId="T_ErrText3410" Value="Input 5-6 dual channel input evaluation: error detected." />
+          <Text TextId="T_ErrText3411" Value="Input 7-8 dual channel input evaluation: error detected." />
+	   <Text TextId="T_ErrText3416" Value="Input 1 external test signal failure." />
+          <Text TextId="T_ErrText3417" Value="Input 2 external test signal failure." />
+          <Text TextId="T_ErrText3418" Value="Input 3 external test signal failure." />
+          <Text TextId="T_ErrText3419" Value="Input 4 external test signal failure." />
+          <Text TextId="T_ErrText3420" Value="Input 5 external test signal failure." />
+          <Text TextId="T_ErrText3421" Value="Input 6 external test signal failure." />
+          <Text TextId="T_ErrText3422" Value="Input 7 external test signal failure." />
+          <Text TextId="T_ErrText3423" Value="Input 8 external test signal failure." />
+
+          <Text TextId="T_ErrText3501" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText3502" Value="External Error" />
+	   <Text TextId="T_ErrText3503" Value="Error history item existing" />
+	   <Text TextId="T_ErrText3504" Value="Configuration is incompatible or invalid." />
+	   <Text TextId="T_ErrText3505" Value="Sensor AI1 lower input range OK." />
+          <Text TextId="T_ErrText3506" Value="Sensor AI1 upper input range OK." />
+	   <Text TextId="T_ErrText3507" Value="Sensor AI2 lower input range OK." />
+          <Text TextId="T_ErrText3508" Value="Sensor AI2 upper input range OK." />
+	   <Text TextId="T_ErrText3509" Value="Sensor AI1 lower process range OK." />
+          <Text TextId="T_ErrText3510" Value="Sensor AI1 upper process range OK." />
+	   <Text TextId="T_ErrText3511" Value="Sensor AI2 lower process range OK." />
+          <Text TextId="T_ErrText3512" Value="Sensor AI2 upper process range OK." />        
+          <Text TextId="T_ErrText3513" Value="Discrepancy status OK." />
+	   <Text TextId="T_ErrText3514" Value="Lower process range limit OK." />
+          <Text TextId="T_ErrText3515" Value="Upper process range limit OK." />
+          <Text TextId="T_ErrText3516" Value="Measured value bit 00." />
+	   <Text TextId="T_ErrText3517" Value="Measured value bit 01." />
+          <Text TextId="T_ErrText3518" Value="Measured value bit 02." />
+	   <Text TextId="T_ErrText3519" Value="Measured value bit 03." />
+          <Text TextId="T_ErrText3520" Value="Measured value bit 04." />
+	   <Text TextId="T_ErrText3521" Value="Measured value bit 05." />
+          <Text TextId="T_ErrText3522" Value="Measured value bit 06." />
+ 	   <Text TextId="T_ErrText3523" Value="Measured value bit 07. "/>
+	   <Text TextId="T_ErrText3524" Value="Measured value bit 08." />
+          <Text TextId="T_ErrText3525" Value="Measured value bit 09." />          
+          <Text TextId="T_ErrText3526" Value="Measured value bit 10." />
+	   <Text TextId="T_ErrText3527" Value="Measured value bit 11." />
+          <Text TextId="T_ErrText3528" Value="Measured value bit 12." />
+          <Text TextId="T_ErrText3529" Value="Measured value bit 13." />
+	   <Text TextId="T_ErrText3530" Value="Measured value bit 14." />
+          <Text TextId="T_ErrText3531" Value="Measured value bit 15." />  
+          
+          <Text TextId="T_ErrText3601" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText3604" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText3701" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText3704" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText3801" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText3804" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText3901" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText3904" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText4001" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText4004" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText4101" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText4104" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText4201" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText4204" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText4301" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText4304" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText4401" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText4404" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText4501" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText4504" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText4601" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText4604" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText4701" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText4704" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText4801" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText4804" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText4901" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText4904" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText5001" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText5004" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText5101" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText5104" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText5201" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText5204" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText5301" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText5304" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText5401" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText5404" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText5501" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText5504" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText5601" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText5604" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText5701" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText5704" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText5801" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText5804" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText5901" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText5904" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText6001" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText6004" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText6101" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText6104" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText6201" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText6204" Value="Configuration is incompatible or invalid." />
+          <Text TextId="T_ErrText6301" Value="Internal Error: Internal tests failed" />
+          <Text TextId="T_ErrText6304" Value="Configuration is incompatible or invalid." />
+        </PrimaryLanguage>
+        <Language xml:lang="de">
+          <!--Identification-->
+		  <Text TextId="T_DevType1" Value="FX0-GPNT V2" />
+          <Text TextId="T_DevType2" Value="FX0-GPNT V3" />
+		  <Text TextId="T_DevDescription" Value="Flexi Soft PROFINET IO Gateway" />
+          <Text TextId="T_SS_Interface" Value="X1" />
+          <Text TextId="T_SS_Port1" Value="X1 P1" />
+          <Text TextId="T_SS_Port2" Value="X1 P2" />
+          <Text TextId="T_Port1" Value="Port 1" />
+          <Text TextId="T_Port2" Value="Port 2" />
+          <!--Module category-->
+          <Text TextId="T_InputsModule" Value="Eingangsmodule" />		  
+          <Text TextId="T_OutputsModule" Value="Ausgangsmodule" />		  
+		  <Text TextId="T_Gateway_V2" Value="FX0-GPNT V2" />
+		  <Text TextId="T_Gateway_V3" Value="FX0-GPNT V3" />
+          <!-- Modules-->
+          <Text TextId="T_InputsModuleName1" Value="Eingangsdatenblock 1" />
+		  <Text TextId="T_InputsModuleInfo1" Value="Eingangsdatenblock 1 für das Flexi Soft System" />
+          <Text TextId="T_InputsModuleName11" Value="Eingangsdatenblock 1" />
+		  <Text TextId="T_InputsModuleInfo11" Value="Eingangsdatenblock 1 für das Flexi Soft System" />
+		  <Text TextId="T_InputsModuleName2" Value="Eingangsdatenblock 2" />
+          <Text TextId="T_InputsModuleInfo2" Value="Eingangsdatenblock 2 für das Flexi Soft System" />
+		  <Text TextId="T_InputsModuleName12" Value="Eingangsdatenblock 2" />
+          <Text TextId="T_InputsModuleInfo12" Value="Eingangsdatenblock 2 für das Flexi Soft System" />
+		  <Text TextId="T_InputsModuleName3" Value="Eingangsdatenblock 3" />
+          <Text TextId="T_InputsModuleInfo3" Value="Eingangsdatenblock 3 für das Flexi Soft System" />
+		  <Text TextId="T_InputsModuleName13" Value="Eingangsdatenblock 3" />
+          <Text TextId="T_InputsModuleInfo13" Value="Eingangsdatenblock 3 für das Flexi Soft System" />
+		  <Text TextId="T_InputsModuleName4" Value="Eingangsdatenblock 4" />
+          <Text TextId="T_InputsModuleInfo4" Value="Eingangsdatenblock 4 für das Flexi Soft System" />
+		  <Text TextId="T_InputsModuleName14" Value="Eingangsdatenblock 4" />
+          <Text TextId="T_InputsModuleInfo14" Value="Eingangsdatenblock 4 für das Flexi Soft System" />
+		  <Text TextId="T_InputsModuleName5" Value="Eingangsdatenblock 5" />
+          <Text TextId="T_InputsModuleInfo5" Value="Eingangsdatenblock 5 für das Flexi Soft System" />
+		  <Text TextId="T_InputsModuleName15" Value="Eingangsdatenblock 5" />
+          <Text TextId="T_InputsModuleInfo15" Value="Eingangsdatenblock 5 für das Flexi Soft System" />
+          <Text TextId="T_OutputsModuleName1" Value="Ausgangsdatenblock 1" />
+          <Text TextId="T_OutputsModuleInfo1" Value="Ausgangsdatenblock 1 für das Flexi Soft System" />
+          <Text TextId="T_OutputsModuleName11" Value="Ausgangsdatenblock 1" />
+          <Text TextId="T_OutputsModuleInfo11" Value="Ausgangsdatenblock 1 für das Flexi Soft System" />
+		  <Text TextId="T_OutputsModuleName2" Value="Ausgangsdatenblock 2" />
+          <Text TextId="T_OutputsModuleInfo2" Value="Ausgangsdatenblock 2 für das Flexi Soft System" />
+          <Text TextId="T_OutputsModuleName12" Value="Ausgangsdatenblock 2" />
+          <Text TextId="T_OutputsModuleInfo12" Value="Ausgangsdatenblock 2 für das Flexi Soft System" />
+		  <Text TextId="T_OutputsModuleName3" Value="Ausgangsdatenblock 3" />
+          <Text TextId="T_OutputsModuleInfo3" Value="Ausgangsdatenblock 3 für das Flexi Soft System" />
+          <Text TextId="T_OutputsModuleName13" Value="Ausgangsdatenblock 3" />
+          <Text TextId="T_OutputsModuleInfo13" Value="Ausgangsdatenblock 3 für das Flexi Soft System" />
+		  <Text TextId="T_OutputsModuleName4" Value="Ausgangsdatenblock 4" />
+          <Text TextId="T_OutputsModuleInfo4" Value="Ausgangsdatenblock 4 für das Flexi Soft System" />
+          <Text TextId="T_OutputsModuleName14" Value="Ausgangsdatenblock 4" />
+          <Text TextId="T_OutputsModuleInfo14" Value="Ausgangsdatenblock 4 für das Flexi Soft System" />
+		  <Text TextId="T_OutputsModuleName5" Value="Ausgangsdatenblock 5" />
+          <Text TextId="T_OutputsModuleInfo5" Value="Ausgangsdatenblock 5 für das Flexi Soft System" />
+          <Text TextId="T_OutputsModuleName15" Value="Ausgangsdatenblock 5" />
+          <Text TextId="T_OutputsModuleInfo15" Value="Ausgangsdatenblock 5 für das Flexi Soft System" />
+		  <!-- Data Types -->
+          <Text TextId="T_OUTPUT_DATA_BYTES" Value="Ausgangsdatenbytes für das FlexiSoft System." />
+          <Text TextId="T_INPUT_DATA_BYTES" Value="Eingangsdatenbytes für das FlexiSoft System." />
+          <Text TextId="T_HelpChanSlot" Value="Die Kanalnummer steht für den Slot, in welchem der Fehler entdeckt wurde." />
+          <Text TextId="T_ErrText0101" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText0102" Value="Externer Fehler." />
+          <Text TextId="T_ErrText0104" Value="Konfigurationsstatus eines Moduls innerhalb des Systems ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText0105" Value="Spannungsversorgung außerhalb des spezifizierten Bereichs." />
+          <Text TextId="T_ErrText0106" Value="EFI 1 Kommunikationsfehler." />
+          <Text TextId="T_ErrText0107" Value="EFI 2 Kommunikationsfehler." />
+          <Text TextId="T_ErrText0201" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText0203" Value="Es existiert ein Eintrag in der Fehlerhistorie: Zugriff über das Konfigurationstool." />
+          <Text TextId="T_ErrText0204" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText0205" Value="Ausgangsspannungsversorgung ist außerhalb des gültigen Bereichs." />
+          <Text TextId="T_ErrText0208" Value="Eingang 1-2 Zweikanalauswertung: Fehler festgestellt." />
+          <Text TextId="T_ErrText0209" Value="Eingang 3-4 Zweikanalauswertung: Fehler festgestellt." />
+          <Text TextId="T_ErrText0210" Value="Eingang 5-6 Zweikanalauswertung: Fehler festgestellt." />
+          <Text TextId="T_ErrText0211" Value="Eingang 7-8 Zweikanalauswertung: Fehler festgestellt." />
+          <Text TextId="T_ErrText0212" Value="Reserviert " />
+          <Text TextId="T_ErrText0213" Value="Reserviert " />
+          <Text TextId="T_ErrText0214" Value="Reserviert" />
+          <Text TextId="T_ErrText0215" Value="Reserviert" />
+          <Text TextId="T_ErrText0216" Value="Eingang 1 externer Fehler bei Testsignal. Auf stuck-at-high oder Verkabelungsfehler überprüfen." />
+          <Text TextId="T_ErrText0217" Value="Eingang 2 externer Fehler bei Testsignal. Auf stuck-at-high oder Verkabelungsfehler überprüfen." />
+          <Text TextId="T_ErrText0218" Value="Eingang 3 externer Fehler bei Testsignal. Auf stuck-at-high oder Verkabelungsfehler überprüfen." />
+          <Text TextId="T_ErrText0219" Value="Eingang 4 externer Fehler bei Testsignal. Auf stuck-at-high oder Verkabelungsfehler überprüfen." />
+          <Text TextId="T_ErrText0220" Value="Eingang 5 externer Fehler bei Testsignal. Auf stuck-at-high oder Verkabelungsfehler überprüfen." />
+          <Text TextId="T_ErrText0221" Value="Eingang 6 externer Fehler bei Testsignal. Auf stuck-at-high oder Verkabelungsfehler überprüfen." />
+          <Text TextId="T_ErrText0222" Value="Eingang 7 externer Fehler bei Testsignal. Auf stuck-at-high oder Verkabelungsfehler überprüfen." />
+          <Text TextId="T_ErrText0223" Value="Eingang 8 externer Fehler bei Testsignal. Auf stuck-at-high oder Verkabelungsfehler überprüfen." />
+          <Text TextId="T_ErrText0224" Value="Ausgang 1 Testauswertung stuck-at-high Fehler." />
+          <Text TextId="T_ErrText0225" Value="Ausgang 1 Testauswertung stuck-at-high Fehler." />
+          <Text TextId="T_ErrText0226" Value="Ausgang 2 Testauswertung stuck-at-high Fehler." />
+          <Text TextId="T_ErrText0227" Value="Ausgang 2 Testauswertung stuck-at-high Fehler." />
+          <Text TextId="T_ErrText0228" Value="Ausgang 3 Testauswertung stuck-at-high Fehler." />
+          <Text TextId="T_ErrText0229" Value="Ausgang 3 Testauswertung stuck-at-high Fehler." />
+          <Text TextId="T_ErrText0230" Value="Ausgang 4 Testauswertung stuck-at-high Fehler." />
+          <Text TextId="T_ErrText0231" Value="Ausgang 4 Testauswertung stuck-at-high Fehler." />
+          <Text TextId="T_ErrText0301" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText0304" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText0401" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText0404" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText0501" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText0504" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText0601" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText0604" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText0701" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText0704" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText0801" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText0804" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText0901" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText0904" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText1001" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText1004" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText1101" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText1104" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText1201" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText1204" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText1301" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText1304" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText1401" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText1404" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText1501" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText1504" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText1601" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText1604" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText1701" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText1704" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText1801" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText1804" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText1901" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText1904" Value="Konfiguration ist inkompatibel oder ungültig." />
+
+          <Text TextId="T_ErrText2001" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText2004" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText2101" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText2104" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText2201" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText2204" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText2301" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText2304" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText2401" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText2404" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText2501" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText2504" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText2601" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText2604" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText2701" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText2704" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText2801" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText2804" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText2901" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText2904" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText3001" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText3004" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText3101" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText3104" Value="Konfiguration ist inkompatibel oder ungültig." />
+
+
+          <Text TextId="T_ErrText3201" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText3204" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText3205" Value="Ausgangsspannungsversorgung ist außerhalb des gültigen Bereichs." />
+          <Text TextId="T_ErrText3207" Value="Status Stromversorgung Ausgänge." />
+          <Text TextId="T_ErrText3301" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText3302" Value="Externer Fehler" />
+          <Text TextId="T_ErrText3304" Value="Konfiguration ist inkompatibel oder ungültig." />
+	   <Text TextId="T_ErrText3306" Value="Encoder 1 Status." />
+          <Text TextId="T_ErrText3307" Value="Encoder 2 Status." />
+          <Text TextId="T_ErrText3308" Value="Encoder 1 Teach Status." />
+          <Text TextId="T_ErrText3309" Value="Encoder 2 Teach Status." />
+          <Text TextId="T_ErrText3312" Value="Anwender definiertes Statusbit 1." />
+          <Text TextId="T_ErrText3313" Value="Anwender definiertes Statusbit 2." />
+          <Text TextId="T_ErrText3314" Value="Anwender definiertes Statusbit 3." />
+          <Text TextId="T_ErrText3315" Value="Anwender definiertes Statusbit 4." />
+          <Text TextId="T_ErrText3316" Value="Anwender definiertes Überwachungsbit 1." />
+          <Text TextId="T_ErrText3317" Value="Anwender definiertes Überwachungsbit 2." />
+          <Text TextId="T_ErrText3318" Value="Anwender definiertes Überwachungsbit 3." />
+          <Text TextId="T_ErrText3319" Value="Anwender definiertes Überwachungsbit 4." />
+          <Text TextId="T_ErrText3320" Value="Anwender definiertes Überwachungsbit 5." />
+          <Text TextId="T_ErrText3321" Value="Anwender definiertes Überwachungsbit 6." />
+          <Text TextId="T_ErrText3322" Value="Anwender definiertes Überwachungsbit 7." />
+          <Text TextId="T_ErrText3323" Value="Anwender definiertes Überwachungsbit 8." />
+          <Text TextId="T_ErrText3324" Value="Anwender definiertes Überwachungsbit 9." />
+          <Text TextId="T_ErrText3325" Value="Anwender definiertes Überwachungsbit 10." />
+          <Text TextId="T_ErrText3326" Value="Anwender definiertes Überwachungsbit 11." />
+          <Text TextId="T_ErrText3327" Value="Anwender definiertes Überwachungsbit 12." />
+          <Text TextId="T_ErrText3328" Value="Anwender definiertes Überwachungsbit 13." />
+          <Text TextId="T_ErrText3329" Value="Anwender definiertes Überwachungsbit 14." />
+ 	   <Text TextId="T_ErrText3330" Value="Anwender definiertes Überwachungsbit 15." />
+          <Text TextId="T_ErrText3331" Value="Anwender definiertes Überwachungsbit 16." />
+         
+          <Text TextId="T_ErrText3401" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText3402" Value="Externer Fehler" />
+          <Text TextId="T_ErrText3404" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText3405" Value="Ausgangsspannungsversorgung ist außerhalb des gültigen Bereichs." />
+          <Text TextId="T_ErrText3407" Value="Status Stromversorgung Ausgänge." />
+          <Text TextId="T_ErrText3408" Value="Eingang 1-2 Zweikanalauswertung: Fehler festgestellt." />
+          <Text TextId="T_ErrText3409" Value="Eingang 3-4 Zweikanalauswertung: Fehler festgestellt." />
+          <Text TextId="T_ErrText3410" Value="Eingang 5-6 Zweikanalauswertung: Fehler festgestellt." />
+          <Text TextId="T_ErrText3411" Value="Eingang 7-8 Zweikanalauswertung: Fehler festgestellt." />
+          <Text TextId="T_ErrText3416" Value="Eingang 1 externer Fehler bei Testsignal." />
+          <Text TextId="T_ErrText3417" Value="Eingang 2 externer Fehler bei Testsignal." />
+          <Text TextId="T_ErrText3418" Value="Eingang 3 externer Fehler bei Testsignal." />
+          <Text TextId="T_ErrText3419" Value="Eingang 4 externer Fehler bei Testsignal." />
+          <Text TextId="T_ErrText3420" Value="Eingang 5 externer Fehler bei Testsignal." />
+          <Text TextId="T_ErrText3421" Value="Eingang 6 externer Fehler bei Testsignal." />
+          <Text TextId="T_ErrText3422" Value="Eingang 7 externer Fehler bei Testsignal." />
+          <Text TextId="T_ErrText3423" Value="Eingang 8 externer Fehler bei Testsignal." />
+
+          <Text TextId="T_ErrText3501" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText3502" Value="Externer Fehler" />
+	   <Text TextId="T_ErrText3503" Value="Eintrag in Fehlerhistorie existiert" />
+          <Text TextId="T_ErrText3504" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText3505" Value="Sensor AI1 unterer Input Bereich OK." />
+          <Text TextId="T_ErrText3506" Value="Sensor AI1 oberer Input Bereich OK." />
+	   <Text TextId="T_ErrText3507" Value="Sensor AI2 unterer Input Bereich OK." />
+          <Text TextId="T_ErrText3508" Value="Sensor AI2 oberer Input Bereich OK." />
+	   <Text TextId="T_ErrText3509" Value="Sensor AI1 unterer Prozessbereich OK." />
+          <Text TextId="T_ErrText3510" Value="Sensor AI1 oberer Prozessbereich OK." />
+	   <Text TextId="T_ErrText3511" Value="Sensor AI2 unterer Prozessbereich OK." />
+          <Text TextId="T_ErrText3512" Value="Sensor AI2 oberer Prozessbereich OK." />        
+          <Text TextId="T_ErrText3513" Value="Diskrepanz Status OK." />
+	   <Text TextId="T_ErrText3514" Value="unterer Prozessbereichsgrenzwert OK." />
+          <Text TextId="T_ErrText3515" Value="oberer Prozessbereichsgrenzwert OK." />
+          <Text TextId="T_ErrText3516" Value="Gemessener Wert Bit 00." />
+	   <Text TextId="T_ErrText3517" Value="Gemessener Wert Bit 01." />
+          <Text TextId="T_ErrText3518" Value="Gemessener Wert Bit 02." />
+	   <Text TextId="T_ErrText3519" Value="Gemessener Wert Bit 03." />
+          <Text TextId="T_ErrText3520" Value="Gemessener Wert Bit 04." />
+	   <Text TextId="T_ErrText3521" Value="Gemessener Wert Bit 05." />
+          <Text TextId="T_ErrText3522" Value="Gemessener Wert Bit 06." />
+ 	   <Text TextId="T_ErrText3523" Value="Gemessener Wert Bit 07. "/>
+	   <Text TextId="T_ErrText3524" Value="Gemessener Wert Bit 08." />
+          <Text TextId="T_ErrText3525" Value="Gemessener Wert Bit 09." />          
+          <Text TextId="T_ErrText3526" Value="Gemessener Wert Bit 10." />
+	   <Text TextId="T_ErrText3527" Value="Gemessener Wert Bit 11." />
+          <Text TextId="T_ErrText3528" Value="Gemessener Wert Bit 12." />
+          <Text TextId="T_ErrText3529" Value="Gemessener Wert Bit 13." />
+	   <Text TextId="T_ErrText3530" Value="Gemessener Wert Bit 14." />
+          <Text TextId="T_ErrText3531" Value="Gemessener Wert Bit 15." />  
+
+          <Text TextId="T_ErrText3601" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText3604" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText3701" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText3704" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText3801" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText3804" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText3901" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText3904" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText4001" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText4004" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText4101" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText4104" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText4201" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText4204" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText4301" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText4304" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText4401" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText4404" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText4501" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText4504" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText4601" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText4604" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText4701" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText4704" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText4801" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText4804" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText4901" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText4904" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText5001" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText5004" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText5101" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText5104" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText5201" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText5204" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText5301" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText5304" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText5401" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText5404" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText5501" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText5504" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText5601" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText5604" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText5701" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText5704" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText5801" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText5804" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText5901" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText5904" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText6001" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText6004" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText6101" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText6104" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText6201" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText6204" Value="Konfiguration ist inkompatibel oder ungültig." />
+          <Text TextId="T_ErrText6301" Value="Interner Fehler: Interne Tests fehlgeschlagen." />
+          <Text TextId="T_ErrText6304" Value="Konfiguration ist inkompatibel oder ungültig." />
+        </Language>
+      </ExternalTextList>
+    </ApplicationProcess>
+  </ProfileBody>
+</ISO15745Profile>

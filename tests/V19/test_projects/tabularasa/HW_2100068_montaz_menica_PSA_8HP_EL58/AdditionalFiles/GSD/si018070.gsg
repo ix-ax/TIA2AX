@@ -1,0 +1,773 @@
+;===============================================
+;"GSD für DP/DP-Koppler Ausgabestand 2"
+;"Bestellnr.":  6ES7 158-0AD01 0XA0
+;"Hersteller":  SIEMENS AG A&D AS RD 23
+;"Autor":       Hopfengaertner / Schmidt
+;"Version": 	V1.04
+;"Date": 			15.12.10
+; ==============================================
+;
+#Profibus_DP
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; <Unit-Definition-List>
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+GSD_Revision = 4
+Vendor_Name = "Siemens AG"
+Model_Name = "DP/DP-Koppler, Ausgabestand 2"
+Revision = "2.0"                        ;"DP/DP-Koppler, Ausgabestand 2"
+Ident_Number = 0x8070
+Protocol_Ident = 0
+Station_Type = 0
+Hardware_Release = "A0"
+Software_Release = "B0"
+Info_Text= "Koppler zweier Profibus-DP Netze, IP20, bis 12 MBit/s"
+;
+9.6_supp = 1
+19.2_supp = 1
+45.45_supp = 1
+93.75_supp = 1
+187.5_supp = 1
+500_supp = 1
+1.5M_supp = 1
+3M_supp = 1
+6M_supp = 1
+12M_supp = 1
+;
+MaxTsdr_9.6 = 15
+MaxTsdr_19.2 = 15
+MaxTsdr_45.45 = 15
+MaxTsdr_93.75 = 15
+MaxTsdr_187.5 = 15
+MaxTsdr_500 = 15
+MaxTsdr_1.5M = 25
+MaxTsdr_3M = 50
+MaxTsdr_6M = 100
+MaxTsdr_12M = 200
+;
+Implementation_Type="DPC31"
+Bitmap_Device="SI8070_N"
+Bitmap_SF="SI8070_S"
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Slave-Spezifikation:
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+OrderNumber = "6ES7 158-0AD01-0XA0"
+Set_Slave_Add_supp = 1
+Freeze_Mode_supp = 1
+Sync_Mode_supp = 1
+Auto_Baud_supp = 1
+Fail_Safe = 1
+
+; COM PROFIBUS V 3.3 hat Probleme mit dem Schlüsselwort Fail_Safe_required:
+; COM PROFIBUS V3.3 überprüft die GSD-Datei auf unbekannte Schlüsselworte 
+; und gibt eine Fehlermeldung aus, wenn er ein unbekanntes findet. 
+; Da Fail_Safe_required erst ab Revision 3 zum GSD-Standard gehört,
+; kennt COM PROFIBUS V3.3 dieses Schlüsselwort nicht.
+; Fail_Safe gehört bereits seit Revision 1 zum Standard.
+;Fail_Safe_required = 0
+
+Min_Slave_Intervall = 3
+;
+Max_Diag_Data_Len = 26
+;
+Modular_Station = 1
+Max_Module = 16
+Modul_Offset = 1
+Slave_Family = 9
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; DPV1 Schlüssel
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+DPV1_Slave=1
+;
+C1_Read_Write_supp=0		; C1-Kanal wird nicht unterstützt
+;
+C2_Read_Write_supp=0		; C2-Kanal wird nicht unterstützt
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Unit-Diagnostics:
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+Unit_Diag_Area=24-31
+Value(1) ="Gueltige Daten"
+Unit_Diag_Area_End
+;
+Unit_Diag_Area=32-39
+Value(1) ="1 Byte Eingang des Partners"
+Value(2) ="2 Bytes Eingang des Partners"
+Value(3) ="3 Bytes Eingang des Partners"
+Value(4) ="4 Bytes Eingang des Partners"
+Value(5) ="5 Bytes Eingang des Partners"
+Value(6) ="6 Bytes Eingang des Partners"
+Value(7) ="7 Bytes Eingang des Partners"
+Value(8) ="8 Bytes Eingang des Partners"
+Value(9) ="9 Bytes Eingang des Partners"
+Value(10) ="10 Bytes Eingang des Partners"
+Value(11) ="11 Bytes Eingang des Partners"
+Value(12) ="12 Bytes Eingang des Partners"
+Value(13) ="13 Bytes Eingang des Partners"
+Value(14) ="14 Bytes Eingang des Partners"
+Value(15) ="15 Bytes Eingang des Partners"
+Value(16) ="16 Bytes Eingang des Partners"
+Value(17) ="17 Bytes Eingang des Partners"
+Value(18) ="18 Bytes Eingang des Partners"
+Value(19) ="19 Bytes Eingang des Partners"
+Value(20) ="20 Bytes Eingang des Partners"
+Value(21) ="21 Bytes Eingang des Partners"
+Value(22) ="22 Bytes Eingang des Partners"
+Value(23) ="23 Bytes Eingang des Partners"
+Value(24) ="24 Bytes Eingang des Partners"
+Value(25) ="25 Bytes Eingang des Partners"
+Value(26) ="26 Bytes Eingang des Partners"
+Value(27) ="27 Bytes Eingang des Partners"
+Value(28) ="28 Bytes Eingang des Partners"
+Value(29) ="29 Bytes Eingang des Partners"
+Value(30) ="30 Bytes Eingang des Partners"
+Value(31) ="31 Bytes Eingang des Partners"
+Value(32) ="32 Bytes Eingang des Partners"
+Value(33) ="33 Bytes Eingang des Partners"
+Value(34) ="34 Bytes Eingang des Partners"
+Value(35) ="35 Bytes Eingang des Partners"
+Value(36) ="36 Bytes Eingang des Partners"
+Value(37) ="37 Bytes Eingang des Partners"
+Value(38) ="38 Bytes Eingang des Partners"
+Value(39) ="39 Bytes Eingang des Partners"
+Value(40) ="40 Bytes Eingang des Partners"
+Value(41) ="41 Bytes Eingang des Partners"
+Value(42) ="42 Bytes Eingang des Partners"
+Value(43) ="43 Bytes Eingang des Partners"
+Value(44) ="44 Bytes Eingang des Partners"
+Value(45) ="45 Bytes Eingang des Partners"
+Value(46) ="46 Bytes Eingang des Partners"
+Value(47) ="47 Bytes Eingang des Partners"
+Value(48) ="48 Bytes Eingang des Partners"
+Value(49) ="49 Bytes Eingang des Partners"
+Value(50) ="50 Bytes Eingang des Partners"
+Value(51) ="51 Bytes Eingang des Partners"
+Value(52) ="52 Bytes Eingang des Partners"
+Value(53) ="53 Bytes Eingang des Partners"
+Value(54) ="54 Bytes Eingang des Partners"
+Value(55) ="55 Bytes Eingang des Partners"
+Value(56) ="56 Bytes Eingang des Partners"
+Value(57) ="57 Bytes Eingang des Partners"
+Value(58) ="58 Bytes Eingang des Partners"
+Value(59) ="59 Bytes Eingang des Partners"
+Value(60) ="60 Bytes Eingang des Partners"
+Value(61) ="61 Bytes Eingang des Partners"
+Value(62) ="62 Bytes Eingang des Partners"
+Value(63) ="63 Bytes Eingang des Partners"
+Value(64) ="64 Bytes Eingang des Partners"
+Value(65) ="65 Bytes Eingang des Partners"
+Value(66) ="66 Bytes Eingang des Partners"
+Value(67) ="67 Bytes Eingang des Partners"
+Value(68) ="68 Bytes Eingang des Partners"
+Value(69) ="69 Bytes Eingang des Partners"
+Value(70) ="70 Bytes Eingang des Partners"
+Value(71) ="71 Bytes Eingang des Partners"
+Value(72) ="72 Bytes Eingang des Partners"
+Value(73) ="73 Bytes Eingang des Partners"
+Value(74) ="74 Bytes Eingang des Partners"
+Value(75) ="75 Bytes Eingang des Partners"
+Value(76) ="76 Bytes Eingang des Partners"
+Value(77) ="77 Bytes Eingang des Partners"
+Value(78) ="78 Bytes Eingang des Partners"
+Value(79) ="79 Bytes Eingang des Partners"
+Value(80) ="80 Bytes Eingang des Partners"
+Value(81) ="81 Bytes Eingang des Partners"
+Value(82) ="82 Bytes Eingang des Partners"
+Value(83) ="83 Bytes Eingang des Partners"
+Value(84) ="84 Bytes Eingang des Partners"
+Value(85) ="85 Bytes Eingang des Partners"
+Value(86) ="86 Bytes Eingang des Partners"
+Value(87) ="87 Bytes Eingang des Partners"
+Value(88) ="88 Bytes Eingang des Partners"
+Value(89) ="89 Bytes Eingang des Partners"
+Value(90) ="90 Bytes Eingang des Partners"
+Value(91) ="91 Bytes Eingang des Partners"
+Value(92) ="92 Bytes Eingang des Partners"
+Value(93) ="93 Bytes Eingang des Partners"
+Value(94) ="94 Bytes Eingang des Partners"
+Value(95) ="95 Bytes Eingang des Partners"
+Value(96) ="96 Bytes Eingang des Partners"
+Value(97) ="97 Bytes Eingang des Partners"
+Value(98) ="98 Bytes Eingang des Partners"
+Value(99) ="99 Bytes Eingang des Partners"
+Value(100) ="100 Bytes Eingang des Partners"
+Value(101) ="101 Bytes Eingang des Partners"
+Value(102) ="102 Bytes Eingang des Partners"
+Value(103) ="103 Bytes Eingang des Partners"
+Value(104) ="104 Bytes Eingang des Partners"
+Value(105) ="105 Bytes Eingang des Partners"
+Value(106) ="106 Bytes Eingang des Partners"
+Value(107) ="107 Bytes Eingang des Partners"
+Value(108) ="108 Bytes Eingang des Partners"
+Value(109) ="109 Bytes Eingang des Partners"
+Value(110) ="110 Bytes Eingang des Partners"
+Value(111) ="111 Bytes Eingang des Partners"
+Value(112) ="112 Bytes Eingang des Partners"
+Value(113) ="113 Bytes Eingang des Partners"
+Value(114) ="114 Bytes Eingang des Partners"
+Value(115) ="115 Bytes Eingang des Partners"
+Value(116) ="116 Bytes Eingang des Partners"
+Value(117) ="117 Bytes Eingang des Partners"
+Value(118) ="118 Bytes Eingang des Partners"
+Value(119) ="119 Bytes Eingang des Partners"
+Value(120) ="120 Bytes Eingang des Partners"
+Value(121) ="121 Bytes Eingang des Partners"
+Value(122) ="122 Bytes Eingang des Partners"
+Value(123) ="123 Bytes Eingang des Partners"
+Value(124) ="124 Bytes Eingang des Partners"
+Value(125) ="125 Bytes Eingang des Partners"
+Value(126) ="126 Bytes Eingang des Partners"
+Value(127) ="127 Bytes Eingang des Partners"
+Value(128) ="128 Bytes Eingang des Partners"
+Value(129) ="129 Bytes Eingang des Partners"
+Value(130) ="130 Bytes Eingang des Partners"
+Value(131) ="131 Bytes Eingang des Partners"
+Value(132) ="132 Bytes Eingang des Partners"
+Value(133) ="133 Bytes Eingang des Partners"
+Value(134) ="134 Bytes Eingang des Partners"
+Value(135) ="135 Bytes Eingang des Partners"
+Value(136) ="136 Bytes Eingang des Partners"
+Value(137) ="137 Bytes Eingang des Partners"
+Value(138) ="138 Bytes Eingang des Partners"
+Value(139) ="139 Bytes Eingang des Partners"
+Value(140) ="140 Bytes Eingang des Partners"
+Value(141) ="141 Bytes Eingang des Partners"
+Value(142) ="142 Bytes Eingang des Partners"
+Value(143) ="143 Bytes Eingang des Partners"
+Value(144) ="144 Bytes Eingang des Partners"
+Value(145) ="145 Bytes Eingang des Partners"
+Value(146) ="146 Bytes Eingang des Partners"
+Value(147) ="147 Bytes Eingang des Partners"
+Value(148) ="148 Bytes Eingang des Partners"
+Value(149) ="149 Bytes Eingang des Partners"
+Value(150) ="150 Bytes Eingang des Partners"
+Value(151) ="151 Bytes Eingang des Partners"
+Value(152) ="152 Bytes Eingang des Partners"
+Value(153) ="153 Bytes Eingang des Partners"
+Value(154) ="154 Bytes Eingang des Partners"
+Value(155) ="155 Bytes Eingang des Partners"
+Value(156) ="156 Bytes Eingang des Partners"
+Value(157) ="157 Bytes Eingang des Partners"
+Value(158) ="158 Bytes Eingang des Partners"
+Value(159) ="159 Bytes Eingang des Partners"
+Value(160) ="160 Bytes Eingang des Partners"
+Value(161) ="161 Bytes Eingang des Partners"
+Value(162) ="162 Bytes Eingang des Partners"
+Value(163) ="163 Bytes Eingang des Partners"
+Value(164) ="164 Bytes Eingang des Partners"
+Value(165) ="165 Bytes Eingang des Partners"
+Value(166) ="166 Bytes Eingang des Partners"
+Value(167) ="167 Bytes Eingang des Partners"
+Value(168) ="168 Bytes Eingang des Partners"
+Value(169) ="169 Bytes Eingang des Partners"
+Value(170) ="170 Bytes Eingang des Partners"
+Value(171) ="171 Bytes Eingang des Partners"
+Value(172) ="172 Bytes Eingang des Partners"
+Value(173) ="173 Bytes Eingang des Partners"
+Value(174) ="174 Bytes Eingang des Partners"
+Value(175) ="175 Bytes Eingang des Partners"
+Value(176) ="176 Bytes Eingang des Partners"
+Value(177) ="177 Bytes Eingang des Partners"
+Value(178) ="178 Bytes Eingang des Partners"
+Value(179) ="179 Bytes Eingang des Partners"
+Value(180) ="180 Bytes Eingang des Partners"
+Value(181) ="181 Bytes Eingang des Partners"
+Value(182) ="182 Bytes Eingang des Partners"
+Value(183) ="183 Bytes Eingang des Partners"
+Value(184) ="184 Bytes Eingang des Partners"
+Value(185) ="185 Bytes Eingang des Partners"
+Value(186) ="186 Bytes Eingang des Partners"
+Value(187) ="187 Bytes Eingang des Partners"
+Value(188) ="188 Bytes Eingang des Partners"
+Value(189) ="189 Bytes Eingang des Partners"
+Value(190) ="190 Bytes Eingang des Partners"
+Value(191) ="191 Bytes Eingang des Partners"
+Value(192) ="192 Bytes Eingang des Partners"
+Value(193) ="193 Bytes Eingang des Partners"
+Value(194) ="194 Bytes Eingang des Partners"
+Value(195) ="195 Bytes Eingang des Partners"
+Value(196) ="196 Bytes Eingang des Partners"
+Value(197) ="197 Bytes Eingang des Partners"
+Value(198) ="198 Bytes Eingang des Partners"
+Value(199) ="199 Bytes Eingang des Partners"
+Value(200) ="200 Bytes Eingang des Partners"
+Value(201) ="201 Bytes Eingang des Partners"
+Value(202) ="202 Bytes Eingang des Partners"
+Value(203) ="203 Bytes Eingang des Partners"
+Value(204) ="204 Bytes Eingang des Partners"
+Value(205) ="205 Bytes Eingang des Partners"
+Value(206) ="206 Bytes Eingang des Partners"
+Value(207) ="207 Bytes Eingang des Partners"
+Value(208) ="208 Bytes Eingang des Partners"
+Value(209) ="209 Bytes Eingang des Partners"
+Value(210) ="210 Bytes Eingang des Partners"
+Value(211) ="211 Bytes Eingang des Partners"
+Value(212) ="212 Bytes Eingang des Partners"
+Value(213) ="213 Bytes Eingang des Partners"
+Value(214) ="214 Bytes Eingang des Partners"
+Value(215) ="215 Bytes Eingang des Partners"
+Value(216) ="216 Bytes Eingang des Partners"
+Value(217) ="217 Bytes Eingang des Partners"
+Value(218) ="218 Bytes Eingang des Partners"
+Value(219) ="219 Bytes Eingang des Partners"
+Value(220) ="220 Bytes Eingang des Partners"
+Value(221) ="221 Bytes Eingang des Partners"
+Value(222) ="222 Bytes Eingang des Partners"
+Value(223) ="223 Bytes Eingang des Partners"
+Value(224) ="224 Bytes Eingang des Partners"
+Value(225) ="225 Bytes Eingang des Partners"
+Value(226) ="226 Bytes Eingang des Partners"
+Value(227) ="227 Bytes Eingang des Partners"
+Value(228) ="228 Bytes Eingang des Partners"
+Value(229) ="229 Bytes Eingang des Partners"
+Value(230) ="230 Bytes Eingang des Partners"
+Value(231) ="231 Bytes Eingang des Partners"
+Value(232) ="232 Bytes Eingang des Partners"
+Value(233) ="233 Bytes Eingang des Partners"
+Value(234) ="234 Bytes Eingang des Partners"
+Value(235) ="235 Bytes Eingang des Partners"
+Value(236) ="236 Bytes Eingang des Partners"
+Value(237) ="237 Bytes Eingang des Partners"
+Value(238) ="238 Bytes Eingang des Partners"
+Value(239) ="239 Bytes Eingang des Partners"
+Value(240) ="240 Bytes Eingang des Partners"
+Value(241) ="241 Bytes Eingang des Partners"
+Value(242) ="242 Bytes Eingang des Partners"
+Value(243) ="243 Bytes Eingang des Partners"
+Value(244) ="244 Bytes Eingang des Partners"
+Unit_Diag_Area_End
+;
+Unit_Diag_Area=40-47
+Value(1) ="1 Byte Ausgang des Partners"
+Value(2) ="2 Bytes Ausgang des Partners"
+Value(3) ="3 Bytes Ausgang des Partners"
+Value(4) ="4 Bytes Ausgang des Partners"
+Value(5) ="5 Bytes Ausgang des Partners"
+Value(6) ="6 Bytes Ausgang des Partners"
+Value(7) ="7 Bytes Ausgang des Partners"
+Value(8) ="8 Bytes Ausgang des Partners"
+Value(9) ="9 Bytes Ausgang des Partners"
+Value(10) ="10 Bytes Ausgang des Partners"
+Value(11) ="11 Bytes Ausgang des Partners"
+Value(12) ="12 Bytes Ausgang des Partners"
+Value(13) ="13 Bytes Ausgang des Partners"
+Value(14) ="14 Bytes Ausgang des Partners"
+Value(15) ="15 Bytes Ausgang des Partners"
+Value(16) ="16 Bytes Ausgang des Partners"
+Value(17) ="17 Bytes Ausgang des Partners"
+Value(18) ="18 Bytes Ausgang des Partners"
+Value(19) ="19 Bytes Ausgang des Partners"
+Value(20) ="20 Bytes Ausgang des Partners"
+Value(21) ="21 Bytes Ausgang des Partners"
+Value(22) ="22 Bytes Ausgang des Partners"
+Value(23) ="23 Bytes Ausgang des Partners"
+Value(24) ="24 Bytes Ausgang des Partners"
+Value(25) ="25 Bytes Ausgang des Partners"
+Value(26) ="26 Bytes Ausgang des Partners"
+Value(27) ="27 Bytes Ausgang des Partners"
+Value(28) ="28 Bytes Ausgang des Partners"
+Value(29) ="29 Bytes Ausgang des Partners"
+Value(30) ="30 Bytes Ausgang des Partners"
+Value(31) ="31 Bytes Ausgang des Partners"
+Value(32) ="32 Bytes Ausgang des Partners"
+Value(33) ="33 Bytes Ausgang des Partners"
+Value(34) ="34 Bytes Ausgang des Partners"
+Value(35) ="35 Bytes Ausgang des Partners"
+Value(36) ="36 Bytes Ausgang des Partners"
+Value(37) ="37 Bytes Ausgang des Partners"
+Value(38) ="38 Bytes Ausgang des Partners"
+Value(39) ="39 Bytes Ausgang des Partners"
+Value(40) ="40 Bytes Ausgang des Partners"
+Value(41) ="41 Bytes Ausgang des Partners"
+Value(42) ="42 Bytes Ausgang des Partners"
+Value(43) ="43 Bytes Ausgang des Partners"
+Value(44) ="44 Bytes Ausgang des Partners"
+Value(45) ="45 Bytes Ausgang des Partners"
+Value(46) ="46 Bytes Ausgang des Partners"
+Value(47) ="47 Bytes Ausgang des Partners"
+Value(48) ="48 Bytes Ausgang des Partners"
+Value(49) ="49 Bytes Ausgang des Partners"
+Value(50) ="50 Bytes Ausgang des Partners"
+Value(51) ="51 Bytes Ausgang des Partners"
+Value(52) ="52 Bytes Ausgang des Partners"
+Value(53) ="53 Bytes Ausgang des Partners"
+Value(54) ="54 Bytes Ausgang des Partners"
+Value(55) ="55 Bytes Ausgang des Partners"
+Value(56) ="56 Bytes Ausgang des Partners"
+Value(57) ="57 Bytes Ausgang des Partners"
+Value(58) ="58 Bytes Ausgang des Partners"
+Value(59) ="59 Bytes Ausgang des Partners"
+Value(60) ="60 Bytes Ausgang des Partners"
+Value(61) ="61 Bytes Ausgang des Partners"
+Value(62) ="62 Bytes Ausgang des Partners"
+Value(63) ="63 Bytes Ausgang des Partners"
+Value(64) ="64 Bytes Ausgang des Partners"
+Value(65) ="65 Bytes Ausgang des Partners"
+Value(66) ="66 Bytes Ausgang des Partners"
+Value(67) ="67 Bytes Ausgang des Partners"
+Value(68) ="68 Bytes Ausgang des Partners"
+Value(69) ="69 Bytes Ausgang des Partners"
+Value(70) ="70 Bytes Ausgang des Partners"
+Value(71) ="71 Bytes Ausgang des Partners"
+Value(72) ="72 Bytes Ausgang des Partners"
+Value(73) ="73 Bytes Ausgang des Partners"
+Value(74) ="74 Bytes Ausgang des Partners"
+Value(75) ="75 Bytes Ausgang des Partners"
+Value(76) ="76 Bytes Ausgang des Partners"
+Value(77) ="77 Bytes Ausgang des Partners"
+Value(78) ="78 Bytes Ausgang des Partners"
+Value(79) ="79 Bytes Ausgang des Partners"
+Value(80) ="80 Bytes Ausgang des Partners"
+Value(81) ="81 Bytes Ausgang des Partners"
+Value(82) ="82 Bytes Ausgang des Partners"
+Value(83) ="83 Bytes Ausgang des Partners"
+Value(84) ="84 Bytes Ausgang des Partners"
+Value(85) ="85 Bytes Ausgang des Partners"
+Value(86) ="86 Bytes Ausgang des Partners"
+Value(87) ="87 Bytes Ausgang des Partners"
+Value(88) ="88 Bytes Ausgang des Partners"
+Value(89) ="89 Bytes Ausgang des Partners"
+Value(90) ="90 Bytes Ausgang des Partners"
+Value(91) ="91 Bytes Ausgang des Partners"
+Value(92) ="92 Bytes Ausgang des Partners"
+Value(93) ="93 Bytes Ausgang des Partners"
+Value(94) ="94 Bytes Ausgang des Partners"
+Value(95) ="95 Bytes Ausgang des Partners"
+Value(96) ="96 Bytes Ausgang des Partners"
+Value(97) ="97 Bytes Ausgang des Partners"
+Value(98) ="98 Bytes Ausgang des Partners"
+Value(99) ="99 Bytes Ausgang des Partners"
+Value(100) ="100 Bytes Ausgang des Partners"
+Value(101) ="101 Bytes Ausgang des Partners"
+Value(102) ="102 Bytes Ausgang des Partners"
+Value(103) ="103 Bytes Ausgang des Partners"
+Value(104) ="104 Bytes Ausgang des Partners"
+Value(105) ="105 Bytes Ausgang des Partners"
+Value(106) ="106 Bytes Ausgang des Partners"
+Value(107) ="107 Bytes Ausgang des Partners"
+Value(108) ="108 Bytes Ausgang des Partners"
+Value(109) ="109 Bytes Ausgang des Partners"
+Value(110) ="110 Bytes Ausgang des Partners"
+Value(111) ="111 Bytes Ausgang des Partners"
+Value(112) ="112 Bytes Ausgang des Partners"
+Value(113) ="113 Bytes Ausgang des Partners"
+Value(114) ="114 Bytes Ausgang des Partners"
+Value(115) ="115 Bytes Ausgang des Partners"
+Value(116) ="116 Bytes Ausgang des Partners"
+Value(117) ="117 Bytes Ausgang des Partners"
+Value(118) ="118 Bytes Ausgang des Partners"
+Value(119) ="119 Bytes Ausgang des Partners"
+Value(120) ="120 Bytes Ausgang des Partners"
+Value(121) ="121 Bytes Ausgang des Partners"
+Value(122) ="122 Bytes Ausgang des Partners"
+Value(123) ="123 Bytes Ausgang des Partners"
+Value(124) ="124 Bytes Ausgang des Partners"
+Value(125) ="125 Bytes Ausgang des Partners"
+Value(126) ="126 Bytes Ausgang des Partners"
+Value(127) ="127 Bytes Ausgang des Partners"
+Value(128) ="128 Bytes Ausgang des Partners"
+Value(129) ="129 Bytes Ausgang des Partners"
+Value(130) ="130 Bytes Ausgang des Partners"
+Value(131) ="131 Bytes Ausgang des Partners"
+Value(132) ="132 Bytes Ausgang des Partners"
+Value(133) ="133 Bytes Ausgang des Partners"
+Value(134) ="134 Bytes Ausgang des Partners"
+Value(135) ="135 Bytes Ausgang des Partners"
+Value(136) ="136 Bytes Ausgang des Partners"
+Value(137) ="137 Bytes Ausgang des Partners"
+Value(138) ="138 Bytes Ausgang des Partners"
+Value(139) ="139 Bytes Ausgang des Partners"
+Value(140) ="140 Bytes Ausgang des Partners"
+Value(141) ="141 Bytes Ausgang des Partners"
+Value(142) ="142 Bytes Ausgang des Partners"
+Value(143) ="143 Bytes Ausgang des Partners"
+Value(144) ="144 Bytes Ausgang des Partners"
+Value(145) ="145 Bytes Ausgang des Partners"
+Value(146) ="146 Bytes Ausgang des Partners"
+Value(147) ="147 Bytes Ausgang des Partners"
+Value(148) ="148 Bytes Ausgang des Partners"
+Value(149) ="149 Bytes Ausgang des Partners"
+Value(150) ="150 Bytes Ausgang des Partners"
+Value(151) ="151 Bytes Ausgang des Partners"
+Value(152) ="152 Bytes Ausgang des Partners"
+Value(153) ="153 Bytes Ausgang des Partners"
+Value(154) ="154 Bytes Ausgang des Partners"
+Value(155) ="155 Bytes Ausgang des Partners"
+Value(156) ="156 Bytes Ausgang des Partners"
+Value(157) ="157 Bytes Ausgang des Partners"
+Value(158) ="158 Bytes Ausgang des Partners"
+Value(159) ="159 Bytes Ausgang des Partners"
+Value(160) ="160 Bytes Ausgang des Partners"
+Value(161) ="161 Bytes Ausgang des Partners"
+Value(162) ="162 Bytes Ausgang des Partners"
+Value(163) ="163 Bytes Ausgang des Partners"
+Value(164) ="164 Bytes Ausgang des Partners"
+Value(165) ="165 Bytes Ausgang des Partners"
+Value(166) ="166 Bytes Ausgang des Partners"
+Value(167) ="167 Bytes Ausgang des Partners"
+Value(168) ="168 Bytes Ausgang des Partners"
+Value(169) ="169 Bytes Ausgang des Partners"
+Value(170) ="170 Bytes Ausgang des Partners"
+Value(171) ="171 Bytes Ausgang des Partners"
+Value(172) ="172 Bytes Ausgang des Partners"
+Value(173) ="173 Bytes Ausgang des Partners"
+Value(174) ="174 Bytes Ausgang des Partners"
+Value(175) ="175 Bytes Ausgang des Partners"
+Value(176) ="176 Bytes Ausgang des Partners"
+Value(177) ="177 Bytes Ausgang des Partners"
+Value(178) ="178 Bytes Ausgang des Partners"
+Value(179) ="179 Bytes Ausgang des Partners"
+Value(180) ="180 Bytes Ausgang des Partners"
+Value(181) ="181 Bytes Ausgang des Partners"
+Value(182) ="182 Bytes Ausgang des Partners"
+Value(183) ="183 Bytes Ausgang des Partners"
+Value(184) ="184 Bytes Ausgang des Partners"
+Value(185) ="185 Bytes Ausgang des Partners"
+Value(186) ="186 Bytes Ausgang des Partners"
+Value(187) ="187 Bytes Ausgang des Partners"
+Value(188) ="188 Bytes Ausgang des Partners"
+Value(189) ="189 Bytes Ausgang des Partners"
+Value(190) ="190 Bytes Ausgang des Partners"
+Value(191) ="191 Bytes Ausgang des Partners"
+Value(192) ="192 Bytes Ausgang des Partners"
+Value(193) ="193 Bytes Ausgang des Partners"
+Value(194) ="194 Bytes Ausgang des Partners"
+Value(195) ="195 Bytes Ausgang des Partners"
+Value(196) ="196 Bytes Ausgang des Partners"
+Value(197) ="197 Bytes Ausgang des Partners"
+Value(198) ="198 Bytes Ausgang des Partners"
+Value(199) ="199 Bytes Ausgang des Partners"
+Value(200) ="200 Bytes Ausgang des Partners"
+Value(201) ="201 Bytes Ausgang des Partners"
+Value(202) ="202 Bytes Ausgang des Partners"
+Value(203) ="203 Bytes Ausgang des Partners"
+Value(204) ="204 Bytes Ausgang des Partners"
+Value(205) ="205 Bytes Ausgang des Partners"
+Value(206) ="206 Bytes Ausgang des Partners"
+Value(207) ="207 Bytes Ausgang des Partners"
+Value(208) ="208 Bytes Ausgang des Partners"
+Value(209) ="209 Bytes Ausgang des Partners"
+Value(210) ="210 Bytes Ausgang des Partners"
+Value(211) ="211 Bytes Ausgang des Partners"
+Value(212) ="212 Bytes Ausgang des Partners"
+Value(213) ="213 Bytes Ausgang des Partners"
+Value(214) ="214 Bytes Ausgang des Partners"
+Value(215) ="215 Bytes Ausgang des Partners"
+Value(216) ="216 Bytes Ausgang des Partners"
+Value(217) ="217 Bytes Ausgang des Partners"
+Value(218) ="218 Bytes Ausgang des Partners"
+Value(219) ="219 Bytes Ausgang des Partners"
+Value(220) ="220 Bytes Ausgang des Partners"
+Value(221) ="221 Bytes Ausgang des Partners"
+Value(222) ="222 Bytes Ausgang des Partners"
+Value(223) ="223 Bytes Ausgang des Partners"
+Value(224) ="224 Bytes Ausgang des Partners"
+Value(225) ="225 Bytes Ausgang des Partners"
+Value(226) ="226 Bytes Ausgang des Partners"
+Value(227) ="227 Bytes Ausgang des Partners"
+Value(228) ="228 Bytes Ausgang des Partners"
+Value(229) ="229 Bytes Ausgang des Partners"
+Value(230) ="230 Bytes Ausgang des Partners"
+Value(231) ="231 Bytes Ausgang des Partners"
+Value(232) ="232 Bytes Ausgang des Partners"
+Value(233) ="233 Bytes Ausgang des Partners"
+Value(234) ="234 Bytes Ausgang des Partners"
+Value(235) ="235 Bytes Ausgang des Partners"
+Value(236) ="236 Bytes Ausgang des Partners"
+Value(237) ="237 Bytes Ausgang des Partners"
+Value(238) ="238 Bytes Ausgang des Partners"
+Value(239) ="239 Bytes Ausgang des Partners"
+Value(240) ="240 Bytes Ausgang des Partners"
+Value(241) ="241 Bytes Ausgang des Partners"
+Value(242) ="242 Bytes Ausgang des Partners"
+Value(243) ="243 Bytes Ausgang des Partners"
+Value(244) ="244 Bytes Ausgang des Partners"
+Unit_Diag_Area_End
+;
+Unit_Diag_Bit(49) = "Daten des Partners loeschen"
+Unit_Diag_Bit(50) = "Unfreeze des Partners"
+Unit_Diag_Bit(51) = "Freeze des Partners"
+Unit_Diag_Bit(52) = "Unsync des Partners"
+Unit_Diag_Bit(53) = "Sync des Partners"
+;
+Unit_Diag_Area=56-63
+Value(1) ="PS1 Aus"
+Value(2) ="PS2 Ein"
+Unit_Diag_Area_End
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; <Prm-Text-Def-List>
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+PrmText=1
+Text(0)="Erweitertes Diagnosebit ein"
+Text(1)="Erweitertes Diagnosebit aus"
+EndPrmText
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; <Ext-User-Prm-Data-Def-List>
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+ExtUserPrmData=1 "Diagnose"
+Bit(7) 0 0-1
+Prm_Text_Ref=1
+EndExtUserPrmData
+;
+Max_User_Prm_Data_Len = 8 
+Ext_User_Prm_Data_Const(0) = 0x00,0x00,0x00 
+Ext_User_Prm_Data_Const(3) = 0x05,0x81,0x00,0x00,0x80 
+Ext_User_Prm_Data_Ref(7) = 1
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; <Module-Definition-List>
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+Module = "1 Byte Eingang" 0x10
+1
+EndModule
+;
+Module = "2 Bytes Eingang" 0x11
+2
+EndModule
+;
+Module = "4 Bytes Eingang" 0x13
+3
+EndModule
+;
+Module = "8 Bytes Eingang" 0x17
+4
+EndModule
+;
+Module = "16 Bytes Eingang" 0x1F
+5
+EndModule
+;
+Module = "32 Bytes Eingang" 0x40,0x1F
+6
+EndModule
+;
+Module = "64 Bytes Eingang" 0x40,0x3F
+7
+EndModule
+;
+Module = "64 Worte Eingang" 0x40,0x7F
+8
+EndModule
+;
+Module = "1 Byte Ausgang" 0x20
+10
+EndModule
+;
+Module = "2 Bytes Ausgang" 0x21
+11
+EndModule
+;
+Module = "4 Bytes Ausgang" 0x23
+12
+EndModule
+;
+Module = "8 Bytes Ausgang " 0x27
+13
+EndModule
+;
+Module = "16 Bytes Ausgang" 0x2F
+14
+EndModule
+;
+Module = "32 Bytes Ausgang" 0x80,0x1F
+15
+EndModule
+;
+Module = "64 Bytes Ausgang" 0x80,0x3F
+16
+EndModule
+;
+Module = "64 Worte Ausgang" 0x80,0x7F
+17
+EndModule
+;
+Module = "1 Byte Eingang konsistent" 0x90
+19
+EndModule
+;
+Module = "2 Bytes Eingang konsistent" 0x91
+20
+EndModule
+;
+Module = "4 Bytes Eingang konsistent" 0x93
+21
+EndModule
+;
+Module = "8 Bytes Eingang konsistent" 0x97
+22
+EndModule
+;
+Module = "16 Bytes Eingang konsistent" 0x9F
+23
+EndModule
+;
+Module = "32 Bytes Eingang konsistent" 0x40,0x9F
+24
+EndModule
+;
+Module = "64 Bytes Eingang konsistent" 0x40,0xBF
+25
+EndModule
+;
+Module = "64 Worte Eingang konsistent" 0x40,0xFF
+26
+EndModule
+;
+Module = "1 Byte Ausgang konsistent" 0xA0
+28
+EndModule
+;
+Module = "2 Bytes Ausgang konsistent" 0xA1
+29
+EndModule
+;
+Module = "4 Bytes Ausgang konsistent" 0xA3
+30
+EndModule
+;
+Module = "8 Bytes Ausgang konsistent" 0xA7
+31
+EndModule
+;
+Module = "16 Bytes Ausgang konsistent" 0xAF
+32
+EndModule
+;
+Module = "32 Bytes Ausgang konsistent" 0x80,0x9F
+33
+EndModule
+;
+Module = "64 Bytes Ausgang konsistent" 0x80,0xBF
+34
+EndModule
+;
+Module = "64 Worte Ausgang konsistent" 0x80,0xFF
+35
+EndModule
+;
+Module = "6 Bytes E/12 Bytes A konsistent" 0xC0,0x8B,0x85
+36
+EndModule
+;
+Module = "12 Bytes E/6 Bytes A konsistent" 0xC0,0x85,0x8B
+37
+EndModule
+;
+Max_Output_Len = 244
+Max_Input_Len = 244
+Max_Data_Len = 488
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+

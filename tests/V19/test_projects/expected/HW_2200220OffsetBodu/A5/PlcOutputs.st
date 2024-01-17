@@ -1,0 +1,47 @@
+TYPE
+	PlcOutputs : STRUCT
+		A6_15A5 : WORD;
+		A6_15A6 : WORD;
+		A6_15A7 : WORD;
+		A6_15A8 : WORD;
+		A6_15A10 : ARRAY[0..7] OF BYTE;
+		VI_13_MPA1S_VMPA1_FB_EMS_8_8DO_1 : BYTE;
+		VI_13_MPA1S_VMPA1_FB_EMS_8_8DO_2 : BYTE;
+		VI_13_MPA1S_VMPA1_FB_EMS_8_8DO_3 : BYTE;
+		VI_13_MPA1S_VMPA1_FB_EMS_8_8DO_4 : BYTE;
+		VI_13_MPA1S_VMPA1_FB_EMS_8_8DO_5 : BYTE;
+		VI_13_MPA1S_VMPA1_FB_EMS_8_8DO_6 : BYTE;
+		VI_13_MPA1S_VMPA1_FB_EMS_8_8DO_7 : BYTE;
+		VI_13_MPA1S_VMPA1_FB_EMS_8_8DO_8 : BYTE;
+		AxisLinear_DO_SERVO_1_Siemens_telegram_111_PZD_12_12 : ARRAY[0..23] OF BYTE;
+		Bash_Output_1_byte_1 : BYTE;
+		Bash_Output_1_byte_2 : BYTE;
+		AEBDown_Output_1_byte_1 : BYTE;
+		AEBDown_Output_1_byte_2 : BYTE;
+		AEBUp_Output_1_byte_1 : BYTE;
+		AEBUp_Output_1_byte_2 : BYTE;
+		AETDown_Output_1_byte_1 : BYTE;
+		AETDown_Output_1_byte_2 : BYTE;
+		AETUp_Output_1_byte_1 : BYTE;
+		AETUp_Output_1_byte_2 : BYTE;
+		GT2_DL_PN1_1 : BYTE;
+		GT2_B1 : BYTE;
+		GT2_B2 : BYTE;
+		GT2_B3 : BYTE;
+		GT2_B4 : BYTE;
+		GT2_B5 : BYTE;
+		GT2_B6 : BYTE;
+		GT2_B7 : BYTE;
+		GT2_B8 : BYTE;
+		GT2_B9 : BYTE;
+		CPX_CW_SW : DWORD;
+		CPX_CNC : ARRAY[0..31] OF BYTE;
+		CPX_PtP : ARRAY[0..15] OF BYTE;
+		CPX_Error : ARRAY[0..31] OF BYTE;
+		Reader_Latch_and_Error_Clear_Control_Bits_1 : BYTE;
+		Reader_Operation_instruction_Control_Bits_1 : BYTE;
+		Reader_Completion_Clear_Control_Bits_1 : BYTE;
+		Reader_Parameter_Bank_Number_1 : WORD;
+		Reader_User_Data_128Byte_1 : ARRAY[0..129] OF BYTE;
+	END_STRUCT;
+END_TYPE

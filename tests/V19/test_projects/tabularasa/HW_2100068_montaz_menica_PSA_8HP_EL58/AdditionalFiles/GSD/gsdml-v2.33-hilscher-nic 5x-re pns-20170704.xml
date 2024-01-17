@@ -1,0 +1,1698 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-V2.33.xsd">
+  <ProfileHeader>
+    <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+    <ProfileRevision>1.00</ProfileRevision>
+    <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+    <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+    <ProfileClassID>Device</ProfileClassID>
+    <ISO15745Reference>
+      <ISO15745Part>4</ISO15745Part>
+      <ISO15745Edition>1</ISO15745Edition>
+      <ProfileTechnology>GSDML</ProfileTechnology>
+    </ISO15745Reference>
+  </ProfileHeader>
+  <ProfileBody>
+    <DeviceIdentity DeviceID="0x010A" VendorID="0x011E">
+      <InfoText TextId="DeviceDescription_InfoText"/>
+      <VendorName Value="Hilscher Gesellschaft für Systemautomation mbH"/>
+    </DeviceIdentity>
+    <DeviceFunction>
+      <Family MainFamily="I/O" ProductFamily="PNS"/>
+    </DeviceFunction>
+    <ApplicationProcess>
+      <DeviceAccessPointList>
+        <DeviceAccessPointItem CheckDeviceID_Allowed="false" DNS_CompatibleName="nic50repns" DeviceAccessSupported="false" FixedInSlots="0" ID="DIM 1" ImplementationType="netX" MinDeviceInterval="64" ModuleIdentNumber="0x00000001" NameOfStationNotTransferable="true" ObjectUUID_LocalIndex="1" PNIO_Version="V2.2" PhysicalSlots="0..8" PowerOnToCommReady="800" PrmBeginPrmEndSequenceSupported="false" SharedDeviceSupported="false" SharedInputSupported="false">
+          <ModuleInfo>
+            <Name TextId="NIC 50-RE/PNS V1.2.x - V1.4.15"/>
+            <InfoText TextId="DIM 1_InfoText"/>
+            <VendorName Value="Hilscher Gesellschaft für Systemautomation mbH"/>
+            <OrderNumber Value="1541.100"/>
+            <HardwareRelease Value="2"/>
+            <SoftwareRelease Value="V1.2"/>
+          </ModuleInfo>
+          <SubslotList>
+            <SubslotItem SubslotNumber="32768" TextId="X1"/>
+            <SubslotItem SubslotNumber="32769" TextId="X1P1"/>
+            <SubslotItem SubslotNumber="32770" TextId="X1P2"/>
+          </SubslotList>
+          <IOConfigData MaxInputLength="1024" MaxOutputLength="1024"/>
+          <UseableModules>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="2byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="3byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="4byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="8byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="12byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="16byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="20byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="32byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="64byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1int8input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1int16input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1int32input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1int64input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1uint8input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1uint16input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1uint32input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1uint64input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1float32input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1float64input"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="2byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="3byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="4byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="8byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="12byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="16byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="20byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="32byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="64byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1int8output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1int16output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1int32output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1int64output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1uint8output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1uint16output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1uint32output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1uint64output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1float32output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1float64output"/>
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DIM 1" IM5_Supported="true" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x00000000">
+              <IOData/>
+              <ModuleInfo CategoryRef="DAP Module">
+                <Name TextId="NIC 50-RE/PNS V1.2.x - V1.4.15"/>
+                <InfoText TextId="DIM 1_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem DCP_HelloSupported="true" ID="DIM 1 Interfacesubmodule" NetworkComponentDiagnosisSupported="true" SubmoduleIdentNumber="0x00000001" SubslotNumber="32768" SupportedProtocols="SNMP;LLDP" SupportedRT_Classes="RT_CLASS_1" TextId="PN-IO">
+              <ApplicationRelations NumberOfAR="0" StartupMode="Legacy">
+                <TimingProperties SendClock="32 64 128"/>
+              </ApplicationRelations>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem CheckMAUTypeSupported="false" ID="DIM 1 Portsubmodule 1" LinkStateDiagnosisCapability="Up+Down" MAUTypes="16" SubmoduleIdentNumber="0x00000001" SubslotNumber="32769" TextId="Port1">
+              <MAUTypeList>
+                <MAUTypeItem AdjustSupported="true" Value="16"/>
+              </MAUTypeList>
+            </PortSubmoduleItem>
+            <PortSubmoduleItem CheckMAUTypeSupported="false" ID="DIM 1 Portsubmodule 2" LinkStateDiagnosisCapability="Up+Down" MAUTypes="16" SubmoduleIdentNumber="0x00000001" SubslotNumber="32770" TextId="Port2">
+              <MAUTypeList>
+                <MAUTypeItem AdjustSupported="true" Value="16"/>
+              </MAUTypeList>
+            </PortSubmoduleItem>
+          </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef GraphicItemTarget="1" Type="DeviceSymbol"/>
+            <GraphicItemRef GraphicItemTarget="1" Type="DeviceIcon"/>
+          </Graphics>
+        </DeviceAccessPointItem>
+        <DeviceAccessPointItem AddressAssignment="DCP;LOCAL" CheckDeviceID_Allowed="false" DNS_CompatibleName="nic50repns" DeviceAccessSupported="false" FixedInSlots="0" ID="DIM 7" ImplementationType="netX" MinDeviceInterval="64" ModuleIdentNumber="0x00000101" MultipleWriteSupported="true" NameOfStationNotTransferable="true" ObjectUUID_LocalIndex="1" PNIO_Version="V2.2" PhysicalSlots="0..8" PowerOnToCommReady="800" PrmBeginPrmEndSequenceSupported="false" SharedDeviceSupported="false" SharedInputSupported="false">
+          <ModuleInfo>
+            <Name TextId="NIC 50-RE/PNS V1.4.16 - V1.5.x"/>
+            <InfoText TextId="DIM 7_InfoText"/>
+            <VendorName Value="Hilscher Gesellschaft für Systemautomation mbH"/>
+            <OrderNumber Value="1541.100"/>
+            <HardwareRelease Value="4"/>
+            <SoftwareRelease Value="V1.5.x"/>
+          </ModuleInfo>
+          <SubslotList>
+            <SubslotItem SubslotNumber="32768" TextId="X1"/>
+            <SubslotItem SubslotNumber="32769" TextId="X1P1"/>
+            <SubslotItem SubslotNumber="32770" TextId="X1P2"/>
+          </SubslotList>
+          <IOConfigData MaxInputLength="1024" MaxOutputLength="1024"/>
+          <UseableModules>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="2byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="3byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="4byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="8byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="12byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="16byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="20byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="32byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="64byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1int8input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1int16input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1int32input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1int64input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1uint8input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1uint16input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1uint32input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1uint64input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1float32input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1float64input"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="2byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="3byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="4byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="8byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="12byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="16byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="20byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="32byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="64byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1int8output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1int16output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1int32output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1int64output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1uint8output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1uint16output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1uint32output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1uint64output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1float32output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1float64output"/>
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DIM 7" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x00000100" Writeable_IM_Records="1 2 3 4">
+              <IOData/>
+              <ModuleInfo CategoryRef="DAP Module">
+                <Name TextId="NIC 50-RE/PNS V1.4.16 - V1.5.x"/>
+                <InfoText TextId="DIM 7_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem DCP_HelloSupported="true" ID="DIM 7 Interfacesubmodule" NetworkComponentDiagnosisSupported="true" SubmoduleIdentNumber="0x00000101" SubslotNumber="32768" SupportedProtocols="SNMP;LLDP" SupportedRT_Classes="RT_CLASS_1" TextId="PN-IO">
+              <ApplicationRelations NumberOfAR="0" StartupMode="Legacy">
+                <TimingProperties ReductionRatio="1 2 4 8 16 32 64 128 256 512" SendClock="32 64 128"/>
+              </ApplicationRelations>
+              <MediaRedundancy SupportedRole="Client"/>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem CheckMAUTypeSupported="true" ID="DIM 7 Portsubmodule 1" IsDefaultRingport="true" LinkStateDiagnosisCapability="Up+Down" MAUTypes="16" SubmoduleIdentNumber="0x00000102" SubslotNumber="32769" TextId="Port1">
+              <MAUTypeList>
+                <MAUTypeItem AdjustSupported="true" Value="16"/>
+              </MAUTypeList>
+            </PortSubmoduleItem>
+            <PortSubmoduleItem CheckMAUTypeSupported="true" ID="DIM 7 Portsubmodule 2" IsDefaultRingport="true" LinkStateDiagnosisCapability="Up+Down" MAUTypes="16" SubmoduleIdentNumber="0x00000103" SubslotNumber="32770" TextId="Port2">
+              <MAUTypeList>
+                <MAUTypeItem AdjustSupported="true" Value="16"/>
+              </MAUTypeList>
+            </PortSubmoduleItem>
+          </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef GraphicItemTarget="1" Type="DeviceSymbol"/>
+            <GraphicItemRef GraphicItemTarget="1" Type="DeviceIcon"/>
+          </Graphics>
+        </DeviceAccessPointItem>
+        <DeviceAccessPointItem AddressAssignment="DCP;LOCAL" CheckDeviceID_Allowed="false" DNS_CompatibleName="nic50repns" DeviceAccessSupported="false" FixedInSlots="0" ID="DIM 8" ImplementationType="netX" MinDeviceInterval="64" ModuleIdentNumber="0x00000201" MultipleWriteSupported="true" NameOfStationNotTransferable="true" ObjectUUID_LocalIndex="1" PNIO_Version="V2.2" PhysicalSlots="0..8" PowerOnToCommReady="800" PrmBeginPrmEndSequenceSupported="false" SharedDeviceSupported="false" SharedInputSupported="false">
+          <ModuleInfo>
+            <Name TextId="NIC 50-REFO/PNS V1.4.16 - V1.5.x"/>
+            <InfoText TextId="DIM 8_InfoText"/>
+            <VendorName Value="Hilscher Gesellschaft für Systemautomation mbH"/>
+            <OrderNumber Value="1541.110"/>
+            <HardwareRelease Value="4"/>
+            <SoftwareRelease Value="V1.5.x"/>
+          </ModuleInfo>
+          <SubslotList>
+            <SubslotItem SubslotNumber="32768" TextId="X1"/>
+            <SubslotItem SubslotNumber="32769" TextId="X1P1"/>
+            <SubslotItem SubslotNumber="32770" TextId="X1P2"/>
+          </SubslotList>
+          <IOConfigData MaxInputLength="1024" MaxOutputLength="1024"/>
+          <UseableModules>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="2byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="3byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="4byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="8byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="12byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="16byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="20byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="32byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="64byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1int8input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1int16input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1int32input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1int64input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1uint8input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1uint16input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1uint32input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1uint64input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1float32input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1float64input"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="2byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="3byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="4byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="8byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="12byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="16byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="20byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="32byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="64byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1int8output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1int16output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1int32output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1int64output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1uint8output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1uint16output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1uint32output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1uint64output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1float32output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1float64output"/>
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DIM 8fo" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x00000200" Writeable_IM_Records="1 2 3 4">
+              <IOData/>
+              <ModuleInfo CategoryRef="DAP Module">
+                <Name TextId="NIC 50-REFO/PNS V1.4.16 - V1.5.x"/>
+                <InfoText TextId="DIM 8_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem DCP_HelloSupported="true" ID="DIM 8fo Interfacesubmodule" NetworkComponentDiagnosisSupported="true" SubmoduleIdentNumber="0x00000201" SubslotNumber="32768" SupportedProtocols="SNMP;LLDP" SupportedRT_Classes="RT_CLASS_1" TextId="PN-IO">
+              <ApplicationRelations NumberOfAR="0" StartupMode="Legacy">
+                <TimingProperties ReductionRatio="1 2 4 8 16 32 64 128 256 512" SendClock="32 64 128"/>
+              </ApplicationRelations>
+              <MediaRedundancy SupportedRole="Client"/>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem CheckMAUTypeSupported="true" FiberOpticTypes="4 5" ID="DIM 8fo Portsubmodule 1" IsDefaultRingport="true" LinkStateDiagnosisCapability="Up+Down" MAUTypes="54" PowerBudgetControlSupported="true" SubmoduleIdentNumber="0x00000202" SubslotNumber="32769" TextId="Port1">
+              <MAUTypeList>
+                <MAUTypeItem AdjustSupported="true" Value="54"/>
+              </MAUTypeList>
+            </PortSubmoduleItem>
+            <PortSubmoduleItem CheckMAUTypeSupported="true" FiberOpticTypes="4 5" ID="DIM 8fo Portsubmodule 2" IsDefaultRingport="true" LinkStateDiagnosisCapability="Up+Down" MAUTypes="54" PowerBudgetControlSupported="true" SubmoduleIdentNumber="0x00000203" SubslotNumber="32770" TextId="Port2">
+              <MAUTypeList>
+                <MAUTypeItem AdjustSupported="true" Value="54"/>
+              </MAUTypeList>
+            </PortSubmoduleItem>
+          </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef GraphicItemTarget="1" Type="DeviceSymbol"/>
+            <GraphicItemRef GraphicItemTarget="1" Type="DeviceIcon"/>
+          </Graphics>
+        </DeviceAccessPointItem>
+        <DeviceAccessPointItem AddressAssignment="DCP;LOCAL" CheckDeviceID_Allowed="false" DNS_CompatibleName="nic52repns" DeviceAccessSupported="true" FixedInSlots="0" ID="DIM 17" IO_SupervisorSupported="true" ImplementationType="netX" LLDP_NoD_Supported="true" MinDeviceInterval="32" ModuleIdentNumber="0x00000181" MultipleWriteSupported="true" NameOfStationNotTransferable="true" NumberOfDeviceAccessAR="1" ObjectUUID_LocalIndex="1" PNIO_Version="V2.33" PhysicalSlots="0..8" PowerOnToCommReady="500" PrmBeginPrmEndSequenceSupported="false" ResetToFactoryModes="2" SharedDeviceSupported="true" SharedInputSupported="false">
+          <ModuleInfo>
+            <Name TextId="NIC 52-RE/PNS V2.0 - V2.x"/>
+            <InfoText TextId="DIM 17_InfoText"/>
+            <VendorName Value="Hilscher Gesellschaft für Systemautomation mbH"/>
+            <OrderNumber Value="1544.100"/>
+            <HardwareRelease Value="3"/>
+            <SoftwareRelease Value="V2.x"/>
+          </ModuleInfo>
+          <CertificationInfo ApplicationClass="" ConformanceClass="C" NetloadClass="I"/>
+          <SubslotList>
+            <SubslotItem SubslotNumber="32768" TextId="X1"/>
+            <SubslotItem SubslotNumber="32769" TextId="X1P1"/>
+            <SubslotItem SubslotNumber="32770" TextId="X1P2"/>
+          </SubslotList>
+          <IOConfigData MaxInputLength="1024" MaxOutputLength="1024"/>
+          <UseableModules>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="2byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="3byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="4byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="8byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="12byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="16byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="20byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="32byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="64byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1int8input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1int16input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1int32input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1int64input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1uint8input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1uint16input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1uint32input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1uint64input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1float32input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1float64input"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="2byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="3byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="4byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="8byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="12byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="16byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="20byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="32byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="64byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1int8output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1int16output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1int32output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1int64output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1uint8output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1uint16output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1uint32output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1uint64output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1float32output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1float64output"/>
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DIM 17" IM5_Supported="true" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x00000180" Writeable_IM_Records="1 2 3 4">
+              <IOData/>
+              <ModuleInfo CategoryRef="DAP Module">
+                <Name TextId="NIC 52-RE/PNS V2.0 - V2.x"/>
+                <InfoText TextId="DIM 17_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem DCP_BoundarySupported="true" DCP_HelloSupported="true" DelayMeasurementSupported="true" ID="DIM 17 Interfacesubmodule" NetworkComponentDiagnosisSupported="true" PTP_BoundarySupported="true" SubmoduleIdentNumber="0x00000181" SubslotNumber="32768" SupportedProtocols="SNMP;LLDP" SupportedRT_Classes="RT_CLASS_1;RT_CLASS_3" TextId="PN-IO">
+              <RT_Class3Properties ForwardingMode="Relative" MaxBridgeDelay="5500" MaxNumberIR_FrameData="256" StartupMode="Advanced;Legacy"/>
+              <SynchronisationMode MaxLocalJitter="50" SupportedRole="SyncSlave" SupportedSyncProtocols="PTCP" T_PLL_MAX="1000"/>
+              <ApplicationRelations NumberOfAR="2" StartupMode="Advanced;Legacy">
+                <TimingProperties ReductionRatio="1 2 4 8 16 32 64 128 256 512" SendClock="32 64 128"/>
+                <RT_Class3TimingProperties ReductionRatio="1 2 4 8 16" SendClock="32 64 128"/>
+              </ApplicationRelations>
+              <MediaRedundancy SupportedRole="Client"/>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem CheckMAUTypeDifferenceSupported="true" CheckMAUTypeSupported="true" ID="DIM 17 Portsubmodule 1" IsDefaultRingport="true" LinkStateDiagnosisCapability="Up+Down" MAUTypes="16" MaxPortRxDelay="340" MaxPortTxDelay="92" PortDeactivationSupported="true" SubmoduleIdentNumber="0x00000182" SubslotNumber="32769" TextId="Port1">
+              <MAUTypeList>
+                <MAUTypeItem AdjustSupported="true" Value="16"/>
+              </MAUTypeList>
+            </PortSubmoduleItem>
+            <PortSubmoduleItem CheckMAUTypeDifferenceSupported="true" CheckMAUTypeSupported="true" ID="DIM 17 Portsubmodule 2" IsDefaultRingport="true" LinkStateDiagnosisCapability="Up+Down" MAUTypes="16" MaxPortRxDelay="340" MaxPortTxDelay="92" PortDeactivationSupported="true" SubmoduleIdentNumber="0x00000183" SubslotNumber="32770" TextId="Port2">
+              <MAUTypeList>
+                <MAUTypeItem AdjustSupported="true" Value="16"/>
+              </MAUTypeList>
+            </PortSubmoduleItem>
+          </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef GraphicItemTarget="1" Type="DeviceSymbol"/>
+            <GraphicItemRef GraphicItemTarget="1" Type="DeviceIcon"/>
+          </Graphics>
+        </DeviceAccessPointItem>
+        <DeviceAccessPointItem AddressAssignment="DCP;LOCAL" CheckDeviceID_Allowed="false" DNS_CompatibleName="nic52repns" DeviceAccessSupported="true" FixedInSlots="0" ID="DIM 18" IO_SupervisorSupported="true" ImplementationType="netX" LLDP_NoD_Supported="true" MinDeviceInterval="32" ModuleIdentNumber="0x00000281" MultipleWriteSupported="true" NameOfStationNotTransferable="true" NumberOfDeviceAccessAR="1" ObjectUUID_LocalIndex="1" PNIO_Version="V2.33" PhysicalSlots="0..8" PowerOnToCommReady="500" PrmBeginPrmEndSequenceSupported="false" ResetToFactoryModes="2" SharedDeviceSupported="true" SharedInputSupported="false">
+          <ModuleInfo>
+            <Name TextId="NIC 52-REFO/PNS V2.0 - V2.x"/>
+            <InfoText TextId="DIM 18_InfoText"/>
+            <VendorName Value="Hilscher Gesellschaft für Systemautomation mbH"/>
+            <OrderNumber Value="1544.110"/>
+            <HardwareRelease Value="1"/>
+            <SoftwareRelease Value="V2.x"/>
+          </ModuleInfo>
+          <CertificationInfo ApplicationClass="" ConformanceClass="C" NetloadClass="I"/>
+          <SubslotList>
+            <SubslotItem SubslotNumber="32768" TextId="X1"/>
+            <SubslotItem SubslotNumber="32769" TextId="X1P1"/>
+            <SubslotItem SubslotNumber="32770" TextId="X1P2"/>
+          </SubslotList>
+          <IOConfigData MaxInputLength="1024" MaxOutputLength="1024"/>
+          <UseableModules>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="2byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="3byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="4byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="8byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="12byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="16byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="20byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="32byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="64byteinput"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1int8input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1int16input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1int32input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1int64input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1uint8input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1uint16input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1uint32input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1uint64input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1float32input"/>
+            <ModuleItemRef AllowedInSlots="5..8" ModuleItemTarget="1float64input"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="2byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="3byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="4byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="8byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="12byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="16byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="20byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="32byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="64byteoutput"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1int8output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1int16output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1int32output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1int64output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1uint8output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1uint16output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1uint32output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1uint64output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1float32output"/>
+            <ModuleItemRef AllowedInSlots="1..4" ModuleItemTarget="1float64output"/>
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DIM 18" IM5_Supported="true" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x00000280" Writeable_IM_Records="1 2 3 4">
+              <IOData/>
+              <ModuleInfo CategoryRef="DAP Module">
+                <Name TextId="NIC 52-REFO/PNS V2.0 - V2.x"/>
+                <InfoText TextId="DIM 18_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem DCP_BoundarySupported="true" DCP_HelloSupported="true" DelayMeasurementSupported="true" ID="DIM 18 Interfacesubmodule" NetworkComponentDiagnosisSupported="true" PTP_BoundarySupported="true" SubmoduleIdentNumber="0x00000281" SubslotNumber="32768" SupportedProtocols="SNMP;LLDP" SupportedRT_Classes="RT_CLASS_1;RT_CLASS_3" TextId="PN-IO">
+              <RT_Class3Properties ForwardingMode="Relative" MaxBridgeDelay="5500" MaxNumberIR_FrameData="256" StartupMode="Advanced;Legacy"/>
+              <SynchronisationMode MaxLocalJitter="50" SupportedRole="SyncSlave" SupportedSyncProtocols="PTCP" T_PLL_MAX="1000"/>
+              <ApplicationRelations NumberOfAR="2" StartupMode="Advanced;Legacy">
+                <TimingProperties ReductionRatio="1 2 4 8 16 32 64 128 256 512" SendClock="32 64 128"/>
+                <RT_Class3TimingProperties ReductionRatio="1 2 4 8 16" SendClock="32 64 128"/>
+              </ApplicationRelations>
+              <MediaRedundancy SupportedRole="Client"/>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem CheckMAUTypeDifferenceSupported="true" CheckMAUTypeSupported="true" FiberOpticTypes="4 5" ID="DIM 18 Portsubmodule 1" IsDefaultRingport="true" LinkStateDiagnosisCapability="Up+Down" MAUTypes="54" MaxPortRxDelay="340" MaxPortTxDelay="92" PortDeactivationSupported="true" PowerBudgetControlSupported="true" SubmoduleIdentNumber="0x00000282" SubslotNumber="32769" TextId="Port1">
+              <MAUTypeList>
+                <MAUTypeItem AdjustSupported="true" Value="54"/>
+              </MAUTypeList>
+            </PortSubmoduleItem>
+            <PortSubmoduleItem CheckMAUTypeDifferenceSupported="true" CheckMAUTypeSupported="true" FiberOpticTypes="4 5" ID="DIM 18 Portsubmodule 2" IsDefaultRingport="true" LinkStateDiagnosisCapability="Up+Down" MAUTypes="54" MaxPortRxDelay="340" MaxPortTxDelay="92" PortDeactivationSupported="true" PowerBudgetControlSupported="true" SubmoduleIdentNumber="0x00000283" SubslotNumber="32770" TextId="Port2">
+              <MAUTypeList>
+                <MAUTypeItem AdjustSupported="true" Value="54"/>
+              </MAUTypeList>
+            </PortSubmoduleItem>
+          </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef GraphicItemTarget="1" Type="DeviceSymbol"/>
+            <GraphicItemRef GraphicItemTarget="1" Type="DeviceIcon"/>
+          </Graphics>
+        </DeviceAccessPointItem>
+      </DeviceAccessPointList>
+      <ModuleList>
+        <ModuleItem ID="1byteinput" ModuleIdentNumber="0x00000002">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_1byteinput_Name"/>
+            <InfoText TextId="Module_1byteinput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1byteinput" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x00000001">
+              <IOData>
+                <Input>
+                  <DataItem DataType="OctetString" Length="1" TextId="DataItem_1byteinput_inputdata_0_Name"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_1byteinput_Name"/>
+                <InfoText TextId="Submodule_1byteinput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="2byteinput" ModuleIdentNumber="0x00000004">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_2byteinput_Name"/>
+            <InfoText TextId="Module_2byteinput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="2byteinput" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x00000003">
+              <IOData>
+                <Input>
+                  <DataItem DataType="OctetString" Length="2" TextId="DataItem_2byteinput_inputdata_0_Name"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_2byteinput_Name"/>
+                <InfoText TextId="Submodule_2byteinput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="3byteinput" ModuleIdentNumber="0x00000006">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_3byteinput_Name"/>
+            <InfoText TextId="Module_3byteinput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="3byteinput" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x00000005">
+              <IOData>
+                <Input>
+                  <DataItem DataType="OctetString" Length="3" TextId="DataItem_3byteinput_inputdata_0_Name"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_3byteinput_Name"/>
+                <InfoText TextId="Submodule_3byteinput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="4byteinput" ModuleIdentNumber="0x00000008">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_4byteinput_Name"/>
+            <InfoText TextId="Module_4byteinput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="4byteinput" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x00000007">
+              <IOData>
+                <Input>
+                  <DataItem DataType="OctetString" Length="4" TextId="DataItem_4byteinput_inputdata_0_Name"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_4byteinput_Name"/>
+                <InfoText TextId="Submodule_4byteinput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="8byteinput" ModuleIdentNumber="0x0000000A">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_8byteinput_Name"/>
+            <InfoText TextId="Module_8byteinput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="8byteinput" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x00000009">
+              <IOData>
+                <Input>
+                  <DataItem DataType="OctetString" Length="8" TextId="DataItem_8byteinput_inputdata_0_Name"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_8byteinput_Name"/>
+                <InfoText TextId="Submodule_8byteinput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="12byteinput" ModuleIdentNumber="0x0000000C">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_12byteinput_Name"/>
+            <InfoText TextId="Module_12byteinput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="12byteinput" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x0000000B">
+              <IOData>
+                <Input>
+                  <DataItem DataType="OctetString" Length="12" TextId="DataItem_12byteinput_inputdata_0_Name"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_12byteinput_Name"/>
+                <InfoText TextId="Submodule_12byteinput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="16byteinput" ModuleIdentNumber="0x0000000E">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_16byteinput_Name"/>
+            <InfoText TextId="Module_16byteinput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="16byteinput" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x0000000D">
+              <IOData>
+                <Input>
+                  <DataItem DataType="OctetString" Length="16" TextId="DataItem_16byteinput_inputdata_0_Name"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_16byteinput_Name"/>
+                <InfoText TextId="Submodule_16byteinput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="20byteinput" ModuleIdentNumber="0x00000010">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_20byteinput_Name"/>
+            <InfoText TextId="Module_20byteinput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="20byteinput" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x0000000F">
+              <IOData>
+                <Input>
+                  <DataItem DataType="OctetString" Length="20" TextId="DataItem_20byteinput_inputdata_0_Name"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_20byteinput_Name"/>
+                <InfoText TextId="Submodule_20byteinput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="32byteinput" ModuleIdentNumber="0x00000012">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_32byteinput_Name"/>
+            <InfoText TextId="Module_32byteinput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="32byteinput" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x00000011">
+              <IOData>
+                <Input>
+                  <DataItem DataType="OctetString" Length="32" TextId="DataItem_32byteinput_inputdata_0_Name"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_32byteinput_Name"/>
+                <InfoText TextId="Submodule_32byteinput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="64byteinput" ModuleIdentNumber="0x00000014">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_64byteinput_Name"/>
+            <InfoText TextId="Module_64byteinput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="64byteinput" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x00000013">
+              <IOData>
+                <Input>
+                  <DataItem DataType="OctetString" Length="64" TextId="DataItem_64byteinput_inputdata_0_Name"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_64byteinput_Name"/>
+                <InfoText TextId="Submodule_64byteinput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="1int8input" ModuleIdentNumber="0x0000002A">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_1int8input_Name"/>
+            <InfoText TextId="Module_1int8input_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1int8input" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x00000029">
+              <IOData>
+                <Input>
+                  <DataItem DataType="Integer8" TextId="DataItem_1int8input_inputdata_0_Name"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_1int8input_Name"/>
+                <InfoText TextId="Submodule_1int8input_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="1int16input" ModuleIdentNumber="0x0000002C">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_1int16input_Name"/>
+            <InfoText TextId="Module_1int16input_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1int16input" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x0000002B">
+              <IOData>
+                <Input>
+                  <DataItem DataType="Integer16" TextId="DataItem_1int16input_inputdata_0_Name"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_1int16input_Name"/>
+                <InfoText TextId="Submodule_1int16input_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="1int32input" ModuleIdentNumber="0x0000002E">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_1int32input_Name"/>
+            <InfoText TextId="Module_1int32input_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1int32input" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x0000002D">
+              <IOData>
+                <Input>
+                  <DataItem DataType="Integer32" TextId="DataItem_1int32input_inputdata_0_Name"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_1int32input_Name"/>
+                <InfoText TextId="Submodule_1int32input_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="1int64input" ModuleIdentNumber="0x00000030">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_1int64input_Name"/>
+            <InfoText TextId="Module_1int64input_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1int64input" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x0000002F">
+              <IOData>
+                <Input>
+                  <DataItem DataType="Integer64" TextId="DataItem_1int64input_inputdata_0_Name"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_1int64input_Name"/>
+                <InfoText TextId="Submodule_1int64input_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="1uint8input" ModuleIdentNumber="0x00000032">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_1uint8input_Name"/>
+            <InfoText TextId="Module_1uint8input_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1uint8input" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x00000031">
+              <IOData>
+                <Input>
+                  <DataItem DataType="Unsigned8" TextId="DataItem_1uint8input_inputdata_0_Name"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_1uint8input_Name"/>
+                <InfoText TextId="Submodule_1uint8input_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="1uint16input" ModuleIdentNumber="0x00000034">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_1uint16input_Name"/>
+            <InfoText TextId="Module_1uint16input_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1uint16input" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x00000033">
+              <IOData>
+                <Input>
+                  <DataItem DataType="Unsigned16" TextId="DataItem_1uint16input_inputdata_0_Name"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_1uint16input_Name"/>
+                <InfoText TextId="Submodule_1uint16input_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="1uint32input" ModuleIdentNumber="0x00000036">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_1uint32input_Name"/>
+            <InfoText TextId="Module_1uint32input_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1uint32input" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x00000035">
+              <IOData>
+                <Input>
+                  <DataItem DataType="Unsigned32" TextId="DataItem_1uint32input_inputdata_0_Name"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_1uint32input_Name"/>
+                <InfoText TextId="Submodule_1uint32input_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="1uint64input" ModuleIdentNumber="0x00000038">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_1uint64input_Name"/>
+            <InfoText TextId="Module_1uint64input_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1uint64input" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x00000037">
+              <IOData>
+                <Input>
+                  <DataItem DataType="Unsigned64" TextId="DataItem_1uint64input_inputdata_0_Name"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_1uint64input_Name"/>
+                <InfoText TextId="Submodule_1uint64input_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="1float32input" ModuleIdentNumber="0x0000003A">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_1float32input_Name"/>
+            <InfoText TextId="Module_1float32input_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1float32input" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x00000039">
+              <IOData>
+                <Input>
+                  <DataItem DataType="Float32" TextId="DataItem_1float32input_inputdata_0_Name"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_1float32input_Name"/>
+                <InfoText TextId="Submodule_1float32input_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="1float64input" ModuleIdentNumber="0x0000003C">
+          <ModuleInfo CategoryRef="Input Module">
+            <Name TextId="Module_1float64input_Name"/>
+            <InfoText TextId="Module_1float64input_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1float64input" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x0000003B">
+              <IOData>
+                <Input>
+                  <DataItem DataType="Float64" TextId="DataItem_1float64input_inputdata_0_Name"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_1float64input_Name"/>
+                <InfoText TextId="Submodule_1float64input_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="1byteoutput" ModuleIdentNumber="0x00000003">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_1byteoutput_Name"/>
+            <InfoText TextId="Module_1byteoutput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1byteoutput" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x00000002">
+              <IOData>
+                <Output>
+                  <DataItem DataType="OctetString" Length="1" TextId="DataItem_1byteoutput_outputdata_0_Name"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_1byteoutput_Name"/>
+                <InfoText TextId="Submodule_1byteoutput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="2byteoutput" ModuleIdentNumber="0x00000005">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_2byteoutput_Name"/>
+            <InfoText TextId="Module_2byteoutput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="2byteoutput" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x00000004">
+              <IOData>
+                <Output>
+                  <DataItem DataType="OctetString" Length="2" TextId="DataItem_2byteoutput_outputdata_0_Name"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_2byteoutput_Name"/>
+                <InfoText TextId="Submodule_2byteoutput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="3byteoutput" ModuleIdentNumber="0x00000007">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_3byteoutput_Name"/>
+            <InfoText TextId="Module_3byteoutput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="3byteoutput" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x00000006">
+              <IOData>
+                <Output>
+                  <DataItem DataType="OctetString" Length="3" TextId="DataItem_3byteoutput_outputdata_0_Name"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_3byteoutput_Name"/>
+                <InfoText TextId="Submodule_3byteoutput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="4byteoutput" ModuleIdentNumber="0x00000009">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_4byteoutput_Name"/>
+            <InfoText TextId="Module_4byteoutput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="4byteoutput" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x00000008">
+              <IOData>
+                <Output>
+                  <DataItem DataType="OctetString" Length="4" TextId="DataItem_4byteoutput_outputdata_0_Name"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_4byteoutput_Name"/>
+                <InfoText TextId="Submodule_4byteoutput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="8byteoutput" ModuleIdentNumber="0x0000000B">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_8byteoutput_Name"/>
+            <InfoText TextId="Module_8byteoutput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="8byteoutput" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x0000000A">
+              <IOData>
+                <Output>
+                  <DataItem DataType="OctetString" Length="8" TextId="DataItem_8byteoutput_outputdata_0_Name"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_8byteoutput_Name"/>
+                <InfoText TextId="Submodule_8byteoutput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="12byteoutput" ModuleIdentNumber="0x0000000D">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_12byteoutput_Name"/>
+            <InfoText TextId="Module_12byteoutput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="12byteoutput" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x0000000C">
+              <IOData>
+                <Output>
+                  <DataItem DataType="OctetString" Length="12" TextId="DataItem_12byteoutput_outputdata_0_Name"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_12byteoutput_Name"/>
+                <InfoText TextId="Submodule_12byteoutput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="16byteoutput" ModuleIdentNumber="0x0000000F">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_16byteoutput_Name"/>
+            <InfoText TextId="Module_16byteoutput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="16byteoutput" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x0000000E">
+              <IOData>
+                <Output>
+                  <DataItem DataType="OctetString" Length="16" TextId="DataItem_16byteoutput_outputdata_0_Name"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_16byteoutput_Name"/>
+                <InfoText TextId="Submodule_16byteoutput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="20byteoutput" ModuleIdentNumber="0x00000011">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_20byteoutput_Name"/>
+            <InfoText TextId="Module_20byteoutput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="20byteoutput" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x00000010">
+              <IOData>
+                <Output>
+                  <DataItem DataType="OctetString" Length="20" TextId="DataItem_20byteoutput_outputdata_0_Name"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_20byteoutput_Name"/>
+                <InfoText TextId="Submodule_20byteoutput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="32byteoutput" ModuleIdentNumber="0x00000013">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_32byteoutput_Name"/>
+            <InfoText TextId="Module_32byteoutput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="32byteoutput" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x00000012">
+              <IOData>
+                <Output>
+                  <DataItem DataType="OctetString" Length="32" TextId="DataItem_32byteoutput_outputdata_0_Name"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_32byteoutput_Name"/>
+                <InfoText TextId="Submodule_32byteoutput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="64byteoutput" ModuleIdentNumber="0x00000015">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_64byteoutput_Name"/>
+            <InfoText TextId="Module_64byteoutput_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="64byteoutput" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x00000014">
+              <IOData>
+                <Output>
+                  <DataItem DataType="OctetString" Length="64" TextId="DataItem_64byteoutput_outputdata_0_Name"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_64byteoutput_Name"/>
+                <InfoText TextId="Submodule_64byteoutput_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="1int8output" ModuleIdentNumber="0x0000002B">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_1int8output_Name"/>
+            <InfoText TextId="Module_1int8output_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1int8output" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x0000002A">
+              <IOData>
+                <Output>
+                  <DataItem DataType="Integer8" TextId="DataItem_1int8output_outputdata_0_Name"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_1int8output_Name"/>
+                <InfoText TextId="Submodule_1int8output_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="1int16output" ModuleIdentNumber="0x0000002D">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_1int16output_Name"/>
+            <InfoText TextId="Module_1int16output_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1int16output" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x0000002C">
+              <IOData>
+                <Output>
+                  <DataItem DataType="Integer16" TextId="DataItem_1int16output_outputdata_0_Name"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_1int16output_Name"/>
+                <InfoText TextId="Submodule_1int16output_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="1int32output" ModuleIdentNumber="0x0000002F">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_1int32output_Name"/>
+            <InfoText TextId="Module_1int32output_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1int32output" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x0000002E">
+              <IOData>
+                <Output>
+                  <DataItem DataType="Integer32" TextId="DataItem_1int32output_outputdata_0_Name"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_1int32output_Name"/>
+                <InfoText TextId="Submodule_1int32output_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="1int64output" ModuleIdentNumber="0x00000031">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_1int64output_Name"/>
+            <InfoText TextId="Module_1int64output_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1int64output" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x00000030">
+              <IOData>
+                <Output>
+                  <DataItem DataType="Integer64" TextId="DataItem_1int64output_outputdata_0_Name"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_1int64output_Name"/>
+                <InfoText TextId="Submodule_1int64output_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="1uint8output" ModuleIdentNumber="0x00000033">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_1uint8output_Name"/>
+            <InfoText TextId="Module_1uint8output_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1uint8output" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x00000032">
+              <IOData>
+                <Output>
+                  <DataItem DataType="Unsigned8" TextId="DataItem_1uint8output_outputdata_0_Name"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_1uint8output_Name"/>
+                <InfoText TextId="Submodule_1uint8output_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="1uint16output" ModuleIdentNumber="0x00000035">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_1uint16output_Name"/>
+            <InfoText TextId="Module_1uint16output_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1uint16output" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x00000034">
+              <IOData>
+                <Output>
+                  <DataItem DataType="Unsigned16" TextId="DataItem_1uint16output_outputdata_0_Name"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_1uint16output_Name"/>
+                <InfoText TextId="Submodule_1uint16output_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="1uint32output" ModuleIdentNumber="0x00000037">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_1uint32output_Name"/>
+            <InfoText TextId="Module_1uint32output_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1uint32output" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x00000036">
+              <IOData>
+                <Output>
+                  <DataItem DataType="Unsigned32" TextId="DataItem_1uint32output_outputdata_0_Name"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_1uint32output_Name"/>
+                <InfoText TextId="Submodule_1uint32output_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="1uint64output" ModuleIdentNumber="0x00000039">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_1uint64output_Name"/>
+            <InfoText TextId="Module_1uint64output_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1uint64output" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x00000038">
+              <IOData>
+                <Output>
+                  <DataItem DataType="Unsigned64" TextId="DataItem_1uint64output_outputdata_0_Name"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_1uint64output_Name"/>
+                <InfoText TextId="Submodule_1uint64output_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="1float32output" ModuleIdentNumber="0x0000003B">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_1float32output_Name"/>
+            <InfoText TextId="Module_1float32output_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1float32output" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x0000003A">
+              <IOData>
+                <Output>
+                  <DataItem DataType="Float32" TextId="DataItem_1float32output_outputdata_0_Name"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_1float32output_Name"/>
+                <InfoText TextId="Submodule_1float32output_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="1float64output" ModuleIdentNumber="0x0000003D">
+          <ModuleInfo CategoryRef="Output Module">
+            <Name TextId="Module_1float64output_Name"/>
+            <InfoText TextId="Module_1float64output_InfoText"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1float64output" MayIssueProcessAlarm="false" SubmoduleIdentNumber="0x0000003C">
+              <IOData>
+                <Output>
+                  <DataItem DataType="Float64" TextId="DataItem_1float64output_outputdata_0_Name"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="Submodule_1float64output_Name"/>
+                <InfoText TextId="Submodule_1float64output_InfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+      </ModuleList>
+      <GraphicsList>
+        <GraphicItem GraphicFile="GSDML-011E-010A-NIC50PNS" ID="1"/>
+        <GraphicItem GraphicFile="GSDML-011E-010A-NIC52FOPNS" ID="2"/>
+        <GraphicItem GraphicFile="GSDML-011E-010A-NIC52PNS" ID="3"/>
+      </GraphicsList>
+      <CategoryList>
+        <CategoryItem ID="DAP Module" TextId="DAP Module_CategoryName"/>
+        <CategoryItem ID="Input Module" TextId="Input Module_CategoryName"/>
+        <CategoryItem ID="Output Module" TextId="Output Module_CategoryName"/>
+      </CategoryList>
+      <ExternalTextList>
+        <PrimaryLanguage>
+          <Text TextId="DAP Module_CategoryName" Value="Device Access Point Modules"/>
+          <Text TextId="DIM 17_InfoText" Value="NIC 52-RE, firmware V2.0 - V2.x, supports FastStartup, Identification &amp; Maintenance 1-4, RT &amp; IRT Communication."/>
+          <Text TextId="DIM 18_InfoText" Value="NIC 52-REFO, FiberOptic, firmware V2.0 - V2.x, supports FastStartup, Identification &amp; Maintenance 1-4, RT &amp; IRT Communication."/>
+          <Text TextId="DIM 1_InfoText" Value="NIC 50-RE, firmware V1.2.x - V1.4.15, supports RT Communication."/>
+          <Text TextId="DIM 7_InfoText" Value="NIC 50-RE, firmware V1.4.16 - V1.5.x, supports FastStartup, Identification &amp; Maintenance 1-4, RT Communication."/>
+          <Text TextId="DIM 8_InfoText" Value="NIC 50-REFO, FiberOptic, firmware V1.4.16 - V1.5.x, supports FastStartup, Identification &amp; Maintenance 1-4, RT Communication."/>
+          <Text TextId="DataItem_12byteinput_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_12byteoutput_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DataItem_16byteinput_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_16byteoutput_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DataItem_1byteinput_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_1byteoutput_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DataItem_1float32input_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_1float32output_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DataItem_1float64input_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_1float64output_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DataItem_1int16input_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_1int16output_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DataItem_1int32input_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_1int32output_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DataItem_1int64input_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_1int64output_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DataItem_1int8input_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_1int8output_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DataItem_1uint16input_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_1uint16output_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DataItem_1uint32input_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_1uint32output_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DataItem_1uint64input_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_1uint64output_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DataItem_1uint8input_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_1uint8output_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DataItem_20byteinput_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_20byteoutput_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DataItem_2byteinput_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_2byteoutput_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DataItem_32byteinput_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_32byteoutput_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DataItem_3byteinput_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_3byteoutput_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DataItem_4byteinput_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_4byteoutput_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DataItem_64byteinput_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_64byteoutput_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DataItem_8byteinput_inputdata_0_Name" Value="Inputs"/>
+          <Text TextId="DataItem_8byteoutput_outputdata_0_Name" Value="Outputs"/>
+          <Text TextId="DeviceDescription_InfoText" Value="PROFINET IO-Device based on netIC"/>
+          <Text TextId="Input Module_CategoryName" Value="Input Modules"/>
+          <Text TextId="Module_12byteinput_InfoText" Value="12 Bytes Input Module"/>
+          <Text TextId="Module_12byteinput_Name" Value="12 Bytes Input"/>
+          <Text TextId="Module_12byteoutput_InfoText" Value="12 Bytes Output Module"/>
+          <Text TextId="Module_12byteoutput_Name" Value="12 Bytes Output"/>
+          <Text TextId="Module_16byteinput_InfoText" Value="16 Bytes Input Module"/>
+          <Text TextId="Module_16byteinput_Name" Value="16 Bytes Input"/>
+          <Text TextId="Module_16byteoutput_InfoText" Value="16 Bytes Output Module"/>
+          <Text TextId="Module_16byteoutput_Name" Value="16 Bytes Output"/>
+          <Text TextId="Module_1byteinput_InfoText" Value="1 Byte Input Module"/>
+          <Text TextId="Module_1byteinput_Name" Value="1 Byte Input"/>
+          <Text TextId="Module_1byteoutput_InfoText" Value="1 Byte Output Module"/>
+          <Text TextId="Module_1byteoutput_Name" Value="1 Byte Output"/>
+          <Text TextId="Module_1float32input_InfoText" Value="1 Float32 Input Module"/>
+          <Text TextId="Module_1float32input_Name" Value="1 Float32 Input"/>
+          <Text TextId="Module_1float32output_InfoText" Value="1 Float32 Output Module"/>
+          <Text TextId="Module_1float32output_Name" Value="1 Float32 Output"/>
+          <Text TextId="Module_1float64input_InfoText" Value="1 Float64 Input Module"/>
+          <Text TextId="Module_1float64input_Name" Value="1 Float64 Input"/>
+          <Text TextId="Module_1float64output_InfoText" Value="1 Float64 Output Module"/>
+          <Text TextId="Module_1float64output_Name" Value="1 Float64 Output"/>
+          <Text TextId="Module_1int16input_InfoText" Value="1 Integer16 Input Module"/>
+          <Text TextId="Module_1int16input_Name" Value="1 Integer16 Input"/>
+          <Text TextId="Module_1int16output_InfoText" Value="1 Integer16 Output Module"/>
+          <Text TextId="Module_1int16output_Name" Value="1 Integer16 Output"/>
+          <Text TextId="Module_1int32input_InfoText" Value="1 Integer32 Input Module"/>
+          <Text TextId="Module_1int32input_Name" Value="1 Integer32 Input"/>
+          <Text TextId="Module_1int32output_InfoText" Value="1 Integer32 Output Module"/>
+          <Text TextId="Module_1int32output_Name" Value="1 Integer32 Output"/>
+          <Text TextId="Module_1int64input_InfoText" Value="1 Integer64 Input Module"/>
+          <Text TextId="Module_1int64input_Name" Value="1 Integer64 Input"/>
+          <Text TextId="Module_1int64output_InfoText" Value="1 Integer64 Output Module"/>
+          <Text TextId="Module_1int64output_Name" Value="1 Integer64 Output"/>
+          <Text TextId="Module_1int8input_InfoText" Value="1 Integer8 Input Module"/>
+          <Text TextId="Module_1int8input_Name" Value="1 Integer8 Input"/>
+          <Text TextId="Module_1int8output_InfoText" Value="1 Integer8 Output Module"/>
+          <Text TextId="Module_1int8output_Name" Value="1 Integer8 Output"/>
+          <Text TextId="Module_1uint16input_InfoText" Value="1 Unsigned16 Input Module"/>
+          <Text TextId="Module_1uint16input_Name" Value="1 Unsigned16 Input"/>
+          <Text TextId="Module_1uint16output_InfoText" Value="1 Unsigned16 Output Module"/>
+          <Text TextId="Module_1uint16output_Name" Value="1 Unsigned16 Output"/>
+          <Text TextId="Module_1uint32input_InfoText" Value="1 Unsigned32 Input Module"/>
+          <Text TextId="Module_1uint32input_Name" Value="1 Unsigned32 Input"/>
+          <Text TextId="Module_1uint32output_InfoText" Value="1 Unsigned32 Output Module"/>
+          <Text TextId="Module_1uint32output_Name" Value="1 Unsigned32 Output"/>
+          <Text TextId="Module_1uint64input_InfoText" Value="1 Unsigned64 Input Module"/>
+          <Text TextId="Module_1uint64input_Name" Value="1 Unsigned64 Input"/>
+          <Text TextId="Module_1uint64output_InfoText" Value="1 Unsigned64 Output Module"/>
+          <Text TextId="Module_1uint64output_Name" Value="1 Unsigned64 Output"/>
+          <Text TextId="Module_1uint8input_InfoText" Value="1 Unsigned8 Input Module"/>
+          <Text TextId="Module_1uint8input_Name" Value="1 Unsigned8 Input"/>
+          <Text TextId="Module_1uint8output_InfoText" Value="1 Unsigned8 Output Module"/>
+          <Text TextId="Module_1uint8output_Name" Value="1 Unsigned8 Output"/>
+          <Text TextId="Module_20byteinput_InfoText" Value="20 Bytes Input Module"/>
+          <Text TextId="Module_20byteinput_Name" Value="20 Bytes Input"/>
+          <Text TextId="Module_20byteoutput_InfoText" Value="20 Bytes Output Module"/>
+          <Text TextId="Module_20byteoutput_Name" Value="20 Bytes Output"/>
+          <Text TextId="Module_2byteinput_InfoText" Value="2 Bytes Input Module"/>
+          <Text TextId="Module_2byteinput_Name" Value="2 Bytes Input"/>
+          <Text TextId="Module_2byteoutput_InfoText" Value="2 Bytes Output Module"/>
+          <Text TextId="Module_2byteoutput_Name" Value="2 Byte Output"/>
+          <Text TextId="Module_32byteinput_InfoText" Value="32 Bytes Input Module"/>
+          <Text TextId="Module_32byteinput_Name" Value="32 Bytes Input"/>
+          <Text TextId="Module_32byteoutput_InfoText" Value="32 Bytes Output Module"/>
+          <Text TextId="Module_32byteoutput_Name" Value="32 Bytes Output"/>
+          <Text TextId="Module_3byteinput_InfoText" Value="3 Bytes Input Module"/>
+          <Text TextId="Module_3byteinput_Name" Value="3 Bytes Input"/>
+          <Text TextId="Module_3byteoutput_InfoText" Value="3 Bytes Output Module"/>
+          <Text TextId="Module_3byteoutput_Name" Value="3 Bytes Output"/>
+          <Text TextId="Module_4byteinput_InfoText" Value="4 Bytes Input Module"/>
+          <Text TextId="Module_4byteinput_Name" Value="4 Bytes Input"/>
+          <Text TextId="Module_4byteoutput_InfoText" Value="4 Bytes Output Module"/>
+          <Text TextId="Module_4byteoutput_Name" Value="4 Bytes Output"/>
+          <Text TextId="Module_64byteinput_InfoText" Value="64 Bytes Input Module"/>
+          <Text TextId="Module_64byteinput_Name" Value="64 Bytes Input"/>
+          <Text TextId="Module_64byteoutput_InfoText" Value="64 Bytes Output Module"/>
+          <Text TextId="Module_64byteoutput_Name" Value="64 Bytes Output"/>
+          <Text TextId="Module_8byteinput_InfoText" Value="8 Bytes Input Module"/>
+          <Text TextId="Module_8byteinput_Name" Value="8 Bytes Input"/>
+          <Text TextId="Module_8byteoutput_InfoText" Value="8 Bytes Output Module"/>
+          <Text TextId="Module_8byteoutput_Name" Value="8 Bytes Output"/>
+          <Text TextId="NIC 50-RE/PNS V1.2.x - V1.4.15" Value="NIC 50-RE/PNS V1.2.x - V1.4.15"/>
+          <Text TextId="NIC 50-RE/PNS V1.4.16 - V1.5.x" Value="NIC 50-RE/PNS V1.4.16 - V1.5.x"/>
+          <Text TextId="NIC 50-REFO/PNS V1.4.16 - V1.5.x" Value="NIC 50-REFO/PNS V1.4.16 - V1.5.x"/>
+          <Text TextId="NIC 52-RE/PNS V2.0 - V2.x" Value="NIC 52-RE/PNS V2.0 - V2.x"/>
+          <Text TextId="NIC 52-REFO/PNS V2.0 - V2.x" Value="NIC 52-REFO/PNS V2.0 - V2.x"/>
+          <Text TextId="Output Module_CategoryName" Value="Output Modules"/>
+          <Text TextId="PN-IO" Value="PN-IO"/>
+          <Text TextId="Port1" Value="Port 1"/>
+          <Text TextId="Port2" Value="Port 2"/>
+          <Text TextId="Submodule_12byteinput_InfoText" Value="12 Bytes Input Submodule"/>
+          <Text TextId="Submodule_12byteinput_Name" Value="12 Bytes Input"/>
+          <Text TextId="Submodule_12byteoutput_InfoText" Value="12 Bytes Output Submodule"/>
+          <Text TextId="Submodule_12byteoutput_Name" Value="12 Bytes Output"/>
+          <Text TextId="Submodule_16byteinput_InfoText" Value="16 Bytes Input Submodule"/>
+          <Text TextId="Submodule_16byteinput_Name" Value="16 Bytes Input"/>
+          <Text TextId="Submodule_16byteoutput_InfoText" Value="16 Bytes Output Submodule"/>
+          <Text TextId="Submodule_16byteoutput_Name" Value="16 Bytes Output"/>
+          <Text TextId="Submodule_1byteinput_InfoText" Value="1 Byte Input Submodule"/>
+          <Text TextId="Submodule_1byteinput_Name" Value="1 Byte Input"/>
+          <Text TextId="Submodule_1byteoutput_InfoText" Value="1 Byte Output Submodule"/>
+          <Text TextId="Submodule_1byteoutput_Name" Value="1 Byte Output"/>
+          <Text TextId="Submodule_1float32input_InfoText" Value="1 Float32 Input Module"/>
+          <Text TextId="Submodule_1float32input_Name" Value="1 Float32 Input"/>
+          <Text TextId="Submodule_1float32output_InfoText" Value="1 Float32 Output Module"/>
+          <Text TextId="Submodule_1float32output_Name" Value="1 Float32 Output"/>
+          <Text TextId="Submodule_1float64input_InfoText" Value="1 Float64 Input Module"/>
+          <Text TextId="Submodule_1float64input_Name" Value="1 Float64 Input"/>
+          <Text TextId="Submodule_1float64output_InfoText" Value="1 Float64 Output Module"/>
+          <Text TextId="Submodule_1float64output_Name" Value="1 Float64 Output"/>
+          <Text TextId="Submodule_1int16input_InfoText" Value="1 Integer16 Input Module"/>
+          <Text TextId="Submodule_1int16input_Name" Value="1 Integer16 Input"/>
+          <Text TextId="Submodule_1int16output_InfoText" Value="1 Integer16 Output Module"/>
+          <Text TextId="Submodule_1int16output_Name" Value="1 Integer16 Input"/>
+          <Text TextId="Submodule_1int32input_InfoText" Value="1 Integer32 Input Module"/>
+          <Text TextId="Submodule_1int32input_Name" Value="1 Integer32 Input"/>
+          <Text TextId="Submodule_1int32output_InfoText" Value="1 Integer32 Output Module"/>
+          <Text TextId="Submodule_1int32output_Name" Value="1 Integer32 Output"/>
+          <Text TextId="Submodule_1int64input_InfoText" Value="1 Integer64 Input Module"/>
+          <Text TextId="Submodule_1int64input_Name" Value="1 Integer64 Input"/>
+          <Text TextId="Submodule_1int64output_InfoText" Value="1 Integer64 Output Module"/>
+          <Text TextId="Submodule_1int64output_Name" Value="1 Integer64 Output"/>
+          <Text TextId="Submodule_1int8input_InfoText" Value="1 Integer8 Input Module"/>
+          <Text TextId="Submodule_1int8input_Name" Value="1 Integer8 Input"/>
+          <Text TextId="Submodule_1int8output_InfoText" Value="1 Integer8 Output Module"/>
+          <Text TextId="Submodule_1int8output_Name" Value="1 Integer8 Output"/>
+          <Text TextId="Submodule_1uint16input_InfoText" Value="1 Unsigned16 Input Module"/>
+          <Text TextId="Submodule_1uint16input_Name" Value="1 Unsigned16 Input"/>
+          <Text TextId="Submodule_1uint16output_InfoText" Value="1 Unsigned16 Output Module"/>
+          <Text TextId="Submodule_1uint16output_Name" Value="1 Unsigned16 Output"/>
+          <Text TextId="Submodule_1uint32input_InfoText" Value="1 Unsigned32 Input Module"/>
+          <Text TextId="Submodule_1uint32input_Name" Value="1 Unsigned32 Input"/>
+          <Text TextId="Submodule_1uint32output_InfoText" Value="1 Unsigned32 Output Module"/>
+          <Text TextId="Submodule_1uint32output_Name" Value="1 Unsigned32 Output"/>
+          <Text TextId="Submodule_1uint64input_InfoText" Value="1 Unsigned64 Input Module"/>
+          <Text TextId="Submodule_1uint64input_Name" Value="1 Unsigned64 Input"/>
+          <Text TextId="Submodule_1uint64output_InfoText" Value="1 Unsigned64 Output Module"/>
+          <Text TextId="Submodule_1uint64output_Name" Value="1 Unsigned64 Output"/>
+          <Text TextId="Submodule_1uint8input_InfoText" Value="1 Unsigned8 Input Module"/>
+          <Text TextId="Submodule_1uint8input_Name" Value="1 Unsigned8 Input"/>
+          <Text TextId="Submodule_1uint8output_InfoText" Value="1 Unsigned8 Output Module"/>
+          <Text TextId="Submodule_1uint8output_Name" Value="1 Unsigned8 Output"/>
+          <Text TextId="Submodule_20byteinput_InfoText" Value="20 Bytes Input Submodule"/>
+          <Text TextId="Submodule_20byteinput_Name" Value="20 Bytes Input"/>
+          <Text TextId="Submodule_20byteoutput_InfoText" Value="20 Bytes Output Submodule"/>
+          <Text TextId="Submodule_20byteoutput_Name" Value="20 Bytes Output"/>
+          <Text TextId="Submodule_2byteinput_InfoText" Value="2 Bytes Input Submodule"/>
+          <Text TextId="Submodule_2byteinput_Name" Value="2 Bytes Input"/>
+          <Text TextId="Submodule_2byteoutput_InfoText" Value="2 Byte Output Submodule"/>
+          <Text TextId="Submodule_2byteoutput_Name" Value="2 Byte Output"/>
+          <Text TextId="Submodule_32byteinput_InfoText" Value="32 Bytes Input Submodule"/>
+          <Text TextId="Submodule_32byteinput_Name" Value="32 Bytes Input"/>
+          <Text TextId="Submodule_32byteoutput_InfoText" Value="32 Bytes Output Submodule"/>
+          <Text TextId="Submodule_32byteoutput_Name" Value="32 Bytes Output"/>
+          <Text TextId="Submodule_3byteinput_InfoText" Value="3 Bytes Input Submodule"/>
+          <Text TextId="Submodule_3byteinput_Name" Value="3 Bytes Input"/>
+          <Text TextId="Submodule_3byteoutput_InfoText" Value="3 Byte Output Submodule"/>
+          <Text TextId="Submodule_3byteoutput_Name" Value="3 Byte Output"/>
+          <Text TextId="Submodule_4byteinput_InfoText" Value="4 Bytes Input Submodule"/>
+          <Text TextId="Submodule_4byteinput_Name" Value="4 Bytes Input"/>
+          <Text TextId="Submodule_4byteoutput_InfoText" Value="4 Byte Output Submodule"/>
+          <Text TextId="Submodule_4byteoutput_Name" Value="4 Bytes Output"/>
+          <Text TextId="Submodule_64byteinput_InfoText" Value="64 Bytes Input Submodule"/>
+          <Text TextId="Submodule_64byteinput_Name" Value="64 Bytes Input"/>
+          <Text TextId="Submodule_64byteoutput_InfoText" Value="64 Bytes Output Submodule"/>
+          <Text TextId="Submodule_64byteoutput_Name" Value="64 Bytes Output"/>
+          <Text TextId="Submodule_8byteinput_InfoText" Value="8 Bytes Input Submodule"/>
+          <Text TextId="Submodule_8byteinput_Name" Value="8 Bytes Input"/>
+          <Text TextId="Submodule_8byteoutput_InfoText" Value="8 Byte Output Submodule"/>
+          <Text TextId="Submodule_8byteoutput_Name" Value="8 Bytes Output"/>
+          <Text TextId="X1" Value="X1"/>
+          <Text TextId="X1P1" Value="X1 P1"/>
+          <Text TextId="X1P2" Value="X1 P2"/>
+        </PrimaryLanguage>
+        <Language xml:lang="de">
+          <Text TextId="DAP Module_CategoryName" Value="Device Access Point Module"/>
+          <Text TextId="DIM 17_InfoText" Value="NIC 52-RE, Firmware V2.0 - V2.x, unterstützt Priorisierten Hochlauf, Identification &amp; Maintenance 1-4, RT &amp; IRT Betrieb."/>
+          <Text TextId="DIM 18_InfoText" Value="NIC 52-REFO, FiberOptic, Firmware V2.0 - V2.x, unterstützt Priorisierten Hochlauf, Identification &amp; Maintenance 1-4, RT &amp; IRT Betrieb."/>
+          <Text TextId="DIM 1_InfoText" Value="NIC 50-RE, Firmware V1.2.x - V1.4.15, unterstützt RT Kommunikation."/>
+          <Text TextId="DIM 7_InfoText" Value="NIC 50-RE, Firmware V1.4.16 - V1.5.x, unterstützt Priorisierten Hochlauf, Identification &amp; Maintenance 1-4, RT Betrieb."/>
+          <Text TextId="DIM 8_InfoText" Value="NIC 50-REFO, FiberOptic, Firmware V1.4.16 - V1.5.x, unterstützt Priorisierten Hochlauf, Identification &amp; Maintenance 1-4, RT Betrieb."/>
+          <Text TextId="DataItem_12byteinput_inputdata_0_Name" Value="Eingänge"/>
+          <Text TextId="DataItem_12byteoutput_outputdata_0_Name" Value="Ausgänge"/>
+          <Text TextId="DataItem_16byteinput_inputdata_0_Name" Value="Eingänge"/>
+          <Text TextId="DataItem_16byteoutput_outputdata_0_Name" Value="Ausgänge"/>
+          <Text TextId="DataItem_1byteinput_inputdata_0_Name" Value="Eingänge"/>
+          <Text TextId="DataItem_1byteoutput_outputdata_0_Name" Value="Ausgänge"/>
+          <Text TextId="DataItem_1float32input_inputdata_0_Name" Value="Eingänge"/>
+          <Text TextId="DataItem_1float32output_outputdata_0_Name" Value="Ausgänge"/>
+          <Text TextId="DataItem_1float64input_inputdata_0_Name" Value="Eingänge"/>
+          <Text TextId="DataItem_1float64output_outputdata_0_Name" Value="Ausgänge"/>
+          <Text TextId="DataItem_1int16input_inputdata_0_Name" Value="Eingänge"/>
+          <Text TextId="DataItem_1int16output_outputdata_0_Name" Value="Ausgänge"/>
+          <Text TextId="DataItem_1int32input_inputdata_0_Name" Value="Eingänge"/>
+          <Text TextId="DataItem_1int32output_outputdata_0_Name" Value="Ausgänge"/>
+          <Text TextId="DataItem_1int64input_inputdata_0_Name" Value="Eingänge"/>
+          <Text TextId="DataItem_1int64output_outputdata_0_Name" Value="Ausgänge"/>
+          <Text TextId="DataItem_1int8input_inputdata_0_Name" Value="Eingänge"/>
+          <Text TextId="DataItem_1int8output_outputdata_0_Name" Value="Ausgänge"/>
+          <Text TextId="DataItem_1uint16input_inputdata_0_Name" Value="Eingänge"/>
+          <Text TextId="DataItem_1uint16output_outputdata_0_Name" Value="Ausgänge"/>
+          <Text TextId="DataItem_1uint32input_inputdata_0_Name" Value="Eingänge"/>
+          <Text TextId="DataItem_1uint32output_outputdata_0_Name" Value="Ausgänge"/>
+          <Text TextId="DataItem_1uint64input_inputdata_0_Name" Value="Eingänge"/>
+          <Text TextId="DataItem_1uint64output_outputdata_0_Name" Value="Ausgänge"/>
+          <Text TextId="DataItem_1uint8input_inputdata_0_Name" Value="Eingänge"/>
+          <Text TextId="DataItem_1uint8output_outputdata_0_Name" Value="Ausgänge"/>
+          <Text TextId="DataItem_20byteinput_inputdata_0_Name" Value="Eingänge"/>
+          <Text TextId="DataItem_20byteoutput_outputdata_0_Name" Value="Ausgänge"/>
+          <Text TextId="DataItem_2byteinput_inputdata_0_Name" Value="Eingänge"/>
+          <Text TextId="DataItem_2byteoutput_outputdata_0_Name" Value="Ausgänge"/>
+          <Text TextId="DataItem_32byteinput_inputdata_0_Name" Value="Eingänge"/>
+          <Text TextId="DataItem_32byteoutput_outputdata_0_Name" Value="Ausgänge"/>
+          <Text TextId="DataItem_3byteinput_inputdata_0_Name" Value="Eingänge"/>
+          <Text TextId="DataItem_3byteoutput_outputdata_0_Name" Value="Ausgänge"/>
+          <Text TextId="DataItem_4byteinput_inputdata_0_Name" Value="Eingänge"/>
+          <Text TextId="DataItem_4byteoutput_outputdata_0_Name" Value="Ausgänge"/>
+          <Text TextId="DataItem_64byteinput_inputdata_0_Name" Value="Eingänge"/>
+          <Text TextId="DataItem_64byteoutput_outputdata_0_Name" Value="Ausgänge"/>
+          <Text TextId="DataItem_8byteinput_inputdata_0_Name" Value="Eingänge"/>
+          <Text TextId="DataItem_8byteoutput_outputdata_0_Name" Value="Ausgänge"/>
+          <Text TextId="DeviceDescription_InfoText" Value="PROFINET IO-Device basierend auf netIC."/>
+          <Text TextId="Input Module_CategoryName" Value="Eingangsmodule"/>
+          <Text TextId="Module_12byteinput_InfoText" Value="12 Byte Eingangsmodul"/>
+          <Text TextId="Module_12byteinput_Name" Value="12 Byte Eingang"/>
+          <Text TextId="Module_12byteoutput_InfoText" Value="12 Byte Ausgangsmodul"/>
+          <Text TextId="Module_12byteoutput_Name" Value="12 Byte Ausgang"/>
+          <Text TextId="Module_16byteinput_InfoText" Value="16 Byte Eingangsmodul"/>
+          <Text TextId="Module_16byteinput_Name" Value="16 Byte Eingang"/>
+          <Text TextId="Module_16byteoutput_InfoText" Value="16 Byte Ausgangsmodul"/>
+          <Text TextId="Module_16byteoutput_Name" Value="16 Byte Ausgang"/>
+          <Text TextId="Module_1byteinput_InfoText" Value="1 Byte Eingangsmodul"/>
+          <Text TextId="Module_1byteinput_Name" Value="1 Byte Eingang"/>
+          <Text TextId="Module_1byteoutput_InfoText" Value="1 Byte Ausgangsmodul"/>
+          <Text TextId="Module_1byteoutput_Name" Value="1 Byte Ausgang"/>
+          <Text TextId="Module_1float32input_InfoText" Value="1 Float32 Eingangsmodul"/>
+          <Text TextId="Module_1float32input_Name" Value="1 Float32 Eingang"/>
+          <Text TextId="Module_1float32output_InfoText" Value="1 Float32 Ausgangssmodul"/>
+          <Text TextId="Module_1float32output_Name" Value="1 Float32 Ausgang"/>
+          <Text TextId="Module_1float64input_InfoText" Value="1 Float64 Eingangsmodul"/>
+          <Text TextId="Module_1float64input_Name" Value="1 Float64 Eingang"/>
+          <Text TextId="Module_1float64output_InfoText" Value="1 Float64 Ausgangssmodul"/>
+          <Text TextId="Module_1float64output_Name" Value="1 Float64 Ausgang"/>
+          <Text TextId="Module_1int16input_InfoText" Value="1 Integer16 Eingangsmodul"/>
+          <Text TextId="Module_1int16input_Name" Value="1 Integer16 Eingang"/>
+          <Text TextId="Module_1int16output_InfoText" Value="1 Integer32 Ausgangssmodul"/>
+          <Text TextId="Module_1int16output_Name" Value="1 Integer16 Ausgang"/>
+          <Text TextId="Module_1int32input_InfoText" Value="1 Integer32 Eingangsmodul"/>
+          <Text TextId="Module_1int32input_Name" Value="1 Integer32 Eingang"/>
+          <Text TextId="Module_1int32output_InfoText" Value="1 Integer32 Ausgangssmodul"/>
+          <Text TextId="Module_1int32output_Name" Value="1 Integer32 Ausgang"/>
+          <Text TextId="Module_1int64input_InfoText" Value="1 Integer64 Eingangsmodul"/>
+          <Text TextId="Module_1int64input_Name" Value="1 Integer64 Eingang"/>
+          <Text TextId="Module_1int64output_InfoText" Value="1 Integer64 Ausgangssmodul"/>
+          <Text TextId="Module_1int64output_Name" Value="1 Integer64 Ausgang"/>
+          <Text TextId="Module_1int8input_InfoText" Value="1 Integer8 Eingangsmodul"/>
+          <Text TextId="Module_1int8input_Name" Value="1 Integer8 Eingang"/>
+          <Text TextId="Module_1int8output_InfoText" Value="1 Integer8 Ausgangsmodul"/>
+          <Text TextId="Module_1int8output_Name" Value="1 Integer8 Ausgang"/>
+          <Text TextId="Module_1uint16input_InfoText" Value="1 Unsigned16 Eingangsmodul"/>
+          <Text TextId="Module_1uint16input_Name" Value="1 Unsigned16 Eingang"/>
+          <Text TextId="Module_1uint16output_InfoText" Value="1 Unsigned32 Ausgangssmodul"/>
+          <Text TextId="Module_1uint16output_Name" Value="1 Unsigned16 Ausgang"/>
+          <Text TextId="Module_1uint32input_InfoText" Value="1 Unsigned32 Eingangsmodul"/>
+          <Text TextId="Module_1uint32input_Name" Value="1 Unsigned32 Eingang"/>
+          <Text TextId="Module_1uint32output_InfoText" Value="1 Unsigned32 Ausgangssmodul"/>
+          <Text TextId="Module_1uint32output_Name" Value="1 Unsigned32 Ausgang"/>
+          <Text TextId="Module_1uint64input_InfoText" Value="1 Unsigned64 Eingangsmodul"/>
+          <Text TextId="Module_1uint64input_Name" Value="1 Unsigned64 Eingang"/>
+          <Text TextId="Module_1uint64output_InfoText" Value="1 Unsigned64 Ausgangssmodul"/>
+          <Text TextId="Module_1uint64output_Name" Value="1 Unsigned64 Ausgang"/>
+          <Text TextId="Module_1uint8input_InfoText" Value="1 Unsigned8 Eingangsmodul"/>
+          <Text TextId="Module_1uint8input_Name" Value="1 Unsigned8 Eingang"/>
+          <Text TextId="Module_1uint8output_InfoText" Value="1 Unsigned8 Ausgangsmodul"/>
+          <Text TextId="Module_1uint8output_Name" Value="1 Unsigned8 Ausgang"/>
+          <Text TextId="Module_20byteinput_InfoText" Value="20 Byte Eingangsmodul"/>
+          <Text TextId="Module_20byteinput_Name" Value="20 Byte Eingang"/>
+          <Text TextId="Module_20byteoutput_InfoText" Value="20 Byte Ausgangsmodul"/>
+          <Text TextId="Module_20byteoutput_Name" Value="20 Byte Ausgang"/>
+          <Text TextId="Module_2byteinput_InfoText" Value="2 Byte Eingangsmodul"/>
+          <Text TextId="Module_2byteinput_Name" Value="2 Byte Eingang"/>
+          <Text TextId="Module_2byteoutput_InfoText" Value="2 Byte Ausgangsmodul"/>
+          <Text TextId="Module_2byteoutput_Name" Value="2 Byte Ausgang"/>
+          <Text TextId="Module_32byteinput_InfoText" Value="32 Byte Eingangsmodul"/>
+          <Text TextId="Module_32byteinput_Name" Value="32 Byte Eingang"/>
+          <Text TextId="Module_32byteoutput_InfoText" Value="32 Byte Ausgangsmodul"/>
+          <Text TextId="Module_32byteoutput_Name" Value="32 Byte Ausgang"/>
+          <Text TextId="Module_3byteinput_InfoText" Value="3 Byte Eingangsmodul"/>
+          <Text TextId="Module_3byteinput_Name" Value="3 Byte Eingang"/>
+          <Text TextId="Module_3byteoutput_InfoText" Value="3 Byte Ausgangsmodul"/>
+          <Text TextId="Module_3byteoutput_Name" Value="3 Byte Ausgang"/>
+          <Text TextId="Module_4byteinput_InfoText" Value="4 Byte Eingangsmodul"/>
+          <Text TextId="Module_4byteinput_Name" Value="4 Byte Eingang"/>
+          <Text TextId="Module_4byteoutput_InfoText" Value="4 Byte Ausgangsmodul"/>
+          <Text TextId="Module_4byteoutput_Name" Value="4 Byte Ausgang"/>
+          <Text TextId="Module_64byteinput_InfoText" Value="64 Byte Eingangsmodul"/>
+          <Text TextId="Module_64byteinput_Name" Value="64 Byte Eingang"/>
+          <Text TextId="Module_64byteoutput_InfoText" Value="64 Byte Ausgangsmodul"/>
+          <Text TextId="Module_64byteoutput_Name" Value="64 Byte Ausgang"/>
+          <Text TextId="Module_8byteinput_InfoText" Value="8 Byte Eingangsmodul"/>
+          <Text TextId="Module_8byteinput_Name" Value="8 Byte Eingang"/>
+          <Text TextId="Module_8byteoutput_InfoText" Value="8 Byte Ausgangsmodul"/>
+          <Text TextId="Module_8byteoutput_Name" Value="8 Byte Ausgang"/>
+          <Text TextId="NIC 50-RE/PNS V1.2.x - V1.4.15" Value="NIC 50-RE/PNS V1.2.x - V1.4.15"/>
+          <Text TextId="NIC 50-RE/PNS V1.4.16 - V1.5.x" Value="NIC 50-RE/PNS V1.4.16 - V1.5.x"/>
+          <Text TextId="NIC 50-REFO/PNS V1.4.16 - V1.5.x" Value="NIC 50-REFO/PNS V1.4.16 - V1.5.x"/>
+          <Text TextId="NIC 52-RE/PNS V2.0 - V2.x" Value="NIC 52-RE/PNS V2.0 - V2.x"/>
+          <Text TextId="NIC 52-REFO/PNS V2.0 - V2.x" Value="NIC 52-REFO/PNS V2.0 - V2.x"/>
+          <Text TextId="Output Module_CategoryName" Value="Ausgangsmodule"/>
+          <Text TextId="PN-IO" Value="PN-IO"/>
+          <Text TextId="Port1" Value="Port 1"/>
+          <Text TextId="Port2" Value="Port 2"/>
+          <Text TextId="Submodule_12byteinput_InfoText" Value="12 Byte Eingangssubmodul"/>
+          <Text TextId="Submodule_12byteinput_Name" Value="12 Byte Eingang"/>
+          <Text TextId="Submodule_12byteoutput_InfoText" Value="12 Byte Ausgangssubmodul"/>
+          <Text TextId="Submodule_12byteoutput_Name" Value="12 Byte Ausgang"/>
+          <Text TextId="Submodule_16byteinput_InfoText" Value="16 Byte Eingangssubmodul"/>
+          <Text TextId="Submodule_16byteinput_Name" Value="16 Byte Eingang"/>
+          <Text TextId="Submodule_16byteoutput_InfoText" Value="16 Byte Ausgangssubmodul"/>
+          <Text TextId="Submodule_16byteoutput_Name" Value="16 Byte Ausgang"/>
+          <Text TextId="Submodule_1byteinput_InfoText" Value="1 Byte Eingangssubmodul"/>
+          <Text TextId="Submodule_1byteinput_Name" Value="1 Byte Eingang"/>
+          <Text TextId="Submodule_1byteoutput_InfoText" Value="1 Byte Ausgangssubmodul"/>
+          <Text TextId="Submodule_1byteoutput_Name" Value="1 Byte Ausgang"/>
+          <Text TextId="Submodule_1float32input_InfoText" Value="1 Float32 Eingangssubmodul"/>
+          <Text TextId="Submodule_1float32input_Name" Value="1 Float32 Eingang"/>
+          <Text TextId="Submodule_1float32output_InfoText" Value="1 Float32 Ausgangssubmodul"/>
+          <Text TextId="Submodule_1float32output_Name" Value="1 Float32 Ausgang"/>
+          <Text TextId="Submodule_1float64input_InfoText" Value="1 Float64 Eingangssubmodul"/>
+          <Text TextId="Submodule_1float64input_Name" Value="1 Float64 Eingang"/>
+          <Text TextId="Submodule_1float64output_InfoText" Value="1 Float64 Ausgangssubmodul"/>
+          <Text TextId="Submodule_1float64output_Name" Value="1 Float64 Ausgang"/>
+          <Text TextId="Submodule_1int16input_InfoText" Value="1 Integer16 Eingangssubmodul"/>
+          <Text TextId="Submodule_1int16input_Name" Value="1 Integer16 Eingang"/>
+          <Text TextId="Submodule_1int16output_InfoText" Value="1 Integer16 Ausgangssubmodul"/>
+          <Text TextId="Submodule_1int16output_Name" Value="1 Integer16 Ausgang"/>
+          <Text TextId="Submodule_1int32input_InfoText" Value="1 Integer32 Eingangssubmodul"/>
+          <Text TextId="Submodule_1int32input_Name" Value="1 Integer32 Eingang"/>
+          <Text TextId="Submodule_1int32output_InfoText" Value="1 Integer32 Ausgangssubmodul"/>
+          <Text TextId="Submodule_1int32output_Name" Value="1 Integer32 Ausgang"/>
+          <Text TextId="Submodule_1int64input_InfoText" Value="1 Integer64 Eingangssubmodul"/>
+          <Text TextId="Submodule_1int64input_Name" Value="1 Integer64 Eingang"/>
+          <Text TextId="Submodule_1int64output_InfoText" Value="1 Integer64 Ausgangssubmodul"/>
+          <Text TextId="Submodule_1int64output_Name" Value="1 Integer64 Ausgang"/>
+          <Text TextId="Submodule_1int8input_InfoText" Value="1 Integer8 Eingangssubmodul"/>
+          <Text TextId="Submodule_1int8input_Name" Value="1 Integer8 Eingang"/>
+          <Text TextId="Submodule_1int8output_InfoText" Value="1 Integer8 Ausgangssubmodul"/>
+          <Text TextId="Submodule_1int8output_Name" Value="1 Integer8 Ausgang"/>
+          <Text TextId="Submodule_1uint16input_InfoText" Value="1 Unsigned16 Eingangssubmodul"/>
+          <Text TextId="Submodule_1uint16input_Name" Value="1 Unsigned16 Eingang"/>
+          <Text TextId="Submodule_1uint16output_InfoText" Value="1 Unsigned16 Ausgangssubmodul"/>
+          <Text TextId="Submodule_1uint16output_Name" Value="1 Unsigned16 Ausgang"/>
+          <Text TextId="Submodule_1uint32input_InfoText" Value="1 Unsigned32 Eingangssubmodul"/>
+          <Text TextId="Submodule_1uint32input_Name" Value="1 Unsigned32 Eingang"/>
+          <Text TextId="Submodule_1uint32output_InfoText" Value="1 Unsigned32 Ausgangssubmodul"/>
+          <Text TextId="Submodule_1uint32output_Name" Value="1 Unsigned32 Ausgang"/>
+          <Text TextId="Submodule_1uint64input_InfoText" Value="1 Unsigned64 Eingangssubmodul"/>
+          <Text TextId="Submodule_1uint64input_Name" Value="1 Unsigned64 Eingang"/>
+          <Text TextId="Submodule_1uint64output_InfoText" Value="1 Unsigned64 Ausgangssubmodul"/>
+          <Text TextId="Submodule_1uint64output_Name" Value="1 Unsigned64 Ausgang"/>
+          <Text TextId="Submodule_1uint8input_InfoText" Value="1 Unsigned8 Eingangssubmodul"/>
+          <Text TextId="Submodule_1uint8input_Name" Value="1 Unsigned8 Eingang"/>
+          <Text TextId="Submodule_1uint8output_InfoText" Value="1 Unsigned8 Ausgangssubmodul"/>
+          <Text TextId="Submodule_1uint8output_Name" Value="1 Unsigned8 Ausgang"/>
+          <Text TextId="Submodule_20byteinput_InfoText" Value="20 Byte Eingangssubmodul"/>
+          <Text TextId="Submodule_20byteinput_Name" Value="20 Byte Eingang"/>
+          <Text TextId="Submodule_20byteoutput_InfoText" Value="20 Byte Ausgangssubmodul"/>
+          <Text TextId="Submodule_20byteoutput_Name" Value="20 Byte Ausgang"/>
+          <Text TextId="Submodule_2byteinput_InfoText" Value="2 Byte Eingangssubmodul"/>
+          <Text TextId="Submodule_2byteinput_Name" Value="2 Byte Eingang"/>
+          <Text TextId="Submodule_2byteoutput_InfoText" Value="2 Byte Ausgangssubmodul"/>
+          <Text TextId="Submodule_2byteoutput_Name" Value="2 Byte Ausgang"/>
+          <Text TextId="Submodule_32byteinput_InfoText" Value="32 Byte Eingangssubmodul"/>
+          <Text TextId="Submodule_32byteinput_Name" Value="32 Byte Eingang"/>
+          <Text TextId="Submodule_32byteoutput_InfoText" Value="32 Byte Ausgangssubmodul"/>
+          <Text TextId="Submodule_32byteoutput_Name" Value="32 Byte Ausgang"/>
+          <Text TextId="Submodule_3byteinput_InfoText" Value="3 Byte Eingangssubmodul"/>
+          <Text TextId="Submodule_3byteinput_Name" Value="3 Byte Eingang"/>
+          <Text TextId="Submodule_3byteoutput_InfoText" Value="3 Byte Ausgangssubmodul"/>
+          <Text TextId="Submodule_3byteoutput_Name" Value="3 Byte Ausgang"/>
+          <Text TextId="Submodule_4byteinput_InfoText" Value="4 Byte Eingangssubmodul"/>
+          <Text TextId="Submodule_4byteinput_Name" Value="4 Byte Eingang"/>
+          <Text TextId="Submodule_4byteoutput_InfoText" Value="4 Byte Ausgangssubmodul"/>
+          <Text TextId="Submodule_4byteoutput_Name" Value="4 Byte Ausgang"/>
+          <Text TextId="Submodule_64byteinput_InfoText" Value="64 Byte Eingangssubmodul"/>
+          <Text TextId="Submodule_64byteinput_Name" Value="64 Byte Eingang"/>
+          <Text TextId="Submodule_64byteoutput_InfoText" Value="64 Byte Ausgangssubmodul"/>
+          <Text TextId="Submodule_64byteoutput_Name" Value="64 Byte Ausgang"/>
+          <Text TextId="Submodule_8byteinput_InfoText" Value="8 Byte Eingangssubmodul"/>
+          <Text TextId="Submodule_8byteinput_Name" Value="8 Byte Eingang"/>
+          <Text TextId="Submodule_8byteoutput_InfoText" Value="8 Byte Ausgangssubmodul"/>
+          <Text TextId="Submodule_8byteoutput_Name" Value="8 Byte Ausgang"/>
+          <Text TextId="X1" Value="X1"/>
+          <Text TextId="X1P1" Value="X1 P1"/>
+          <Text TextId="X1P2" Value="X1 P2"/>
+        </Language>
+      </ExternalTextList>
+    </ApplicationProcess>
+  </ProfileBody>
+</ISO15745Profile>

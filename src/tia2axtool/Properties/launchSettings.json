@@ -2,7 +2,8 @@
   "profiles": {
     "tia2ax": {
       "commandName": "Project",
-      "commandLineArgs": "-x D:\\github\\ix-ax\\TiaProjects\\AX_Plc1518V3_CmmtAs\\AX_Plc1518V3_CmmtAs.ap18 -o D:\\github\\ix-ax\\TiaProjects\\Export"
+      //"commandLineArgs": "-x D:\\github\\ix-ax\\TiaProjects\\AX_Plc1518V3_CmmtAs\\AX_Plc1518V3_CmmtAs.ap18 -o D:\\github\\ix-ax\\Export",
+      "commandLineArgs": "-x D:\\github\\ix-ax\\TiaProjects\\HW_Plc1518V3_CmmtAs\\HW_Plc1518V3_CmmtAs.ap19 -o D:\\github\\ix-ax\\Export"
     }
   }
 }

@@ -1,0 +1,765 @@
+;===============================================
+;"GSD for DP/DP Coupler Release 2"
+;"No de reference":	6ES7 158-0AD01 0XA0
+;"Fabricant":		SIEMENS AG A&D AS RD 23
+;"Auteur": 		Hopfengaertner / Schmidt
+;"Version": 	V1.04
+;"Date": 			15.12.10
+; ==============================================
+;
+#Profibus_DP
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; <Unit-Definition-List>
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+GSD_Revision = 4
+Vendor_Name = "Siemens AG"
+Model_Name = "Coupleur DP/DP, version 2"
+Revision = "2.0"                        ;"Coupleur DP/DP, version 2"
+Ident_Number = 0x8070
+Protocol_Ident = 0
+Station_Type = 0
+Hardware_Release = "A0"
+Software_Release = "B0"
+Info_Text= "Coupleur de deux reseaux Profibus-DP IP20, jusqu´a 12 MBit/s"
+;
+9.6_supp = 1
+19.2_supp = 1
+45.45_supp = 1
+93.75_supp = 1
+187.5_supp = 1
+500_supp = 1
+1.5M_supp = 1
+3M_supp = 1
+6M_supp = 1
+12M_supp = 1
+;
+MaxTsdr_9.6 = 15
+MaxTsdr_19.2 = 15
+MaxTsdr_45.45 = 15
+MaxTsdr_93.75 = 15
+MaxTsdr_187.5 = 15
+MaxTsdr_500 = 15
+MaxTsdr_1.5M = 25
+MaxTsdr_3M = 50
+MaxTsdr_6M = 100
+MaxTsdr_12M = 200
+;
+Implementation_Type="DPC31"
+Bitmap_Device="SI8070_N"
+Bitmap_SF="SI8070_S"
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Slave-Spezifikation:
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+OrderNumber = "6ES7 158-0AD01-0XA0"
+Set_Slave_Add_supp = 1
+Freeze_Mode_supp = 1
+Sync_Mode_supp = 1
+Auto_Baud_supp = 1
+Fail_Safe = 1
+;Fail_Safe_required = 0
+Min_Slave_Intervall = 3
+;
+Max_Diag_Data_Len = 26
+;
+Modular_Station = 1
+Max_Module = 16
+Modul_Offset = 1
+Slave_Family = 9
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; DPV1 Schlüssel
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+DPV1_Slave=1
+;
+C1_Read_Write_supp=0
+;
+C2_Read_Write_supp=0
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Unit-Diagnostics:
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+Unit_Diag_Area=24-31
+Value(1) ="Validation des donnees"
+Unit_Diag_Area_End
+;
+Unit_Diag_Area=32-39
+Value(1) ="Entree 1 octet du partenaire"
+Value(2) ="Entree 2 octets du partenaire"
+Value(3) ="Entree 3 octets du partenaire"
+Value(4) ="Entree 4 octets du partenaire"
+Value(5) ="Entree 5 octets du partenaire"
+Value(6) ="Entree 6 octets du partenaire"
+Value(7) ="Entree 7 octets du partenaire"
+Value(8) ="Entree 8 octets du partenaire"
+Value(9) ="Entree 9 octets du partenaire"
+Value(10) ="Entree 10 octets du partenaire"
+Value(11) ="Entree 11 octets du partenaire"
+Value(12) ="Entree 12 octets du partenaire"
+Value(13) ="Entree 13 octets du partenaire"
+Value(14) ="Entree 14 octets du partenaire"
+Value(15) ="Entree 15 octets du partenaire"
+Value(16) ="Entree 16 octets du partenaire"
+Value(17) ="Entree 17 octets du partenaire"
+Value(18) ="Entree 18 octets du partenaire"
+Value(19) ="Entree 19 octets du partenaire"
+Value(20) ="Entree 20 octets du partenaire"
+Value(21) ="Entree 21 octets du partenaire"
+Value(22) ="Entree 22 octets du partenaire"
+Value(23) ="Entree 23 octets du partenaire"
+Value(24) ="Entree 24 octets du partenaire"
+Value(25) ="Entree 25 octets du partenaire"
+Value(26) ="Entree 26 octets du partenaire"
+Value(27) ="Entree 27 octets du partenaire"
+Value(28) ="Entree 28 octets du partenaire"
+Value(29) ="Entree 29 octets du partenaire"
+Value(30) ="Entree 30 octets du partenaire"
+Value(31) ="Entree 31 octets du partenaire"
+Value(32) ="Entree 32 octets du partenaire"
+Value(33) ="Entree 33 octets du partenaire"
+Value(34) ="Entree 34 octets du partenaire"
+Value(35) ="Entree 35 octets du partenaire"
+Value(36) ="Entree 36 octets du partenaire"
+Value(37) ="Entree 37 octets du partenaire"
+Value(38) ="Entree 38 octets du partenaire"
+Value(39) ="Entree 39 octets du partenaire"
+Value(40) ="Entree 40 octets du partenaire"
+Value(41) ="Entree 41 octets du partenaire"
+Value(42) ="Entree 42 octets du partenaire"
+Value(43) ="Entree 43 octets du partenaire"
+Value(44) ="Entree 44 octets du partenaire"
+Value(45) ="Entree 45 octets du partenaire"
+Value(46) ="Entree 46 octets du partenaire"
+Value(47) ="Entree 47 octets du partenaire"
+Value(48) ="Entree 48 octets du partenaire"
+Value(49) ="Entree 49 octets du partenaire"
+Value(50) ="Entree 50 octets du partenaire"
+Value(51) ="Entree 51 octets du partenaire"
+Value(52) ="Entree 52 octets du partenaire"
+Value(53) ="Entree 53 octets du partenaire"
+Value(54) ="Entree 54 octets du partenaire"
+Value(55) ="Entree 55 octets du partenaire"
+Value(56) ="Entree 56 octets du partenaire"
+Value(57) ="Entree 57 octets du partenaire"
+Value(58) ="Entree 58 octets du partenaire"
+Value(59) ="Entree 59 octets du partenaire"
+Value(60) ="Entree 60 octets du partenaire"
+Value(61) ="Entree 61 octets du partenaire"
+Value(62) ="Entree 62 octets du partenaire"
+Value(63) ="Entree 63 octets du partenaire"
+Value(64) ="Entree 64 octets du partenaire"
+Value(65) ="Entree 65 octets du partenaire"
+Value(66) ="Entree 66 octets du partenaire"
+Value(67) ="Entree 67 octets du partenaire"
+Value(68) ="Entree 68 octets du partenaire"
+Value(69) ="Entree 69 octets du partenaire"
+Value(70) ="Entree 70 octets du partenaire"
+Value(71) ="Entree 71 octets du partenaire"
+Value(72) ="Entree 72 octets du partenaire"
+Value(73) ="Entree 73 octets du partenaire"
+Value(74) ="Entree 74 octets du partenaire"
+Value(75) ="Entree 75 octets du partenaire"
+Value(76) ="Entree 76 octets du partenaire"
+Value(77) ="Entree 77 octets du partenaire"
+Value(78) ="Entree 78 octets du partenaire"
+Value(79) ="Entree 79 octets du partenaire"
+Value(80) ="Entree 80 octets du partenaire"
+Value(81) ="Entree 81 octets du partenaire"
+Value(82) ="Entree 82 octets du partenaire"
+Value(83) ="Entree 83 octets du partenaire"
+Value(84) ="Entree 84 octets du partenaire"
+Value(85) ="Entree 85 octets du partenaire"
+Value(86) ="Entree 86 octets du partenaire"
+Value(87) ="Entree 87 octets du partenaire"
+Value(88) ="Entree 88 octets du partenaire"
+Value(89) ="Entree 89 octets du partenaire"
+Value(90) ="Entree 90 octets du partenaire"
+Value(91) ="Entree 91 octets du partenaire"
+Value(92) ="Entree 92 octets du partenaire"
+Value(93) ="Entree 93 octets du partenaire"
+Value(94) ="Entree 94 octets du partenaire"
+Value(95) ="Entree 95 octets du partenaire"
+Value(96) ="Entree 96 octets du partenaire"
+Value(97) ="Entree 97 octets du partenaire"
+Value(98) ="Entree 98 octets du partenaire"
+Value(99) ="Entree 99 octets du partenaire"
+Value(100) ="Entree 100 octets du partenaire"
+Value(101) ="Entree 101 octets du partenaire"
+Value(102) ="Entree 102 octets du partenaire"
+Value(103) ="Entree 103 octets du partenaire"
+Value(104) ="Entree 104 octets du partenaire"
+Value(105) ="Entree 105 octets du partenaire"
+Value(106) ="Entree 106 octets du partenaire"
+Value(107) ="Entree 107 octets du partenaire"
+Value(108) ="Entree 108 octets du partenaire"
+Value(109) ="Entree 109 octets du partenaire"
+Value(110) ="Entree 110 octets du partenaire"
+Value(111) ="Entree 111 octets du partenaire"
+Value(112) ="Entree 112 octets du partenaire"
+Value(113) ="Entree 113 octets du partenaire"
+Value(114) ="Entree 114 octets du partenaire"
+Value(115) ="Entree 115 octets du partenaire"
+Value(116) ="Entree 116 octets du partenaire"
+Value(117) ="Entree 117 octets du partenaire"
+Value(118) ="Entree 118 octets du partenaire"
+Value(119) ="Entree 119 octets du partenaire"
+Value(120) ="Entree 120 octets du partenaire"
+Value(121) ="Entree 121 octets du partenaire"
+Value(122) ="Entree 122 octets du partenaire"
+Value(123) ="Entree 123 octets du partenaire"
+Value(124) ="Entree 124 octets du partenaire"
+Value(125) ="Entree 125 octets du partenaire"
+Value(126) ="Entree 126 octets du partenaire"
+Value(127) ="Entree 127 octets du partenaire"
+Value(128) ="Entree 128 octets du partenaire"
+Value(129) ="Entree 129 octets du partenaire"
+Value(130) ="Entree 130 octets du partenaire"
+Value(131) ="Entree 131 octets du partenaire"
+Value(132) ="Entree 132 octets du partenaire"
+Value(133) ="Entree 133 octets du partenaire"
+Value(134) ="Entree 134 octets du partenaire"
+Value(135) ="Entree 135 octets du partenaire"
+Value(136) ="Entree 136 octets du partenaire"
+Value(137) ="Entree 137 octets du partenaire"
+Value(138) ="Entree 138 octets du partenaire"
+Value(139) ="Entree 139 octets du partenaire"
+Value(140) ="Entree 140 octets du partenaire"
+Value(141) ="Entree 141 octets du partenaire"
+Value(142) ="Entree 142 octets du partenaire"
+Value(143) ="Entree 143 octets du partenaire"
+Value(144) ="Entree 144 octets du partenaire"
+Value(145) ="Entree 145 octets du partenaire"
+Value(146) ="Entree 146 octets du partenaire"
+Value(147) ="Entree 147 octets du partenaire"
+Value(148) ="Entree 148 octets du partenaire"
+Value(149) ="Entree 149 octets du partenaire"
+Value(150) ="Entree 150 octets du partenaire"
+Value(151) ="Entree 151octets du partenaire"
+Value(152) ="Entree 152 octets du partenaire"
+Value(153) ="Entree 153 octets du partenaire"
+Value(154) ="Entree 154 octets du partenaire"
+Value(155) ="Entree 155 octets du partenaire"
+Value(156) ="Entree 156 octets du partenaire"
+Value(157) ="Entree 157 octets du partenaire"
+Value(158) ="Entree 158 octets du partenaire"
+Value(159) ="Entree 159 octets du partenaire"
+Value(160) ="Entree 160 octets du partenaire"
+Value(161) ="Entree 161 octets du partenaire"
+Value(162) ="Entree 162 octets du partenaire"
+Value(163) ="Entree 163 octets du partenaire"
+Value(164) ="Entree 164 octets du partenaire"
+Value(165) ="Entree 165 octets du partenaire"
+Value(166) ="Entree 166 octets du partenaire"
+Value(167) ="Entree 167 octets du partenaire"
+Value(168) ="Entree 168 octets du partenaire"
+Value(169) ="Entree 169 octets du partenaire"
+Value(170) ="Entree 170 octets du partenaire"
+Value(171) ="Entree 171 octets du partenaire"
+Value(172) ="Entree 172 octets du partenaire"
+Value(173) ="Entree 173 octets du partenaire"
+Value(174) ="Entree 174 octets du partenaire"
+Value(175) ="Entree 175 octets du partenaire"
+Value(176) ="Entree 176 octets du partenaire"
+Value(177) ="Entree 177 octets du partenaire"
+Value(178) ="Entree 178 octets du partenaire"
+Value(179) ="Entree 179 octets du partenaire"
+Value(180) ="Entree 180 octets du partenaire"
+Value(181) ="Entree 181 octets du partenaire"
+Value(182) ="Entree 182 octets du partenaire"
+Value(183) ="Entree 183 octets du partenaire"
+Value(184) ="Entree 184 octets du partenaire"
+Value(185) ="Entree 185 octets du partenaire"
+Value(186) ="Entree 186 octets du partenaire"
+Value(187) ="Entree 187 octets du partenaire"
+Value(188) ="Entree 188 octets du partenaire"
+Value(189) ="Entree 189 octets du partenaire"
+Value(190) ="Entree 190 octets du partenaire"
+Value(191) ="Entree 191 octets du partenaire"
+Value(192) ="Entree 192 octets du partenaire"
+Value(193) ="Entree 193 octets du partenaire"
+Value(194) ="Entree 194 octets du partenaire"
+Value(195) ="Entree 195 octets du partenaire"
+Value(196) ="Entree 196 octets du partenaire"
+Value(197) ="Entree 197 octets du partenaire"
+Value(198) ="Entree 198 octets du partenaire"
+Value(199) ="Entree 199 octets du partenaire"
+Value(200) ="Entree 200 octets du partenaire"
+Value(201) ="Entree 201 octets du partenaire"
+Value(202) ="Entree 202 octets du partenaire"
+Value(203) ="Entree 203 octets du partenaire"
+Value(204) ="Entree 204 octets du partenaire"
+Value(205) ="Entree 205 octets du partenaire"
+Value(206) ="Entree 206 octets du partenaire"
+Value(207) ="Entree 207 octets du partenaire"
+Value(208) ="Entree 208 octets du partenaire"
+Value(209) ="Entree 209 octets du partenaire"
+Value(210) ="Entree 210 octets du partenaire"
+Value(211) ="Entree 211 octets du partenaire"
+Value(212) ="Entree 212 octets du partenaire"
+Value(213) ="Entree 213 octets du partenaire"
+Value(214) ="Entree 214 octets du partenaire"
+Value(215) ="Entree 215 octets du partenaire"
+Value(216) ="Entree 216 octets du partenaire"
+Value(217) ="Entree 217 octets du partenaire"
+Value(218) ="Entree 218 octets du partenaire"
+Value(219) ="Entree 219 octets du partenaire"
+Value(220) ="Entree 220 octets du partenaire"
+Value(221) ="Entree 221 octets du partenaire"
+Value(222) ="Entree 222 octets du partenaire"
+Value(223) ="Entree 223 octets du partenaire"
+Value(224) ="Entree 224 octets du partenaire"
+Value(225) ="Entree 225 octets du partenaire"
+Value(226) ="Entree 226 octets du partenaire"
+Value(227) ="Entree 227 octets du partenaire"
+Value(228) ="Entree 228 octets du partenaire"
+Value(229) ="Entree 229 octets du partenaire"
+Value(230) ="Entree 230 octets du partenaire"
+Value(231) ="Entree 231 octets du partenaire"
+Value(232) ="Entree 232 octets du partenaire"
+Value(233) ="Entree 233 octets du partenaire"
+Value(234) ="Entree 234 octets du partenaire"
+Value(235) ="Entree 235 octets du partenaire"
+Value(236) ="Entree 236 octets du partenaire"
+Value(237) ="Entree 237 octets du partenaire"
+Value(238) ="Entree 238 octets du partenaire"
+Value(239) ="Entree 239 octets du partenaire"
+Value(240) ="Entree 240 octets du partenaire"
+Value(241) ="Entree 241 octets du partenaire"
+Value(242) ="Entree 242 octets du partenaire"
+Value(243) ="Entree 243 octets du partenaire"
+Value(244) ="Entree 244 octets du partenaire"
+Unit_Diag_Area_End
+;
+Unit_Diag_Area=40-47
+Value(1) ="Sortie 1 octet du partenaire"
+Value(2) ="Sortie 2 octets du partenaire"
+Value(3) ="Sortie 3 octets du partenaire"
+Value(4) ="Sortie 4 octets du partenaire"
+Value(5) ="Sortie 5 octets du partenaire"
+Value(6) ="Sortie 6 octets du partenaire"
+Value(7) ="Sortie 7 octets du partenaire"
+Value(8) ="Sortie 8 octets du partenaire"
+Value(9) ="Sortie 9 octets du partenaire"
+Value(10) ="Sortie 10 octets du partenaire"
+Value(11) ="Sortie 11 octets du partenaire"
+Value(12) ="Sortie 12 octets du partenaire"
+Value(13) ="Sortie 13 octets du partenaire"
+Value(14) ="Sortie 14 octets du partenaire"
+Value(15) ="Sortie 15 octets du partenaire"
+Value(16) ="Sortie 16 octets du partenaire"
+Value(17) ="Sortie 17 octets du partenaire"
+Value(18) ="Sortie 18 octets du partenaire"
+Value(19) ="Sortie 19 octets du partenaire"
+Value(20) ="Sortie 20 octets du partenaire"
+Value(21) ="Sortie 21 octets du partenaire"
+Value(22) ="Sortie 22 octets du partenaire"
+Value(23) ="Sortie 23 octets du partenaire"
+Value(24) ="Sortie 24 octets du partenaire"
+Value(25) ="Sortie 25 octets du partenaire"
+Value(26) ="Sortie 26 octets du partenaire"
+Value(27) ="Sortie 27 octets du partenaire"
+Value(28) ="Sortie 28 octets du partenaire"
+Value(29) ="Sortie 29 octets du partenaire"
+Value(30) ="Sortie 30 octets du partenaire"
+Value(31) ="Sortie 31 octets du partenaire"
+Value(32) ="Sortie 32 octets du partenaire"
+Value(33) ="Sortie 33 octets du partenaire"
+Value(34) ="Sortie 34 octets du partenaire"
+Value(35) ="Sortie 35 octets du partenaire"
+Value(36) ="Sortie 36 octets du partenaire"
+Value(37) ="Sortie 37 octets du partenaire"
+Value(38) ="Sortie 38 octets du partenaire"
+Value(39) ="Sortie 39 octets du partenaire"
+Value(40) ="Sortie 40 octets du partenaire"
+Value(41) ="Sortie 41 octets du partenaire"
+Value(42) ="Sortie 42 octets du partenaire"
+Value(43) ="Sortie 43 octets du partenaire"
+Value(44) ="Sortie 44 octets du partenaire"
+Value(45) ="Sortie 45 octets du partenaire"
+Value(46) ="Sortie 46 octets du partenaire"
+Value(47) ="Sortie 47 octets du partenaire"
+Value(48) ="Sortie 48 octets du partenaire"
+Value(49) ="Sortie 49 octets du partenaire"
+Value(50) ="Sortie 50 octets du partenaire"
+Value(51) ="Sortie 51 octets du partenaire"
+Value(52) ="Sortie 52 octets du partenaire"
+Value(53) ="Sortie 53 octets du partenaire"
+Value(54) ="Sortie 54 octets du partenaire"
+Value(55) ="Sortie 55 octets du partenaire"
+Value(56) ="Sortie 56 octets du partenaire"
+Value(57) ="Sortie 57 octets du partenaire"
+Value(58) ="Sortie 58 octets du partenaire"
+Value(59) ="Sortie 59 octets du partenaire"
+Value(60) ="Sortie 60 octets du partenaire"
+Value(61) ="Sortie 61 octets du partenaire"
+Value(62) ="Sortie 62 octets du partenaire"
+Value(63) ="Sortie 63 octets du partenaire"
+Value(64) ="Sortie 64 octets du partenaire"
+Value(65) ="Sortie 65 octets du partenaire"
+Value(66) ="Sortie 66 octets du partenaire"
+Value(67) ="Sortie 67 octets du partenaire"
+Value(68) ="Sortie 68 octets du partenaire"
+Value(69) ="Sortie 69 octets du partenaire"
+Value(70) ="Sortie 70 octets du partenaire"
+Value(71) ="Sortie 71 octets du partenaire"
+Value(72) ="Sortie 72 octets du partenaire"
+Value(73) ="Sortie 73 octets du partenaire"
+Value(74) ="Sortie 74 octets du partenaire"
+Value(75) ="Sortie 75 octets du partenaire"
+Value(76) ="Sortie 76 octets du partenaire"
+Value(77) ="Sortie 77 octets du partenaire"
+Value(78) ="Sortie 78 octets du partenaire"
+Value(79) ="Sortie 79 octets du partenaire"
+Value(80) ="Sortie 80 octets du partenaire"
+Value(81) ="Sortie 81 octets du partenaire"
+Value(82) ="Sortie 82 octets du partenaire"
+Value(83) ="Sortie 83 octets du partenaire"
+Value(84) ="Sortie 84 octets du partenaire"
+Value(85) ="Sortie 85 octets du partenaire"
+Value(86) ="Sortie 86 octets du partenaire"
+Value(87) ="Sortie 87 octets du partenaire"
+Value(88) ="Sortie 88 octets du partenaire"
+Value(89) ="Sortie 89 octets du partenaire"
+Value(90) ="Sortie 90 octets du partenaire"
+Value(91) ="Sortie 91 octets du partenaire"
+Value(92) ="Sortie 92 octets du partenaire"
+Value(93) ="Sortie 93 octets du partenaire"
+Value(94) ="Sortie 94 octets du partenaire"
+Value(95) ="Sortie 95 octets du partenaire"
+Value(96) ="Sortie 96 octets du partenaire"
+Value(97) ="Sortie 97 octets du partenaire"
+Value(98) ="Sortie 98 octets du partenaire"
+Value(99) ="Sortie 99 octets du partenaire"
+Value(100) ="Sortie 100 octets du partenaire"
+Value(101) ="Sortie 101 octets du partenaire"
+Value(102) ="Sortie 102 octets du partenaire"
+Value(103) ="Sortie 103 octets du partenaire"
+Value(104) ="Sortie 104 octets du partenaire"
+Value(105) ="Sortie 105 octets du partenaire"
+Value(106) ="Sortie 106 octets du partenaire"
+Value(107) ="Sortie 107 octets du partenaire"
+Value(108) ="Sortie 108 octets du partenaire"
+Value(109) ="Sortie 109 octets du partenaire"
+Value(110) ="Sortie 110 octets du partenaire"
+Value(111) ="Sortie 111 octets du partenaire"
+Value(112) ="Sortie 112 octets du partenaire"
+Value(113) ="Sortie 113 octets du partenaire"
+Value(114) ="Sortie 114 octets du partenaire"
+Value(115) ="Sortie 115 octets du partenaire"
+Value(116) ="Sortie 116 octets du partenaire"
+Value(117) ="Sortie 117 octets du partenaire"
+Value(118) ="Sortie 118 octets du partenaire"
+Value(119) ="Sortie 119 octets du partenaire"
+Value(120) ="Sortie 120 octets du partenaire"
+Value(121) ="Sortie 121 octets du partenaire"
+Value(122) ="Sortie 122 octets du partenaire"
+Value(123) ="Sortie 123 octets du partenaire"
+Value(124) ="Sortie 124 octets du partenaire"
+Value(125) ="Sortie 125 octets du partenaire"
+Value(126) ="Sortie 126 octets du partenaire"
+Value(127) ="Sortie 127 octets du partenaire"
+Value(128) ="Sortie 128 octets du partenaire"
+Value(129) ="Sortie 129 octets du partenaire"
+Value(130) ="Sortie 130 octets du partenaire"
+Value(131) ="Sortie 131 octets du partenaire"
+Value(132) ="Sortie 132 octets du partenaire"
+Value(133) ="Sortie 133 octets du partenaire"
+Value(134) ="Sortie 134 octets du partenaire"
+Value(135) ="Sortie 135 octets du partenaire"
+Value(136) ="Sortie 136 octets du partenaire"
+Value(137) ="Sortie 137 octets du partenaire"
+Value(138) ="Sortie 138 octets du partenaire"
+Value(139) ="Sortie 139 octets du partenaire"
+Value(140) ="Sortie 140 octets du partenaire"
+Value(141) ="Sortie 141 octets du partenaire"
+Value(142) ="Sortie 142 octets du partenaire"
+Value(143) ="Sortie 143 octets du partenaire"
+Value(144) ="Sortie 144 octets du partenaire"
+Value(145) ="Sortie 145 octets du partenaire"
+Value(146) ="Sortie 146 octets du partenaire"
+Value(147) ="Sortie 147 octets du partenaire"
+Value(148) ="Sortie 148 octets du partenaire"
+Value(149) ="Sortie 149 octets du partenaire"
+Value(150) ="Sortie 150 octets du partenaire"
+Value(151) ="Sortie 151 octets du partenaire"
+Value(152) ="Sortie 152 octets du partenaire"
+Value(153) ="Sortie 153 octets du partenaire"
+Value(154) ="Sortie 154 octets du partenaire"
+Value(155) ="Sortie 155 octets du partenaire"
+Value(156) ="Sortie 156 octets du partenaire"
+Value(157) ="Sortie 157 octets du partenaire"
+Value(158) ="Sortie 158 octets du partenaire"
+Value(159) ="Sortie 159 octets du partenaire"
+Value(160) ="Sortie 160 octets du partenaire"
+Value(161) ="Sortie 161 octets du partenaire"
+Value(162) ="Sortie 162 octets du partenaire"
+Value(163) ="Sortie 163 octets du partenaire"
+Value(164) ="Sortie 164 octets du partenaire"
+Value(165) ="Sortie 165 octets du partenaire"
+Value(166) ="Sortie 166 octets du partenaire"
+Value(167) ="Sortie 167 octets du partenaire"
+Value(168) ="Sortie 168 octets du partenaire"
+Value(169) ="Sortie 169 octets du partenaire"
+Value(170) ="Sortie 170 octets du partenaire"
+Value(171) ="Sortie 171 octets du partenaire"
+Value(172) ="Sortie 172 octets du partenaire"
+Value(173) ="Sortie 173 octets du partenaire"
+Value(174) ="Sortie 174 octets du partenaire"
+Value(175) ="Sortie 175 octets du partenaire"
+Value(176) ="Sortie 176 octets du partenaire"
+Value(177) ="Sortie 177 octets du partenaire"
+Value(178) ="Sortie 178 octets du partenaire"
+Value(179) ="Sortie 179 octets du partenaire"
+Value(180) ="Sortie 180 octets du partenaire"
+Value(181) ="Sortie 181 octets du partenaire"
+Value(182) ="Sortie 182 octets du partenaire"
+Value(183) ="Sortie 183 octets du partenaire"
+Value(184) ="Sortie 184 octets du partenaire"
+Value(185) ="Sortie 185 octets du partenaire"
+Value(186) ="Sortie 186 octets du partenaire"
+Value(187) ="Sortie 187 octets du partenaire"
+Value(188) ="Sortie 188 octets du partenaire"
+Value(189) ="Sortie 189 octets du partenaire"
+Value(190) ="Sortie 190 octets du partenaire"
+Value(191) ="Sortie 191 octets du partenaire"
+Value(192) ="Sortie 192 octets du partenaire"
+Value(193) ="Sortie 193 octets du partenaire"
+Value(194) ="Sortie 194 octets du partenaire"
+Value(195) ="Sortie 195 octets du partenaire"
+Value(196) ="Sortie 196 octets du partenaire"
+Value(197) ="Sortie 197 octets du partenaire"
+Value(198) ="Sortie 198 octets du partenaire"
+Value(199) ="Sortie 199 octets du partenaire"
+Value(200) ="Sortie 200 octets du partenaire"
+Value(201) ="Sortie 201 octets du partenaire"
+Value(202) ="Sortie 202 octets du partenaire"
+Value(203) ="Sortie 203 octets du partenaire"
+Value(204) ="Sortie 204 octets du partenaire"
+Value(205) ="Sortie 205 octets du partenaire"
+Value(206) ="Sortie 206 octets du partenaire"
+Value(207) ="Sortie 207 octets du partenaire"
+Value(208) ="Sortie 208 octets du partenaire"
+Value(209) ="Sortie 209 octets du partenaire"
+Value(210) ="Sortie 210 octets du partenaire"
+Value(211) ="Sortie 211 octets du partenaire"
+Value(212) ="Sortie 212 octets du partenaire"
+Value(213) ="Sortie 213 octets du partenaire"
+Value(214) ="Sortie 214 octets du partenaire"
+Value(215) ="Sortie 215 octets du partenaire"
+Value(216) ="Sortie 216 octets du partenaire"
+Value(217) ="Sortie 217 octets du partenaire"
+Value(218) ="Sortie 218 octets du partenaire"
+Value(219) ="Sortie 219 octets du partenaire"
+Value(220) ="Sortie 220 octets du partenaire"
+Value(221) ="Sortie 221 octets du partenaire"
+Value(222) ="Sortie 222 octets du partenaire"
+Value(223) ="Sortie 223 octets du partenaire"
+Value(224) ="Sortie 224 octets du partenaire"
+Value(225) ="Sortie 225 octets du partenaire"
+Value(226) ="Sortie 226 octets du partenaire"
+Value(227) ="Sortie 227 octets du partenaire"
+Value(228) ="Sortie 228 octets du partenaire"
+Value(229) ="Sortie 229 octets du partenaire"
+Value(230) ="Sortie 230 octets du partenaire"
+Value(231) ="Sortie 231 octets du partenaire"
+Value(232) ="Sortie 232 octets du partenaire"
+Value(233) ="Sortie 233 octets du partenaire"
+Value(234) ="Sortie 234 octets du partenaire"
+Value(235) ="Sortie 235 octets du partenaire"
+Value(236) ="Sortie 236 octets du partenaire"
+Value(237) ="Sortie 237 octets du partenaire"
+Value(238) ="Sortie 238 octets du partenaire"
+Value(239) ="Sortie 239 octets du partenaire"
+Value(240) ="Sortie 240 octets du partenaire"
+Value(241) ="Sortie 241 octets du partenaire"
+Value(242) ="Sortie 242 octets du partenaire"
+Value(243) ="Sortie 243 octets du partenaire"
+Value(244) ="Sortie 244 octets du partenaire"
+Unit_Diag_Area_End
+;
+Unit_Diag_Bit(49) = "Suppr. des donnees du partenaire"
+Unit_Diag_Bit(50) = "Unfreeze du partenaire"
+Unit_Diag_Bit(51) = "Freeze du partenaire"
+Unit_Diag_Bit(52) = "Unsync du partenaire"
+Unit_Diag_Bit(53) = "Sync du partenaire"
+;
+Unit_Diag_Area=56-63
+Value(1) ="PS1 Off"
+Value(2) ="PS2 Off"
+Unit_Diag_Area_End
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; <Prm-Text-Def-List>
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+PrmText=1
+Text(0)="Bit de diagnostic etendu active"
+Text(1)="Bit diagnostic etendu desactive"
+EndPrmText
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; <Ext-User-Prm-Data-Def-List>
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+ExtUserPrmData=1 "Diagnostics"
+Bit(7) 0 0-1
+Prm_Text_Ref=1
+EndExtUserPrmData
+;
+Max_User_Prm_Data_Len = 8 
+Ext_User_Prm_Data_Const(0) = 0x00,0x00,0x00 
+Ext_User_Prm_Data_Const(3) = 0x05,0x81,0x00,0x00,0x80 
+Ext_User_Prm_Data_Ref(7) = 1
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; <Module-Definition-List>
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+Module = "Entree 1 octet" 0x10
+1
+EndModule
+;
+Module = "Entree 2 octets" 0x11
+2
+EndModule
+;
+Module = "Entree 4 octets" 0x13
+3
+EndModule
+;
+Module = "Entree 8 octets" 0x17
+4
+EndModule
+;
+Module = "Entree 16 octets" 0x1F
+5
+EndModule
+;
+Module = "Entree 32 octets" 0x40,0x1F
+6
+EndModule
+;
+Module = "Entree 64 octets" 0x40,0x3F
+7
+EndModule
+;
+Module = "Entree 64 mots" 0x40,0x7F
+8
+EndModule
+;
+Module = "Sortie 1 octet" 0x20
+10
+EndModule
+;
+Module = "Sortie 2 octets" 0x21
+11
+EndModule
+;
+Module = "Sortie 4 octets" 0x23
+12
+EndModule
+;
+Module = "Sortie 8 octets" 0x27
+13
+EndModule
+;
+Module = "Sortie 16 octets" 0x2F
+14
+EndModule
+;
+Module = "Sortie 32 octets" 0x80,0x1F
+15
+EndModule
+;
+Module = "Sortie 64 octets" 0x80,0x3F
+16
+EndModule
+;
+Module = "Sortie 64 mots" 0x80,0x7F
+17
+EndModule
+;
+Module = "Entree 1 octet coherente" 0x90
+19
+EndModule
+;
+Module = "Entree  2 octets coherente" 0x91
+20
+EndModule
+;
+Module = "Entree  4 octets coherente" 0x93
+21
+EndModule
+;
+Module = "Entree  8 octets coherente" 0x97
+22
+EndModule
+;
+Module = "Entree  16 octets coherente" 0x9F
+23
+EndModule
+;
+Module = "Entree  32 octets coherente" 0x40,0x9F
+24
+EndModule
+;
+Module = "Entree  64 octets coherente" 0x40,0xBF
+25
+EndModule
+;
+Module = "Entree 64 mots coherente" 0x40,0xFF
+26
+EndModule
+;
+Module = "Sortie 1 octet coherente" 0xA0
+28
+EndModule
+;
+Module = "Sortie 2 octets coherente" 0xA1
+29
+EndModule
+;
+Module = "Sortie 4 octets coherente" 0xA3
+30
+EndModule
+;
+Module = "Sortie 8 octets coherente" 0xA7
+31
+EndModule
+;
+Module = "Sortie 16 octets coherente" 0xAF
+32
+EndModule
+;
+Module = "Sortie 32 octets coherente" 0x80,0x9F
+33
+EndModule
+;
+Module = "Sortie 64 octets coherente" 0x80,0xBF
+34
+EndModule
+;
+Module = "Sortie 64 mots coherente" 0x80,0xFF
+35
+EndModule
+;
+Module = "E 6 octets/S 12 octets coher." 0xC0,0x8B,0x85
+36
+EndModule
+;
+Module = "E 12 octets/S 6 octets coher." 0xC0,0x85,0x8B
+37
+EndModule
+;
+
+Max_Output_Len = 244
+Max_Input_Len = 244
+Max_Data_Len = 488
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
