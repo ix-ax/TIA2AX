@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ISO15745Profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\XSD\GSDML-DeviceProfile-V2.32.xsd" xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile">
+    <ProfileHeader>
+        <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+        <ProfileRevision>1.00</ProfileRevision>
+        <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+        <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+        <ProfileClassID>Device</ProfileClassID>
+        <ISO15745Reference>
+            <ISO15745Part>4</ISO15745Part>
+            <ISO15745Edition>1</ISO15745Edition>
+            <ProfileTechnology>GSDML</ProfileTechnology>
+        </ISO15745Reference>
+    </ProfileHeader>
+    <ProfileBody>
+        <DeviceIdentity VendorID="0x002A" DeviceID="0x10E">
+            <InfoText TextId="EmptyString" />
+            <VendorName Value="SIEMENS" />
+        </DeviceIdentity>
+        <DeviceFunction>
+            <Family MainFamily="PLCs" ProductFamily="CPU 1516F-3 PN/DP" />
+        </DeviceFunction>
+        <ApplicationProcess>
+            <DeviceAccessPointList>
+                <DeviceAccessPointItem ID="DAP1" DNS_CompatibleName="xd310a1xbplc.profinetxainterfacexb14f47" PhysicalSlots="1" FixedInSlots="1" DeviceAccessSupported="true" ModuleIdentNumber="0x1076323" ObjectUUID_LocalIndex="100" RequiredSchemaVersion="V2.31" MinDeviceInterval="32" MaxSupportedRecordSize="32768" NameOfStationNotTransferable="false" AddressAssignment="LOCAL" MultipleWriteSupported="true" IOXS_Required="false" LLDP_NoD_Supported="true" CheckDeviceID_Allowed="true" ResetToFactoryModes="2" PNIO_Version="V2.32">
+                    <ModuleInfo>
+                        <Name TextId="DAP_Name_ID" />
+                        <InfoText TextId="DAP_Description_ID" />
+                        <OrderNumber Value="6ES7 516-3FN01-0AB0" />
+                        <SoftwareRelease Value="V2.1" />
+                    </ModuleInfo>
+                    <CertificationInfo ConformanceClass="B" ApplicationClass="" NetloadClass="III" />
+                    <SubslotList>
+                        <SubslotItem SubslotNumber="32768" TextId="Interface_SubslotLabel" />
+                        <SubslotItem SubslotNumber="32769" TextId="Port32769_SubslotLabel" />
+                        <SubslotItem SubslotNumber="32770" TextId="Port32770_SubslotLabel" />
+                    </SubslotList>
+                    <IOConfigData MaxInputLength="71" MaxOutputLength="7" MaxDataLength="78" />
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem SubmoduleIdentNumber="0x6B58" FixedInSubslots="1000" ID="VSM_2_1000" Writeable_IM_Records="1 2 3" MayIssueProcessAlarm="false">
+                            <IOData IOPS_Length="1" IOCS_Length="1">
+                                <Input>
+                                    <DataItem Length="4" DataType="OctetString" TextId="VSM_2_1000" />
+                                </Input>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="VSM_2_1000_Name" />
+                                <InfoText TextId="VSM_2_1000_Comment" />
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                        <VirtualSubmoduleItem SubmoduleIdentNumber="0x6677" FixedInSubslots="1001" ID="VSM_2_1001" MayIssueProcessAlarm="false">
+                            <IOData IOPS_Length="1" IOCS_Length="1">
+                                <Output>
+                                    <DataItem Length="4" DataType="OctetString" TextId="VSM_2_1001" />
+                                </Output>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="VSM_2_1001_Name" />
+                                <InfoText TextId="VSM_2_1001_Comment" />
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                        <VirtualSubmoduleItem SubmoduleIdentNumber="0x7418" FixedInSubslots="1002" ID="VSM_2_1002" MayIssueProcessAlarm="false">
+                            <IOData IOPS_Length="1" IOCS_Length="1">
+                                <Input>
+                                    <DataItem Length="64" DataType="OctetString" TextId="VSM_2_1002" />
+                                </Input>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="VSM_2_1002_Name" />
+                                <InfoText TextId="VSM_2_1002_Comment" />
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                    <SystemDefinedSubmoduleList>
+                        <InterfaceSubmoduleItem ID="Interface" SubslotNumber="32768" SubmoduleIdentNumber="0xf00" TextId="Interface" NetworkComponentDiagnosisSupported="true" ParameterizationDisallowed="true" SupportedMibs="MIB2" SupportedProtocols="SNMP;LLDP" PTP_BoundarySupported="true" DCP_BoundarySupported="true" MaxFrameStartTime="1600" MinNRT_Gap="960" SupportedRT_Classes="RT_CLASS_1" PDEV_CombinedObjectSupported="true">
+                            <ApplicationRelations StartupMode="Advanced;Legacy" NumberOfAR="1">
+                                <TimingProperties PreferredSendClock="32" SendClock="32" ReductionRatioNonPow2="1" ReductionRatioPow2="1 2 4 8 16 32 64 128 256 512" />
+                            </ApplicationRelations>
+                            <MediaRedundancy SupportedRole="Manager (Auto);Manager;Client" MaxMRP_Instances="1" />
+                        </InterfaceSubmoduleItem>
+                        <PortSubmoduleItem ID="Port_1" TextId="Port_1" SubslotNumber="32769" SubmoduleIdentNumber="0xf01" ParameterizationDisallowed="true" MaxPortRxDelay="330" MaxPortTxDelay="58" MAUTypes="16" PortDeactivationSupported="true" CheckMAUTypeSupported="true" SupportsRingportConfig="true" IsDefaultRingport="true" CheckMAUTypeDifferenceSupported="true">
+                            <MAUTypeList>
+                                <MAUTypeItem Value="16" AdjustSupported="true" />
+                            </MAUTypeList>
+                        </PortSubmoduleItem>
+                        <PortSubmoduleItem ID="Port_2" TextId="Port_2" SubslotNumber="32770" SubmoduleIdentNumber="0xf02" ParameterizationDisallowed="true" MaxPortRxDelay="330" MaxPortTxDelay="58" MAUTypes="16" PortDeactivationSupported="true" CheckMAUTypeSupported="true" SupportsRingportConfig="true" IsDefaultRingport="true" CheckMAUTypeDifferenceSupported="true">
+                            <MAUTypeList>
+                                <MAUTypeItem Value="16" AdjustSupported="true" />
+                            </MAUTypeList>
+                        </PortSubmoduleItem>
+                    </SystemDefinedSubmoduleList>
+                </DeviceAccessPointItem>
+            </DeviceAccessPointList>
+            <ExternalTextList>
+                <PrimaryLanguage>
+                    <Text TextId="EmptyString" Value="" />
+                    <Text TextId="Interface_SubslotLabel" Value="X1" />
+                    <Text TextId="Port32769_SubslotLabel" Value="Port1" />
+                    <Text TextId="Port32770_SubslotLabel" Value="Port2" />
+                    <Text TextId="DAP_Name_ID" Value="310A1_PLC_X1" />
+                    <Text TextId="DAP_Description_ID" Value="Fail-safe CPU with display; work memory 1.5 MB code and 5 MB data; can be used for safety applications; supports consistent safety upload; supports PROFIsafe V2; 10 ns bit instruction time; 5-stage protection concept, integrated technology functions: motion control, closed-loop control, counting &amp; measuring; tracing; 1st interface: PROFINET IO controller, supports RT/IRT, performance upgrade PROFINET V2.3, 2 ports, I-device, MRP, MRPD, transport protocol TCP/IP, secure Open User Communication, S7 communication, Web server, DNS client, OPC UA server data access, constant bus cycle time, routing; 2nd interface: PROFINET IO controller, supports RT, I-device, transport protocol TCP/IP, secure Open User Communication, S7 communication, Web server, DNS client, OPC UA server data access, routing; 3rd interface: PROFIBUS DP master, S7 communication, constant bus cycle time, routing; Runtime options, firmware V2.1" />
+                    <Text TextId="Interface" Value="Interface" />
+                    <Text TextId="Port_1" Value="Port 1" />
+                    <Text TextId="Port_2" Value="Port 2" />
+                    <Text TextId="VSM_2_1000_Name" Value="Outputs" />
+                    <Text TextId="VSM_2_1000_Comment" Value="" />
+                    <Text TextId="VSM_2_1000" Value="VSM_2_1000" />
+                    <Text TextId="VSM_2_1001_Name" Value="Inputs" />
+                    <Text TextId="VSM_2_1001_Comment" Value="" />
+                    <Text TextId="VSM_2_1001" Value="VSM_2_1001" />
+                    <Text TextId="VSM_2_1002_Name" Value="DataToMainLine" />
+                    <Text TextId="VSM_2_1002_Comment" Value="" />
+                    <Text TextId="VSM_2_1002" Value="VSM_2_1002" />
+                </PrimaryLanguage>
+            </ExternalTextList>
+        </ApplicationProcess>
+    </ProfileBody>
+</ISO15745Profile>

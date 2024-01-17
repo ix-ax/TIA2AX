@@ -1,0 +1,765 @@
+;===============================================
+;"GSD para acoplador DP/DP release 2"
+;"Numero de pedido":	6ES7 158-0AD01 0XA0
+;"Fabricante":		SIEMENS AG A&D AS RD 23
+;"Autor": 		Hopfengaertner / Schmidt
+;"Version": 	V1.04
+;"Date": 			15.12.10
+; ==============================================
+;
+#Profibus_DP
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; <Unit-Definition-List>
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+GSD_Revision = 4
+Vendor_Name = "Siemens AG"
+Model_Name = "Acoplador DP/DP, rel. 2"
+Revision = "2.0"                        ;"Acoplador DP/DP, release 2"
+Ident_Number = 0x8070
+Protocol_Ident = 0
+Station_Type = 0
+Hardware_Release = "A0"
+Software_Release = "B0"
+Info_Text= "Acoplador de dos redes Profibus DP, IP20, hasta 12 MBit/s"
+;
+9.6_supp = 1
+19.2_supp = 1
+45.45_supp = 1
+93.75_supp = 1
+187.5_supp = 1
+500_supp = 1
+1.5M_supp = 1
+3M_supp = 1
+6M_supp = 1
+12M_supp = 1
+;
+MaxTsdr_9.6 = 15
+MaxTsdr_19.2 = 15
+MaxTsdr_45.45 = 15
+MaxTsdr_93.75 = 15
+MaxTsdr_187.5 = 15
+MaxTsdr_500 = 15
+MaxTsdr_1.5M = 25
+MaxTsdr_3M = 50
+MaxTsdr_6M = 100
+MaxTsdr_12M = 200
+;
+Implementation_Type="DPC31"
+Bitmap_Device="SI8070_N"
+Bitmap_SF="SI8070_S"
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Slave-Spezifikation:
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+OrderNumber = "6ES7 158-0AD01-0XA0"
+Set_Slave_Add_supp = 1
+Freeze_Mode_supp = 1
+Sync_Mode_supp = 1
+Auto_Baud_supp = 1
+Fail_Safe = 1
+;Fail_Safe_required = 0
+Min_Slave_Intervall = 3
+;
+Max_Diag_Data_Len = 26
+;
+Modular_Station = 1
+Max_Module = 16
+Modul_Offset = 1
+Slave_Family = 9
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; DPV1 Schlüssel
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+DPV1_Slave=1
+;
+C1_Read_Write_supp=0
+;
+C2_Read_Write_supp=0
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Unit-Diagnostics:
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+Unit_Diag_Area=24-31
+Value(1) ="Datos validos"
+Unit_Diag_Area_End
+;
+Unit_Diag_Area=32-39
+Value(1) ="Entrada de 1 byte del interloc"
+Value(2) ="Entrada de 2 bytes del interloc"
+Value(3) ="Entrada de 3 bytes de interloc"
+Value(4) ="Entrada de 4 bytes de interloc"
+Value(5) ="Entrada de 5 bytes de interloc"
+Value(6) ="Entrada de 6 bytes de interloc"
+Value(7) ="Entrada de 7 bytes de interloc"
+Value(8) ="Entrada de 8 bytes de interloc"
+Value(9) ="Entrada de 9 bytes de interloc"
+Value(10) ="Entrada de 10 bytes de interloc"
+Value(11) ="Entrada de 11 bytes de interloc"
+Value(12) ="Entrada de 12 bytes de interloc"
+Value(13) ="Entrada de 13 bytes de interloc"
+Value(14) ="Entrada de 14 bytes de interloc"
+Value(15) ="Entrada de 15 bytes de interloc"
+Value(16) ="Entrada de 16 bytes de interloc"
+Value(17) ="Entrada de 17 bytes de interloc"
+Value(18) ="Entrada de 18 bytes de interloc"
+Value(19) ="Entrada de 19 bytes de interloc"
+Value(20) ="Entrada de 20 bytes de interloc"
+Value(21) ="Entrada de 21 bytes de interloc"
+Value(22) ="Entrada de 22 bytes de interloc"
+Value(23) ="Entrada de 23 bytes de interloc"
+Value(24) ="Entrada de 24 bytes de interloc"
+Value(25) ="Entrada de 25 bytes de interloc"
+Value(26) ="Entrada de 26 bytes de interloc"
+Value(27) ="Entrada de 27 bytes de interloc"
+Value(28) ="Entrada de 28 bytes de interloc"
+Value(29) ="Entrada de 29 bytes de interloc"
+Value(30) ="Entrada de 30 bytes de interloc"
+Value(31) ="Entrada de 31 bytes de interloc"
+Value(32) ="Entrada de 32 bytes de interloc"
+Value(33) ="Entrada de 33 bytes de interloc"
+Value(34) ="Entrada de 34 bytes de interloc"
+Value(35) ="Entrada de 35 bytes de interloc"
+Value(36) ="Entrada de 36 bytes de interloc"
+Value(37) ="Entrada de 37 bytes de interloc"
+Value(38) ="Entrada de 38 bytes de interloc"
+Value(39) ="Entrada de 39 bytes de interloc"
+Value(40) ="Entrada de 40 bytes de interloc"
+Value(41) ="Entrada de 41 bytes de interloc"
+Value(42) ="Entrada de 42 bytes de interloc"
+Value(43) ="Entrada de 43 bytes de interloc"
+Value(44) ="Entrada de 44 bytes de interloc"
+Value(45) ="Entrada de 45 bytes de interloc"
+Value(46) ="Entrada de 46 bytes de interloc"
+Value(47) ="Entrada de 47 bytes de interloc"
+Value(48) ="Entrada de 48 bytes de interloc"
+Value(49) ="Entrada de 49 bytes de interloc"
+Value(50) ="Entrada de 50 bytes de interloc"
+Value(51) ="Entrada de 51 bytes de interloc"
+Value(52) ="Entrada de 52 bytes de interloc"
+Value(53) ="Entrada de 53 bytes de interloc"
+Value(54) ="Entrada de 54 bytes de interloc"
+Value(55) ="Entrada de 55 bytes de interloc"
+Value(56) ="Entrada de 56 bytes de interloc"
+Value(57) ="Entrada de 57 bytes de interloc"
+Value(58) ="Entrada de 58 bytes de interloc"
+Value(59) ="Entrada de 59 bytes de interloc"
+Value(60) ="Entrada de 60 bytes de interloc"
+Value(61) ="Entrada de 61 bytes de interloc"
+Value(62) ="Entrada de 62 bytes de interloc"
+Value(63) ="Entrada de 63 bytes de interloc"
+Value(64) ="Entrada de 64 bytes de interloc"
+Value(65) ="Entrada de 65 bytes de interloc"
+Value(66) ="Entrada de 66 bytes de interloc"
+Value(67) ="Entrada de 67 bytes de interloc"
+Value(68) ="Entrada de 68 bytes de interloc"
+Value(69) ="Entrada de 69 bytes de interloc"
+Value(70) ="Entrada de 70 bytes de interloc"
+Value(71) ="Entrada de 71 bytes de interloc"
+Value(72) ="Entrada de 72 bytes de interloc"
+Value(73) ="Entrada de 73 bytes de interloc"
+Value(74) ="Entrada de 74 bytes de interloc"
+Value(75) ="Entrada de 75 bytes de interloc"
+Value(76) ="Entrada de 76 bytes de interloc"
+Value(77) ="Entrada de 77 bytes de interloc"
+Value(78) ="Entrada de 78 bytes de interloc"
+Value(79) ="Entrada de 79 bytes de interloc"
+Value(80) ="Entrada de 80 bytes de interloc"
+Value(81) ="Entrada de 81 bytes de interloc"
+Value(82) ="Entrada de 82 bytes de interloc"
+Value(83) ="Entrada de 83 bytes de interloc"
+Value(84) ="Entrada de 84 bytes de interloc"
+Value(85) ="Entrada de 85 bytes de interloc"
+Value(86) ="Entrada de 86 bytes de interloc"
+Value(87) ="Entrada de 87 bytes de interloc"
+Value(88) ="Entrada de 88 bytes de interloc"
+Value(89) ="Entrada de 89 bytes de interloc"
+Value(90) ="Entrada de 90 bytes de interloc"
+Value(91) ="Entrada de 91 bytes de interloc"
+Value(92) ="Entrada de 92 bytes de interloc"
+Value(93) ="Entrada de 93 bytes de interloc"
+Value(94) ="Entrada de 94 bytes de interloc"
+Value(95) ="Entrada de 95 bytes de interloc"
+Value(96) ="Entrada de 96 bytes de interloc"
+Value(97) ="Entrada de 97 bytes de interloc"
+Value(98) ="Entrada de 98 bytes de interloc"
+Value(99) ="Entrada de 99 bytes de interloc"
+Value(100) ="Entrada de 100 bytes de interloc"
+Value(101) ="Entrada de 101 bytes de interloc"
+Value(102) ="Entrada de 102 bytes de interloc"
+Value(103) ="Entrada de 103 bytes de interloc"
+Value(104) ="Entrada de 104 bytes de interloc"
+Value(105) ="Entrada de 105 bytes de interloc"
+Value(106) ="Entrada de 106 bytes de interloc"
+Value(107) ="Entrada de 107 bytes de interloc"
+Value(108) ="Entrada de 108 bytes de interloc"
+Value(109) ="Entrada de 109 bytes de interloc"
+Value(110) ="Entrada de 110 bytes de interloc"
+Value(111) ="Entrada de 111 bytes de interloc"
+Value(112) ="Entrada de 112 bytes de interloc"
+Value(113) ="Entrada de 113 bytes de interloc"
+Value(114) ="Entrada de 114 bytes de interloc"
+Value(115) ="Entrada de 115 bytes de interloc"
+Value(116) ="Entrada de 116 bytes de interloc"
+Value(117) ="Entrada de 117 bytes de interloc"
+Value(118) ="Entrada de 118 bytes de interloc"
+Value(119) ="Entrada de 119 bytes de interloc"
+Value(120) ="Entrada de 120 bytes de interloc"
+Value(121) ="Entrada de 121 bytes de interloc"
+Value(122) ="Entrada de 122 bytes de interloc"
+Value(123) ="Entrada de 123 bytes de interloc"
+Value(124) ="Entrada de 124 bytes de interloc"
+Value(125) ="Entrada de 125 bytes de interloc"
+Value(126) ="Entrada de 126 bytes de interloc"
+Value(127) ="Entrada de 127 bytes de interloc"
+Value(128) ="Entrada de 128 bytes de interloc"
+Value(129) ="Entrada de 129 bytes de interloc"
+Value(130) ="Entrada de 130 bytes de interloc"
+Value(131) ="Entrada de 131 bytes de interloc"
+Value(132) ="Entrada de 132 bytes de interloc"
+Value(133) ="Entrada de 133 bytes de interloc"
+Value(134) ="Entrada de 134 bytes de interloc"
+Value(135) ="Entrada de 135 bytes de interloc"
+Value(136) ="Entrada de 136 bytes de interloc"
+Value(137) ="Entrada de 137 bytes de interloc"
+Value(138) ="Entrada de 138 bytes de interloc"
+Value(139) ="Entrada de 139 bytes de interloc"
+Value(140) ="Entrada de 140 bytes de interloc"
+Value(141) ="Entrada de 141 bytes de interloc"
+Value(142) ="Entrada de 142 bytes de interloc"
+Value(143) ="Entrada de 143 bytes de interloc"
+Value(144) ="Entrada de 144 bytes de interloc"
+Value(145) ="Entrada de 145 bytes de interloc"
+Value(146) ="Entrada de 146 bytes de interloc"
+Value(147) ="Entrada de 147 bytes de interloc"
+Value(148) ="Entrada de 148 bytes de interloc"
+Value(149) ="Entrada de 149 bytes de interloc"
+Value(150) ="Entrada de 150 bytes de interloc"
+Value(151) ="Entrada de 151 bytes de interloc"
+Value(152) ="Entrada de 152 bytes de interloc"
+Value(153) ="Entrada de 153 bytes de interloc"
+Value(154) ="Entrada de 154 bytes de interloc"
+Value(155) ="Entrada de 155 bytes de interloc"
+Value(156) ="Entrada de 156 bytes de interloc"
+Value(157) ="Entrada de 157 bytes de interloc"
+Value(158) ="Entrada de 158 bytes de interloc"
+Value(159) ="Entrada de 159 bytes de interloc"
+Value(160) ="Entrada de 160 bytes de interloc"
+Value(161) ="Entrada de 161 bytes de interloc"
+Value(162) ="Entrada de 162 bytes de interloc"
+Value(163) ="Entrada de 163 bytes de interloc"
+Value(164) ="Entrada de 164 bytes de interloc"
+Value(165) ="Entrada de 165 bytes de interloc"
+Value(166) ="Entrada de 166 bytes de interloc"
+Value(167) ="Entrada de 167 bytes de interloc"
+Value(168) ="Entrada de 168 bytes de interloc"
+Value(169) ="Entrada de 169 bytes de interloc"
+Value(170) ="Entrada de 170 bytes de interloc"
+Value(171) ="Entrada de 171 bytes de interloc"
+Value(172) ="Entrada de 172 bytes de interloc"
+Value(173) ="Entrada de 173 bytes de interloc"
+Value(174) ="Entrada de 174 bytes de interloc"
+Value(175) ="Entrada de 175 bytes de interloc"
+Value(176) ="Entrada de 176 bytes de interloc"
+Value(177) ="Entrada de 177 bytes de interloc"
+Value(178) ="Entrada de 178 bytes de interloc"
+Value(179) ="Entrada de 179 bytes de interloc"
+Value(180) ="Entrada de 180 bytes de interloc"
+Value(181) ="Entrada de 181 bytes de interloc"
+Value(182) ="Entrada de 182 bytes de interloc"
+Value(183) ="Entrada de 183 bytes de interloc"
+Value(184) ="Entrada de 184 bytes de interloc"
+Value(185) ="Entrada de 185 bytes de interloc"
+Value(186) ="Entrada de 186 bytes de interloc"
+Value(187) ="Entrada de 187 bytes de interloc"
+Value(188) ="Entrada de 188 bytes de interloc"
+Value(189) ="Entrada de 189 bytes de interloc"
+Value(190) ="Entrada de 190 bytes de interloc"
+Value(191) ="Entrada de 191 bytes de interloc"
+Value(192) ="Entrada de 192 bytes de interloc"
+Value(193) ="Entrada de 193 bytes de interloc"
+Value(194) ="Entrada de 194 bytes de interloc"
+Value(195) ="Entrada de 195 bytes de interloc"
+Value(196) ="Entrada de 196 bytes de interloc"
+Value(197) ="Entrada de 197 bytes de interloc"
+Value(198) ="Entrada de 198 bytes de interloc"
+Value(199) ="Entrada de 199 bytes de interloc"
+Value(200) ="Entrada de 200 bytes de interloc"
+Value(201) ="Entrada de 201 bytes de interloc"
+Value(202) ="Entrada de 202 bytes de interloc"
+Value(203) ="Entrada de 203 bytes de interloc"
+Value(204) ="Entrada de 204 bytes de interloc"
+Value(205) ="Entrada de 205 bytes de interloc"
+Value(206) ="Entrada de 206 bytes de interloc"
+Value(207) ="Entrada de 207 bytes de interloc"
+Value(208) ="Entrada de 208 bytes de interloc"
+Value(209) ="Entrada de 209 bytes de interloc"
+Value(210) ="Entrada de 210 bytes de interloc"
+Value(211) ="Entrada de 211 bytes de interloc"
+Value(212) ="Entrada de 212 bytes de interloc"
+Value(213) ="Entrada de 213 bytes de interloc"
+Value(214) ="Entrada de 214 bytes de interloc"
+Value(215) ="Entrada de 215 bytes de interloc"
+Value(216) ="Entrada de 216 bytes de interloc"
+Value(217) ="Entrada de 217 bytes de interloc"
+Value(218) ="Entrada de 218 bytes de interloc"
+Value(219) ="Entrada de 219 bytes de interloc"
+Value(220) ="Entrada de 220 bytes de interloc"
+Value(221) ="Entrada de 221 bytes de interloc"
+Value(222) ="Entrada de 222 bytes de interloc"
+Value(223) ="Entrada de 223 bytes de interloc"
+Value(224) ="Entrada de 224 bytes de interloc"
+Value(225) ="Entrada de 225 bytes de interloc"
+Value(226) ="Entrada de 226 bytes de interloc"
+Value(227) ="Entrada de 227 bytes de interloc"
+Value(228) ="Entrada de 228 bytes de interloc"
+Value(229) ="Entrada de 229 bytes de interloc"
+Value(230) ="Entrada de 230 bytes de interloc"
+Value(231) ="Entrada de 231 bytes de interloc"
+Value(232) ="Entrada de 232 bytes de interloc"
+Value(233) ="Entrada de 233 bytes de interloc"
+Value(234) ="Entrada de 234 bytes de interloc"
+Value(235) ="Entrada de 235 bytes de interloc"
+Value(236) ="Entrada de 236 bytes de interloc"
+Value(237) ="Entrada de 237 bytes de interloc"
+Value(238) ="Entrada de 238 bytes de interloc"
+Value(239) ="Entrada de 239 bytes de interloc"
+Value(240) ="Entrada de 240 bytes de interloc"
+Value(241) ="Entrada de 241 bytes de interloc"
+Value(242) ="Entrada de 242 bytes de interloc"
+Value(243) ="Entrada de 243 bytes de interloc"
+Value(244) ="Entrada de 244 bytes de interloc"
+Unit_Diag_Area_End
+;
+Unit_Diag_Area=40-47
+Value(1) ="Salida de 1 byte del interloc"
+Value(2) ="Salida de 2 bytes del interloc"
+Value(3) ="Salida de 3 bytes de interloc"
+Value(4) ="Salida de 4 bytes de interloc"
+Value(5) ="Salida de 5 bytes de interloc"
+Value(6) ="Salida de 6 bytes de interloc"
+Value(7) ="Salida de 7 bytes de interloc"
+Value(8) ="Salida de 8 bytes de interloc"
+Value(9) ="Salida de 9 bytes de interloc"
+Value(10) ="Salida de 10 bytes de interloc"
+Value(11) ="Salida de 11 bytes de interloc"
+Value(12) ="Salida de 12 bytes de interloc"
+Value(13) ="Salida de 13 bytes de interloc"
+Value(14) ="Salida de 14 bytes de interloc"
+Value(15) ="Salida de 15 bytes de interloc"
+Value(16) ="Salida de 16 bytes de interloc"
+Value(17) ="Salida de 17 bytes de interloc"
+Value(18) ="Salida de 18 bytes de interloc"
+Value(19) ="Salida de 19 bytes de interloc"
+Value(20) ="Salida de 20 bytes de interloc"
+Value(21) ="Salida de 21 bytes de interloc"
+Value(22) ="Salida de 22 bytes de interloc"
+Value(23) ="Salida de 23 bytes de interloc"
+Value(24) ="Salida de 24 bytes de interloc"
+Value(25) ="Salida de 25 bytes de interloc"
+Value(26) ="Salida de 26 bytes de interloc"
+Value(27) ="Salida de 27 bytes de interloc"
+Value(28) ="Salida de 28 bytes de interloc"
+Value(29) ="Salida de 29 bytes de interloc"
+Value(30) ="Salida de 30 bytes de interloc"
+Value(31) ="Salida de 31 bytes de interloc"
+Value(32) ="Salida de 32 bytes de interloc"
+Value(33) ="Salida de 33 bytes de interloc"
+Value(34) ="Salida de 34 bytes de interloc"
+Value(35) ="Salida de 35 bytes de interloc"
+Value(36) ="Salida de 36 bytes de interloc"
+Value(37) ="Salida de 37 bytes de interloc"
+Value(38) ="Salida de 38 bytes de interloc"
+Value(39) ="Salida de 39 bytes de interloc"
+Value(40) ="Salida de 40 bytes de interloc"
+Value(41) ="Salida de 41 bytes de interloc"
+Value(42) ="Salida de 42 bytes de interloc"
+Value(43) ="Salida de 43 bytes de interloc"
+Value(44) ="Salida de 44 bytes de interloc"
+Value(45) ="Salida de 45 bytes de interloc"
+Value(46) ="Salida de 46 bytes de interloc"
+Value(47) ="Salida de 47 bytes de interloc"
+Value(48) ="Salida de 48 bytes de interloc"
+Value(49) ="Salida de 49 bytes de interloc"
+Value(50) ="Salida de 50 bytes de interloc"
+Value(51) ="Salida de 51 bytes de interloc"
+Value(52) ="Salida de 52 bytes de interloc"
+Value(53) ="Salida de 53 bytes de interloc"
+Value(54) ="Salida de 54 bytes de interloc"
+Value(55) ="Salida de 55 bytes de interloc"
+Value(56) ="Salida de 56 bytes de interloc"
+Value(57) ="Salida de 57 bytes de interloc"
+Value(58) ="Salida de 58 bytes de interloc"
+Value(59) ="Salida de 59 bytes de interloc"
+Value(60) ="Salida de 60 bytes de interloc"
+Value(61) ="Salida de 61 bytes de interloc"
+Value(62) ="Salida de 62 bytes de interloc"
+Value(63) ="Salida de 63 bytes de interloc"
+Value(64) ="Salida de 64 bytes de interloc"
+Value(65) ="Salida de 65 bytes de interloc"
+Value(66) ="Salida de 66 bytes de interloc"
+Value(67) ="Salida de 67 bytes de interloc"
+Value(68) ="Salida de 68 bytes de interloc"
+Value(69) ="Salida de 69 bytes de interloc"
+Value(70) ="Salida de 70 bytes de interloc"
+Value(71) ="Salida de 71 bytes de interloc"
+Value(72) ="Salida de 72 bytes de interloc"
+Value(73) ="Salida de 73 bytes de interloc"
+Value(74) ="Salida de 74 bytes de interloc"
+Value(75) ="Salida de 75 bytes de interloc"
+Value(76) ="Salida de 76 bytes de interloc"
+Value(77) ="Salida de 77 bytes de interloc"
+Value(78) ="Salida de 78 bytes de interloc"
+Value(79) ="Salida de 79 bytes de interloc"
+Value(80) ="Salida de 80 bytes de interloc"
+Value(81) ="Salida de 81 bytes de interloc"
+Value(82) ="Salida de 82 bytes de interloc"
+Value(83) ="Salida de 83 bytes de interloc"
+Value(84) ="Salida de 84 bytes de interloc"
+Value(85) ="Salida de 85 bytes de interloc"
+Value(86) ="Salida de 86 bytes de interloc"
+Value(87) ="Salida de 87 bytes de interloc"
+Value(88) ="Salida de 88 bytes de interloc"
+Value(89) ="Salida de 89 bytes de interloc"
+Value(90) ="Salida de 90 bytes de interloc"
+Value(91) ="Salida de 91 bytes de interloc"
+Value(92) ="Salida de 92 bytes de interloc"
+Value(93) ="Salida de 93 bytes de interloc"
+Value(94) ="Salida de 94 bytes de interloc"
+Value(95) ="Salida de 95 bytes de interloc"
+Value(96) ="Salida de 96 bytes de interloc"
+Value(97) ="Salida de 97 bytes de interloc"
+Value(98) ="Salida de 98 bytes de interloc"
+Value(99) ="Salida de 99 bytes de interloc"
+Value(100) ="Salida de 100 bytes de interloc"
+Value(101) ="Salida de 101 bytes de interloc"
+Value(102) ="Salida de 102 bytes de interloc"
+Value(103) ="Salida de 103 bytes de interloc"
+Value(104) ="Salida de 104 bytes de interloc"
+Value(105) ="Salida de 105 bytes de interloc"
+Value(106) ="Salida de 106 bytes de interloc"
+Value(107) ="Salida de 107 bytes de interloc"
+Value(108) ="Salida de 108 bytes de interloc"
+Value(109) ="Salida de 109 bytes de interloc"
+Value(110) ="Salida de 110 bytes de interloc"
+Value(111) ="Salida de 111 bytes de interloc"
+Value(112) ="Salida de 112 bytes de interloc"
+Value(113) ="Salida de 113 bytes de interloc"
+Value(114) ="Salida de 114 bytes de interloc"
+Value(115) ="Salida de 115 bytes de interloc"
+Value(116) ="Salida de 116 bytes de interloc"
+Value(117) ="Salida de 117 bytes de interloc"
+Value(118) ="Salida de 118 bytes de interloc"
+Value(119) ="Salida de 119 bytes de interloc"
+Value(120) ="Salida de 120 bytes de interloc"
+Value(121) ="Salida de 121 bytes de interloc"
+Value(122) ="Salida de 122 bytes de interloc"
+Value(123) ="Salida de 123 bytes de interloc"
+Value(124) ="Salida de 124 bytes de interloc"
+Value(125) ="Salida de 125 bytes de interloc"
+Value(126) ="Salida de 126 bytes de interloc"
+Value(127) ="Salida de 127 bytes de interloc"
+Value(128) ="Salida de 128 bytes de interloc"
+Value(129) ="Salida de 129 bytes de interloc"
+Value(130) ="Salida de 130 bytes de interloc"
+Value(131) ="Salida de 131 bytes de interloc"
+Value(132) ="Salida de 132 bytes de interloc"
+Value(133) ="Salida de 133 bytes de interloc"
+Value(134) ="Salida de 134 bytes de interloc"
+Value(135) ="Salida de 135 bytes de interloc"
+Value(136) ="Salida de 136 bytes de interloc"
+Value(137) ="Salida de 137 bytes de interloc"
+Value(138) ="Salida de 138 bytes de interloc"
+Value(139) ="Salida de 139 bytes de interloc"
+Value(140) ="Salida de 140 bytes de interloc"
+Value(141) ="Salida de 141 bytes de interloc"
+Value(142) ="Salida de 142 bytes de interloc"
+Value(143) ="Salida de 143 bytes de interloc"
+Value(144) ="Salida de 144 bytes de interloc"
+Value(145) ="Salida de 145 bytes de interloc"
+Value(146) ="Salida de 146 bytes de interloc"
+Value(147) ="Salida de 147 bytes de interloc"
+Value(148) ="Salida de 148 bytes de interloc"
+Value(149) ="Salida de 149 bytes de interloc"
+Value(150) ="Salida de 150 bytes de interloc"
+Value(151) ="Salida de 151 bytes de interloc"
+Value(152) ="Salida de 152 bytes de interloc"
+Value(153) ="Salida de 153 bytes de interloc"
+Value(154) ="Salida de 154 bytes de interloc"
+Value(155) ="Salida de 155 bytes de interloc"
+Value(156) ="Salida de 156 bytes de interloc"
+Value(157) ="Salida de 157 bytes de interloc"
+Value(158) ="Salida de 158 bytes de interloc"
+Value(159) ="Salida de 159 bytes de interloc"
+Value(160) ="Salida de 160 bytes de interloc"
+Value(161) ="Salida de 161 bytes de interloc"
+Value(162) ="Salida de 162 bytes de interloc"
+Value(163) ="Salida de 163 bytes de interloc"
+Value(164) ="Salida de 164 bytes de interloc"
+Value(165) ="Salida de 165 bytes de interloc"
+Value(166) ="Salida de 166 bytes de interloc"
+Value(167) ="Salida de 167 bytes de interloc"
+Value(168) ="Salida de 168 bytes de interloc"
+Value(169) ="Salida de 169 bytes de interloc"
+Value(170) ="Salida de 170 bytes de interloc"
+Value(171) ="Salida de 171 bytes de interloc"
+Value(172) ="Salida de 172 bytes de interloc"
+Value(173) ="Salida de 173 bytes de interloc"
+Value(174) ="Salida de 174 bytes de interloc"
+Value(175) ="Salida de 175 bytes de interloc"
+Value(176) ="Salida de 176 bytes de interloc"
+Value(177) ="Salida de 177 bytes de interloc"
+Value(178) ="Salida de 178 bytes de interloc"
+Value(179) ="Salida de 179 bytes de interloc"
+Value(180) ="Salida de 180 bytes de interloc"
+Value(181) ="Salida de 181 bytes de interloc"
+Value(182) ="Salida de 182 bytes de interloc"
+Value(183) ="Salida de 183 bytes de interloc"
+Value(184) ="Salida de 184 bytes de interloc"
+Value(185) ="Salida de 185 bytes de interloc"
+Value(186) ="Salida de 186 bytes de interloc"
+Value(187) ="Salida de 187 bytes de interloc"
+Value(188) ="Salida de 188 bytes de interloc"
+Value(189) ="Salida de 189 bytes de interloc"
+Value(190) ="Salida de 190 bytes de interloc"
+Value(191) ="Salida de 191 bytes de interloc"
+Value(192) ="Salida de 192 bytes de interloc"
+Value(193) ="Salida de 193 bytes de interloc"
+Value(194) ="Salida de 194 bytes de interloc"
+Value(195) ="Salida de 195 bytes de interloc"
+Value(196) ="Salida de 196 bytes de interloc"
+Value(197) ="Salida de 197 bytes de interloc"
+Value(198) ="Salida de 198 bytes de interloc"
+Value(199) ="Salida de 199 bytes de interloc"
+Value(200) ="Salida de 200 bytes de interloc"
+Value(201) ="Salida de 201 bytes de interloc"
+Value(202) ="Salida de 202 bytes de interloc"
+Value(203) ="Salida de 203 bytes de interloc"
+Value(204) ="Salida de 204 bytes de interloc"
+Value(205) ="Salida de 205 bytes de interloc"
+Value(206) ="Salida de 206 bytes de interloc"
+Value(207) ="Salida de 207 bytes de interloc"
+Value(208) ="Salida de 208 bytes de interloc"
+Value(209) ="Salida de 209 bytes de interloc"
+Value(210) ="Salida de 210 bytes de interloc"
+Value(211) ="Salida de 211 bytes de interloc"
+Value(212) ="Salida de 212 bytes de interloc"
+Value(213) ="Salida de 213 bytes de interloc"
+Value(214) ="Salida de 214 bytes de interloc"
+Value(215) ="Salida de 215 bytes de interloc"
+Value(216) ="Salida de 216 bytes de interloc"
+Value(217) ="Salida de 217 bytes de interloc"
+Value(218) ="Salida de 218 bytes de interloc"
+Value(219) ="Salida de 219 bytes de interloc"
+Value(220) ="Salida de 220 bytes de interloc"
+Value(221) ="Salida de 221 bytes de interloc"
+Value(222) ="Salida de 222 bytes de interloc"
+Value(223) ="Salida de 223 bytes de interloc"
+Value(224) ="Salida de 224 bytes de interloc"
+Value(225) ="Salida de 225 bytes de interloc"
+Value(226) ="Salida de 226 bytes de interloc"
+Value(227) ="Salida de 227 bytes de interloc"
+Value(228) ="Salida de 228 bytes de interloc"
+Value(229) ="Salida de 229 bytes de interloc"
+Value(230) ="Salida de 230 bytes de interloc"
+Value(231) ="Salida de 231 bytes de interloc"
+Value(232) ="Salida de 232 bytes de interloc"
+Value(233) ="Salida de 233 bytes de interloc"
+Value(234) ="Salida de 234 bytes de interloc"
+Value(235) ="Salida de 235 bytes de interloc"
+Value(236) ="Salida de 236 bytes de interloc"
+Value(237) ="Salida de 237 bytes de interloc"
+Value(238) ="Salida de 238 bytes de interloc"
+Value(239) ="Salida de 239 bytes de interloc"
+Value(240) ="Salida de 240 bytes de interloc"
+Value(241) ="Salida de 241 bytes de interloc"
+Value(242) ="Salida de 242 bytes de interloc"
+Value(243) ="Salida de 243 bytes de interloc"
+Value(244) ="Salida de 244 bytes de interloc"
+Unit_Diag_Area_End
+;
+Unit_Diag_Bit(49) = "Borrar datos del interloc"
+Unit_Diag_Bit(50) = "Unfreeze del interloc"
+Unit_Diag_Bit(51) = "Freeze del interloc"
+Unit_Diag_Bit(52) = "Unsync del interloc"
+Unit_Diag_Bit(53) = "Sync del interloc"
+;
+Unit_Diag_Area=56-63
+Value(1) ="PS1 off"
+Value(2) ="PS2 off"
+Unit_Diag_Area_End
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; <Prm-Text-Def-List>
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+PrmText=1
+Text(0)="Bit de diagnostico ampliado on"
+Text(1)="Bit de diagnostico ampliado off"
+EndPrmText
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; <Ext-User-Prm-Data-Def-List>
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+ExtUserPrmData=1 "Diagnosticos"
+Bit(7) 0 0-1
+Prm_Text_Ref=1
+EndExtUserPrmData
+;
+Max_User_Prm_Data_Len = 8 
+Ext_User_Prm_Data_Const(0) = 0x00,0x00,0x00 
+Ext_User_Prm_Data_Const(3) = 0x05,0x81,0x00,0x00,0x80 
+Ext_User_Prm_Data_Ref(7) = 1
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; <Module-Definition-List>
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+Module = "Entrada de 1 byte" 0x10
+1
+EndModule
+;
+Module = "Entrada de 2 bytes" 0x11
+2
+EndModule
+;
+Module = "Entrada de 4 bytes" 0x13
+3
+EndModule
+;
+Module = "Entrada de 8 bytes" 0x17
+4
+EndModule
+;
+Module = "Entrada de 16 bytes" 0x1F
+5
+EndModule
+;
+Module = "Entrada de 32 bytes" 0x40,0x1F
+6
+EndModule
+;
+Module = "Entrada de 64 bytes" 0x40,0x3F
+7
+EndModule
+;
+Module = "Entrada de 64 palabras" 0x40,0x7F
+8
+EndModule
+;
+Module = "Salida de 1 byte" 0x20
+10
+EndModule
+;
+Module = "Salida de 2 bytes" 0x21
+11
+EndModule
+;
+Module = "Salida de 4 bytes" 0x23
+12
+EndModule
+;
+Module = "Salida de 8 bytes" 0x27
+13
+EndModule
+;
+Module = "Salida de 16 bytes" 0x2F
+14
+EndModule
+;
+Module = "Salida de 32 bytes" 0x80,0x1F
+15
+EndModule
+;
+Module = "Salida de 64 bytes" 0x80,0x3F
+16
+EndModule
+;
+Module = "Salida de 64 palabras" 0x80,0x7F
+17
+EndModule
+;
+Module = "Entrada de 1 byte consistente" 0x90
+19
+EndModule
+;
+Module = "Entrada de 2 bytes consistente" 0x91
+20
+EndModule
+;
+Module = "Entrada de 4 bytes consistente" 0x93
+21
+EndModule
+;
+Module = "Entrada de 8 bytes consistente" 0x97
+22
+EndModule
+;
+Module = "Entrada de 16 bytes consistente" 0x9F
+23
+EndModule
+;
+Module = "Entrada de 32 bytes consistente" 0x40,0x9F
+24
+EndModule
+;
+Module = "Entrada de 64 bytes consistente" 0x40,0xBF
+25
+EndModule
+;
+Module = "Entrada de 64 palabras consist." 0x40,0xFF
+26
+EndModule
+;
+Module = "Salida de 1 byte consistente" 0xA0
+28
+EndModule
+;
+Module = "Salida de 2 bytes consistente" 0xA1
+29
+EndModule
+;
+Module = "Salida de 4 bytes consistente" 0xA3
+30
+EndModule
+;
+Module = "Salida de 8 bytes consistente" 0xA7
+31
+EndModule
+;
+Module = "Salida de 16 bytes consistente" 0xAF
+32
+EndModule
+;
+Module = "Salida de 32 bytes consistente" 0x80,0x9F
+33
+EndModule
+;
+Module = "Salida de 64 bytes consistente" 0x80,0xBF
+34
+EndModule
+;
+Module = "Salida de 64 palabras consist." 0x80,0xFF
+35
+EndModule
+;
+
+Module = "E de 6 bytes/S de 12 bytes cons." 0xC0,0x8B,0x85
+36
+EndModule
+;
+Module = "E de 12 bytes/S de 6 bytes cons." 0xC0,0x85,0x8B
+37
+EndModule
+;
+
+Max_Output_Len = 244
+Max_Input_Len = 244
+Max_Data_Len = 488
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

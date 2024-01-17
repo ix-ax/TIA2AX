@@ -5,7 +5,8 @@
       //"commandLineArgs": "-x D:\\github\\ix-ax\\TiaProjects\\AX_Plc1518V3_CognexDataman\\AX_Plc1518V3_CognexDataman.ap18 -o D:\\github\\ix-ax\\TiaProjects\\Export"
       //"commandLineArgs": "-x D:\\github\\ix-ax\\TiaProjects\\AX_Plc1518V3_CmmtAs\\AX_Plc1518V3_CmmtAs.ap18 -o D:\\github\\ix-ax\\TiaProjects\\Export"
       //"commandLineArgs": "-x D:\\github\\ix-ax\\TiaProjects\\AX_Plc1518V3_IndraDrive\\AX_Plc1518V3_IndraDrive.ap18 -o D:\\github\\ix-ax\\TiaProjects\\Export"
-      "commandLineArgs": "-x D:\\github\\ix-ax\\TiaProjects\\AX_Plc1518V3_Desoutter\\AX_Plc1518V3_Desoutter.ap18 -o D:\\github\\ix-ax\\TiaProjects\\Export"
+      "commandLineArgs": "-x D:\\github\\ix-ax\\TiaProjects\\AX_Plc1518V3_Desoutter\\AX_Plc1518V3_Desoutter.ap18 -o D:\\github\\ix-ax\\Export"
+      //"commandLineArgs": "-x D:\\github\\ix-ax\\TiaProjects\\HW_Plc1518V3_Desoutter\\HW_Plc1518V3_IndraDrive.ap19 -o D:\\github\\ix-ax\\TiaProjects\\Export"
     }
   }
 }

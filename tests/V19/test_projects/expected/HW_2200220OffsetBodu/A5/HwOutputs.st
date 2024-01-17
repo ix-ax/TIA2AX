@@ -1,0 +1,47 @@
+TYPE
+	HwOutputs : STRUCT
+		A6_15A5 AT %B1 : WORD;
+		A6_15A6 AT %B3 : WORD;
+		A6_15A7 AT %B14 : WORD;
+		A6_15A8 AT %B16 : WORD;
+		A6_15A10 AT %B99 : ARRAY[0..7] OF BYTE;
+		VI_13_MPA1S_VMPA1_FB_EMS_8_8DO_1 AT %B6 : BYTE;
+		VI_13_MPA1S_VMPA1_FB_EMS_8_8DO_2 AT %B8 : BYTE;
+		VI_13_MPA1S_VMPA1_FB_EMS_8_8DO_3 AT %B9 : BYTE;
+		VI_13_MPA1S_VMPA1_FB_EMS_8_8DO_4 AT %B10 : BYTE;
+		VI_13_MPA1S_VMPA1_FB_EMS_8_8DO_5 AT %B11 : BYTE;
+		VI_13_MPA1S_VMPA1_FB_EMS_8_8DO_6 AT %B12 : BYTE;
+		VI_13_MPA1S_VMPA1_FB_EMS_8_8DO_7 AT %B13 : BYTE;
+		VI_13_MPA1S_VMPA1_FB_EMS_8_8DO_8 AT %B18 : BYTE;
+		AxisLinear_DO_SERVO_1_Siemens_telegram_111_PZD_12_12 AT %B123 : ARRAY[0..23] OF BYTE;
+		Bash_Output_1_byte_1 AT %B5300 : BYTE;
+		Bash_Output_1_byte_2 AT %B5301 : BYTE;
+		AEBDown_Output_1_byte_1 AT %B5302 : BYTE;
+		AEBDown_Output_1_byte_2 AT %B5303 : BYTE;
+		AEBUp_Output_1_byte_1 AT %B5304 : BYTE;
+		AEBUp_Output_1_byte_2 AT %B5305 : BYTE;
+		AETDown_Output_1_byte_1 AT %B5306 : BYTE;
+		AETDown_Output_1_byte_2 AT %B5307 : BYTE;
+		AETUp_Output_1_byte_1 AT %B5308 : BYTE;
+		AETUp_Output_1_byte_2 AT %B5309 : BYTE;
+		GT2_DL_PN1_1 AT %B32 : BYTE;
+		GT2_B1 AT %B45 : BYTE;
+		GT2_B2 AT %B147 : BYTE;
+		GT2_B3 AT %B148 : BYTE;
+		GT2_B4 AT %B149 : BYTE;
+		GT2_B5 AT %B39 : BYTE;
+		GT2_B6 AT %B38 : BYTE;
+		GT2_B7 AT %B150 : BYTE;
+		GT2_B8 AT %B151 : BYTE;
+		GT2_B9 AT %B33 : BYTE;
+		CPX_CW_SW AT %B21 : DWORD;
+		CPX_CNC AT %B51 : ARRAY[0..31] OF BYTE;
+		CPX_PtP AT %B83 : ARRAY[0..15] OF BYTE;
+		CPX_Error AT %B282 : ARRAY[0..31] OF BYTE;
+		Reader_Latch_and_Error_Clear_Control_Bits_1 AT %B0 : BYTE;
+		Reader_Operation_instruction_Control_Bits_1 AT %B5 : BYTE;
+		Reader_Completion_Clear_Control_Bits_1 AT %B7 : BYTE;
+		Reader_Parameter_Bank_Number_1 AT %B19 : WORD;
+		Reader_User_Data_128Byte_1 AT %B152 : ARRAY[0..129] OF BYTE;
+	END_STRUCT;
+END_TYPE

@@ -1,0 +1,1126 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-V2.34.xsd">
+    <ProfileHeader>
+        <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+        <ProfileRevision>1.00</ProfileRevision>
+        <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+        <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+        <ProfileClassID>Device</ProfileClassID>
+        <ISO15745Reference>
+            <ISO15745Part>4</ISO15745Part>
+            <ISO15745Edition>1</ISO15745Edition>
+            <ProfileTechnology>GSDML</ProfileTechnology>
+        </ISO15745Reference>
+    </ProfileHeader>
+    <ProfileBody>
+        <DeviceIdentity VendorID="0x014D" DeviceID="0x0203">
+            <InfoText TextId="IDT_DeviceIdenty"/>
+            <VendorName Value="Festo AG &amp; Co. KG"/>
+        </DeviceIdentity>
+        <DeviceFunction>
+            <Family MainFamily="Drives" ProductFamily="Festo CMMT-AS"/>
+        </DeviceFunction>
+        <ApplicationProcess>
+            <DeviceAccessPointList>
+                <DeviceAccessPointItem ID="IDD_DAP rev1" PhysicalSlots="0..4" ModuleIdentNumber="0x00000001" MinDeviceInterval="32" ImplementationType="Festo-libRTE" PowerOnToCommReady="500" DNS_CompatibleName="CMMT-AS" AddressAssignment="DCP" NameOfStationNotTransferable="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" SharedDeviceSupported="true" MultipleWriteSupported="true" DeviceAccessSupported="true" NumberOfDeviceAccessAR="1" LLDP_NoD_Supported="true" ResetToFactoryModes="2" CheckDeviceID_Allowed="true" RequiredSchemaVersion="V2.25" PNIO_Version="V2.34">
+                    <ModuleInfo>
+                        <Name TextId="IDT_Module_Name_DAP rev1"/>
+                        <InfoText TextId="IDT_Module_Info_DAP rev1"/>
+                        <OrderNumber Value="CMMT-AS-...-PN"/>
+                        <HardwareRelease Value="1"/>
+                        <SoftwareRelease Value="V1.0.0"/>
+                    </ModuleInfo>
+                    <CertificationInfo ConformanceClass="C" ApplicationClass="Isochronous;HighPerformance" NetloadClass="III"/>
+                    <SubslotList>
+                        <SubslotItem SubslotNumber="32768" TextId="IDT_SubS_Interface"/>
+                        <SubslotItem SubslotNumber="32769" TextId="IDT_SubS_Port1"/>
+                        <SubslotItem SubslotNumber="32770" TextId="IDT_SubS_Port2"/>
+                    </SubslotList>
+                    <IOConfigData MaxInputLength="1024" MaxOutputLength="1024"/>
+                    <UseableModules>
+                        <ModuleItemRef ModuleItemTarget="IDM_SERVO" AllowedInSlots="1..1" FixedInSlots="1"/>
+                    </UseableModules>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="IDS_DAP rev1" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3" IM5_Supported="false" MayIssueProcessAlarm="false">
+                            <IOData/>
+                            <RecordDataList>
+                                <ParameterRecordDataItem Index="1051" Length="1">
+                                <Name TextId="IDT_RECORD1"/>
+                                <Const Data="0x00" ByteOffset="0"/>
+                                <Ref ValueItemTarget="VAL_DIAG_ACTIVATION" DataType="Integer8" ByteOffset="0" Length="1" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="IDT_REC_DIAG_ACTIVATION"/>
+                                </ParameterRecordDataItem>
+                            </RecordDataList>
+                            <ModuleInfo>
+                                <Name TextId="IDT_Module_Name_DAP rev1"/>
+                                <InfoText TextId="IDT_Module_Info_DAP rev1"/>
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                    <SystemDefinedSubmoduleList>
+                        <InterfaceSubmoduleItem ID="IDS_IF rev1" SubslotNumber="32768" TextId="IDT_Interface" SubmoduleIdentNumber="0x00000002" SupportedRT_Classes="RT_CLASS_1;RT_CLASS_3" IsochroneModeInRT_Classes="RT_CLASS_3" IsochroneModeSupported="true" MaxFrameStartTime="1600" MinNRT_Gap="960" SupportedProtocols="SNMP;LLDP" DelayMeasurementSupported="true" NetworkComponentDiagnosisSupported="true" PTP_BoundarySupported="true" DCP_BoundarySupported="true" DCP_HelloSupported="false">
+                            <RT_Class3Properties ForwardingMode="Absolute;Relative" MaxBridgeDelay="2088" MaxBridgeDelayFFW="1024" MaxNumberIR_FrameData="1024" StartupMode="Legacy;Advanced" MaxDFP_Frames="1" MaxDFP_Feed="340" AlignDFP_Subframes="false" FragmentationType="Dynamic" MinFSO="1760" MinRTC3_Gap="1120" YellowSafetyMargin="160" DFP_OutboundTruncationSupported="false" MaxRetentionTime="30000"/>
+                            <SynchronisationMode SupportedRole="SyncSlave" MaxLocalJitter="300" T_PLL_MAX="1000" SupportedSyncProtocols="PTCP" PeerToPeerJitter="250"/>
+                            <ApplicationRelations NumberOfAR="2" StartupMode="Legacy;Advanced" NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="true">
+                                <TimingProperties SendClock="8 16 32 64 128" ReductionRatio="1 2 4 8 16 32 64 128 256 512"/>
+                                <RT_Class3TimingProperties SendClock="4 8 16 32 64 128" ReductionRatio="1 2 4 8 16"/>
+                            </ApplicationRelations>
+                            <MediaRedundancy SupportedRole="Client" MRPD_Supported="true" MRT_Supported="true"/>
+                        </InterfaceSubmoduleItem>
+                        <PortSubmoduleItem ID="IDS_P1 rev1" SubslotNumber="32769" TextId="IDT_P1" SubmoduleIdentNumber="0x00000003" MAUTypes="16" CheckMAUTypeSupported="true" CheckMAUTypeDifferenceSupported="true" MaxPortRxDelay="198" MaxPortTxDelay="6" ShortPreamble100MBitSupported="true" LinkStateDiagnosisCapability="Up+Down" PortDeactivationSupported="true" SupportsRingportConfig="false" IsDefaultRingport="true">
+                            <MAUTypeList>
+                                <MAUTypeItem Value="16" AdjustSupported="true"/>
+                            </MAUTypeList>
+                        </PortSubmoduleItem>
+                        <PortSubmoduleItem ID="IDS_P2 rev1" SubslotNumber="32770" TextId="IDT_P2" SubmoduleIdentNumber="0x00000003" MAUTypes="16" CheckMAUTypeSupported="true" CheckMAUTypeDifferenceSupported="true" MaxPortRxDelay="198" MaxPortTxDelay="6" ShortPreamble100MBitSupported="true" LinkStateDiagnosisCapability="Up+Down" PortDeactivationSupported="true" SupportsRingportConfig="false" IsDefaultRingport="true">
+                            <MAUTypeList>
+                                <MAUTypeItem Value="16" AdjustSupported="true"/>
+                            </MAUTypeList>
+                        </PortSubmoduleItem>
+                    </SystemDefinedSubmoduleList>
+                    <Graphics>
+                        <GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="ID_Graph_1"/>
+                    </Graphics>
+                </DeviceAccessPointItem>
+            </DeviceAccessPointList>
+
+<!-- ******************************************************************************** -->
+<!--                                                                                  -->
+<!--    module list                                                                   -->
+<!--                                                                                  -->
+<!-- ******************************************************************************** -->
+            <ModuleList>
+                <!-- DO Type: SERVO -->
+                <ModuleItem ID="IDM_SERVO" ModuleIdentNumber="0x100100B0" PhysicalSubslots="1 2 3 4">
+                    <ModuleInfo>
+                        <Name TextId="IDM_Name_SERVO"/>
+                        <InfoText TextId="IDM_Info_SERVO"/>
+                    </ModuleInfo>
+                    <UseableSubmodules>
+                        <SubmoduleItemRef SubmoduleItemTarget="IDS_MAP" AllowedInSubslots="1" FixedInSubslots="1"/>
+                        <SubmoduleItemRef SubmoduleItemTarget="IDS_TELEGRAM_1" AllowedInSubslots="3"/>
+                        <SubmoduleItemRef SubmoduleItemTarget="IDS_TELEGRAM_2" AllowedInSubslots="3"/>
+                        <SubmoduleItemRef SubmoduleItemTarget="IDS_TELEGRAM_3" AllowedInSubslots="3"/>
+                        <SubmoduleItemRef SubmoduleItemTarget="IDS_TELEGRAM_7" AllowedInSubslots="3"/>
+                        <SubmoduleItemRef SubmoduleItemTarget="IDS_TELEGRAM_9" AllowedInSubslots="3"/>
+                        <SubmoduleItemRef SubmoduleItemTarget="IDS_TELEGRAM_111" AllowedInSubslots="3"/>
+                    </UseableSubmodules>
+                </ModuleItem>
+            </ModuleList>
+
+            <SubmoduleList>
+                <!-- MAP -->
+                <SubmoduleItem ID="IDS_MAP" SubmoduleIdentNumber="0x0000FFFF" API="14848" MayIssueProcessAlarm="true">
+                    <IOData/>
+                    <ModuleInfo>
+                        <Name TextId="IDS_Name_MAP"/>
+                        <InfoText TextId="IDS_Info_MAP"/>
+                    </ModuleInfo>
+                </SubmoduleItem>
+                <!-- Standard telegram 1 : 2/2 PZD -->
+                <SubmoduleItem ID="IDS_TELEGRAM_1" SubmoduleIdentNumber="0x00000001" API="14848" MayIssueProcessAlarm="true">
+                    <IOData>
+                        <Input Consistency="All items consistency">
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_ZSW1" UseAsBits="true">
+                                <BitDataItem BitOffset="0" TextId="IDIO_ReadyToSwitchOn"/>
+                                <BitDataItem BitOffset="1" TextId="IDIO_ReadyToOperate"/>
+                                <BitDataItem BitOffset="2" TextId="IDIO_OperationEnabled"/>
+                                <BitDataItem BitOffset="3" TextId="IDIO_FaultPresent"/>
+                                <BitDataItem BitOffset="4" TextId="IDIO_CoastStopNotActivated"/>
+                                <BitDataItem BitOffset="5" TextId="IDIO_QuickStopNotActivated"/>
+                                <BitDataItem BitOffset="6" TextId="IDIO_SwitchingOnNotInhibited"/>
+                                <BitDataItem BitOffset="7" TextId="IDIO_WarningPresent"/>
+                                <BitDataItem BitOffset="8" TextId="IDIO_SpeedErrorWithinToleranceRange"/>
+                                <BitDataItem BitOffset="9" TextId="IDIO_ControlRequested"/>
+                                <BitDataItem BitOffset="10" TextId="IDIO_fOrNReached"/>
+                                <BitDataItem BitOffset="11" TextId="IDIO_DeviceSpecificZSW1Bit11"/>
+                                <BitDataItem BitOffset="12" TextId="IDIO_DeviceSpecificZSW1Bit12"/>
+                                <BitDataItem BitOffset="13" TextId="IDIO_DeviceSpecificZSW1Bit13"/>
+                                <BitDataItem BitOffset="14" TextId="IDIO_DeviceSpecificZSW1Bit14"/>
+                                <BitDataItem BitOffset="15" TextId="IDIO_DeviceSpecificZSW1Bit15"/>
+                            </DataItem>
+                            <DataItem DataType="Integer16" TextId="IDT_Dataitem_NIST_A"/>
+                        </Input>
+                        <Output Consistency="All items consistency">
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_STW1" UseAsBits="true">
+                                <BitDataItem BitOffset="0" TextId="IDIO_SwitchOn"/>
+                                <BitDataItem BitOffset="1" TextId="IDIO_NoCoastStop"/>
+                                <BitDataItem BitOffset="2" TextId="IDIO_NoQuickStop"/>
+                                <BitDataItem BitOffset="3" TextId="IDIO_EnableOperation"/>
+                                <BitDataItem BitOffset="4" TextId="IDIO_EnableRampGenerator"/>
+                                <BitDataItem BitOffset="5" TextId="IDIO_UnfreezeRampGenerator"/>
+                                <BitDataItem BitOffset="6" TextId="IDIO_EnableSetpoint"/>
+                                <BitDataItem BitOffset="7" TextId="IDIO_FaultAck"/>
+                                <BitDataItem BitOffset="8" TextId="IDIO_Jog1"/>
+                                <BitDataItem BitOffset="9" TextId="IDIO_Jog2"/>
+                                <BitDataItem BitOffset="10" TextId="IDIO_ControlByPLC"/>
+                                <BitDataItem BitOffset="11" TextId="IDIO_DeviceSpecificSTW1Bit11"/>
+                                <BitDataItem BitOffset="12" TextId="IDIO_DeviceSpecificSTW1Bit12"/>
+                                <BitDataItem BitOffset="13" TextId="IDIO_DeviceSpecificSTW1Bit13"/>
+                                <BitDataItem BitOffset="14" TextId="IDIO_DeviceSpecificSTW1Bit14"/>
+                                <BitDataItem BitOffset="15" TextId="IDIO_DeviceSpecificSTW1Bit15"/>
+                            </DataItem>
+                            <DataItem DataType="Integer16" TextId="IDT_Dataitem_NSOLL_A"/>
+                        </Output>
+                    </IOData>
+                    <ModuleInfo>
+                        <Name TextId="IDS_Name_TELEGRAM_1"/>
+                        <InfoText TextId="IDS_Info_TELEGRAM_1"/>
+                    </ModuleInfo>
+                    <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Max="16" T_DC_Min="1" T_IO_Base="1000" T_IO_InputMin="25" T_IO_OutputMin="25"/>
+                </SubmoduleItem>
+                <!-- Standard telegram 2 : 4/4 PZD -->
+                <SubmoduleItem ID="IDS_TELEGRAM_2" SubmoduleIdentNumber="0x00000002" API="14848" MayIssueProcessAlarm="true">
+                    <IOData>
+                        <Input Consistency="All items consistency">
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_ZSW1" UseAsBits="true">
+                                <BitDataItem BitOffset="0" TextId="IDIO_ReadyToSwitchOn"/>
+                                <BitDataItem BitOffset="1" TextId="IDIO_ReadyToOperate"/>
+                                <BitDataItem BitOffset="2" TextId="IDIO_OperationEnabled"/>
+                                <BitDataItem BitOffset="3" TextId="IDIO_FaultPresent"/>
+                                <BitDataItem BitOffset="4" TextId="IDIO_CoastStopNotActivated"/>
+                                <BitDataItem BitOffset="5" TextId="IDIO_QuickStopNotActivated"/>
+                                <BitDataItem BitOffset="6" TextId="IDIO_SwitchingOnNotInhibited"/>
+                                <BitDataItem BitOffset="7" TextId="IDIO_WarningPresent"/>
+                                <BitDataItem BitOffset="8" TextId="IDIO_SpeedErrorWithinToleranceRange"/>
+                                <BitDataItem BitOffset="9" TextId="IDIO_ControlRequested"/>
+                                <BitDataItem BitOffset="10" TextId="IDIO_fOrNReached"/>
+                                <BitDataItem BitOffset="11" TextId="IDIO_DeviceSpecificZSW1Bit11"/>
+                                <BitDataItem BitOffset="12" TextId="IDIO_DeviceSpecificZSW1Bit12"/>
+                                <BitDataItem BitOffset="13" TextId="IDIO_DeviceSpecificZSW1Bit13"/>
+                                <BitDataItem BitOffset="14" TextId="IDIO_DeviceSpecificZSW1Bit14"/>
+                                <BitDataItem BitOffset="15" TextId="IDIO_DeviceSpecificZSW1Bit15"/>
+                            </DataItem>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_NIST_B"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_ZSW2"/>
+                        </Input>
+                        <Output Consistency="All items consistency">
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_STW1" UseAsBits="true">
+                                <BitDataItem BitOffset="0" TextId="IDIO_SwitchOn"/>
+                                <BitDataItem BitOffset="1" TextId="IDIO_NoCoastStop"/>
+                                <BitDataItem BitOffset="2" TextId="IDIO_NoQuickStop"/>
+                                <BitDataItem BitOffset="3" TextId="IDIO_EnableOperation"/>
+                                <BitDataItem BitOffset="4" TextId="IDIO_EnableRampGenerator"/>
+                                <BitDataItem BitOffset="5" TextId="IDIO_UnfreezeRampGenerator"/>
+                                <BitDataItem BitOffset="6" TextId="IDIO_EnableSetpoint"/>
+                                <BitDataItem BitOffset="7" TextId="IDIO_FaultAck"/>
+                                <BitDataItem BitOffset="8" TextId="IDIO_Jog1"/>
+                                <BitDataItem BitOffset="9" TextId="IDIO_Jog2"/>
+                                <BitDataItem BitOffset="10" TextId="IDIO_ControlByPLC"/>
+                                <BitDataItem BitOffset="11" TextId="IDIO_DeviceSpecificSTW1Bit11"/>
+                                <BitDataItem BitOffset="12" TextId="IDIO_DeviceSpecificSTW1Bit12"/>
+                                <BitDataItem BitOffset="13" TextId="IDIO_DeviceSpecificSTW1Bit13"/>
+                                <BitDataItem BitOffset="14" TextId="IDIO_DeviceSpecificSTW1Bit14"/>
+                                <BitDataItem BitOffset="15" TextId="IDIO_DeviceSpecificSTW1Bit15"/>
+                            </DataItem>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_NSOLL_B"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_STW2"/>
+                        </Output>
+                    </IOData>
+                    <ModuleInfo>
+                        <Name TextId="IDS_Name_TELEGRAM_2"/>
+                        <InfoText TextId="IDS_Info_TELEGRAM_2"/>
+                    </ModuleInfo>
+                    <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Max="16" T_DC_Min="1" T_IO_Base="1000" T_IO_InputMin="25" T_IO_OutputMin="25"/>
+                </SubmoduleItem>
+                <!-- Standard telegram 3 : 5/9 PZD -->
+                <SubmoduleItem ID="IDS_TELEGRAM_3" SubmoduleIdentNumber="0x00000003" API="14848" MayIssueProcessAlarm="true">
+                    <IOData>
+                        <Input Consistency="All items consistency">
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_ZSW1" UseAsBits="true">
+                                <BitDataItem BitOffset="0" TextId="IDIO_ReadyToSwitchOn"/>
+                                <BitDataItem BitOffset="1" TextId="IDIO_ReadyToOperate"/>
+                                <BitDataItem BitOffset="2" TextId="IDIO_OperationEnabled"/>
+                                <BitDataItem BitOffset="3" TextId="IDIO_FaultPresent"/>
+                                <BitDataItem BitOffset="4" TextId="IDIO_CoastStopNotActivated"/>
+                                <BitDataItem BitOffset="5" TextId="IDIO_QuickStopNotActivated"/>
+                                <BitDataItem BitOffset="6" TextId="IDIO_SwitchingOnNotInhibited"/>
+                                <BitDataItem BitOffset="7" TextId="IDIO_WarningPresent"/>
+                                <BitDataItem BitOffset="8" TextId="IDIO_SpeedErrorWithinToleranceRange"/>
+                                <BitDataItem BitOffset="9" TextId="IDIO_ControlRequested"/>
+                                <BitDataItem BitOffset="10" TextId="IDIO_fOrNReached"/>
+                                <BitDataItem BitOffset="11" TextId="IDIO_DeviceSpecificZSW1Bit11"/>
+                                <BitDataItem BitOffset="12" TextId="IDIO_DeviceSpecificZSW1Bit12"/>
+                                <BitDataItem BitOffset="13" TextId="IDIO_DeviceSpecificZSW1Bit13"/>
+                                <BitDataItem BitOffset="14" TextId="IDIO_DeviceSpecificZSW1Bit14"/>
+                                <BitDataItem BitOffset="15" TextId="IDIO_DeviceSpecificZSW1Bit15"/>
+                            </DataItem>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_NIST_B"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_ZSW2"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_G1_ZSW"/>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_G1_XIST1"/>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_G1_XIST2"/>
+                        </Input>
+                        <Output Consistency="All items consistency">
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_STW1" UseAsBits="true">
+                                <BitDataItem BitOffset="0" TextId="IDIO_SwitchOn"/>
+                                <BitDataItem BitOffset="1" TextId="IDIO_NoCoastStop"/>
+                                <BitDataItem BitOffset="2" TextId="IDIO_NoQuickStop"/>
+                                <BitDataItem BitOffset="3" TextId="IDIO_EnableOperation"/>
+                                <BitDataItem BitOffset="4" TextId="IDIO_EnableRampGenerator"/>
+                                <BitDataItem BitOffset="5" TextId="IDIO_UnfreezeRampGenerator"/>
+                                <BitDataItem BitOffset="6" TextId="IDIO_EnableSetpoint"/>
+                                <BitDataItem BitOffset="7" TextId="IDIO_FaultAck"/>
+                                <BitDataItem BitOffset="8" TextId="IDIO_Jog1"/>
+                                <BitDataItem BitOffset="9" TextId="IDIO_Jog2"/>
+                                <BitDataItem BitOffset="10" TextId="IDIO_ControlByPLC"/>
+                                <BitDataItem BitOffset="11" TextId="IDIO_DeviceSpecificSTW1Bit11"/>
+                                <BitDataItem BitOffset="12" TextId="IDIO_DeviceSpecificSTW1Bit12"/>
+                                <BitDataItem BitOffset="13" TextId="IDIO_DeviceSpecificSTW1Bit13"/>
+                                <BitDataItem BitOffset="14" TextId="IDIO_DeviceSpecificSTW1Bit14"/>
+                                <BitDataItem BitOffset="15" TextId="IDIO_DeviceSpecificSTW1Bit15"/>
+                            </DataItem>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_NSOLL_B"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_STW2"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_G1_STW"/>
+                        </Output>
+                    </IOData>
+                    <ModuleInfo>
+                        <Name TextId="IDS_Name_TELEGRAM_3"/>
+                        <InfoText TextId="IDS_Info_TELEGRAM_3"/>
+                    </ModuleInfo>
+                    <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Max="16" T_DC_Min="1" T_IO_Base="1000" T_IO_InputMin="25" T_IO_OutputMin="25"/>
+                </SubmoduleItem>
+                <!-- Standard telegram 4 : 6/14 PZD -->
+                <SubmoduleItem ID="IDS_TELEGRAM_4" SubmoduleIdentNumber="0x00000004" API="14848" MayIssueProcessAlarm="true">
+                    <IOData>
+                        <Input Consistency="All items consistency">
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_ZSW1" UseAsBits="true">
+                                <BitDataItem BitOffset="0" TextId="IDIO_ReadyToSwitchOn"/>
+                                <BitDataItem BitOffset="1" TextId="IDIO_ReadyToOperate"/>
+                                <BitDataItem BitOffset="2" TextId="IDIO_OperationEnabled"/>
+                                <BitDataItem BitOffset="3" TextId="IDIO_FaultPresent"/>
+                                <BitDataItem BitOffset="4" TextId="IDIO_CoastStopNotActivated"/>
+                                <BitDataItem BitOffset="5" TextId="IDIO_QuickStopNotActivated"/>
+                                <BitDataItem BitOffset="6" TextId="IDIO_SwitchingOnNotInhibited"/>
+                                <BitDataItem BitOffset="7" TextId="IDIO_WarningPresent"/>
+                                <BitDataItem BitOffset="8" TextId="IDIO_SpeedErrorWithinToleranceRange"/>
+                                <BitDataItem BitOffset="9" TextId="IDIO_ControlRequested"/>
+                                <BitDataItem BitOffset="10" TextId="IDIO_fOrNReached"/>
+                                <BitDataItem BitOffset="11" TextId="IDIO_DeviceSpecificZSW1Bit11"/>
+                                <BitDataItem BitOffset="12" TextId="IDIO_DeviceSpecificZSW1Bit12"/>
+                                <BitDataItem BitOffset="13" TextId="IDIO_DeviceSpecificZSW1Bit13"/>
+                                <BitDataItem BitOffset="14" TextId="IDIO_DeviceSpecificZSW1Bit14"/>
+                                <BitDataItem BitOffset="15" TextId="IDIO_DeviceSpecificZSW1Bit15"/>
+                            </DataItem>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_NIST_B"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_ZSW2"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_G1_ZSW"/>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_G1_XIST1"/>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_G1_XIST2"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_G2_ZSW"/>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_G2_XIST1"/>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_G2_XIST2"/>
+                        </Input>
+                        <Output Consistency="All items consistency">
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_STW1" UseAsBits="true">
+                                <BitDataItem BitOffset="0" TextId="IDIO_SwitchOn"/>
+                                <BitDataItem BitOffset="1" TextId="IDIO_NoCoastStop"/>
+                                <BitDataItem BitOffset="2" TextId="IDIO_NoQuickStop"/>
+                                <BitDataItem BitOffset="3" TextId="IDIO_EnableOperation"/>
+                                <BitDataItem BitOffset="4" TextId="IDIO_EnableRampGenerator"/>
+                                <BitDataItem BitOffset="5" TextId="IDIO_UnfreezeRampGenerator"/>
+                                <BitDataItem BitOffset="6" TextId="IDIO_EnableSetpoint"/>
+                                <BitDataItem BitOffset="7" TextId="IDIO_FaultAck"/>
+                                <BitDataItem BitOffset="8" TextId="IDIO_Jog1"/>
+                                <BitDataItem BitOffset="9" TextId="IDIO_Jog2"/>
+                                <BitDataItem BitOffset="10" TextId="IDIO_ControlByPLC"/>
+                                <BitDataItem BitOffset="11" TextId="IDIO_DeviceSpecificSTW1Bit11"/>
+                                <BitDataItem BitOffset="12" TextId="IDIO_DeviceSpecificSTW1Bit12"/>
+                                <BitDataItem BitOffset="13" TextId="IDIO_DeviceSpecificSTW1Bit13"/>
+                                <BitDataItem BitOffset="14" TextId="IDIO_DeviceSpecificSTW1Bit14"/>
+                                <BitDataItem BitOffset="15" TextId="IDIO_DeviceSpecificSTW1Bit15"/>
+                            </DataItem>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_NSOLL_B"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_STW2"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_G1_STW"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_G2_STW"/>
+                        </Output>
+                    </IOData>
+                    <ModuleInfo>
+                        <Name TextId="IDS_Name_TELEGRAM_4"/>
+                        <InfoText TextId="IDS_Info_TELEGRAM_4"/>
+                    </ModuleInfo>
+                </SubmoduleItem>
+                <!-- Standard telegram 5 : 9/9 PZD -->
+                <SubmoduleItem ID="IDS_TELEGRAM_5" SubmoduleIdentNumber="0x00000005" API="14848" MayIssueProcessAlarm="true">
+                    <IOData>
+                        <Input Consistency="All items consistency">
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_ZSW1" UseAsBits="true">
+                                <BitDataItem BitOffset="0" TextId="IDIO_ReadyToSwitchOn"/>
+                                <BitDataItem BitOffset="1" TextId="IDIO_ReadyToOperate"/>
+                                <BitDataItem BitOffset="2" TextId="IDIO_OperationEnabled"/>
+                                <BitDataItem BitOffset="3" TextId="IDIO_FaultPresent"/>
+                                <BitDataItem BitOffset="4" TextId="IDIO_CoastStopNotActivated"/>
+                                <BitDataItem BitOffset="5" TextId="IDIO_QuickStopNotActivated"/>
+                                <BitDataItem BitOffset="6" TextId="IDIO_SwitchingOnNotInhibited"/>
+                                <BitDataItem BitOffset="7" TextId="IDIO_WarningPresent"/>
+                                <BitDataItem BitOffset="8" TextId="IDIO_SpeedErrorWithinToleranceRange"/>
+                                <BitDataItem BitOffset="9" TextId="IDIO_ControlRequested"/>
+                                <BitDataItem BitOffset="10" TextId="IDIO_fOrNReached"/>
+                                <BitDataItem BitOffset="11" TextId="IDIO_DeviceSpecificZSW1Bit11"/>
+                                <BitDataItem BitOffset="12" TextId="IDIO_DeviceSpecificZSW1Bit12"/>
+                                <BitDataItem BitOffset="13" TextId="IDIO_DeviceSpecificZSW1Bit13"/>
+                                <BitDataItem BitOffset="14" TextId="IDIO_DeviceSpecificZSW1Bit14"/>
+                                <BitDataItem BitOffset="15" TextId="IDIO_DeviceSpecificZSW1Bit15"/>
+                            </DataItem>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_NIST_B"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_ZSW2"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_G1_ZSW"/>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_G1_XIST1"/>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_G1_XIST2"/>
+                        </Input>
+                        <Output Consistency="All items consistency">
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_STW1" UseAsBits="true">
+                                <BitDataItem BitOffset="0" TextId="IDIO_SwitchOn"/>
+                                <BitDataItem BitOffset="1" TextId="IDIO_NoCoastStop"/>
+                                <BitDataItem BitOffset="2" TextId="IDIO_NoQuickStop"/>
+                                <BitDataItem BitOffset="3" TextId="IDIO_EnableOperation"/>
+                                <BitDataItem BitOffset="4" TextId="IDIO_EnableRampGenerator"/>
+                                <BitDataItem BitOffset="5" TextId="IDIO_UnfreezeRampGenerator"/>
+                                <BitDataItem BitOffset="6" TextId="IDIO_EnableSetpoint"/>
+                                <BitDataItem BitOffset="7" TextId="IDIO_FaultAck"/>
+                                <BitDataItem BitOffset="8" TextId="IDIO_Jog1"/>
+                                <BitDataItem BitOffset="9" TextId="IDIO_Jog2"/>
+                                <BitDataItem BitOffset="10" TextId="IDIO_ControlByPLC"/>
+                                <BitDataItem BitOffset="11" TextId="IDIO_DeviceSpecificSTW1Bit11"/>
+                                <BitDataItem BitOffset="12" TextId="IDIO_DeviceSpecificSTW1Bit12"/>
+                                <BitDataItem BitOffset="13" TextId="IDIO_DeviceSpecificSTW1Bit13"/>
+                                <BitDataItem BitOffset="14" TextId="IDIO_DeviceSpecificSTW1Bit14"/>
+                                <BitDataItem BitOffset="15" TextId="IDIO_DeviceSpecificSTW1Bit15"/>
+                            </DataItem>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_NSOLL_B"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_STW2"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_G1_STW"/>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_XERR"/>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_KPC"/>
+                        </Output>
+                    </IOData>
+                    <ModuleInfo>
+                        <Name TextId="IDS_Name_TELEGRAM_5"/>
+                        <InfoText TextId="IDS_Info_TELEGRAM_5"/>
+                    </ModuleInfo>
+                </SubmoduleItem>
+                <!-- Standard telegram 6 : 10/14 PZD -->
+                <SubmoduleItem ID="IDS_TELEGRAM_6" SubmoduleIdentNumber="0x00000006" API="14848" MayIssueProcessAlarm="true">
+                    <IOData>
+                        <Input Consistency="All items consistency">
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_ZSW1" UseAsBits="true">
+                                <BitDataItem BitOffset="0" TextId="IDIO_ReadyToSwitchOn"/>
+                                <BitDataItem BitOffset="1" TextId="IDIO_ReadyToOperate"/>
+                                <BitDataItem BitOffset="2" TextId="IDIO_OperationEnabled"/>
+                                <BitDataItem BitOffset="3" TextId="IDIO_FaultPresent"/>
+                                <BitDataItem BitOffset="4" TextId="IDIO_CoastStopNotActivated"/>
+                                <BitDataItem BitOffset="5" TextId="IDIO_QuickStopNotActivated"/>
+                                <BitDataItem BitOffset="6" TextId="IDIO_SwitchingOnNotInhibited"/>
+                                <BitDataItem BitOffset="7" TextId="IDIO_WarningPresent"/>
+                                <BitDataItem BitOffset="8" TextId="IDIO_SpeedErrorWithinToleranceRange"/>
+                                <BitDataItem BitOffset="9" TextId="IDIO_ControlRequested"/>
+                                <BitDataItem BitOffset="10" TextId="IDIO_fOrNReached"/>
+                                <BitDataItem BitOffset="11" TextId="IDIO_DeviceSpecificZSW1Bit11"/>
+                                <BitDataItem BitOffset="12" TextId="IDIO_DeviceSpecificZSW1Bit12"/>
+                                <BitDataItem BitOffset="13" TextId="IDIO_DeviceSpecificZSW1Bit13"/>
+                                <BitDataItem BitOffset="14" TextId="IDIO_DeviceSpecificZSW1Bit14"/>
+                                <BitDataItem BitOffset="15" TextId="IDIO_DeviceSpecificZSW1Bit15"/>
+                            </DataItem>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_NIST_B"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_ZSW2"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_G1_ZSW"/>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_G1_XIST1"/>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_G1_XIST2"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_G2_ZSW"/>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_G2_XIST1"/>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_G2_XIST2"/>
+                        </Input>
+                        <Output Consistency="All items consistency">
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_STW1" UseAsBits="true">
+                                <BitDataItem BitOffset="0" TextId="IDIO_SwitchOn"/>
+                                <BitDataItem BitOffset="1" TextId="IDIO_NoCoastStop"/>
+                                <BitDataItem BitOffset="2" TextId="IDIO_NoQuickStop"/>
+                                <BitDataItem BitOffset="3" TextId="IDIO_EnableOperation"/>
+                                <BitDataItem BitOffset="4" TextId="IDIO_EnableRampGenerator"/>
+                                <BitDataItem BitOffset="5" TextId="IDIO_UnfreezeRampGenerator"/>
+                                <BitDataItem BitOffset="6" TextId="IDIO_EnableSetpoint"/>
+                                <BitDataItem BitOffset="7" TextId="IDIO_FaultAck"/>
+                                <BitDataItem BitOffset="8" TextId="IDIO_Jog1"/>
+                                <BitDataItem BitOffset="9" TextId="IDIO_Jog2"/>
+                                <BitDataItem BitOffset="10" TextId="IDIO_ControlByPLC"/>
+                                <BitDataItem BitOffset="11" TextId="IDIO_DeviceSpecificSTW1Bit11"/>
+                                <BitDataItem BitOffset="12" TextId="IDIO_DeviceSpecificSTW1Bit12"/>
+                                <BitDataItem BitOffset="13" TextId="IDIO_DeviceSpecificSTW1Bit13"/>
+                                <BitDataItem BitOffset="14" TextId="IDIO_DeviceSpecificSTW1Bit14"/>
+                                <BitDataItem BitOffset="15" TextId="IDIO_DeviceSpecificSTW1Bit15"/>
+                            </DataItem>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_NSOLL_B"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_STW2"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_G1_STW"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_G2_STW"/>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_XERR"/>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_KPC"/>
+                        </Output>
+                    </IOData>
+                    <ModuleInfo>
+                        <Name TextId="IDS_Name_TELEGRAM_6"/>
+                        <InfoText TextId="IDS_Info_TELEGRAM_6"/>
+                    </ModuleInfo>
+                </SubmoduleItem>
+                <!-- Standard telegram 7 : 2/2 PZD -->
+                <SubmoduleItem ID="IDS_TELEGRAM_7" SubmoduleIdentNumber="0x00000007" API="14848" MayIssueProcessAlarm="true">
+                    <IOData>
+                        <Input Consistency="All items consistency">
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_ZSW1" UseAsBits="true">
+                                <BitDataItem BitOffset="0" TextId="IDIO_ReadyToSwitchOn"/>
+                                <BitDataItem BitOffset="1" TextId="IDIO_ReadyToOperate"/>
+                                <BitDataItem BitOffset="2" TextId="IDIO_OperationEnabled"/>
+                                <BitDataItem BitOffset="3" TextId="IDIO_FaultPresent"/>
+                                <BitDataItem BitOffset="4" TextId="IDIO_CoastStopNotActivated"/>
+                                <BitDataItem BitOffset="5" TextId="IDIO_QuickStopNotActivated"/>
+                                <BitDataItem BitOffset="6" TextId="IDIO_SwitchingOnNotInhibited"/>
+                                <BitDataItem BitOffset="7" TextId="IDIO_WarningPresent"/>
+                                <BitDataItem BitOffset="8" TextId="IDIO_FollowingErrorWithinToleranceRange"/>
+                                <BitDataItem BitOffset="9" TextId="IDIO_ControlRequested"/>
+                                <BitDataItem BitOffset="10" TextId="IDIO_TargetPositionReached"/>
+                                <BitDataItem BitOffset="11" TextId="IDIO_HomePositionSet"/>
+                                <BitDataItem BitOffset="12" TextId="IDIO_TraversingTaskAcknowledgment"/>
+                                <BitDataItem BitOffset="13" TextId="IDIO_DriveStopped"/>
+                                <BitDataItem BitOffset="14" TextId="IDIO_DeviceSpecificZSW1Bit14"/>
+                                <BitDataItem BitOffset="15" TextId="IDIO_DeviceSpecificZSW1Bit15"/>
+                            </DataItem>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_AKTSATZ"/>
+                        </Input>
+                        <Output Consistency="All items consistency">
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_STW1" UseAsBits="true">
+                                <BitDataItem BitOffset="0" TextId="IDIO_SwitchOn"/>
+                                <BitDataItem BitOffset="1" TextId="IDIO_NoCoastStop"/>
+                                <BitDataItem BitOffset="2" TextId="IDIO_NoQuickStop"/>
+                                <BitDataItem BitOffset="3" TextId="IDIO_EnableOperation"/>
+                                <BitDataItem BitOffset="4" TextId="IDIO_DoNotRejectTraversingTask"/>
+                                <BitDataItem BitOffset="5" TextId="IDIO_NoIntermediateStop"/>
+                                <BitDataItem BitOffset="6" TextId="IDIO_ActivateTraversingTask"/>
+                                <BitDataItem BitOffset="7" TextId="IDIO_FaultAck"/>
+                                <BitDataItem BitOffset="8" TextId="IDIO_Jog1"/>
+                                <BitDataItem BitOffset="9" TextId="IDIO_Jog2"/>
+                                <BitDataItem BitOffset="10" TextId="IDIO_ControlByPLC"/>
+                                <BitDataItem BitOffset="11" TextId="IDIO_StartHomingProcedure"/>
+                                <BitDataItem BitOffset="12" TextId="IDIO_DeviceSpecificSTW1Bit12"/>
+                                <BitDataItem BitOffset="13" TextId="IDIO_DeviceSpecificSTW1Bit13"/>
+                                <BitDataItem BitOffset="14" TextId="IDIO_DeviceSpecificSTW1Bit14"/>
+                                <BitDataItem BitOffset="15" TextId="IDIO_DeviceSpecificSTW1Bit15"/>
+                            </DataItem>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_SATZANW"/>
+                        </Output>
+                    </IOData>
+                    <ModuleInfo>
+                        <Name TextId="IDS_Name_TELEGRAM_7"/>
+                        <InfoText TextId="IDS_Info_TELEGRAM_7"/>
+                    </ModuleInfo>
+                </SubmoduleItem>
+                <!-- Standard telegram 9 : 10/5 PZD -->
+                <SubmoduleItem ID="IDS_TELEGRAM_9" SubmoduleIdentNumber="0x00000009" API="14848" MayIssueProcessAlarm="true">
+                    <IOData>
+                        <Input Consistency="All items consistency">
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_ZSW1" UseAsBits="true">
+                                <BitDataItem BitOffset="0" TextId="IDIO_ReadyToSwitchOn"/>
+                                <BitDataItem BitOffset="1" TextId="IDIO_ReadyToOperate"/>
+                                <BitDataItem BitOffset="2" TextId="IDIO_OperationEnabled"/>
+                                <BitDataItem BitOffset="3" TextId="IDIO_FaultPresent"/>
+                                <BitDataItem BitOffset="4" TextId="IDIO_CoastStopNotActivated"/>
+                                <BitDataItem BitOffset="5" TextId="IDIO_QuickStopNotActivated"/>
+                                <BitDataItem BitOffset="6" TextId="IDIO_SwitchingOnNotInhibited"/>
+                                <BitDataItem BitOffset="7" TextId="IDIO_WarningPresent"/>
+                                <BitDataItem BitOffset="8" TextId="IDIO_FollowingErrorWithinToleranceRange"/>
+                                <BitDataItem BitOffset="9" TextId="IDIO_ControlRequested"/>
+                                <BitDataItem BitOffset="10" TextId="IDIO_TargetPositionReached"/>
+                                <BitDataItem BitOffset="11" TextId="IDIO_HomePositionSet"/>
+                                <BitDataItem BitOffset="12" TextId="IDIO_TraversingTaskAcknowledgment"/>
+                                <BitDataItem BitOffset="13" TextId="IDIO_DriveStopped"/>
+                                <BitDataItem BitOffset="14" TextId="IDIO_DeviceSpecificZSW1Bit14"/>
+                                <BitDataItem BitOffset="15" TextId="IDIO_DeviceSpecificZSW1Bit15"/>
+                            </DataItem>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_AKTSATZ"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_ZSW2"/>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_XIST_A"/>
+                        </Input>
+                        <Output Consistency="All items consistency">
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_STW1" UseAsBits="true">
+                                <BitDataItem BitOffset="0" TextId="IDIO_SwitchOn"/>
+                                <BitDataItem BitOffset="1" TextId="IDIO_NoCoastStop"/>
+                                <BitDataItem BitOffset="2" TextId="IDIO_NoQuickStop"/>
+                                <BitDataItem BitOffset="3" TextId="IDIO_EnableOperation"/>
+                                <BitDataItem BitOffset="4" TextId="IDIO_DoNotRejectTraversingTask"/>
+                                <BitDataItem BitOffset="5" TextId="IDIO_NoIntermediateStop"/>
+                                <BitDataItem BitOffset="6" TextId="IDIO_ActivateTraversingTask"/>
+                                <BitDataItem BitOffset="7" TextId="IDIO_FaultAck"/>
+                                <BitDataItem BitOffset="8" TextId="IDIO_Jog1"/>
+                                <BitDataItem BitOffset="9" TextId="IDIO_Jog2"/>
+                                <BitDataItem BitOffset="10" TextId="IDIO_ControlByPLC"/>
+                                <BitDataItem BitOffset="11" TextId="IDIO_StartHomingProcedure"/>
+                                <BitDataItem BitOffset="12" TextId="IDIO_DeviceSpecificSTW1Bit12"/>
+                                <BitDataItem BitOffset="13" TextId="IDIO_DeviceSpecificSTW1Bit13"/>
+                                <BitDataItem BitOffset="14" TextId="IDIO_DeviceSpecificSTW1Bit14"/>
+                                <BitDataItem BitOffset="15" TextId="IDIO_DeviceSpecificSTW1Bit15"/>
+                            </DataItem>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_SATZANW"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_STW2"/>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_MDI_TARPOS"/>
+                            <DataItem DataType="Unsigned32" TextId="IDT_Dataitem_MDI_VELOCITY"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_MDI_ACC"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_MDI_DEC"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_MDI_MOD"/>
+                        </Output>
+                    </IOData>
+                    <ModuleInfo>
+                        <Name TextId="IDS_Name_TELEGRAM_9"/>
+                        <InfoText TextId="IDS_Info_TELEGRAM_9"/>
+                    </ModuleInfo>
+                </SubmoduleItem>
+
+                <!-- Telegram 102 : 6/10 PZD -->
+                <SubmoduleItem ID="IDS_TELEGRAM_102" SubmoduleIdentNumber="0x00000066" API="14848" MayIssueProcessAlarm="true">
+                    <IOData>
+                        <Input Consistency="All items consistency">
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_ZSW1" UseAsBits="true">
+                                <BitDataItem BitOffset="0" TextId="IDIO_ReadyToSwitchOn"/>
+                                <BitDataItem BitOffset="1" TextId="IDIO_ReadyToOperate"/>
+                                <BitDataItem BitOffset="2" TextId="IDIO_OperationEnabled"/>
+                                <BitDataItem BitOffset="3" TextId="IDIO_FaultPresent"/>
+                                <BitDataItem BitOffset="4" TextId="IDIO_CoastStopNotActivated"/>
+                                <BitDataItem BitOffset="5" TextId="IDIO_QuickStopNotActivated"/>
+                                <BitDataItem BitOffset="6" TextId="IDIO_SwitchingOnNotInhibited"/>
+                                <BitDataItem BitOffset="7" TextId="IDIO_WarningPresent"/>
+                                <BitDataItem BitOffset="8" TextId="IDIO_SpeedErrorWithinToleranceRange"/>
+                                <BitDataItem BitOffset="9" TextId="IDIO_ControlRequested"/>
+                                <BitDataItem BitOffset="10" TextId="IDIO_fOrNReached"/>
+                                <BitDataItem BitOffset="11" TextId="IDIO_DeviceSpecificZSW1Bit11"/>
+                                <BitDataItem BitOffset="12" TextId="IDIO_DeviceSpecificZSW1Bit12"/>
+                                <BitDataItem BitOffset="13" TextId="IDIO_DeviceSpecificZSW1Bit13"/>
+                                <BitDataItem BitOffset="14" TextId="IDIO_DeviceSpecificZSW1Bit14"/>
+                                <BitDataItem BitOffset="15" TextId="IDIO_DeviceSpecificZSW1Bit15"/>
+                            </DataItem>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_NIST_B"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_ZSW2"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_MELDW" UseAsBits="true">
+                                <BitDataItem BitOffset="0" TextId="IDIO_RampFunctionCompleted"/>
+                                <BitDataItem BitOffset="1" TextId="IDIO_TorqueUtilizationLowerThreshold"/>
+                                <BitDataItem BitOffset="2" TextId="IDIO_RpmLowerThreshold"/>
+                                <BitDataItem BitOffset="3" TextId="IDIO_RpmEqualThreshold"/>
+                                <BitDataItem BitOffset="4" TextId="IDIO_DeviceSpecificMELDWBit4"/>
+                                <BitDataItem BitOffset="5" TextId="IDIO_DeviceSpecificMELDWBit5"/>
+                                <BitDataItem BitOffset="6" TextId="IDIO_MotorTempWarningInactive"/>
+                                <BitDataItem BitOffset="7" TextId="IDIO_PsTempWarningInactive"/>
+                                <BitDataItem BitOffset="8" TextId="IDIO_SpeedSetpointDeviationInTolerance"/>
+                                <BitDataItem BitOffset="9" TextId="IDIO_DeviceSpecificMELDWBit9"/>
+                                <BitDataItem BitOffset="10" TextId="IDIO_DeviceSpecificMELDWBit10"/>
+                                <BitDataItem BitOffset="11" TextId="IDIO_ControllerEnabled"/>
+                                <BitDataItem BitOffset="12" TextId="IDIO_DriveReady"/>
+                                <BitDataItem BitOffset="13" TextId="IDIO_PulsesEnabled"/>
+                                <BitDataItem BitOffset="14" TextId="IDIO_DeviceSpecificMELDWBit14"/>
+                                <BitDataItem BitOffset="15" TextId="IDIO_DeviceSpecificMELDWBit15"/>                            
+                            </DataItem>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_G1_ZSW"/>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_G1_XIST1"/>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_G1_XIST2"/>
+                        </Input>
+                        <Output Consistency="All items consistency">
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_STW1" UseAsBits="true">
+                                <BitDataItem BitOffset="0" TextId="IDIO_SwitchOn"/>
+                                <BitDataItem BitOffset="1" TextId="IDIO_NoCoastStop"/>
+                                <BitDataItem BitOffset="2" TextId="IDIO_NoQuickStop"/>
+                                <BitDataItem BitOffset="3" TextId="IDIO_EnableOperation"/>
+                                <BitDataItem BitOffset="4" TextId="IDIO_EnableRampGenerator"/>
+                                <BitDataItem BitOffset="5" TextId="IDIO_UnfreezeRampGenerator"/>
+                                <BitDataItem BitOffset="6" TextId="IDIO_EnableSetpoint"/>
+                                <BitDataItem BitOffset="7" TextId="IDIO_FaultAck"/>
+                                <BitDataItem BitOffset="8" TextId="IDIO_Jog1"/>
+                                <BitDataItem BitOffset="9" TextId="IDIO_Jog2"/>
+                                <BitDataItem BitOffset="10" TextId="IDIO_ControlByPLC"/>
+                                <BitDataItem BitOffset="11" TextId="IDIO_DeviceSpecificSTW1Bit11"/>
+                                <BitDataItem BitOffset="12" TextId="IDIO_DeviceSpecificSTW1Bit12"/>
+                                <BitDataItem BitOffset="13" TextId="IDIO_DeviceSpecificSTW1Bit13"/>
+                                <BitDataItem BitOffset="14" TextId="IDIO_DeviceSpecificSTW1Bit14"/>
+                                <BitDataItem BitOffset="15" TextId="IDIO_DeviceSpecificSTW1Bit15"/>
+                            </DataItem>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_NSOLL_B"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_STW2"/>
+                            <DataItem DataType="Integer16" TextId="IDT_Dataitem_MOMRED"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_G1_STW"/>
+                        </Output>
+                    </IOData>
+                    <ModuleInfo>
+                        <Name TextId="IDS_Name_TELEGRAM_102"/>
+                        <InfoText TextId="IDS_Info_TELEGRAM_102"/>
+                    </ModuleInfo>
+                </SubmoduleItem>
+                <!-- Telegram 105 : 10/10 PZD -->
+                <SubmoduleItem ID="IDS_TELEGRAM_105" SubmoduleIdentNumber="0x00000069" API="14848" MayIssueProcessAlarm="true">
+                    <IOData>
+                        <Input Consistency="All items consistency">
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_ZSW1" UseAsBits="true">
+                                <BitDataItem BitOffset="0" TextId="IDIO_ReadyToSwitchOn"/>
+                                <BitDataItem BitOffset="1" TextId="IDIO_ReadyToOperate"/>
+                                <BitDataItem BitOffset="2" TextId="IDIO_OperationEnabled"/>
+                                <BitDataItem BitOffset="3" TextId="IDIO_FaultPresent"/>
+                                <BitDataItem BitOffset="4" TextId="IDIO_CoastStopNotActivated"/>
+                                <BitDataItem BitOffset="5" TextId="IDIO_QuickStopNotActivated"/>
+                                <BitDataItem BitOffset="6" TextId="IDIO_SwitchingOnNotInhibited"/>
+                                <BitDataItem BitOffset="7" TextId="IDIO_WarningPresent"/>
+                                <BitDataItem BitOffset="8" TextId="IDIO_SpeedErrorWithinToleranceRange"/>
+                                <BitDataItem BitOffset="9" TextId="IDIO_ControlRequested"/>
+                                <BitDataItem BitOffset="10" TextId="IDIO_fOrNReached"/>
+                                <BitDataItem BitOffset="11" TextId="IDIO_DeviceSpecificZSW1Bit11"/>
+                                <BitDataItem BitOffset="12" TextId="IDIO_DeviceSpecificZSW1Bit12"/>
+                                <BitDataItem BitOffset="13" TextId="IDIO_DeviceSpecificZSW1Bit13"/>
+                                <BitDataItem BitOffset="14" TextId="IDIO_DeviceSpecificZSW1Bit14"/>
+                                <BitDataItem BitOffset="15" TextId="IDIO_DeviceSpecificZSW1Bit15"/>
+                            </DataItem>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_NIST_B"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_ZSW2"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_MELDW" UseAsBits="true">
+                                <BitDataItem BitOffset="0" TextId="IDIO_RampFunctionCompleted"/>
+                                <BitDataItem BitOffset="1" TextId="IDIO_TorqueUtilizationLowerThreshold"/>
+                                <BitDataItem BitOffset="2" TextId="IDIO_RpmLowerThreshold"/>
+                                <BitDataItem BitOffset="3" TextId="IDIO_RpmEqualThreshold"/>
+                                <BitDataItem BitOffset="4" TextId="IDIO_DeviceSpecificMELDWBit4"/>
+                                <BitDataItem BitOffset="5" TextId="IDIO_DeviceSpecificMELDWBit5"/>
+                                <BitDataItem BitOffset="6" TextId="IDIO_MotorTempWarningInactive"/>
+                                <BitDataItem BitOffset="7" TextId="IDIO_PsTempWarningInactive"/>
+                                <BitDataItem BitOffset="8" TextId="IDIO_SpeedSetpointDeviationInTolerance"/>
+                                <BitDataItem BitOffset="9" TextId="IDIO_DeviceSpecificMELDWBit9"/>
+                                <BitDataItem BitOffset="10" TextId="IDIO_DeviceSpecificMELDWBit10"/>
+                                <BitDataItem BitOffset="11" TextId="IDIO_ControllerEnabled"/>
+                                <BitDataItem BitOffset="12" TextId="IDIO_DriveReady"/>
+                                <BitDataItem BitOffset="13" TextId="IDIO_PulsesEnabled"/>
+                                <BitDataItem BitOffset="14" TextId="IDIO_DeviceSpecificMELDWBit14"/>
+                                <BitDataItem BitOffset="15" TextId="IDIO_DeviceSpecificMELDWBit15"/>                            
+                            </DataItem>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_G1_ZSW"/>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_G1_XIST1"/>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_G1_XIST2"/>
+                        </Input>
+                        <Output Consistency="All items consistency">
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_STW1" UseAsBits="true">
+                                <BitDataItem BitOffset="0" TextId="IDIO_SwitchOn"/>
+                                <BitDataItem BitOffset="1" TextId="IDIO_NoCoastStop"/>
+                                <BitDataItem BitOffset="2" TextId="IDIO_NoQuickStop"/>
+                                <BitDataItem BitOffset="3" TextId="IDIO_EnableOperation"/>
+                                <BitDataItem BitOffset="4" TextId="IDIO_EnableRampGenerator"/>
+                                <BitDataItem BitOffset="5" TextId="IDIO_UnfreezeRampGenerator"/>
+                                <BitDataItem BitOffset="6" TextId="IDIO_EnableSetpoint"/>
+                                <BitDataItem BitOffset="7" TextId="IDIO_FaultAck"/>
+                                <BitDataItem BitOffset="8" TextId="IDIO_Jog1"/>
+                                <BitDataItem BitOffset="9" TextId="IDIO_Jog2"/>
+                                <BitDataItem BitOffset="10" TextId="IDIO_ControlByPLC"/>
+                                <BitDataItem BitOffset="11" TextId="IDIO_DeviceSpecificSTW1Bit11"/>
+                                <BitDataItem BitOffset="12" TextId="IDIO_DeviceSpecificSTW1Bit12"/>
+                                <BitDataItem BitOffset="13" TextId="IDIO_DeviceSpecificSTW1Bit13"/>
+                                <BitDataItem BitOffset="14" TextId="IDIO_DeviceSpecificSTW1Bit14"/>
+                                <BitDataItem BitOffset="15" TextId="IDIO_DeviceSpecificSTW1Bit15"/>
+                            </DataItem>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_NSOLL_B"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_STW2"/>
+                            <DataItem DataType="Integer16" TextId="IDT_Dataitem_MOMRED"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_G1_STW"/>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_XERR"/>
+                            <DataItem DataType="Integer32" TextId="IDT_Dataitem_KPC"/>
+                        </Output>
+                    </IOData>
+                    <ModuleInfo>
+                        <Name TextId="IDS_Name_TELEGRAM_105"/>
+                        <InfoText TextId="IDS_Info_TELEGRAM_105"/>
+                    </ModuleInfo>
+                </SubmoduleItem>
+                <!-- Telegram 111 : 12/12 PZD -->
+                <SubmoduleItem ID="IDS_TELEGRAM_111" SubmoduleIdentNumber="0x0000006F" API="14848" MayIssueProcessAlarm="true">
+                    <IOData>
+                        <Input Consistency="All items consistency">
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_ZSW1" UseAsBits="true">
+                                <BitDataItem BitOffset="0" TextId="IDIO_ReadyToSwitchOn"/>
+                                <BitDataItem BitOffset="1" TextId="IDIO_ReadyToOperate"/>
+                                <BitDataItem BitOffset="2" TextId="IDIO_OperationEnabled"/>
+                                <BitDataItem BitOffset="3" TextId="IDIO_FaultPresent"/>
+                                <BitDataItem BitOffset="4" TextId="IDIO_CoastStopNotActivated"/>
+                                <BitDataItem BitOffset="5" TextId="IDIO_QuickStopNotActivated"/>
+                                <BitDataItem BitOffset="6" TextId="IDIO_SwitchingOnNotInhibited"/>
+                                <BitDataItem BitOffset="7" TextId="IDIO_WarningPresent"/>
+                                <BitDataItem BitOffset="8" TextId="IDIO_FollowingErrorWithinToleranceRange"/>
+                                <BitDataItem BitOffset="9" TextId="IDIO_ControlRequested"/>
+                                <BitDataItem BitOffset="10" TextId="IDIO_TargetPositionReached"/>
+                                <BitDataItem BitOffset="11" TextId="IDIO_HomePositionSet"/>
+                                <BitDataItem BitOffset="12" TextId="IDIO_TraversingTaskAcknowledgment"/>
+                                <BitDataItem BitOffset="13" TextId="IDIO_DriveStopped"/>
+                                <BitDataItem BitOffset="14" TextId="IDIO_DeviceSpecificZSW1Bit14"/>
+                                <BitDataItem BitOffset="15" TextId="IDIO_DeviceSpecificZSW1Bit15"/>
+                            </DataItem>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_POS_ZSW1"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_POS_ZSW2"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_ZSW2"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_MELDW"/>
+                            <DataItem DataType="Unsigned32" TextId="IDT_Dataitem_XIST_A"/>
+                            <DataItem DataType="Unsigned32" TextId="IDT_Dataitem_NIST_B"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_FAULT_CODE"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_WARN_CODE"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_USER"/>
+                        </Input>
+                        <Output Consistency="All items consistency">
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_STW1" UseAsBits="true">
+                                <BitDataItem BitOffset="0" TextId="IDIO_SwitchOn"/>
+                                <BitDataItem BitOffset="1" TextId="IDIO_NoCoastStop"/>
+                                <BitDataItem BitOffset="2" TextId="IDIO_NoQuickStop"/>
+                                <BitDataItem BitOffset="3" TextId="IDIO_EnableOperation"/>
+                                <BitDataItem BitOffset="4" TextId="IDIO_DoNotRejectTraversingTask"/>
+                                <BitDataItem BitOffset="5" TextId="IDIO_NoIntermediateStop"/>
+                                <BitDataItem BitOffset="6" TextId="IDIO_ActivateTraversingTask"/>
+                                <BitDataItem BitOffset="7" TextId="IDIO_FaultAck"/>
+                                <BitDataItem BitOffset="8" TextId="IDIO_Jog1"/>
+                                <BitDataItem BitOffset="9" TextId="IDIO_Jog2"/>
+                                <BitDataItem BitOffset="10" TextId="IDIO_ControlByPLC"/>
+                                <BitDataItem BitOffset="11" TextId="IDIO_StartHomingProcedure"/>
+                                <BitDataItem BitOffset="12" TextId="IDIO_DeviceSpecificSTW1Bit12"/>
+                                <BitDataItem BitOffset="13" TextId="IDIO_DeviceSpecificSTW1Bit13"/>
+                                <BitDataItem BitOffset="14" TextId="IDIO_DeviceSpecificSTW1Bit14"/>
+                                <BitDataItem BitOffset="15" TextId="IDIO_DeviceSpecificSTW1Bit15"/>
+                            </DataItem>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_POS_STW1"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_POS_STW2"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_STW2"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_OVERRIDE"/>
+                            <DataItem DataType="Unsigned32" TextId="IDT_Dataitem_MDI_TARPOS"/>
+                            <DataItem DataType="Unsigned32" TextId="IDT_Dataitem_MDI_VELOCITY"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_MDI_ACC"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_MDI_DEC"/>
+                            <DataItem DataType="Unsigned16" TextId="IDT_Dataitem_USER"/>                            
+                        </Output>
+                    </IOData>
+                    <ModuleInfo>
+                        <Name TextId="IDS_Name_TELEGRAM_111"/>
+                        <InfoText TextId="IDS_Info_TELEGRAM_111"/>
+                    </ModuleInfo>
+                </SubmoduleItem>
+            </SubmoduleList>
+
+            <ValueList>
+                <ValueItem ID="VAL_DIAG_ACTIVATION">
+                    <Assignments>
+                        <Assign Content="0" TextId="IDT_VAL_DIAG_OFF"/>
+                        <Assign Content="1" TextId="IDT_VAL_DIAG_ON"/>
+                    </Assignments>
+                </ValueItem>
+            </ValueList>
+
+            <ChannelDiagList>
+                <ProfileChannelDiagItem API="14848" ErrorType="36864">
+                    <Name TextId="IDT_DIAG_NAME_PD0"/>
+                    <Help TextId="IDT_DIAG_HELP_PD0"/>
+                </ProfileChannelDiagItem>
+                <ProfileChannelDiagItem API="14848" ErrorType="36865">
+                    <Name TextId="IDT_DIAG_NAME_PD1"/>
+                    <Help TextId="IDT_DIAG_HELP_PD1"/>
+                </ProfileChannelDiagItem>
+                <ProfileChannelDiagItem API="14848" ErrorType="36866">
+                    <Name TextId="IDT_DIAG_NAME_PD2"/>
+                    <Help TextId="IDT_DIAG_HELP_PD2"/>
+                </ProfileChannelDiagItem>
+                <ProfileChannelDiagItem API="14848" ErrorType="36867">
+                    <Name TextId="IDT_DIAG_NAME_PD3"/>
+                    <Help TextId="IDT_DIAG_HELP_PD3"/>
+                </ProfileChannelDiagItem>
+                <ProfileChannelDiagItem API="14848" ErrorType="36868">
+                    <Name TextId="IDT_DIAG_NAME_PD4"/>
+                    <Help TextId="IDT_DIAG_HELP_PD4"/>
+                </ProfileChannelDiagItem>
+                <ProfileChannelDiagItem API="14848" ErrorType="36869">
+                    <Name TextId="IDT_DIAG_NAME_PD5"/>
+                    <Help TextId="IDT_DIAG_HELP_PD5"/>
+                </ProfileChannelDiagItem>
+                <ProfileChannelDiagItem API="14848" ErrorType="36870">
+                    <Name TextId="IDT_DIAG_NAME_PD6"/>
+                    <Help TextId="IDT_DIAG_HELP_PD6"/>
+                </ProfileChannelDiagItem>
+                <ProfileChannelDiagItem API="14848" ErrorType="36871">
+                    <Name TextId="IDT_DIAG_NAME_PD7"/>
+                    <Help TextId="IDT_DIAG_HELP_PD7"/>
+                </ProfileChannelDiagItem>
+                <ProfileChannelDiagItem API="14848" ErrorType="36872">
+                    <Name TextId="IDT_DIAG_NAME_PD8"/>
+                    <Help TextId="IDT_DIAG_HELP_PD8"/>
+                </ProfileChannelDiagItem>
+                <ProfileChannelDiagItem API="14848" ErrorType="36873">
+                    <Name TextId="IDT_DIAG_NAME_PD9"/>
+                    <Help TextId="IDT_DIAG_HELP_PD9"/>
+                </ProfileChannelDiagItem>
+                <ProfileChannelDiagItem API="14848" ErrorType="36874">
+                    <Name TextId="IDT_DIAG_NAME_PD10"/>
+                    <Help TextId="IDT_DIAG_HELP_PD10"/>
+                </ProfileChannelDiagItem>
+                <ProfileChannelDiagItem API="14848" ErrorType="36875">
+                    <Name TextId="IDT_DIAG_NAME_PD11"/>
+                    <Help TextId="IDT_DIAG_HELP_PD11"/>
+                </ProfileChannelDiagItem>
+                <ProfileChannelDiagItem API="14848" ErrorType="36876">
+                    <Name TextId="IDT_DIAG_NAME_PD12"/>
+                    <Help TextId="IDT_DIAG_HELP_PD12"/>
+                </ProfileChannelDiagItem>
+                <ProfileChannelDiagItem API="14848" ErrorType="36877">
+                    <Name TextId="IDT_DIAG_NAME_PD13"/>
+                    <Help TextId="IDT_DIAG_HELP_PD13"/>
+                </ProfileChannelDiagItem>
+                <ProfileChannelDiagItem API="14848" ErrorType="36878">
+                    <Name TextId="IDT_DIAG_NAME_PD14"/>
+                    <Help TextId="IDT_DIAG_HELP_PD14"/>
+                </ProfileChannelDiagItem>
+                <ProfileChannelDiagItem API="14848" ErrorType="36879">
+                    <Name TextId="IDT_DIAG_NAME_PD15"/>
+                    <Help TextId="IDT_DIAG_HELP_PD15"/>
+                </ProfileChannelDiagItem>
+                <ProfileChannelDiagItem API="14848" ErrorType="36880">
+                    <Name TextId="IDT_DIAG_NAME_PD16"/>
+                    <Help TextId="IDT_DIAG_HELP_PD16"/>
+                </ProfileChannelDiagItem>
+                <ProfileChannelDiagItem API="14848" ErrorType="36881">
+                    <Name TextId="IDT_DIAG_NAME_PD17"/>
+                    <Help TextId="IDT_DIAG_HELP_PD17"/>
+                </ProfileChannelDiagItem>
+                <ProfileChannelDiagItem API="14848" ErrorType="36882">
+                    <Name TextId="IDT_DIAG_NAME_PD18"/>
+                    <Help TextId="IDT_DIAG_HELP_PD18"/>
+                </ProfileChannelDiagItem>
+                <ProfileChannelDiagItem API="14848" ErrorType="36883">
+                    <Name TextId="IDT_DIAG_NAME_PD19"/>
+                    <Help TextId="IDT_DIAG_HELP_PD19"/>
+                </ProfileChannelDiagItem>
+            </ChannelDiagList>
+
+            <GraphicsList>
+                <GraphicItem ID="ID_Graph_1" GraphicFile="GSDML-014D-0203-CMMT-AS"/>
+            </GraphicsList>
+
+            <ExternalTextList>
+
+<!-- ******************************************************************************** -->
+<!--                                                                                  -->
+<!--    standard (english) text                                                       -->
+<!--                                                                                  -->
+<!-- ******************************************************************************** -->
+                <PrimaryLanguage>
+                    <Text TextId="IDT_DeviceIdenty" Value="Servo Drive CMMT-AS"/>
+                    <Text TextId="IDT_Module_Name_DAP rev1" Value="CMMT-AS V1"/>
+                    <Text TextId="IDT_Module_Info_DAP rev1" Value="CMMT-AS V1"/>
+
+                    <Text TextId="IDT_SubS_Interface" Value="X1"/>
+                    <Text TextId="IDT_SubS_Port1" Value="XF1"/>
+                    <Text TextId="IDT_SubS_Port2" Value="XF2"/>
+                    <Text TextId="IDT_Interface" Value="PN-IO Interface"/>
+                    <Text TextId="IDT_P1" Value="Port 1"/>
+                    <Text TextId="IDT_P2" Value="Port 2"/>
+
+                    <Text TextId="IDM_Name_SERVO" Value="DO SERVO"/>
+                    <Text TextId="IDM_Info_SERVO" Value="Drive object (DO) SERVO"/>
+
+                    <Text TextId="IDS_Name_MAP" Value="Module Access Point"/>
+                    <Text TextId="IDS_Info_MAP" Value="Module Access Point"/>
+                    <Text TextId="IDS_Name_PROFIsafe_30" Value="PROFIsafe telegram 30"/>
+                    <Text TextId="IDS_Info_PROFIsafe_30" Value="PROFIsafe standard telegram 30: F-DI/DO length 2/2 bytes"/>
+                    <Text TextId="IDS_Name_PROFIsafe_31" Value="PROFIsafe telegram 31"/>
+                    <Text TextId="IDS_Info_PROFIsafe_31" Value="PROFIsafe standard telegram 31: F-DI/DO length 4/4 bytes"/>
+                    <Text TextId="IDS_Name_TELEGRAM_1" Value="Standard telegram 1, PZD-2/2"/>
+                    <Text TextId="IDS_Info_TELEGRAM_1" Value="Standard telegram 1: Closed-loop speed control, PZD length 2/2 words"/>
+                    <Text TextId="IDS_Name_TELEGRAM_2" Value="Standard telegram 2, PZD-4/4"/>
+                    <Text TextId="IDS_Info_TELEGRAM_2" Value="Standard telegram 2: Closed-loop speed control, PZD length 4/4 words"/>
+                    <Text TextId="IDS_Name_TELEGRAM_3" Value="Standard telegram 3, PZD-5/9"/>
+                    <Text TextId="IDS_Info_TELEGRAM_3" Value="Standard telegram 3: Closed-loop speed control plus 1 position encoder, PZD length 5/9 words"/>
+                    <Text TextId="IDS_Name_TELEGRAM_4" Value="Standard telegram 4, PZD-6/14"/>
+                    <Text TextId="IDS_Info_TELEGRAM_4" Value="Standard telegram 4: Closed-loop speed control plus 2 position encoders, PZD length 6/14 words"/>
+                    <Text TextId="IDS_Name_TELEGRAM_5" Value="Standard telegram 5, PZD-9/9"/>
+                    <Text TextId="IDS_Info_TELEGRAM_5" Value="Standard telegram 5: Closed-loop speed/position control with DSC, 1 position encoder, PZD length 9/9 words"/>
+                    <Text TextId="IDS_Name_TELEGRAM_6" Value="Standard telegram 6, PZD-10/14"/>
+                    <Text TextId="IDS_Info_TELEGRAM_6" Value="Standard telegram 6: Closed-loop speed/position control with DSC, 2 position encoders, PZD length 10/14 words"/>
+                    <Text TextId="IDS_Name_TELEGRAM_7" Value="Standard telegram 7, PZD-2/2"/>
+                    <Text TextId="IDS_Info_TELEGRAM_7" Value="Standard telegram 7: Positioning, PZD length 2/2 words"/>
+                    <Text TextId="IDS_Name_TELEGRAM_9" Value="Standard telegram 9, PZD-10/5"/>
+                    <Text TextId="IDS_Info_TELEGRAM_9" Value="Standard telegram 9: Positioning, PZD length 10/5 words"/>
+
+                    <Text TextId="IDS_Name_TELEGRAM_102" Value="Siemens telegram 102, PZD-6/10"/>
+                    <Text TextId="IDS_Info_TELEGRAM_102" Value="Siemens telegram 102: Closed-loop speed/position control with torque reduction, 1 position encoder, PZD length 6/10 words"/>
+                    <Text TextId="IDS_Name_TELEGRAM_105" Value="Siemens telegram 105, PZD-10/10"/>
+                    <Text TextId="IDS_Info_TELEGRAM_105" Value="Siemens telegram 105: Closed-loop speed/position control with DSC and torque reduction, 1 position encoder, PZD length 10/10 words"/>
+                    <Text TextId="IDS_Name_TELEGRAM_111" Value="Siemens telegram 111, PZD-12/12"/>
+                    <Text TextId="IDS_Info_TELEGRAM_111" Value="Siemens telegram 111: Positioning, incl. MDI, PZD length 12/12 words"/>
+
+                    <Text TextId="IDS_Name_ADD22" Value="Supplementary data, PZD-2/2"/>
+                    <Text TextId="IDS_Info_ADD22" Value="Supplementary data, PZD length 2/2 words"/>
+                    <Text TextId="IDS_Name_ADD24" Value="Supplementary data, PZD-2/4"/>
+                    <Text TextId="IDS_Info_ADD24" Value="Supplementary data, PZD length 2/4 words"/>
+                    <Text TextId="IDS_Name_ADD26" Value="Supplementary data, PZD-2/6"/>
+                    <Text TextId="IDS_Info_ADD26" Value="Supplementary data, PZD length 2/6 words"/>
+                    <Text TextId="IDS_Name_ADD88" Value="Supplementary data, PZD-8/8"/>
+                    <Text TextId="IDS_Info_ADD88" Value="Supplementary data, PZD length 8/8 words"/>
+
+                    <Text TextId="IDT_Dataitem_STW1" Value="Control word 1"/>
+                    <Text TextId="IDT_Dataitem_ZSW1" Value="Status word 1"/>
+                    <Text TextId="IDT_Dataitem_STW2" Value="Control word 2"/>
+                    <Text TextId="IDT_Dataitem_ZSW2" Value="Status word 2"/>
+                    <Text TextId="IDT_Dataitem_NSOLL_A" Value="Speed setpoint A"/>
+                    <Text TextId="IDT_Dataitem_NIST_A" Value="Speed actual value A"/>
+                    <Text TextId="IDT_Dataitem_NSOLL_B" Value="Speed setpoint B"/>
+                    <Text TextId="IDT_Dataitem_NIST_B" Value="Speed actual value B"/>
+                    <Text TextId="IDT_Dataitem_G1_STW" Value="Sensor 1 control word"/>
+                    <Text TextId="IDT_Dataitem_G1_ZSW" Value="Sensor 1 status word"/>
+                    <Text TextId="IDT_Dataitem_G1_XIST1" Value="Sensor 1 position actual value 1"/>
+                    <Text TextId="IDT_Dataitem_G1_XIST2" Value="Sensor 1 position actual value 2"/>
+                    <Text TextId="IDT_Dataitem_G2_STW" Value="Sensor 2 control word"/>
+                    <Text TextId="IDT_Dataitem_G2_ZSW" Value="Sensor 2 status word"/>
+                    <Text TextId="IDT_Dataitem_G2_XIST1" Value="Sensor 2 position actual value 1"/>
+                    <Text TextId="IDT_Dataitem_G2_XIST2" Value="Sensor 2 position actual value 2"/>
+                    <Text TextId="IDT_Dataitem_G3_STW" Value="Sensor 3 control word"/>
+                    <Text TextId="IDT_Dataitem_G3_ZSW" Value="Sensor 3 status word"/>
+                    <Text TextId="IDT_Dataitem_G3_XIST1" Value="Sensor 3 position actual value 1"/>
+                    <Text TextId="IDT_Dataitem_G3_XIST2" Value="Sensor 3 position actual value 2"/>
+                    
+          
+                    <Text TextId="IDT_Dataitem_MELDW" Value="Report word"/>
+                    <Text TextId="IDT_Dataitem_MOMRED" Value="Torque reduction"/>
+                    <Text TextId="IDT_Dataitem_POS_ZSW1" Value="Position Statusword 1"/>
+                    <Text TextId="IDT_Dataitem_POS_ZSW2" Value="Position Statusword 2"/>
+                    <Text TextId="IDT_Dataitem_POS_STW1" Value="Position Controlword 1"/>
+                    <Text TextId="IDT_Dataitem_POS_STW2" Value="Position Controlword 2"/>
+                    <Text TextId="IDT_Dataitem_OVERRIDE" Value="Override"/>
+                    <Text TextId="IDT_Dataitem_USER" Value="User"/>
+                    <Text TextId="IDT_Dataitem_WARN_CODE" Value="Warn Code"/>
+                    <Text TextId="IDT_Dataitem_FAULT_CODE" Value="Fault Code"/>
+                    
+                    
+			<Text TextId="IDIO_RampFunctionCompleted" Value="Ramp function completed"/>
+			<Text TextId="IDIO_TorqueUtilizationLowerThreshold" Value="Torque Utilization Lower Threshold"/>
+			<Text TextId="IDIO_RpmLowerThreshold" Value="Rpm lower threshold"/>
+			<Text TextId="IDIO_RpmEqualThreshold" Value="Rpm equal threshold"/>
+			<Text TextId="IDIO_DeviceSpecificMELDWBit4" Value="Device Specific MELDW Bit4"/>
+			<Text TextId="IDIO_DeviceSpecificMELDWBit5" Value="Device Specific MELDW Bit5"/>
+			<Text TextId="IDIO_MotorTempWarningInactive" Value="Motor Temp Warning Inactive"/>
+			<Text TextId="IDIO_PsTempWarningInactive" Value="Ps Temp Warning Inactive"/>
+			<Text TextId="IDIO_SpeedSetpointDeviationInTolerance" Value="Speed Setpoint Deviation In Tolerance"/>
+			<Text TextId="IDIO_DeviceSpecificMELDWBit9" Value="Device Specific MELDW Bit9"/>
+			<Text TextId="IDIO_DeviceSpecificMELDWBit10" Value="Device Specific MELDW Bit10"/>
+			<Text TextId="IDIO_ControllerEnabled" Value="Controller Enabled"/>
+			<Text TextId="IDIO_DriveReady" Value="Drive Ready"/>
+			<Text TextId="IDIO_PulsesEnabled" Value="Pulse Enabled"/>
+			<Text TextId="IDIO_DeviceSpecificMELDWBit14" Value="Device Specific MELDW Bit14"/>
+			<Text TextId="IDIO_DeviceSpecificMELDWBit15" Value="Device Specific MELDW Bit15"/>
+
+
+                    <Text TextId="IDT_Dataitem_XERR" Value="System deviation"/>
+                    <Text TextId="IDT_Dataitem_KPC" Value="Position controller, gain factor"/>
+                    <Text TextId="IDT_Dataitem_XSOLL_A" Value="Position setpoint value A"/>
+                    <Text TextId="IDT_Dataitem_XIST_A" Value="Position actual value A"/>
+                    <Text TextId="IDT_Dataitem_XIST_B" Value="Position actual value B"/>
+                    <Text TextId="IDT_Dataitem_XIST_C" Value="Position actual value C"/>
+                    <Text TextId="IDT_Dataitem_XIST_D" Value="Position actual value D"/>
+                    <Text TextId="IDT_Dataitem_SATZANW" Value="Traversing block selection"/>
+                    <Text TextId="IDT_Dataitem_AKTSATZ" Value="Actual traversing block"/>
+                    <Text TextId="IDT_Dataitem_MDI_TARPOS" Value="MDI target position"/>
+                    <Text TextId="IDT_Dataitem_MDI_VELOCITY" Value="MDI velocity"/>
+                    <Text TextId="IDT_Dataitem_MDI_ACC" Value="MDI acceleartion"/>
+                    <Text TextId="IDT_Dataitem_MDI_DEC" Value="MDI deceleration"/>
+                    <Text TextId="IDT_Dataitem_MDI_MOD" Value="MDI mode"/>
+
+                    <Text TextId="IDT_Dataitem_SAFETY_INPUT" Value="Safety in"/>
+                    <Text TextId="IDT_Dataitem_SAFETY_OUTPUT" Value="Safety out"/>
+                    <Text TextId="IDT_Dataitem_SAFETY_TRAILER" Value="Safety"/>
+                    <Text TextId="IDT_Dataitem_ACTVAL" Value="Status word or actual value"/>
+                    <Text TextId="IDT_Dataitem_REFVAL" Value="Control word or setpoint"/>
+                    <Text TextId="IDT_Dataitem_Generic" Value="Bytes"/>
+
+                    <Text TextId="IDIO_ReadyToSwitchOn" Value="Ready To Switch On"/>
+                    <Text TextId="IDIO_ReadyToOperate" Value="Ready To Operate"/>
+                    <Text TextId="IDIO_OperationEnabled" Value="Operation Enabled"/>
+                    <Text TextId="IDIO_FaultPresent" Value="Fault Present"/>
+                    <Text TextId="IDIO_CoastStopNotActivated" Value="Coast Stop Not Activated"/>
+                    <Text TextId="IDIO_QuickStopNotActivated" Value="Quick Stop Not Activated"/>
+                    <Text TextId="IDIO_SwitchingOnNotInhibited" Value="Switching On Not Inhibited"/>
+                    <Text TextId="IDIO_WarningPresent" Value="Warning Present"/>
+                    <Text TextId="IDIO_SpeedErrorWithinToleranceRange" Value="Speed Error Within Tolerance Range"/>
+                    <Text TextId="IDIO_ControlRequested" Value="Control Requested"/>
+                    <Text TextId="IDIO_fOrNReached" Value="f Or N Reached"/>
+                    <Text TextId="IDIO_DeviceSpecificZSW1Bit11" Value="Device Specific ZSW1 Bit11"/>
+                    <Text TextId="IDIO_DeviceSpecificZSW1Bit12" Value="Device Specific ZSW1 Bit12"/>
+                    <Text TextId="IDIO_DeviceSpecificZSW1Bit13" Value="Device Specific ZSW1 Bit13"/>
+                    <Text TextId="IDIO_DeviceSpecificZSW1Bit14" Value="Device Specific ZSW1 Bit14"/>
+                    <Text TextId="IDIO_DeviceSpecificZSW1Bit15" Value="Device Specific ZSW1 Bit15"/>
+
+                    <Text TextId="IDIO_FollowingErrorWithinToleranceRange" Value="Following Error Within Tolerance Range"/>
+                    <Text TextId="IDIO_TargetPositionReached" Value="Target Position Reached"/>
+                    <Text TextId="IDIO_HomePositionSet" Value="Home Position Set"/>
+                    <Text TextId="IDIO_TraversingTaskAcknowledgment" Value="Traversing Task Acknowledgment"/>
+                    <Text TextId="IDIO_DriveStopped" Value="Drive Stopped"/>
+
+                    <Text TextId="IDIO_SwitchOn" Value="Switch On"/>
+                    <Text TextId="IDIO_NoCoastStop" Value="No Coast Stop"/>
+                    <Text TextId="IDIO_NoQuickStop" Value="No Quick Stop"/>
+                    <Text TextId="IDIO_EnableOperation" Value="Enable Operation"/>
+                    <Text TextId="IDIO_EnableRampGenerator" Value="Enable Ramp Generator"/>
+                    <Text TextId="IDIO_UnfreezeRampGenerator" Value="Unfreeze Ramp Generator"/>
+                    <Text TextId="IDIO_EnableSetpoint" Value="Enable Setpoint"/>
+                    <Text TextId="IDIO_FaultAck" Value="Fault Ack"/>
+                    <Text TextId="IDIO_Jog1" Value="Jog 1"/>
+                    <Text TextId="IDIO_Jog2" Value="Jog 2"/>
+                    <Text TextId="IDIO_ControlByPLC" Value="Control By PLC"/>
+                    <Text TextId="IDIO_DeviceSpecificSTW1Bit11" Value="Device Specific STW1 Bit11"/>
+                    <Text TextId="IDIO_DeviceSpecificSTW1Bit12" Value="Device Specific STW1 Bit12"/>
+                    <Text TextId="IDIO_DeviceSpecificSTW1Bit13" Value="Device Specific STW1 Bit13"/>
+                    <Text TextId="IDIO_DeviceSpecificSTW1Bit14" Value="Device Specific STW1 Bit14"/>
+                    <Text TextId="IDIO_DeviceSpecificSTW1Bit15" Value="Device Specific STW1 Bit15"/>
+
+                    <Text TextId="IDIO_DoNotRejectTraversingTask" Value="Do Not Reject Traversing Task"/>
+                    <Text TextId="IDIO_NoIntermediateStop" Value="No Intermediate Stop"/>
+                    <Text TextId="IDIO_ActivateTraversingTask" Value="Activate Traversing Task"/>
+                    <Text TextId="IDIO_StartHomingProcedure" Value="Start Homing Procedure"/>
+
+                    <Text TextId="IDT_RECORD1" Value="General settings"/>
+                    <Text TextId="IDT_REC_DIAG_ACTIVATION" Value="Activate diagnostics"/>
+                    <Text TextId="IDT_VAL_DIAG_OFF" Value="Inactive"/>
+                    <Text TextId="IDT_VAL_DIAG_ON" Value="Standard alarms (PROFIdrive)"/>
+
+<Text TextId="IDT_DIAG_NAME_PD0" Value="Hardware/software error" />
+<Text TextId="IDT_DIAG_HELP_PD0" Value="Hardware or software malfunction was identified. Carry out a POWER ON of the component involved. If it occurs again, contact the hotline." />
+<Text TextId="IDT_DIAG_NAME_PD1" Value="Network fault" />
+<Text TextId="IDT_DIAG_HELP_PD1" Value="A line supply fault has occurred (phase failure, voltage level, ...). Check the line supply / fuses. Check the supply voltage. Check the wiring." />
+<Text TextId="IDT_DIAG_NAME_PD2" Value="Supply voltage fault" />
+<Text TextId="IDT_DIAG_HELP_PD2" Value="An electronics power supply fault (48 V, 24 V, 5 V, ...) was identified. Check the wiring. Check the voltage level." />
+<Text TextId="IDT_DIAG_NAME_PD3" Value="DC link overvoltage" />
+<Text TextId="IDT_DIAG_HELP_PD3" Value="The DC link voltage has assumed an inadmissibly high value. Check the dimensioning of the system (line supply, reactor, voltages). Check the infeed settings." />
+<Text TextId="IDT_DIAG_NAME_PD4" Value="Power electronics faulted" />
+<Text TextId="IDT_DIAG_HELP_PD4" Value="An inadmissible operating state of the power electronics was identified (overcurrent, overtemperature, IGBT failure, ...). Check that the permissible load cycles are maintained. Check the ambient temperatures (fan)." />
+<Text TextId="IDT_DIAG_NAME_PD5" Value="Overtemperature of the electronic components" />
+<Text TextId="IDT_DIAG_HELP_PD5" Value="The temperature in the component has exceeded the highest permissible limit. Check the ambient temperature / control cabinet cooling." />
+<Text TextId="IDT_DIAG_NAME_PD6" Value="Ground fault / inter-phase short-circuit detected" />
+<Text TextId="IDT_DIAG_HELP_PD6" Value="A ground fault / inter-phase short-circuit was detected in the power cables or in the motor windings. Check the power cables (connection). Check the motor." />
+<Text TextId="IDT_DIAG_NAME_PD7" Value="Motor overload" />
+<Text TextId="IDT_DIAG_HELP_PD7" Value="The motor was operated outside the permissible limits (temperature, current, torque, ...). Check the load cycles and limits that have been set. Check the ambient temperature / motor cooling." />
+<Text TextId="IDT_DIAG_NAME_PD8" Value="Communication error to the higher-level control system" />
+<Text TextId="IDT_DIAG_HELP_PD8" Value="The communication to the higher-level control system (internal coupling, PROFIBUS, PROFINET, ...) is faulted or interrupted. Check the state of the higher-level control system. Check the communication connection/wiring. Check the bus configuration / clock cycles." />
+<Text TextId="IDT_DIAG_NAME_PD9" Value="Safety monitoring channel has identified an error" />
+<Text TextId="IDT_DIAG_HELP_PD9" Value="A safety operation monitoring function (Safety) has detected an error." />
+<Text TextId="IDT_DIAG_NAME_PD10" Value="Actual position/speed value incorrect or not available" />
+<Text TextId="IDT_DIAG_HELP_PD10" Value="When evaluating the encoder signals (track signals, zero marks, absolute values, ...) an illegal signal state was detected. Check the encoder / state of the encoder signals. Observe the maximum frequencies." />
+<Text TextId="IDT_DIAG_NAME_PD11" Value="Internal (DRIVE-CLiQ) communication error" />
+<Text TextId="IDT_DIAG_HELP_PD11" Value="The internal communication between the SINAMICS components is faulted or interrupted. Check the DRIVE-CLiQ wiring. Ensure an EMC-compliant design. Observe the maximum permissible quantity structure / clock cycles." />
+<Text TextId="IDT_DIAG_NAME_PD12" Value="Infeed faulted" />
+<Text TextId="IDT_DIAG_HELP_PD12" Value="The infeed is faulted or has failed. Check the infeed and the surroundings (line supply, filter, reactors, fuses, ...). Check the closed-loop infeed control." />
+<Text TextId="IDT_DIAG_NAME_PD13" Value="Braking Module faulted" />
+<Text TextId="IDT_DIAG_HELP_PD13" Value="The internal or external Braking Module is faulted or has an overload condition (temperature). Check the connection / state of the Braking Module. Maintain the permissible number of braking operations and their duration." />
+<Text TextId="IDT_DIAG_NAME_PD14" Value="Line filter faulted" />
+<Text TextId="IDT_DIAG_HELP_PD14" Value="The line filter monitoring has detected an excessively high temperature or another inadmissible state. Check the temperature / temperature monitoring. Check the configuration to ensure that it is permissible (filter type, supply, thresholds)." />
+<Text TextId="IDT_DIAG_NAME_PD15" Value="External measured value / signal state outside the permissible range" />
+<Text TextId="IDT_DIAG_HELP_PD15" Value="A measured value / signal state entered via the input area (digital/analog/temperature) has an inadmissible value/state. Identify the signal involved and check. Check the thresholds that have been set." />
+<Text TextId="IDT_DIAG_NAME_PD16" Value="Application/technological function faulted" />
+<Text TextId="IDT_DIAG_HELP_PD16" Value="The application / technological function has exceeded a (set) limit (position, velocity, torque, ...). Identify the limit involved and check. Check the setpoint input of the higher-level control system." />
+<Text TextId="IDT_DIAG_NAME_PD17" Value="Error in the parameterization / configuration / commissioning procedure" />
+<Text TextId="IDT_DIAG_HELP_PD17" Value="An error was identified in the parameterization or in a commissioning procedure, or the parameterization does not match the actual device configuration. Identify the precise cause of the error using the commissioning tool, appropriately adapt the parameterization or device configuration." />
+<Text TextId="IDT_DIAG_NAME_PD18" Value="General drive fault" />
+<Text TextId="IDT_DIAG_HELP_PD18" Value="Group fault, determine the precise cause of the fault using the commissioning tool." />
+<Text TextId="IDT_DIAG_NAME_PD19" Value="Auxiliary unit faulted" />
+<Text TextId="IDT_DIAG_HELP_PD19" Value="The monitoring of an auxiliary unit (incoming transformer, cooling unit, ...) has identified an illegal state. Identify the precise cause of the fault and check the device involved." />
+
+                </PrimaryLanguage>
+            </ExternalTextList>
+        </ApplicationProcess>
+    </ProfileBody>
+</ISO15745Profile>

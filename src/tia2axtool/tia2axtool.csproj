@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\tia2ax\V18_0\V18_0_tia2ax.csproj" />
+    <ProjectReference Include="..\tia2ax\V19_0\V19_0_tia2ax.csproj" />
   </ItemGroup>
 </Project>
 

@@ -1,0 +1,4 @@
+TYPE
+	PlcInputs : STRUCT
+	END_STRUCT;
+END_TYPE

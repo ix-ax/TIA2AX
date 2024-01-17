@@ -1,0 +1,46 @@
+TYPE
+	PlcOutputs : STRUCT
+		AS10DES1_Output_1_byte_1 : BYTE;
+		AS10DES1_Output_1_byte_2 : BYTE;
+		AS10DES2_Output_1_byte_1 : BYTE;
+		AS10DES2_Output_1_byte_2 : BYTE;
+		CPX_PneuOst_AS10_MPA1S_VMPA1_FB_EMS_8_8DO_12 : BYTE;
+		CPX_PneuOst_AS10_MPA1S_VMPA1_FB_EMS_8_8DO_1 : BYTE;
+		CPX_PneuOst_AS10_MPA1S_VMPA1_FB_EMS_8_8DO_2 : BYTE;
+		CPX_PneuOst_AS10_MPA1S_VMPA1_FB_EMS_8_8DO_3 : BYTE;
+		CPX_PneuOst_AS10_MPA1S_VMPA1_FB_EMS_8_8DO_4 : BYTE;
+		CPX_PneuOst_AS10_MPA1S_VMPA1_FB_EMS_8_8DO_5 : BYTE;
+		CPX_PneuOst_AS10_MPA1G_VMPA1_FB_EMG_8_8DO_1 : BYTE;
+		CPX_PneuOst_AS10_MPA1G_VMPA1_FB_EMG_8_8DO_2 : BYTE;
+		CPX_PneuOst_AS10_MPA1G_VMPA1_FB_EMG_8_8DO_3 : BYTE;
+		CPX_PneuOst_AS10_MPA1G_VMPA1_FB_EMG_8_8DO_4 : BYTE;
+		CPX_PneuOst_AS10_MPA1G_VMPA1_FB_EMG_8_8DO_5 : BYTE;
+		CPX_PneuOst_AS10_MPA1G_VMPA1_FB_EMG_8_8DO_6 : BYTE;
+		CPX_PneuOst_AS10_MPA1G_VMPA1_FB_EMG_8_8DO_7 : BYTE;
+		AS10DES11_Output_1_byte_1 : BYTE;
+		AS10DES11_Output_1_byte_2 : BYTE;
+		_6A2_AS10_6A5 : WORD;
+		_6A2_AS10_6A13 : ARRAY[0..31] OF BYTE;
+		_6A2_AS10_6A13_1 : ARRAY[0..31] OF BYTE;
+		_6A2_AS10_6A20 : DWORD;
+		AS10DES3_Output_1_byte_1 : BYTE;
+		AS10DES3_Output_1_byte_2 : BYTE;
+		HousingReader_AS10_Latch_and_Error_Clear_Control_Bits_1 : BYTE;
+		HousingReader_AS10_Operation_instruction_Control_Bits_1 : BYTE;
+		HousingReader_AS10_Completion_Clear_Control_Bits_1 : BYTE;
+		HousingReader_AS10_Parameter_Bank_Number_1 : WORD;
+		HousingReader_AS10_User_Data_128Byte_1 : ARRAY[0..129] OF BYTE;
+		AS10flashing_Out_64_Byte_1 : ARRAY[0..63] OF BYTE;
+		AS10Cam_Command_and_Result_Control_1 : BYTE;
+		AS10Cam_Trg_Control_1 : BYTE;
+		AS10Cam_Miscellaneous_Control_1 : BYTE;
+		AS10Cam_Reserved_Control_1 : BYTE;
+		AS10Cam_Reserved_Control_2 : ARRAY[0..7] OF BYTE;
+		AS10Cam_Parameter_128Byte_1 : ARRAY[0..127] OF BYTE;
+		AS10Cam_Parameter_32Byte_1 : ARRAY[0..31] OF BYTE;
+		AS10Cam_Parameter_32Byte_2 : ARRAY[0..31] OF BYTE;
+		AS10Cam_Parameter_32Byte_3 : ARRAY[0..31] OF BYTE;
+		AS10Cam_Parameter_32Byte_4 : ARRAY[0..31] OF BYTE;
+		AS10Cam_Parameter_32Byte_5 : ARRAY[0..31] OF BYTE;
+	END_STRUCT;
+END_TYPE
