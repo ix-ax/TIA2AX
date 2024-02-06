@@ -158,7 +158,7 @@ namespace tia2axIntegrationTests_V19
             string exportPath = generatedDir.FullName;
 
             creator.OpenProject(tiaProjectPath);
-            creator.GetPlcList(exportPath);
+            creator.GetPlcList(exportPath,false);
 
             Assert.IsTrue(TestsCommon.AllFilesAreEqual(expectedDir.FullName, generatedDir.FullName));
 

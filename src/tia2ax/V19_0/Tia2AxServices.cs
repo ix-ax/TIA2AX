@@ -276,13 +276,13 @@ namespace Tia2Ax.Services
         /// Retrieve the PLCs from the current project
         /// </summary>
         /// <param name="caller"></param>
-        public void GetPlcList(string outputFolder, [CallerMemberName] string caller = "")
+        public void GetPlcList(string outputFolder,bool hwidOnly, [CallerMemberName] string caller = "")
         {
             var methodBase = MethodBase.GetCurrentMethod();
             if (methodBase.ReflectedType != null) _traceWriter.WriteLine(methodBase.ReflectedType.Name + "." + methodBase.Name + " called from " + caller);
 
             _apiWrapper.GetPlcList(ProjectItem);
-            _apiWrapper.ExportAllPLCs(outputFolder, ProjectItem);
+            _apiWrapper.ExportAllPLCs(outputFolder, hwidOnly, ProjectItem);
         }
 
         #endregion // TIA Portal Project

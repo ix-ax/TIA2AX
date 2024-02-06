@@ -87,7 +87,8 @@ namespace tia2axtool
                 HelpText = "Output project folder where generator emits result.")]
             public string OutputProjectFolder { get; set; }
 
-
+            [Option('h', "hwid-only", Required = false, HelpText = "Export only hardware idntifiers")]
+            public bool HwIdOnly { get; set; }
         }
     }
 }
