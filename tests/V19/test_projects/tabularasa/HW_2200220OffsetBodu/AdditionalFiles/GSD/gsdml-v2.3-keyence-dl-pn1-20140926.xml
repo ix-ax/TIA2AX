@@ -1,0 +1,604 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-V2.3.xsd">
+  <ProfileHeader>
+    <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+    <ProfileRevision>1.00</ProfileRevision>
+    <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+    <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+    <ProfileClassID>Device</ProfileClassID>
+    <ISO15745Reference>
+      <ISO15745Part>4</ISO15745Part>
+      <ISO15745Edition>1</ISO15745Edition>
+      <ProfileTechnology>GSDML</ProfileTechnology>
+    </ISO15745Reference>
+  </ProfileHeader>
+  <ProfileBody>
+    <DeviceIdentity VendorID="0x01FD" DeviceID="0x1194">
+      <InfoText TextId="s_top_information" />
+      <VendorName Value="KEYENCE CORPORATION." />
+    </DeviceIdentity>
+    <DeviceFunction>
+      <Family MainFamily="Sensors" ProductFamily="Keyence Profinet Compatible Network Unit" />
+    </DeviceFunction>
+    <ApplicationProcess>
+      <DeviceAccessPointList>
+        <DeviceAccessPointItem ExtendedAddressAssignmentSupported="true" AddressAssignment="DCP" PhysicalSlots="0..16" ModuleIdentNumber="0x00000001" MinDeviceInterval="64" DNS_CompatibleName="dl-pn1" FixedInSlots="0" ObjectUUID_LocalIndex="1" ID="DAP1" RequiredSchemaVersion="V2.2" DeviceAccessSupported="true" PNIO_Version="V2.2">
+          <ModuleInfo>
+            <Name TextId="s_Adapterdevicename" />
+            <InfoText TextId="s_DL-PN1_series" />
+            <VendorName Value="Keyence" />
+            <OrderNumber Value="DL-PN1" />
+            <HardwareRelease Value="1.00" />
+            <SoftwareRelease Value="1.00" />
+          </ModuleInfo>
+          <SubslotList>
+            <SubslotItem SubslotNumber="32768" TextId="s_x1" />
+            <SubslotItem SubslotNumber="32769" TextId="s_x1_p1" />
+          </SubslotList>
+          <IOConfigData MaxInputLength="1440" MaxOutputLength="1440" />
+          <UseableModules>
+            <ModuleItemRef ModuleItemTarget="101" AllowedInSlots="1" UsedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="201" AllowedInSlots="2..16" />
+            <ModuleItemRef ModuleItemTarget="202" AllowedInSlots="2..16" />
+            <ModuleItemRef ModuleItemTarget="203" AllowedInSlots="2..16" />
+            <ModuleItemRef ModuleItemTarget="204" AllowedInSlots="2..16" />
+            <ModuleItemRef ModuleItemTarget="205" AllowedInSlots="2..16" />
+            <ModuleItemRef ModuleItemTarget="206" AllowedInSlots="2..16" />
+            <ModuleItemRef ModuleItemTarget="299" AllowedInSlots="2..16" />
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DIM 1" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1" />
+              <ModuleInfo>
+                <Name TextId="s_Adapterdevicename" />
+                <InfoText TextId="s_DL-PN1_series" />
+                <SoftwareRelease Value="1.00" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem ID="DAP1I" SubslotNumber="32768" SubmoduleIdentNumber="0x0001" SupportedRT_Classes="RT_CLASS_1" TextId="s_interface" IsochroneModeSupported="false" SupportedProtocols="LLDP" SupportedMibs="">
+              <ApplicationRelations NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0">
+                <TimingProperties SendClock="32 64 128" ReductionRatio="2 4 8 16 32 64 128 256 512" />
+              </ApplicationRelations>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem ID="DAP1P" SubslotNumber="32769" SubmoduleIdentNumber="0x0002" MAUType="100BASETXFD" MAUTypes="16" TextId="s_Port1" />
+          </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1" />
+          </Graphics>
+        </DeviceAccessPointItem>
+      </DeviceAccessPointList>
+      <ModuleList>
+        <!-- DL-PN1 Module -->
+        <ModuleItem ID="101" ModuleIdentNumber="0x00000101">
+          <ModuleInfo CategoryRef="DL_Module">
+            <Name TextId="s_DLTypeModule" />
+            <InfoText TextId="s_DLTypeModuleInfo" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="Controller_101" SubmoduleIdentNumber="0x00000000">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="s_DL_Input_Device0" UseAsBits="true">
+                    <BitDataItem BitOffset="2" TextId="s_DL_In_0_BitOffset2" />
+                    <BitDataItem BitOffset="6" TextId="s_DL_In_0_BitOffset6" />
+                    <BitDataItem BitOffset="7" TextId="s_DL_In_0_BitOffset7" />
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_DL_Input_Device1" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_DL_In_1_BitOffset0" />
+                    <BitDataItem BitOffset="1" TextId="s_DL_In_1_BitOffset1" />
+                    <BitDataItem BitOffset="2" TextId="s_DL_In_1_BitOffset2" />
+                    <BitDataItem BitOffset="3" TextId="s_DL_In_1_BitOffset3" />
+                    <BitDataItem BitOffset="4" TextId="s_DL_In_1_BitOffset4" />
+                  </DataItem>
+                  <DataItem DataType="Unsigned16" TextId="s_DL_Input_Device900" />
+                  <DataItem DataType="Integer32" TextId="s_DL_Input_Device901" />
+                  <DataItem DataType="Integer32" TextId="s_DL_Input_Device902" />
+                  <DataItem DataType="Integer32" TextId="s_DL_Input_Device903" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="s_DL_Output_Device0" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_DL_Out_0_BitOffset0" />
+                    <BitDataItem BitOffset="1" TextId="s_DL_Out_0_BitOffset1" />
+                    <BitDataItem BitOffset="2" TextId="s_DL_Out_0_BitOffset2" />
+                    <BitDataItem BitOffset="3" TextId="s_DL_Out_0_BitOffset3" />
+                    <BitDataItem BitOffset="4" TextId="s_DL_Out_0_BitOffset4" />
+                  </DataItem>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_DLModuleName" />
+                <InfoText TextId="s_DLModuleInfo" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <!-- GT2 Module -->
+        <ModuleItem ID="201" ModuleIdentNumber="0x00000201">
+          <ModuleInfo CategoryRef="SLAVE_Module">
+            <Name TextId="s_GT2TypeModule" />
+            <InfoText TextId="s_GT2TypeModuleInfo" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="Controller_201" SubmoduleIdentNumber="0x00000000">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="s_Slave_Input_Device0" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_Slave_In_0_BitOffset0" />
+                    <BitDataItem BitOffset="1" TextId="s_Slave_In_0_BitOffset1" />
+                    <BitDataItem BitOffset="2" TextId="s_Slave_In_0_BitOffset2" />
+                    <BitDataItem BitOffset="3" TextId="s_Slave_In_0_BitOffset3" />
+                    <BitDataItem BitOffset="4" TextId="s_Slave_In_0_BitOffset4" />
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_Slave_Input_Device1" UseAsBits="true">
+                    <BitDataItem BitOffset="1" TextId="s_Slave_In_1_BitOffset1" />
+                    <BitDataItem BitOffset="2" TextId="s_Slave_In_1_BitOffset2" />
+                    <BitDataItem BitOffset="3" TextId="s_Slave_In_1_BitOffset3" />
+                    <BitDataItem BitOffset="6" TextId="s_Slave_In_1_BitOffset6" />
+                    <BitDataItem BitOffset="7" TextId="s_Slave_In_1_BitOffset7" />
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_Slave_Input_Device2" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_Slave_In_2_BitOffset0" />
+                    <BitDataItem BitOffset="1" TextId="s_Slave_In_2_BitOffset1" />
+                    <BitDataItem BitOffset="2" TextId="s_Slave_In_2_BitOffset2" />
+                    <BitDataItem BitOffset="3" TextId="s_Slave_In_2_BitOffset3" />
+                    <BitDataItem BitOffset="4" TextId="s_Slave_In_2_BitOffset4" />
+                  </DataItem>
+                  <DataItem DataType="Integer32" TextId="s_Slave_In_3_Current_Value" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="s_Slave_Output_Device0" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_Slave_Out_0_BitOffset0" />
+                    <BitDataItem BitOffset="1" TextId="s_Slave_Out_0_BitOffset1" />
+                    <BitDataItem BitOffset="2" TextId="s_Slave_Out_0_BitOffset2" />
+                    <BitDataItem BitOffset="3" TextId="s_Slave_Out_0_BitOffset3" />
+                    <BitDataItem BitOffset="4" TextId="s_Slave_Out_0_BitOffset4" />
+                  </DataItem>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_GT2ModuleName" />
+                <InfoText TextId="s_GT2ModuleInfo" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+	
+        <!-- GT Module -->
+        <ModuleItem ID="202" ModuleIdentNumber="0x00000202">
+          <ModuleInfo CategoryRef="SLAVE_Module">
+            <Name TextId="s_GTTypeModule" />
+            <InfoText TextId="s_GTTypeModuleInfo" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="Controller_202" SubmoduleIdentNumber="0x00000000">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="s_Slave_Input_Device0" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_Slave_In_0_BitOffset0" />
+                    <BitDataItem BitOffset="1" TextId="s_Slave_In_0_BitOffset1" />
+                    <BitDataItem BitOffset="2" TextId="s_Slave_In_0_BitOffset2" />
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_Slave_Input_Device1" UseAsBits="true">
+                    <BitDataItem BitOffset="1" TextId="s_Slave_In_1_BitOffset1" />
+                    <BitDataItem BitOffset="2" TextId="s_Slave_In_1_BitOffset2" />
+                    <BitDataItem BitOffset="3" TextId="s_Slave_In_1_BitOffset3" />
+                    <BitDataItem BitOffset="6" TextId="s_Slave_In_1_BitOffset6" />
+                    <BitDataItem BitOffset="7" TextId="s_Slave_In_1_BitOffset7" />
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_Slave_Input_Device2" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_Slave_In_2_BitOffset0" />
+                    <BitDataItem BitOffset="1" TextId="s_Slave_In_2_BitOffset1" />
+                    <BitDataItem BitOffset="2" TextId="s_Slave_In_2_BitOffset2" />
+                    <BitDataItem BitOffset="3" TextId="s_Slave_In_2_BitOffset3" />
+                  </DataItem>
+                  <DataItem DataType="Integer32" TextId="s_Slave_In_3_Current_Value" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="s_Slave_Output_Device0" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_Slave_Out_0_BitOffset0" />
+                    <BitDataItem BitOffset="1" TextId="s_Slave_Out_0_BitOffset1" />
+                    <BitDataItem BitOffset="2" TextId="s_Slave_Out_0_BitOffset2" />
+                  </DataItem>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_GTModuleName" />
+                <InfoText TextId="s_GTModuleInfo" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+	
+        <!-- IG Module -->
+        <ModuleItem ID="203" ModuleIdentNumber="0x00000203">
+          <ModuleInfo CategoryRef="SLAVE_Module">
+            <Name TextId="s_IGTypeModule" />
+            <InfoText TextId="s_IGTypeModuleInfo" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="Controller_203" SubmoduleIdentNumber="0x00000000">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="s_Slave_Input_Device0" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_Slave_In_0_BitOffset0" />
+                    <BitDataItem BitOffset="1" TextId="s_Slave_In_0_BitOffset1" />
+                    <BitDataItem BitOffset="2" TextId="s_Slave_In_0_BitOffset2" />
+                    <BitDataItem BitOffset="3" TextId="s_Slave_In_0_BitOffset3" />
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_Slave_Input_Device1" UseAsBits="true">
+                    <BitDataItem BitOffset="1" TextId="s_Slave_In_1_BitOffset1" />
+                    <BitDataItem BitOffset="2" TextId="s_Slave_In_1_BitOffset2" />
+                    <BitDataItem BitOffset="3" TextId="s_Slave_In_1_BitOffset3" />
+                    <BitDataItem BitOffset="6" TextId="s_Slave_In_1_BitOffset6" />
+                    <BitDataItem BitOffset="7" TextId="s_Slave_In_1_BitOffset7" />
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_Slave_Input_Device2" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_Slave_In_2_BitOffset0" />
+                    <BitDataItem BitOffset="1" TextId="s_Slave_In_2_BitOffset1" />
+                    <BitDataItem BitOffset="2" TextId="s_Slave_In_2_BitOffset2" />
+                    <BitDataItem BitOffset="3" TextId="s_Slave_In_2_BitOffset3" />
+                    <BitDataItem BitOffset="4" TextId="s_Slave_In_2_BitOffset4" />
+                  </DataItem>
+                  <DataItem DataType="Integer32" TextId="s_Slave_In_3_Current_Value" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="s_Slave_Output_Device0" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_Slave_Out_0_BitOffset0" />
+                    <BitDataItem BitOffset="1" TextId="s_Slave_Out_0_BitOffset1" />
+                    <BitDataItem BitOffset="2" TextId="s_Slave_Out_0_BitOffset2" />
+                    <BitDataItem BitOffset="3" TextId="s_Slave_Out_0_BitOffset3" />
+                    <BitDataItem BitOffset="4" TextId="s_Slave_Out_0_BitOffset4" />
+                  </DataItem>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_IGModuleName" />
+                <InfoText TextId="s_IGModuleInfo" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+	
+	<!-- IB Module -->
+        <ModuleItem ID="204" ModuleIdentNumber="0x00000204">
+          <ModuleInfo CategoryRef="SLAVE_Module">
+            <Name TextId="s_IBTypeModule" />
+            <InfoText TextId="s_IBTypeModuleInfo" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="Controller_204" SubmoduleIdentNumber="0x00000000">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="s_Slave_Input_Device0" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_Slave_In_0_BitOffset0" />
+                    <BitDataItem BitOffset="1" TextId="s_Slave_In_0_BitOffset1" />
+                    <BitDataItem BitOffset="2" TextId="s_Slave_In_0_BitOffset2" />
+                    <BitDataItem BitOffset="3" TextId="s_Slave_In_0_BitOffset3" />
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_Slave_Input_Device1" UseAsBits="true">
+                    <BitDataItem BitOffset="1" TextId="s_Slave_In_1_BitOffset1" />
+                    <BitDataItem BitOffset="2" TextId="s_Slave_In_1_BitOffset2" />
+                    <BitDataItem BitOffset="3" TextId="s_Slave_In_1_BitOffset3" />
+                    <BitDataItem BitOffset="6" TextId="s_Slave_In_1_BitOffset6" />
+                    <BitDataItem BitOffset="7" TextId="s_Slave_In_1_BitOffset7" />
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_Slave_Input_Device2" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_Slave_In_2_BitOffset0" />
+                    <BitDataItem BitOffset="1" TextId="s_Slave_In_2_BitOffset1" />
+                    <BitDataItem BitOffset="2" TextId="s_Slave_In_2_BitOffset2" />
+                    <BitDataItem BitOffset="3" TextId="s_Slave_In_2_BitOffset3" />
+                  </DataItem>
+                  <DataItem DataType="Integer32" TextId="s_Slave_In_3_Current_Value" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="s_Slave_Output_Device0" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_Slave_Out_0_BitOffset0" />
+                    <BitDataItem BitOffset="1" TextId="s_Slave_Out_0_BitOffset1" />
+                    <BitDataItem BitOffset="2" TextId="s_Slave_Out_0_BitOffset2" />
+                    <BitDataItem BitOffset="3" TextId="s_Slave_Out_0_BitOffset3" />
+                  </DataItem>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_ILModuleName" />
+                <InfoText TextId="s_ILModuleInfo" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+	
+        <!-- IL Module -->
+        <ModuleItem ID="205" ModuleIdentNumber="0x00000205">
+          <ModuleInfo CategoryRef="SLAVE_Module">
+            <Name TextId="s_ILTypeModule" />
+            <InfoText TextId="s_ILTypeModuleInfo" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="Controller_205" SubmoduleIdentNumber="0x00000000">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="s_Slave_Input_Device0" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_Slave_In_0_BitOffset0" />
+                    <BitDataItem BitOffset="1" TextId="s_Slave_In_0_BitOffset1" />
+                    <BitDataItem BitOffset="2" TextId="s_Slave_In_0_BitOffset2" />
+                    <BitDataItem BitOffset="3" TextId="s_Slave_In_0_BitOffset3" />
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_Slave_Input_Device1" UseAsBits="true">
+                    <BitDataItem BitOffset="1" TextId="s_Slave_In_1_BitOffset1" />
+                    <BitDataItem BitOffset="2" TextId="s_Slave_In_1_BitOffset2" />
+                    <BitDataItem BitOffset="3" TextId="s_Slave_In_1_BitOffset3" />
+                    <BitDataItem BitOffset="6" TextId="s_Slave_In_1_BitOffset6" />
+                    <BitDataItem BitOffset="7" TextId="s_Slave_In_1_BitOffset7" />
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_Slave_Input_Device2" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_Slave_In_2_BitOffset0" />
+                    <BitDataItem BitOffset="1" TextId="s_Slave_In_2_BitOffset1" />
+                    <BitDataItem BitOffset="2" TextId="s_Slave_In_2_BitOffset2" />
+                    <BitDataItem BitOffset="3" TextId="s_Slave_In_2_BitOffset3" />
+                  </DataItem>
+                  <DataItem DataType="Integer32" TextId="s_Slave_In_3_Current_Value" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="s_Slave_Output_Device0" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_Slave_Out_0_BitOffset0" />
+                    <BitDataItem BitOffset="1" TextId="s_Slave_Out_0_BitOffset1" />
+                    <BitDataItem BitOffset="2" TextId="s_Slave_Out_0_BitOffset2" />
+                    <BitDataItem BitOffset="3" TextId="s_Slave_Out_0_BitOffset3" />
+                  </DataItem>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_ILModuleName" />
+                <InfoText TextId="s_ILModuleInfo" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+
+        <!-- SK Module -->
+        <ModuleItem ID="206" ModuleIdentNumber="0x00000206">
+          <ModuleInfo CategoryRef="SLAVE_Module">
+            <Name TextId="s_SKTypeModule" />
+            <InfoText TextId="s_SKTypeModuleInfo" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="Controller_206" SubmoduleIdentNumber="0x00000000">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="s_Slave_Input_Device0" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_Slave_In_0_BitOffset0" />
+                    <BitDataItem BitOffset="1" TextId="s_Slave_In_0_BitOffset1" />
+                    <BitDataItem BitOffset="2" TextId="s_Slave_In_0_BitOffset2" />
+                    <BitDataItem BitOffset="3" TextId="s_Slave_In_0_BitOffset3" />
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_Slave_Input_Device1" UseAsBits="true">
+                    <BitDataItem BitOffset="1" TextId="s_Slave_In_1_BitOffset1" />
+                    <BitDataItem BitOffset="2" TextId="s_Slave_In_1_BitOffset2" />
+                    <BitDataItem BitOffset="3" TextId="s_Slave_In_1_BitOffset3" />
+                    <BitDataItem BitOffset="6" TextId="s_Slave_In_1_BitOffset6" />
+                    <BitDataItem BitOffset="7" TextId="s_Slave_In_1_BitOffset7" />
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_Slave_Input_Device2" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_Slave_In_2_BitOffset0" />
+                    <BitDataItem BitOffset="1" TextId="s_Slave_In_2_BitOffset1" />
+                    <BitDataItem BitOffset="2" TextId="s_Slave_In_2_BitOffset2" />
+                    <BitDataItem BitOffset="3" TextId="s_Slave_In_2_BitOffset3" />
+                  </DataItem>
+                  <DataItem DataType="Integer32" TextId="s_Slave_In_3_Current_Value" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="s_Slave_Output_Device0" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_Slave_Out_0_BitOffset0" />
+                    <BitDataItem BitOffset="1" TextId="s_Slave_Out_0_BitOffset1" />
+                    <BitDataItem BitOffset="2" TextId="s_Slave_Out_0_BitOffset2" />
+                    <BitDataItem BitOffset="3" TextId="s_Slave_Out_0_BitOffset3" />
+                  </DataItem>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_SKModuleName" />
+                <InfoText TextId="s_SKModuleInfo" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+
+
+        <!-- Generic Module -->
+        <ModuleItem ID="299" ModuleIdentNumber="0x00000299">
+          <ModuleInfo CategoryRef="SLAVE_Module">
+            <Name TextId="s_GENETypeModule" />
+            <InfoText TextId="s_GENETypeModuleInfo" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="Controller_299" SubmoduleIdentNumber="0x00000000">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="s_Slave_Input_Device0" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_Slave_In_0_BitOffset0" />
+                    <BitDataItem BitOffset="1" TextId="s_Slave_In_0_BitOffset1" />
+                    <BitDataItem BitOffset="2" TextId="s_Slave_In_0_BitOffset2" />
+                    <BitDataItem BitOffset="3" TextId="s_Slave_In_0_BitOffset3" />
+                    <BitDataItem BitOffset="4" TextId="s_Slave_In_0_BitOffset4" />
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_Slave_Input_Device1" UseAsBits="true">
+                    <BitDataItem BitOffset="1" TextId="s_Slave_In_1_BitOffset1" />
+                    <BitDataItem BitOffset="2" TextId="s_Slave_In_1_BitOffset2" />
+                    <BitDataItem BitOffset="3" TextId="s_Slave_In_1_BitOffset3" />
+                    <BitDataItem BitOffset="6" TextId="s_Slave_In_1_BitOffset6" />
+                    <BitDataItem BitOffset="7" TextId="s_Slave_In_1_BitOffset7" />
+                  </DataItem>
+                  <DataItem DataType="Unsigned8" TextId="s_Slave_Input_Device2" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_Slave_In_2_BitOffset0" />
+                    <BitDataItem BitOffset="1" TextId="s_Slave_In_2_BitOffset1" />
+                    <BitDataItem BitOffset="2" TextId="s_Slave_In_2_BitOffset2" />
+                    <BitDataItem BitOffset="3" TextId="s_Slave_In_2_BitOffset3" />
+                    <BitDataItem BitOffset="4" TextId="s_Slave_In_2_BitOffset4" />
+                  </DataItem>
+                  <DataItem DataType="Integer32" TextId="s_Slave_In_3_Current_Value" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="s_Slave_Output_Device0" UseAsBits="true">
+                    <BitDataItem BitOffset="0" TextId="s_Slave_Out_0_BitOffset0" />
+                    <BitDataItem BitOffset="1" TextId="s_Slave_Out_0_BitOffset1" />
+                    <BitDataItem BitOffset="2" TextId="s_Slave_Out_0_BitOffset2" />
+                    <BitDataItem BitOffset="3" TextId="s_Slave_Out_0_BitOffset3" />
+                    <BitDataItem BitOffset="4" TextId="s_Slave_Out_0_BitOffset4" />
+                  </DataItem>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="s_GENEModuleName" />
+                <InfoText TextId="s_GENEModuleInfo" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+
+</ModuleList>
+
+      
+      <GraphicsList>
+        <GraphicItem ID="1" GraphicFile="GSDML-01FD-1194-DL-PN1" />
+      </GraphicsList>
+      <CategoryList>
+        <CategoryItem TextId="s_DLModules" ID="DL_Module" />
+        <CategoryItem TextId="s_SlaveModules" ID="SLAVE_Module" />
+      </CategoryList>
+      <ExternalTextList>
+        <PrimaryLanguage>
+          <!-- General Text -->
+          <Text TextId="s_top_information" Value="Profinet Compatible Network Unit" />
+          <Text TextId="s_Adapterdevicename" Value="DL-PN1" />
+          <Text TextId="s_DL-PN1_series" Value="DL-PN1 PROFINET IO Device" />
+          <Text TextId="s_x1" Value="X1" />
+          <Text TextId="s_x1_p1" Value="X1 P1" />
+          <Text TextId="s_interface" Value="Interface" />
+          <Text TextId="s_Port1" Value="Port 1" />
+          <!-- Module Info -->
+          <Text TextId="s_Application Port Number_DL" Value="Application Port Number" />
+          <Text TextId="s_DL_TCP PortNum" Value="Application Port Number(TCP)" />
+          <!-- Input Bit Module Names -->
+          <Text TextId="s_DLTypeModule" Value="DL-PN1" />
+          <Text TextId="s_DLTypeModuleInfo" Value="DL-PN1 Info. See Users Manual for Detail." />
+          <Text TextId="s_GT2TypeModule" Value="GT2-***" />
+          <Text TextId="s_GT2TypeModuleInfo" Value="GT2 Info. See Users Manual for Detail." />
+          <Text TextId="s_GTTypeModule" Value="GT-7*" />
+          <Text TextId="s_GTTypeModuleInfo" Value="GT Info. See Users Manual for Detail." />
+          <Text TextId="s_IGTypeModule" Value="IG-1***" />
+          <Text TextId="s_IGTypeModuleInfo" Value="IG Info. See Users Manual for Detail." />
+          <Text TextId="s_IBTypeModule" Value="IB-1***" />
+          <Text TextId="s_IBTypeModuleInfo" Value="IB Info. See Users Manual for Detail." />
+          <Text TextId="s_ILTypeModule" Value="IL-1***" />
+          <Text TextId="s_ILTypeModuleInfo" Value="IL Info. See Users Manual for Detail." />
+          <Text TextId="s_SKTypeModule" Value="SK-1***" />
+          <Text TextId="s_SKTypeModuleInfo" Value="SK Info. See Users Manual for Detail." />
+          <Text TextId="s_GENETypeModule" Value="Generic Module" />
+          <Text TextId="s_GENETypeModuleInfo" Value="See Users Manual for Detail." />
+          <!-- Input Bit Names -->
+          <Text TextId="s_DL_Input_Device0" Value="Sensors Status" />
+          <Text TextId="s_DL_Input_Device1" Value="External Input Response" />
+          <Text TextId="s_DL_Input_Device99" Value="Reserve" />
+          <Text TextId="s_DL_Input_Device900" Value="Reserve00" />
+          <Text TextId="s_DL_Input_Device901" Value="Reserve01" />
+          <Text TextId="s_DL_Input_Device902" Value="Reserve02" />
+          <Text TextId="s_DL_Input_Device903" Value="Reserve03" />
+          <Text TextId="s_DL_Input_Device2" Value="SH ver" />
+          <Text TextId="s_DL_Input_Device3" Value="STM ver" />
+          <Text TextId="s_DL_Input_Device4" Value="Hand shake" />
+          <Text TextId="s_DL_Input_Device5" Value="Sendbyte Num" />
+          <Text TextId="s_Slave_Input_Device0" Value="Sensor Outputs" />
+          <Text TextId="s_Slave_Input_Device1" Value="Sensor Status" />
+          <Text TextId="s_Slave_Input_Device2" Value="External Input Response" />
+          <Text TextId="s_Slave_Input_Device3" Value="Current Value" />
+          <!-- Output bit Names -->
+          <Text TextId="s_DL_Output_Device0" Value="External Input Requests" />
+          <Text TextId="s_Slave_Output_Device0" Value="External Input Requests" />
+          <!-- Input Bit Data Name -->
+	  <Text TextId="s_DL_In_0_BitOffset0" Value="Bit 0 Data" />
+	  <Text TextId="s_DL_In_0_BitOffset1" Value="Bit 1 Data" />
+			<Text TextId="s_DL_In_0_BitOffset2" Value="Current Value Property" />
+			<Text TextId="s_DL_In_0_BitOffset3" Value="Bit 3 Data" />
+			<Text TextId="s_DL_In_0_BitOffset4" Value="Bit 4 Data" />
+			<Text TextId="s_DL_In_0_BitOffset5" Value="Sensor Ready" />
+			<Text TextId="s_DL_In_0_BitOffset6" Value="Warning Status" />
+			<Text TextId="s_DL_In_0_BitOffset7" Value="Error Status" />
+			<Text TextId="s_DL_In_1_BitOffset0" Value="External Input Response 1" />
+			<Text TextId="s_DL_In_1_BitOffset1" Value="External Input Response 2" />
+			<Text TextId="s_DL_In_1_BitOffset2" Value="External Input Response 3" />
+			<Text TextId="s_DL_In_1_BitOffset3" Value="External Input Response 4" />
+			<Text TextId="s_DL_In_1_BitOffset4" Value="External Input Response 5" />
+			<Text TextId="s_DL_In_1_BitOffset5" Value="Bit 13 Data" />
+			<Text TextId="s_DL_In_1_BitOffset6" Value="Bit 14 Data" />
+			<Text TextId="s_DL_In_1_BitOffset7" Value="Bit 15 Data" />
+			<Text TextId="s_DL_Out_0_BitOffset0" Value="External Input Request 1" />
+			<Text TextId="s_DL_Out_0_BitOffset1" Value="External Input Request 2" />
+			<Text TextId="s_DL_Out_0_BitOffset2" Value="External Input Request 3" />
+			<Text TextId="s_DL_Out_0_BitOffset3" Value="External Input Request 4" />
+			<Text TextId="s_DL_Out_0_BitOffset4" Value="External Input Request 5" />
+			<Text TextId="s_DL_Out_0_BitOffset5" Value="Bit 5 Data" />
+			<Text TextId="s_DL_Out_0_BitOffset6" Value="Bit 6 Data" />
+			<Text TextId="s_DL_Out_0_BitOffset7" Value="Bit 7 Data" />
+			<Text TextId="s_Slave_In_0_BitOffset0" Value="Output 1" />
+			<Text TextId="s_Slave_In_0_BitOffset1" Value="Output 2" />
+			<Text TextId="s_Slave_In_0_BitOffset2" Value="Output 3" />
+			<Text TextId="s_Slave_In_0_BitOffset3" Value="Output 4" />
+			<Text TextId="s_Slave_In_0_BitOffset4" Value="Output 5" />
+			<Text TextId="s_Slave_In_0_BitOffset5" Value="Bit 5 Data" />
+			<Text TextId="s_Slave_In_0_BitOffset6" Value="Bit 6 Data" />
+			<Text TextId="s_Slave_In_0_BitOffset7" Value="Bit 7 Data" />
+			<Text TextId="s_Slave_In_1_BitOffset0" Value="Bit 0 Data" />
+			<Text TextId="s_Slave_In_1_BitOffset1" Value="Current Value Invalid" />
+			<Text TextId="s_Slave_In_1_BitOffset2" Value="Current Value Under Range" />
+			<Text TextId="s_Slave_In_1_BitOffset3" Value="Current Value Over Range" />
+			<Text TextId="s_Slave_In_1_BitOffset4" Value="Bit 4 Data" />
+			<Text TextId="s_Slave_In_1_BitOffset5" Value="Bit 5 Data" />
+			<Text TextId="s_Slave_In_1_BitOffset6" Value="Warning Status" />
+			<Text TextId="s_Slave_In_1_BitOffset7" Value="Error Status" />
+			<Text TextId="s_Slave_In_2_BitOffset0" Value="External Input Response 1" />
+			<Text TextId="s_Slave_In_2_BitOffset1" Value="External Input Response 2" />
+			<Text TextId="s_Slave_In_2_BitOffset2" Value="External Input Response 3" />
+			<Text TextId="s_Slave_In_2_BitOffset3" Value="External Input Response 4" />
+			<Text TextId="s_Slave_In_2_BitOffset4" Value="External Input Response 5" />
+			<Text TextId="s_Slave_In_2_BitOffset5" Value="Bit 5 Data" />
+			<Text TextId="s_Slave_In_2_BitOffset6" Value="Bit 6 Data" />
+			<Text TextId="s_Slave_In_2_BitOffset7" Value="Bit 7 Data" />
+			<Text TextId="s_Slave_In_3_Current_Value" Value="Current Value" />
+			<Text TextId="s_Slave_Out_0_BitOffset0" Value="External Input Request 1" />
+			<Text TextId="s_Slave_Out_0_BitOffset1" Value="External Input Request 2" />
+			<Text TextId="s_Slave_Out_0_BitOffset2" Value="External Input Request 3" />
+			<Text TextId="s_Slave_Out_0_BitOffset3" Value="External Input Request 4" />
+			<Text TextId="s_Slave_Out_0_BitOffset4" Value="External Input Request 5" />
+			<Text TextId="s_Slave_Out_0_BitOffset5" Value="Bit 5 Data" />
+			<Text TextId="s_Slave_Out_0_BitOffset6" Value="Bit 6 Data" />
+			<Text TextId="s_Slave_Out_0_BitOffset7" Value="Bit 7 Data" />
+          <Text TextId="s_DLModuleName" Value="DL-PN1 Device" />
+          <Text TextId="s_DLModuleInfo" Value="DL-PN1 I/O Device. See Users Manual for Detail." />
+          <Text TextId="s_GT2ModuleName" Value="GT2-***" />
+          <Text TextId="s_GT2ModuleInfo" Value="GT2 I/O Device. See Users Manual for Detail." />
+          <Text TextId="s_GTModuleName" Value="GT-7*" />
+          <Text TextId="s_GTModuleInfo" Value="GT I/O Device. See Users Manual for Detail." />
+          <Text TextId="s_IGModuleName" Value="IG-1***" />
+          <Text TextId="s_IGModuleInfo" Value="IG I/O Device. See Users Manual for Detail." />
+          <Text TextId="s_IBModuleName" Value="IB-1***" />
+          <Text TextId="s_IBModuleInfo" Value="IB I/O Device. See Users Manual for Detail." />
+          <Text TextId="s_ILModuleName" Value="IL-1***" />
+          <Text TextId="s_ILModuleInfo" Value="IL I/O Device. See Users Manual for Detail." />
+          <Text TextId="s_SKModuleName" Value="SK-1***" />
+          <Text TextId="s_SKModuleInfo" Value="SK I/O Device. See Users Manual for Detail." />
+          <Text TextId="s_GENEModuleName" Value="Generic Device" />
+          <Text TextId="s_GENEModuleInfo" Value="Generic I/O Device. See Users Manual for Detail." />
+          <!-- General -->
+          <Text TextId="s_DLModules" Value="DL-PN1" />
+          <Text TextId="s_SlaveModules" Value="Slave Modules" />
+        </PrimaryLanguage>
+      </ExternalTextList>
+    </ApplicationProcess>
+  </ProfileBody>
+</ISO15745Profile>

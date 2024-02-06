@@ -1,0 +1,760 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-v2.3.xsd">
+  <ProfileHeader>
+    <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+    <ProfileRevision>1.00</ProfileRevision>
+    <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+    <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+    <ProfileClassID>Device</ProfileClassID>
+    <ISO15745Reference>
+      <ISO15745Part>4</ISO15745Part>
+      <ISO15745Edition>1</ISO15745Edition>
+      <ProfileTechnology>GSDML</ProfileTechnology>
+    </ISO15745Reference>
+  </ProfileHeader>
+  <ProfileBody>
+    <DeviceIdentity DeviceID="0x0003" VendorID="0x016D">
+      <InfoText TextId="TOK_DevIdent_InfoText" />
+      <VendorName Value="KUNBUS GmbH" />
+    </DeviceIdentity>
+    <DeviceFunction>
+      <Family MainFamily="I/O" ProductFamily="KUNBUS DF-Profinet-IO" />
+    </DeviceFunction>
+    <ApplicationProcess>
+      <DeviceAccessPointList>
+        <DeviceAccessPointItem ID="DIM 1" FixedInSlots="0" PhysicalSlots="0..128" MinDeviceInterval="32" ModuleIdentNumber="0x0000007B" DNS_CompatibleName="df-profinet-io-device" ImplementationType="SOFTWARE" ObjectUUID_LocalIndex="1" AddressAssignment="DCP;LOCAL" DeviceAccessSupported="true" SharedDeviceSupported="true" NameOfStationNotTransferable="true" MultipleWriteSupported="true" LLDP_NoD_Supported="false" ResetToFactoryModes="2" PNIO_Version="V2.3">
+          <ModuleInfo>
+            <Name TextId="TOK_DF_PROFINET_IO" />
+            <InfoText TextId="TOK_ModInfo_InfoTextId_DAP" />
+            <VendorName Value="KUNBUS GmbH" />
+            <OrderNumber Value="0" />
+            <HardwareRelease Value="0" />
+            <SoftwareRelease Value="0" />
+          </ModuleInfo>
+          <CertificationInfo ConformanceClass="A" ApplicationClass="" NetloadClass="I">
+          </CertificationInfo>
+          <SubslotList>
+            <SubslotItem SubslotNumber="32768" TextId="TOK_Subslot_8000" /> 
+            <SubslotItem SubslotNumber="32769" TextId="TOK_Subslot_8001" /> 
+          </SubslotList>
+          <IOConfigData MaxInputLength="1440" MaxOutputLength="1440" />
+          <UseableModules>
+            <ModuleItemRef ModuleItemTarget="1" AllowedInSlots="1..128" />
+            <ModuleItemRef ModuleItemTarget="2" AllowedInSlots="1..128" />
+            <ModuleItemRef ModuleItemTarget="3" AllowedInSlots="1..128" />
+            <ModuleItemRef ModuleItemTarget="4" AllowedInSlots="1..128" />
+            <ModuleItemRef ModuleItemTarget="5" AllowedInSlots="1..128" />
+            <ModuleItemRef ModuleItemTarget="6" AllowedInSlots="1..128" />
+            <ModuleItemRef ModuleItemTarget="7" AllowedInSlots="1..128" />
+            <ModuleItemRef ModuleItemTarget="8" AllowedInSlots="1..128" />
+            <ModuleItemRef ModuleItemTarget="9" AllowedInSlots="1..128" />
+            
+            <ModuleItemRef ModuleItemTarget="16" AllowedInSlots="1..128" />
+            <ModuleItemRef ModuleItemTarget="17" AllowedInSlots="1..128" />
+            <ModuleItemRef ModuleItemTarget="18" AllowedInSlots="1..128" />
+            <ModuleItemRef ModuleItemTarget="19" AllowedInSlots="1..128" />
+            <ModuleItemRef ModuleItemTarget="20" AllowedInSlots="1..128" />
+            <ModuleItemRef ModuleItemTarget="21" AllowedInSlots="1..128" />
+            <ModuleItemRef ModuleItemTarget="22" AllowedInSlots="1..128" />
+            <ModuleItemRef ModuleItemTarget="23" AllowedInSlots="1..128" />
+            <ModuleItemRef ModuleItemTarget="24" AllowedInSlots="1..128" />
+            
+            <ModuleItemRef ModuleItemTarget="32" AllowedInSlots="1..128" />
+            <ModuleItemRef ModuleItemTarget="33" AllowedInSlots="1..128" />
+            <ModuleItemRef ModuleItemTarget="34" AllowedInSlots="1..128" />
+            <ModuleItemRef ModuleItemTarget="35" AllowedInSlots="1..128" />
+            <ModuleItemRef ModuleItemTarget="36" AllowedInSlots="1..128" />
+            <ModuleItemRef ModuleItemTarget="37" AllowedInSlots="1..128" />
+            <ModuleItemRef ModuleItemTarget="38" AllowedInSlots="1..128" />
+            <ModuleItemRef ModuleItemTarget="39" AllowedInSlots="1..128" />
+            <ModuleItemRef ModuleItemTarget="40" AllowedInSlots="1..128" />
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DIM 1" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4">
+              <IOData IOCS_Length="1" IOPS_Length="1" />
+              <ModuleInfo>
+                <Name TextId="TOK_DF_PROFINET_IO" />
+                <InfoText TextId="TOK_ModInfo_InfoTextId_DAP" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem ID="IDS_1I" SubslotNumber="32768" SubmoduleIdentNumber="0x00008000" TextId="DInterface1" SupportedRT_Classes="RT_CLASS_1" IsochroneModeSupported="false" SupportedProtocols="LLDP" SupportedMibs="" DCP_BoundarySupported="true" PTP_BoundarySupported="true">
+              <ApplicationRelations NumberOfAR="20" NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" StartupMode="Legacy;Advanced">
+                <TimingProperties SendClock="32" ReductionRatio="1 2 4 8 16 32 64 128 256 512" />
+              </ApplicationRelations>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem ID="IDS_1P" SubslotNumber="32769" SubmoduleIdentNumber="0x00008001" TextId="Port1" MAUTypes="16" />
+          </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1" />
+          </Graphics>
+        </DeviceAccessPointItem>
+      </DeviceAccessPointList>
+      <ModuleList>
+        <ModuleItem ID="1" ModuleIdentNumber="0x00000020">
+          <ModuleInfo CategoryRef="DIO Module">
+            <Name TextId="DIO_1_1" />
+            <InfoText TextId="DIO_1_1" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4">              
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input>
+                  <DataItem TextId="DI_1" DataType="OctetString" Length="1" UseAsBits="true"/>
+                </Input>
+                <Output>
+                  <DataItem TextId="DO_1" DataType="OctetString" Length="1" UseAsBits="true"/>
+                </Output>
+              </IOData>          
+              <ModuleInfo>
+                <Name TextId="DIO_1_1" />
+                <InfoText TextId="DIO_1_1" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        
+        <ModuleItem ID="2" ModuleIdentNumber="0x00000021">
+          <ModuleInfo CategoryRef="DIO Module">
+            <Name TextId="DIO_2_2" />
+            <InfoText TextId="DIO_2_2" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="2" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4">              
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input>
+                  <DataItem TextId="DI_2" DataType="OctetString" Length="2" UseAsBits="true"/>
+                </Input>
+                <Output>
+                  <DataItem TextId="DO_2" DataType="OctetString" Length="2" UseAsBits="true"/>
+                </Output>
+              </IOData>          
+              <ModuleInfo>
+                <Name TextId="DIO_2_2" />
+                <InfoText TextId="DIO_2_2" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+              
+        <ModuleItem ID="3" ModuleIdentNumber="0x00000022">
+          <ModuleInfo CategoryRef="DIO Module">
+            <Name TextId="DIO_4_4" />
+            <InfoText TextId="DIO_4_4" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="3" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4">              
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input>
+                  <DataItem TextId="DI_4" DataType="OctetString" Length="4" UseAsBits="true"/>
+                </Input>
+                <Output>
+                  <DataItem TextId="DO_4" DataType="OctetString" Length="4" UseAsBits="true"/>
+                </Output>
+              </IOData>          
+              <ModuleInfo>
+                <Name TextId="DIO_4_4" />
+                <InfoText TextId="DIO_4_4" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+              
+        <ModuleItem ID="4" ModuleIdentNumber="0x00000023">
+          <ModuleInfo CategoryRef="DIO Module">
+            <Name TextId="DIO_8_8" />
+            <InfoText TextId="DIO_8_8" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="4" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4">              
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input>
+                  <DataItem TextId="DI_8" DataType="OctetString" Length="8" UseAsBits="true"/>
+                </Input>
+                <Output>
+                  <DataItem TextId="DO_8" DataType="OctetString" Length="8" UseAsBits="true"/>
+                </Output>
+              </IOData>          
+              <ModuleInfo>
+                <Name TextId="DIO_8_8" />
+                <InfoText TextId="DIO_8_8" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+              
+        <ModuleItem ID="5" ModuleIdentNumber="0x00000024">
+          <ModuleInfo CategoryRef="DIO Module">
+            <Name TextId="DIO_16_16" />
+            <InfoText TextId="DIO_16_16" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="5" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4">              
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input>
+                  <DataItem TextId="DI_16" DataType="OctetString" Length="16" UseAsBits="true"/>
+                </Input>
+                <Output>
+                  <DataItem TextId="DO_16" DataType="OctetString" Length="16" UseAsBits="true"/>
+                </Output>
+              </IOData>          
+              <ModuleInfo>
+                <Name TextId="DIO_16_16" />
+                <InfoText TextId="DIO_16_16" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+              
+        <ModuleItem ID="6" ModuleIdentNumber="0x00000025">
+          <ModuleInfo CategoryRef="DIO Module">
+            <Name TextId="DIO_32_32" />
+            <InfoText TextId="DIO_32_32" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="6" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4">              
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input>
+                  <DataItem TextId="DI_32" DataType="OctetString" Length="32" UseAsBits="true"/>
+                </Input>
+                <Output>
+                  <DataItem TextId="DO_32" DataType="OctetString" Length="32" UseAsBits="true"/>
+                </Output>
+              </IOData>          
+              <ModuleInfo>
+                <Name TextId="DIO_32_32" />
+                <InfoText TextId="DIO_32_32" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+              
+        <ModuleItem ID="7" ModuleIdentNumber="0x00000026">
+          <ModuleInfo CategoryRef="DIO Module">
+            <Name TextId="DIO_64_64" />
+            <InfoText TextId="DIO_64_64" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="7" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4">              
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input>
+                  <DataItem TextId="DI_64" DataType="OctetString" Length="64" UseAsBits="true"/>
+                </Input>
+                <Output>
+                  <DataItem TextId="DO_64" DataType="OctetString" Length="64" UseAsBits="true"/>
+                </Output>
+              </IOData>          
+              <ModuleInfo>
+                <Name TextId="DIO_64_64" />
+                <InfoText TextId="DIO_64_64" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+              
+        <ModuleItem ID="8" ModuleIdentNumber="0x00000027">
+          <ModuleInfo CategoryRef="DIO Module">
+            <Name TextId="DIO_128_128" />
+            <InfoText TextId="DIO_128_128" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="8" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4">              
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input>
+                  <DataItem TextId="DI_128" DataType="OctetString" Length="128" UseAsBits="true"/>
+                </Input>
+                <Output>
+                  <DataItem TextId="DO_128" DataType="OctetString" Length="128" UseAsBits="true"/>
+                </Output>
+              </IOData>          
+              <ModuleInfo>
+                <Name TextId="DIO_128_128" />
+                <InfoText TextId="DIO_128_128" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+              
+        <ModuleItem ID="9" ModuleIdentNumber="0x00000028">
+          <ModuleInfo CategoryRef="DIO Module">
+            <Name TextId="DIO_256_256" />
+            <InfoText TextId="DIO_256_256" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="9" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4">              
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input>
+                  <DataItem TextId="DI_256" DataType="OctetString" Length="256" UseAsBits="true"/>
+                </Input>
+                <Output>
+                  <DataItem TextId="DO_256" DataType="OctetString" Length="256" UseAsBits="true"/>
+                </Output>
+              </IOData>          
+              <ModuleInfo>
+                <Name TextId="DIO_256_256" />
+                <InfoText TextId="DIO_256_256" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+              
+        <ModuleItem ID="16" ModuleIdentNumber="0x00000030">
+          <ModuleInfo CategoryRef="DI Module">
+            <Name TextId="DI_1" />
+            <InfoText TextId="DI_1" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="16" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4">              
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input>
+                  <DataItem TextId="DI_1" DataType="OctetString" Length="1" UseAsBits="true"/>
+                </Input>
+              </IOData>          
+              <ModuleInfo>
+                <Name TextId="DI_1" />
+                <InfoText TextId="DI_1" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+              
+        <ModuleItem ID="17" ModuleIdentNumber="0x00000031">
+          <ModuleInfo CategoryRef="DI Module">
+            <Name TextId="DI_2" />
+            <InfoText TextId="DI_2" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="17" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4">              
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input>
+                  <DataItem TextId="DI_2" DataType="OctetString" Length="2" UseAsBits="true"/>
+                </Input>
+              </IOData>          
+              <ModuleInfo>
+                <Name TextId="DI_2" />
+                <InfoText TextId="DI_2" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+              
+        <ModuleItem ID="18" ModuleIdentNumber="0x00000032">
+          <ModuleInfo CategoryRef="DI Module">
+            <Name TextId="DI_4" />
+            <InfoText TextId="DI_4" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="18" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4">              
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input>
+                  <DataItem TextId="DI_4" DataType="OctetString" Length="4" UseAsBits="true"/>
+                </Input>
+              </IOData>          
+              <ModuleInfo>
+                <Name TextId="DI_4" />
+                <InfoText TextId="DI_4" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+              
+        <ModuleItem ID="19" ModuleIdentNumber="0x00000033">
+          <ModuleInfo CategoryRef="DI Module">
+            <Name TextId="DI_8" />
+            <InfoText TextId="DI_8" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="19" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4">              
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input>
+                  <DataItem TextId="DI_8" DataType="OctetString" Length="8" UseAsBits="true"/>
+                </Input>
+              </IOData>          
+              <ModuleInfo>
+                <Name TextId="DI_8" />
+                <InfoText TextId="DI_8" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+              
+        <ModuleItem ID="20" ModuleIdentNumber="0x00000034">
+          <ModuleInfo CategoryRef="DI Module">
+            <Name TextId="DI_16" />
+            <InfoText TextId="DI_16" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="20" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4">              
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input>
+                  <DataItem TextId="DI_16" DataType="OctetString" Length="16" UseAsBits="true"/>
+                </Input>
+              </IOData>          
+              <ModuleInfo>
+                <Name TextId="DI_16" />
+                <InfoText TextId="DI_16" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+              
+        <ModuleItem ID="21" ModuleIdentNumber="0x00000035">
+          <ModuleInfo CategoryRef="DI Module">
+            <Name TextId="DI_32" />
+            <InfoText TextId="DI_32" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="21" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4">              
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input>
+                  <DataItem TextId="DI_32" DataType="OctetString" Length="32" UseAsBits="true"/>
+                </Input>
+              </IOData>          
+              <ModuleInfo>
+                <Name TextId="DI_32" />
+                <InfoText TextId="DI_32" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+              
+        <ModuleItem ID="22" ModuleIdentNumber="0x00000036">
+          <ModuleInfo CategoryRef="DI Module">
+            <Name TextId="DI_64" />
+            <InfoText TextId="DI_64" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="22" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4">              
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input>
+                  <DataItem TextId="DI_64" DataType="OctetString" Length="64" UseAsBits="true"/>
+                </Input>
+              </IOData>          
+              <ModuleInfo>
+                <Name TextId="DI_64" />
+                <InfoText TextId="DI_64" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+              
+        <ModuleItem ID="23" ModuleIdentNumber="0x00000037">
+          <ModuleInfo CategoryRef="DI Module">
+            <Name TextId="DI_128" />
+            <InfoText TextId="DI_128" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="23" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4">              
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input>
+                  <DataItem TextId="DI_128" DataType="OctetString" Length="128" UseAsBits="true"/>
+                </Input>
+              </IOData>          
+              <ModuleInfo>
+                <Name TextId="DI_128" />
+                <InfoText TextId="DI_128" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+              
+        <ModuleItem ID="24" ModuleIdentNumber="0x00000038">
+          <ModuleInfo CategoryRef="DI Module">
+            <Name TextId="DI_256" />
+            <InfoText TextId="DI_256" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="24" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4">              
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input>
+                  <DataItem TextId="DI_256" DataType="OctetString" Length="256" UseAsBits="true"/>
+                </Input>
+              </IOData>          
+              <ModuleInfo>
+                <Name TextId="DI_256" />
+                <InfoText TextId="DI_256" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+              
+        <ModuleItem ID="32" ModuleIdentNumber="0x00000040">
+          <ModuleInfo CategoryRef="DO Module">
+            <Name TextId="DO_1" />
+            <InfoText TextId="DO_1" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="32" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4">              
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Output>
+                  <DataItem TextId="DO_1" DataType="OctetString" Length="1" UseAsBits="true"/>
+                </Output>
+              </IOData>          
+              <ModuleInfo>
+                <Name TextId="DO_1" />
+                <InfoText TextId="DO_1" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+              
+        <ModuleItem ID="33" ModuleIdentNumber="0x00000041">
+          <ModuleInfo CategoryRef="DO Module">
+            <Name TextId="DO_2" />
+            <InfoText TextId="DO_2" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="33" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4">              
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Output>
+                  <DataItem TextId="DO_2" DataType="OctetString" Length="2" UseAsBits="true"/>
+                </Output>
+              </IOData>          
+              <ModuleInfo>
+                <Name TextId="DO_2" />
+                <InfoText TextId="DO_2" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+              
+        <ModuleItem ID="34" ModuleIdentNumber="0x00000042">
+          <ModuleInfo CategoryRef="DO Module">
+            <Name TextId="DO_4" />
+            <InfoText TextId="DO_4" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="34" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4">              
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Output>
+                  <DataItem TextId="DO_4" DataType="OctetString" Length="4" UseAsBits="true"/>
+                </Output>
+              </IOData>          
+              <ModuleInfo>
+                <Name TextId="DO_4" />
+                <InfoText TextId="DO_4" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+              
+        <ModuleItem ID="35" ModuleIdentNumber="0x00000043">
+          <ModuleInfo CategoryRef="DO Module">
+            <Name TextId="DO_8" />
+            <InfoText TextId="DO_8" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="35" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4">              
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Output>
+                  <DataItem TextId="DO_8" DataType="OctetString" Length="8" UseAsBits="true"/>
+                </Output>
+              </IOData>          
+              <ModuleInfo>
+                <Name TextId="DO_8" />
+                <InfoText TextId="DO_8" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+              
+        <ModuleItem ID="36" ModuleIdentNumber="0x00000044">
+          <ModuleInfo CategoryRef="DO Module">
+            <Name TextId="DO_16" />
+            <InfoText TextId="DO_16" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="36" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4">              
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Output>
+                  <DataItem TextId="DO_16" DataType="OctetString" Length="16" UseAsBits="true"/>
+                </Output>
+              </IOData>          
+              <ModuleInfo>
+                <Name TextId="DO_16" />
+                <InfoText TextId="DO_16" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+              
+        <ModuleItem ID="37" ModuleIdentNumber="0x00000045">
+          <ModuleInfo CategoryRef="DO Module">
+            <Name TextId="DO_32" />
+            <InfoText TextId="DO_32" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="37" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4">              
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Output>
+                  <DataItem TextId="DO_32" DataType="OctetString" Length="32" UseAsBits="true"/>
+                </Output>
+              </IOData>          
+              <ModuleInfo>
+                <Name TextId="DO_32" />
+                <InfoText TextId="DO_32" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+              
+        <ModuleItem ID="38" ModuleIdentNumber="0x00000046">
+          <ModuleInfo CategoryRef="DO Module">
+            <Name TextId="DO_64" />
+            <InfoText TextId="DO_64" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="38" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4">              
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Output>
+                  <DataItem TextId="DO_64" DataType="OctetString" Length="64" UseAsBits="true"/>
+                </Output>
+              </IOData>          
+              <ModuleInfo>
+                <Name TextId="DO_64" />
+                <InfoText TextId="DO_64" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+              
+        <ModuleItem ID="39" ModuleIdentNumber="0x00000047">
+          <ModuleInfo CategoryRef="DO Module">
+            <Name TextId="DO_128" />
+            <InfoText TextId="DO_128" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="39" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4">              
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Output>
+                  <DataItem TextId="DO_128" DataType="OctetString" Length="128" UseAsBits="true"/>
+                </Output>
+              </IOData>          
+              <ModuleInfo>
+                <Name TextId="DO_128" />
+                <InfoText TextId="DO_128" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+              
+        <ModuleItem ID="40" ModuleIdentNumber="0x00000048">
+          <ModuleInfo CategoryRef="DO Module">
+            <Name TextId="DO_256" />
+            <InfoText TextId="DO_256" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="40" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4">              
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Output>
+                  <DataItem TextId="DO_256" DataType="OctetString" Length="256" UseAsBits="true"/>
+                </Output>
+              </IOData>          
+              <ModuleInfo>
+                <Name TextId="DO_256" />
+                <InfoText TextId="DO_256" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+      </ModuleList>
+      <ChannelDiagList>
+          <ChannelDiagItem ErrorType="20481">
+              <Name TextId="This channel has an active error" />
+          </ChannelDiagItem>
+      </ChannelDiagList>
+      <GraphicsList>
+        <GraphicItem ID="1" GraphicFile="GSDML-016D-0003-KunbusDfProfinetIO" />
+      </GraphicsList>
+			<CategoryList>
+        <CategoryItem ID="DIO Module" TextId="DIO_Module"/>
+        <CategoryItem ID="DI Module" TextId="DI_Module"/>
+				<CategoryItem ID="DO Module" TextId="DO_Module"/>
+			</CategoryList>
+      <ExternalTextList>
+        <PrimaryLanguage>
+          <Text TextId="TOK_Subslot_8000" Value="X1" /> 
+          <Text TextId="TOK_Subslot_8001" Value="X1 P1" /> 
+          <Text TextId="TOK_DevIdent_InfoText" Value="DF-Profinet-IO" />
+          <Text TextId="TOK_DF_PROFINET_IO" Value="DF-Profinet-IO" />
+          <Text TextId="TOK_ModInfo_InfoTextId_DAP" Value="KUNBUS DF-Profinet-IO Device" />
+          <Text TextId="DInterface1" Value="Interface1"/>
+          <Text TextId="Port1" Value="Port1"/>
+          <Text TextId="DIO_Module" Value="In/Out Modules"/>
+          <Text TextId="DI_Module" Value="Input Modules"/>
+          <Text TextId="DO_Module" Value="Output Modules"/>
+          <Text TextId="DIO_1_1"    Value="In/Out    1/1 Byte"/>
+          <Text TextId="DIO_2_2"    Value="In/Out    2/2 Byte"/>
+          <Text TextId="DIO_4_4"    Value="In/Out    4/4 Byte"/>
+          <Text TextId="DIO_8_8"    Value="In/Out    8/8 Byte"/>
+          <Text TextId="DIO_16_16"  Value="In/Out   16/16 Byte"/>
+          <Text TextId="DIO_32_32"  Value="In/Out   32/32 Byte"/>
+          <Text TextId="DIO_64_64"  Value="In/Out   64/64 Byte"/>
+          <Text TextId="DIO_128_128" Value="In/Out 128/128 Byte"/>
+          <Text TextId="DIO_256_256" Value="In/Out 256/256 Byte"/>
+          <Text TextId="DI_1"   Value="In   1 Byte"/>
+          <Text TextId="DI_2"   Value="In   2 Byte"/>
+          <Text TextId="DI_4"   Value="In   4 Byte"/>
+          <Text TextId="DI_8"   Value="In   8 Byte"/>
+          <Text TextId="DI_16"  Value="In  16 Byte"/>
+          <Text TextId="DI_32"  Value="In  32 Byte"/>
+          <Text TextId="DI_64"  Value="In  64 Byte"/>
+          <Text TextId="DI_128" Value="In 128 Byte"/>
+          <Text TextId="DI_256" Value="In 256 Byte"/>
+          <Text TextId="DO_1"   Value="Out   1 Byte"/>
+          <Text TextId="DO_2"   Value="Out   2 Byte"/>
+          <Text TextId="DO_4"   Value="Out   4 Byte"/>
+          <Text TextId="DO_8"   Value="Out   8 Byte"/>
+          <Text TextId="DO_16"  Value="Out  16 Byte"/>
+          <Text TextId="DO_32"  Value="Out  32 Byte"/>
+          <Text TextId="DO_64"  Value="Out  64 Byte"/>
+          <Text TextId="DO_128" Value="Out 128 Byte"/>
+          <Text TextId="DO_256" Value="Out 256 Byte"/>
+          <Text Value="This channel has an active error" TextId="This channel has an active error" />
+        </PrimaryLanguage>
+        <Language xml:lang="de">
+          <Text TextId="TOK_Subslot_8000" Value="X1" /> 
+          <Text TextId="TOK_Subslot_8001" Value="X1 P1" /> 
+          <Text TextId="TOK_DevIdent_InfoText" Value="DF-Profinet-IO" />
+          <Text TextId="TOK_DF_PROFINET_IO" Value="DF-Profinet-IO" />
+          <Text TextId="TOK_ModInfo_InfoTextId_DAP" Value="KUNBUS DF-Profinet-IO Device" />
+          <Text TextId="DInterface1" Value="Interface1"/>
+          <Text TextId="Port1" Value="Port1"/>
+          <Text TextId="DIO_Module" Value="Ein-/Augabemodule"/>
+          <Text TextId="DI_Module" Value="Eingabemodule"/>
+          <Text TextId="DO_Module" Value="Ausgabemodule"/>
+          <Text TextId="DIO_1_1"      Value="Ein-/Ausgang   1/1 Byte"/>
+          <Text TextId="DIO_2_2"      Value="Ein-/Ausgang   2/2 Byte"/>
+          <Text TextId="DIO_4_4"      Value="Ein-/Ausgang   4/4 Byte"/>
+          <Text TextId="DIO_8_8"      Value="Ein-/Ausgang   8/8 Byte"/>
+          <Text TextId="DIO_16_16"    Value="Ein-/Ausgang  16/16 Byte"/>
+          <Text TextId="DIO_32_32"    Value="Ein-/Ausgang  32/32 Byte"/>
+          <Text TextId="DIO_64_64"    Value="Ein-/Ausgang  64/64 Byte"/>
+          <Text TextId="DIO_128_128"  Value="Ein-/Ausgang 128/128 Byte"/>
+          <Text TextId="DIO_256_256"  Value="Ein-/Ausgang 256/256 Byte"/>
+          <Text TextId="DI_1"   Value="Eingang   1 Byte"/>
+          <Text TextId="DI_2"   Value="Eingang   2 Byte"/>
+          <Text TextId="DI_4"   Value="Eingang   4 Byte"/>
+          <Text TextId="DI_8"   Value="Eingang   8 Byte"/>
+          <Text TextId="DI_16"  Value="Eingang  16 Byte"/>
+          <Text TextId="DI_32"  Value="Eingang  32 Byte"/>
+          <Text TextId="DI_64"  Value="Eingang  64 Byte"/>
+          <Text TextId="DI_128" Value="Eingang 128 Byte"/>
+          <Text TextId="DI_256" Value="Eingang 256 Byte"/>
+          <Text TextId="DO_1"   Value="Ausgang   1 Byte"/>
+          <Text TextId="DO_2"   Value="Ausgang   2 Byte"/>
+          <Text TextId="DO_4"   Value="Ausgang   4 Byte"/>
+          <Text TextId="DO_8"   Value="Ausgang   8 Byte"/>
+          <Text TextId="DO_16"  Value="Ausgang  16 Byte"/>
+          <Text TextId="DO_32"  Value="Ausgang  32 Byte"/>
+          <Text TextId="DO_64"  Value="Ausgang  64 Byte"/>
+          <Text TextId="DO_128" Value="Ausgang 128 Byte"/>
+          <Text TextId="DO_256" Value="Ausgang 256 Byte"/>
+          <Text Value="Bei diesem Kanal liegt ein Fehler vor" TextId="This channel has an active error" />
+        </Language>
+      </ExternalTextList>
+    </ApplicationProcess>
+  </ProfileBody>
+</ISO15745Profile>

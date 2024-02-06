@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ISO15745Profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\XSD\GSDML-DeviceProfile-V2.35.xsd" xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile">
+    <ProfileHeader>
+        <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+        <ProfileRevision>1.00</ProfileRevision>
+        <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+        <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+        <ProfileClassID>Device</ProfileClassID>
+        <ISO15745Reference>
+            <ISO15745Part>4</ISO15745Part>
+            <ISO15745Edition>1</ISO15745Edition>
+            <ProfileTechnology>GSDML</ProfileTechnology>
+        </ISO15745Reference>
+    </ProfileHeader>
+    <ProfileBody>
+        <DeviceIdentity VendorID="0x002A" DeviceID="0x114">
+            <InfoText TextId="EmptyString" />
+            <VendorName Value="SIEMENS" />
+        </DeviceIdentity>
+        <DeviceFunction>
+            <Family MainFamily="PLCs" ProductFamily="CPU 1512SP F-1 PN" />
+        </DeviceFunction>
+        <ApplicationProcess>
+            <DeviceAccessPointList>
+                <DeviceAccessPointItem ID="DAP1" DNS_CompatibleName="wp12" PhysicalSlots="1" FixedInSlots="1" DeviceAccessSupported="true" NumberOfDeviceAccessAR="1" ModuleIdentNumber="0x10B4322" ObjectUUID_LocalIndex="100" RequiredSchemaVersion="V2.31" MinDeviceInterval="32" MaxSupportedRecordSize="32768" NameOfStationNotTransferable="false" AddressAssignment="LOCAL" MultipleWriteSupported="true" IOXS_Required="false" LLDP_NoD_Supported="true" CheckDeviceID_Allowed="true" ResetToFactoryModes="2" PNIO_Version="V2.35">
+                    <ModuleInfo>
+                        <Name TextId="DAP_Name_ID" />
+                        <InfoText TextId="DAP_Description_ID" />
+                        <OrderNumber Value="6ES7 512-1SK01-0AB0" />
+                        <SoftwareRelease Value="V2.8" />
+                    </ModuleInfo>
+                    <CertificationInfo ConformanceClass="B" ApplicationClass="" NetloadClass="III" />
+                    <SubslotList>
+                        <SubslotItem SubslotNumber="32768" TextId="Interface_SubslotLabel" />
+                        <SubslotItem SubslotNumber="32771" TextId="Port32771_SubslotLabel" />
+                        <SubslotItem SubslotNumber="32769" TextId="Port32769_SubslotLabel" />
+                        <SubslotItem SubslotNumber="32770" TextId="Port32770_SubslotLabel" />
+                    </SubslotList>
+                    <IOConfigData MaxInputLength="2" MaxOutputLength="1" MaxDataLength="3" />
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem SubmoduleIdentNumber="0x29BF" FixedInSubslots="1000" ID="VSM_2_1000" Writeable_IM_Records="1 2 3" MayIssueProcessAlarm="false">
+                            <IOData>
+                                <Input>
+                                    <DataItem Length="1" DataType="OctetString" TextId="VSM_2_1000" />
+                                </Input>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="VSM_2_1000_Name" />
+                                <InfoText TextId="VSM_2_1000_Comment" />
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                    <SystemDefinedSubmoduleList>
+                        <InterfaceSubmoduleItem ID="Interface" SubslotNumber="32768" SubmoduleIdentNumber="0xf00" TextId="Interface" NetworkComponentDiagnosisSupported="false" ParameterizationDisallowed="true" SupportedProtocols="SNMP;LLDP" PTP_BoundarySupported="true" DCP_BoundarySupported="true" MaxFrameStartTime="1600" MinNRT_Gap="960" SupportedRT_Classes="RT_CLASS_1" PDEV_CombinedObjectSupported="true" DelayMeasurementSupported="true">
+                            <ApplicationRelations StartupMode="Advanced;Legacy" NumberOfAR="1">
+                                <TimingProperties PreferredSendClock="32" SendClock="32" ReductionRatio="1" ReductionRatioPow2="2 4 8 16 32 64 128 256 512" />
+                            </ApplicationRelations>
+                            <MediaRedundancy SupportedRole="Manager (Auto);Manager;Client" MaxMRP_Instances="1" AdditionalForwardingRulesSupported="true" />
+                        </InterfaceSubmoduleItem>
+                        <PortSubmoduleItem ID="Port_3" TextId="Port_3" SubslotNumber="32771" SubmoduleIdentNumber="0xf03" ParameterizationDisallowed="true" MaxPortRxDelay="330" MaxPortTxDelay="58" MAUTypes="16" PortDeactivationSupported="true" CheckMAUTypeSupported="true" CheckMAUTypeDifferenceSupported="true">
+                            <MAUTypeList>
+                                <MAUTypeItem Value="16" AdjustSupported="true" />
+                            </MAUTypeList>
+                        </PortSubmoduleItem>
+                        <PortSubmoduleItem ID="Port_1" TextId="Port_1" SubslotNumber="32769" SubmoduleIdentNumber="0xf01" ParameterizationDisallowed="true" MaxPortRxDelay="330" MaxPortTxDelay="58" MAUTypes="16" PortDeactivationSupported="true" CheckMAUTypeSupported="true" SupportsRingportConfig="true" IsDefaultRingport="true" CheckMAUTypeDifferenceSupported="true">
+                            <MAUTypeList>
+                                <MAUTypeItem Value="16" AdjustSupported="true" />
+                            </MAUTypeList>
+                        </PortSubmoduleItem>
+                        <PortSubmoduleItem ID="Port_2" TextId="Port_2" SubslotNumber="32770" SubmoduleIdentNumber="0xf02" ParameterizationDisallowed="true" MaxPortRxDelay="330" MaxPortTxDelay="58" MAUTypes="16" PortDeactivationSupported="true" CheckMAUTypeSupported="true" SupportsRingportConfig="true" IsDefaultRingport="true" CheckMAUTypeDifferenceSupported="true">
+                            <MAUTypeList>
+                                <MAUTypeItem Value="16" AdjustSupported="true" />
+                            </MAUTypeList>
+                        </PortSubmoduleItem>
+                    </SystemDefinedSubmoduleList>
+                </DeviceAccessPointItem>
+            </DeviceAccessPointList>
+            <ExternalTextList>
+                <PrimaryLanguage>
+                    <Text TextId="EmptyString" Value="" />
+                    <Text TextId="Interface_SubslotLabel" Value="X1" />
+                    <Text TextId="Port32771_SubslotLabel" Value="Port3" />
+                    <Text TextId="Port32769_SubslotLabel" Value="Port1" />
+                    <Text TextId="Port32770_SubslotLabel" Value="Port2" />
+                    <Text TextId="DAP_Name_ID" Value="WP12" />
+                    <Text TextId="DAP_Description_ID" Value="Fail-safe CPU with work memory 300 KB code and 1 MB data; can be used for safety applications; supports consistent safety upload; supports PROFIsafe V2; 48 ns bit operation time; 5-stage protection concept, technology functions: motion control, closed-loop control, counting &amp; measuring; tracing; Runtime options; transport protocol TCP/IP, secure Open User Communication, S7 communication, IP forwarding, Web server, DNS client, OPC UA: Server DA, Client DA, methods, companion specifications; PROFINET IO controller, supports RT/IRT, performance upgrade PROFINET V2.3, 3 ports, I-Device, MRP, MRPD, isochronous mode, firmware V2.8" />
+                    <Text TextId="Interface" Value="Interface" />
+                    <Text TextId="Port_3" Value="Port 3" />
+                    <Text TextId="Port_1" Value="Port 1" />
+                    <Text TextId="Port_2" Value="Port 2" />
+                    <Text TextId="VSM_2_1000_Name" Value="WP12" />
+                    <Text TextId="VSM_2_1000_Comment" Value="" />
+                    <Text TextId="VSM_2_1000" Value="VSM_2_1000" />
+                </PrimaryLanguage>
+            </ExternalTextList>
+        </ApplicationProcess>
+    </ProfileBody>
+</ISO15745Profile>

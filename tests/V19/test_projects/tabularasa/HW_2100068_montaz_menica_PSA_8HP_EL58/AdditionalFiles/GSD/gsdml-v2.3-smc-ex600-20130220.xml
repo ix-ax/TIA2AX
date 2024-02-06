@@ -1,0 +1,1332 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\XSD\GSDML-DeviceProfile-v2.3.xsd">
+  <ProfileHeader>
+    <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+    <ProfileRevision>1.00</ProfileRevision>
+    <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+    <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+    <ProfileClassID>Device</ProfileClassID>
+    <ISO15745Reference>
+      <ISO15745Part>4</ISO15745Part>
+      <ISO15745Edition>1</ISO15745Edition>
+      <ProfileTechnology>GSDML</ProfileTechnology>
+    </ISO15745Reference>
+  </ProfileHeader>
+  <ProfileBody>
+    <DeviceIdentity VendorID="0x0083" DeviceID="0x0008">
+      <InfoText TextId="T_ID_DEV_DESCRIPTION" />
+      <VendorName Value="SMC Corporation" />
+    </DeviceIdentity>
+    <DeviceFunction>
+      <Family MainFamily="Valves" ProductFamily="SMC EX600" />
+    </DeviceFunction>
+    <ApplicationProcess>
+      <DeviceAccessPointList>
+        <DeviceAccessPointItem ID="DAP V2.0" PhysicalSlots="0..10" ModuleIdentNumber="0x00000001" MinDeviceInterval="64" ImplementationType="NP30" DNS_CompatibleName="EX600-SPN" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" ParameterizationSpeedupSupported="true" PowerOnToCommReady="2000" MultipleWriteSupported="true" NameOfStationNotTransferable="true" PNIO_Version="V2.2">
+          <ModuleInfo>
+            <Name TextId="T_ID_DAP_V2" />
+            <InfoText TextId="T_ID_V2_DEV_DESCRIPTION" />
+            <VendorName Value="SMC Corporation" />
+            <OrderNumber Value="EX600-SPN#" />
+          </ModuleInfo>
+          <SubslotList>
+            <SubslotItem SubslotNumber="32768" TextId="T_ID_SS_INTERFACE" />
+            <SubslotItem SubslotNumber="32769" TextId="T_ID_SS_PORT1" />
+            <SubslotItem SubslotNumber="32770" TextId="T_ID_SS_PORT2" />
+          </SubslotList>
+          <IOConfigData MaxInputLength="80" MaxOutputLength="80" />
+          <UseableModules>
+            <!--References to the ModuleList-->
+            <ModuleItemRef ModuleItemTarget="ID_MODULE_VALVE32" AllowedInSlots="1..10" />
+            <ModuleItemRef ModuleItemTarget="ID_MODULE_VALVE32_DIAG" AllowedInSlots="1..10" />
+            <ModuleItemRef ModuleItemTarget="ID_MODULE_DX#B" AllowedInSlots="1..9" />
+            <ModuleItemRef ModuleItemTarget="ID_MODULE_DX#C" AllowedInSlots="1..9" />
+            <ModuleItemRef ModuleItemTarget="ID_MODULE_DX#C1" AllowedInSlots="1..9" />
+            <ModuleItemRef ModuleItemTarget="ID_MODULE_DX#D" AllowedInSlots="1..9" />
+            <ModuleItemRef ModuleItemTarget="ID_MODULE_DX#E" AllowedInSlots="1..9" />
+            <ModuleItemRef ModuleItemTarget="ID_MODULE_DX#F" AllowedInSlots="1..9" />
+            <ModuleItemRef ModuleItemTarget="ID_MODULE_DY#B" AllowedInSlots="1..9" />
+            <ModuleItemRef ModuleItemTarget="ID_MODULE_DY#E" AllowedInSlots="1..9" />
+            <ModuleItemRef ModuleItemTarget="ID_MODULE_DY#F" AllowedInSlots="1..9" />
+            <ModuleItemRef ModuleItemTarget="ID_MODULE_DM#E" AllowedInSlots="1..9" />
+            <ModuleItemRef ModuleItemTarget="ID_MODULE_DM#F" AllowedInSlots="1..9" />
+            <ModuleItemRef ModuleItemTarget="ID_MODULE_AXA" AllowedInSlots="1..9" />
+            <ModuleItemRef ModuleItemTarget="ID_MODULE_AYA" AllowedInSlots="1..9" />
+            <ModuleItemRef ModuleItemTarget="ID_MODULE_AMB" AllowedInSlots="1..9" />
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DAP V2.0" SubmoduleIdentNumber="0x00000001" API="0" Writeable_IM_Records="1 2 3 4">
+              <IOData IOPS_Length="1" IOCS_Length="1" />
+              <RecordDataList />
+              <ModuleInfo>
+                <Name TextId="T_ID_DAP_V2" />
+                <InfoText TextId="T_ID_V2_DEV_DESCRIPTION" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem ID="Interface" SubslotNumber="32768" SubmoduleIdentNumber="0x0002" SupportedRT_Classes="RT_CLASS_1" TextId="T_ID_DAP_INTERFACE_MODULE" DCP_HelloSupported="true" IsochroneModeSupported="false" SupportedMibs="MIB2" SupportedProtocols="SNMP;LLDP">
+              <ApplicationRelations NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="false">
+                <TimingProperties SendClock="32 64 128" ReductionRatio="1 2 4 8 16 32 64 128 256 512" />
+              </ApplicationRelations>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem ID="Port 1" SubslotNumber="32769" SubmoduleIdentNumber="0x0003" MAUType="100BASETXFD" TextId="T_ID_PORT" />
+            <PortSubmoduleItem ID="Port 2" SubslotNumber="32770" SubmoduleIdentNumber="0x0004" MAUType="100BASETXFD" TextId="T_ID_PORT2" />
+          </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="ID_Graph_1" />
+          </Graphics>
+        </DeviceAccessPointItem>
+      </DeviceAccessPointList>
+      <ModuleList>
+        <ModuleItem ID="ID_MODULE_VALVE32" ModuleIdentNumber="0x00000104">
+          <ModuleInfo CategoryRef="CAT_REF_MODULES_SI">
+            <Name TextId="T_ID_MODULE_NAME_VALVE32" />
+            <InfoText TextId="T_ID_INFO_TEXT_VALVE32" />
+            <OrderNumber Value="EX600-SPN" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_VALVE32" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DIGITAL_OUTPUT" UseAsBits="true" />
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DIGITAL_OUTPUT" UseAsBits="true" />
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DIGITAL_OUTPUT" UseAsBits="true" />
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DIGITAL_OUTPUT" UseAsBits="true" />
+                </Output>
+              </IOData>
+              <RecordDataList>
+                <ParameterRecordDataItem Index="1" Length="8" TransferSequence="1">
+                  <Name TextId="T_ID_PRM_UNIT_PARAMETER" />
+                  <Const Data="0x10,0x40,0x00,0x00,0x00,0x00,0x03,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="6" BitOffset="0" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_24V_C" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="6" BitOffset="1" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_24V_D" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="6" DefaultValue="1" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_SHORT_CIRCUIT_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_AUTO_MANUAL" DataType="Bit" ByteOffset="0" BitOffset="4" DefaultValue="1" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_RESTART_AFTER_SHORT_CIRCUIT" />
+                </ParameterRecordDataItem>
+                <ParameterRecordDataItem Index="2" Length="4" TransferSequence="2">
+                  <Name TextId="T_ID_PRM_MONITOR_OPEN_CIRCUIT" />
+                  <Const Data="0x00,0x00,0x00,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="0" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="1" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL1" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="2" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL2" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="3" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL3" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="4" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL4" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="5" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL5" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="6" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL6" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="7" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL7" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="0" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL8" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="1" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL9" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="2" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL10" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="3" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL11" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="4" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL12" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="5" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL13" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="6" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL14" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="7" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL15" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="2" BitOffset="0" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL16" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="2" BitOffset="1" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL17" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="2" BitOffset="2" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL18" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="2" BitOffset="3" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL19" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="2" BitOffset="4" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL20" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="2" BitOffset="5" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL21" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="2" BitOffset="6" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL22" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="2" BitOffset="7" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL23" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="3" BitOffset="0" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL24" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="3" BitOffset="1" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL25" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="3" BitOffset="2" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL26" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="3" BitOffset="3" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL27" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="3" BitOffset="4" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL28" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="3" BitOffset="5" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL29" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="3" BitOffset="6" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL30" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="3" BitOffset="7" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL31" />
+                </ParameterRecordDataItem>
+                <ParameterRecordDataItem Index="3" Length="8" TransferSequence="3">
+                  <Name TextId="T_ID_PRM_FAULT_MODE" />
+                  <Const Data="0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="0" BitOffset="0" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL0" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="0" BitOffset="2" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL1" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="0" BitOffset="4" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL2" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="0" BitOffset="6" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL3" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="1" BitOffset="0" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL4" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="1" BitOffset="2" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL5" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="1" BitOffset="4" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL6" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="1" BitOffset="6" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL7" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="2" BitOffset="0" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL8" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="2" BitOffset="2" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL9" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="2" BitOffset="4" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL10" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="2" BitOffset="6" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL11" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="3" BitOffset="0" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL12" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="3" BitOffset="2" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL13" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="3" BitOffset="4" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL14" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="3" BitOffset="6" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL15" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="4" BitOffset="0" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL16" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="4" BitOffset="2" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL17" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="4" BitOffset="4" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL18" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="4" BitOffset="6" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL19" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="5" BitOffset="0" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL20" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="5" BitOffset="2" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL21" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="5" BitOffset="4" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL22" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="5" BitOffset="6" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL23" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="6" BitOffset="0" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL24" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="6" BitOffset="2" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL25" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="6" BitOffset="4" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL26" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="6" BitOffset="6" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL27" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="7" BitOffset="0" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL28" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="7" BitOffset="2" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL29" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="7" BitOffset="4" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL30" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="7" BitOffset="6" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL31" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="T_ID_SUBMOD_NAME_VALVE32" />
+                <InfoText TextId="T_ID_SUBMOD_INFO_VALVE32" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_MODULE_VALVE32_DIAG" ModuleIdentNumber="0x00000114">
+          <ModuleInfo CategoryRef="CAT_REF_MODULES_SI">
+            <Name TextId="T_ID_MODULE_NAME_VALVE32_DIAG" />
+            <InfoText TextId="T_ID_INFO_TEXT_VALVE32_DIAG" />
+            <OrderNumber Value="EX600-SPN" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_VALVE32_DIAG" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DIAG_INPUT" />
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DIAG_INPUT" />
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DIAG_INPUT" />
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DIAG_INPUT" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DIGITAL_OUTPUT" UseAsBits="true" />
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DIGITAL_OUTPUT" UseAsBits="true" />
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DIGITAL_OUTPUT" UseAsBits="true" />
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DIGITAL_OUTPUT" UseAsBits="true" />
+                </Output>
+              </IOData>
+              <RecordDataList>
+                <ParameterRecordDataItem Index="1" Length="8" TransferSequence="1">
+                  <Name TextId="T_ID_PRM_UNIT_PARAMETER" />
+                  <Const Data="0x10,0x40,0x00,0x00,0x00,0x00,0x03,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="6" BitOffset="0" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_24V_C" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="6" BitOffset="1" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_24V_D" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="6" DefaultValue="1" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_SHORT_CIRCUIT_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_AUTO_MANUAL" DataType="Bit" ByteOffset="0" BitOffset="4" DefaultValue="1" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_RESTART_AFTER_SHORT_CIRCUIT" />
+                </ParameterRecordDataItem>
+                <ParameterRecordDataItem Index="2" Length="4" TransferSequence="2">
+                  <Name TextId="T_ID_PRM_MONITOR_OPEN_CIRCUIT" />
+                  <Const Data="0x00,0x00,0x00,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="0" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="1" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL1" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="2" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL2" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="3" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL3" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="4" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL4" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="5" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL5" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="6" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL6" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="7" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL7" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="0" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL8" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="1" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL9" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="2" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL10" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="3" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL11" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="4" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL12" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="5" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL13" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="6" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL14" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="7" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL15" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="2" BitOffset="0" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL16" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="2" BitOffset="1" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL17" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="2" BitOffset="2" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL18" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="2" BitOffset="3" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL19" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="2" BitOffset="4" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL20" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="2" BitOffset="5" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL21" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="2" BitOffset="6" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL22" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="2" BitOffset="7" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL23" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="3" BitOffset="0" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL24" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="3" BitOffset="1" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL25" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="3" BitOffset="2" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL26" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="3" BitOffset="3" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL27" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="3" BitOffset="4" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL28" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="3" BitOffset="5" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL29" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="3" BitOffset="6" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL30" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="3" BitOffset="7" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL31" />
+                </ParameterRecordDataItem>
+                <ParameterRecordDataItem Index="3" Length="8" TransferSequence="3">
+                  <Name TextId="T_ID_PRM_FAULT_MODE" />
+                  <Const Data="0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="0" BitOffset="0" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL0" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="0" BitOffset="2" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL1" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="0" BitOffset="4" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL2" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="0" BitOffset="6" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL3" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="1" BitOffset="0" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL4" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="1" BitOffset="2" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL5" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="1" BitOffset="4" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL6" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="1" BitOffset="6" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL7" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="2" BitOffset="0" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL8" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="2" BitOffset="2" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL9" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="2" BitOffset="4" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL10" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="2" BitOffset="6" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL11" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="3" BitOffset="0" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL12" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="3" BitOffset="2" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL13" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="3" BitOffset="4" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL14" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="3" BitOffset="6" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL15" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="4" BitOffset="0" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL16" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="4" BitOffset="2" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL17" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="4" BitOffset="4" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL18" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="4" BitOffset="6" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL19" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="5" BitOffset="0" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL20" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="5" BitOffset="2" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL21" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="5" BitOffset="4" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL22" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="5" BitOffset="6" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL23" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="6" BitOffset="0" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL24" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="6" BitOffset="2" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL25" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="6" BitOffset="4" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL26" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="6" BitOffset="6" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL27" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="7" BitOffset="0" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL28" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="7" BitOffset="2" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL29" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="7" BitOffset="4" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL30" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="7" BitOffset="6" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL31" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="T_ID_SUBMOD_NAME_VALVE32_DIAG" />
+                <InfoText TextId="T_ID_SUBMOD_INFO_VALVE32_DIAG" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_MODULE_DX#B" ModuleIdentNumber="0x00000201">
+          <ModuleInfo CategoryRef="CAT_REF_MODULES_DIGITAL">
+            <Name TextId="T_ID_MODULE_NAME_DX#B" />
+            <InfoText TextId="T_ID_INFO_TEXT_DX#B" />
+            <OrderNumber Value="EX600-DX#B" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_DX#B" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DIGITAL_INPUT" UseAsBits="true" />
+                </Input>
+              </IOData>
+              <RecordDataList>
+                <ParameterRecordDataItem Index="1" Length="8" TransferSequence="1">
+                  <Name TextId="T_ID_PRM_UNIT_PARAMETER" />
+                  <Const Data="0x00,0x80,0x01,0x01,0x00,0x00,0x00,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="7" DefaultValue="1" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_SHORT_CIRCUIT_POWER" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="7" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_INRUSH_CURRENT_FILTER" />
+                  <Ref ValueItemTarget="ID_VALUE_FILTERING_TIME" DataType="BitArea" ByteOffset="2" BitOffset="0" BitLength="2" DefaultValue="1" AllowedValues="0 1 2 3" Changeable="true" Visible="true" TextId="T_ID_PRM_INPUT_FILTERING_TIME" />
+                  <Ref ValueItemTarget="ID_VALUE_EXTENTION_TIME" DataType="BitArea" ByteOffset="3" BitOffset="0" BitLength="2" DefaultValue="1" AllowedValues="0 1 2 3" Changeable="true" Visible="true" TextId="T_ID_PRM_INPUT_EXTENTION_TIME" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="T_ID_SUBMOD_NAME_DX#B" />
+                <InfoText TextId="T_ID_SUBMOD_INFO_DX#B" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_MODULE_DX#C" ModuleIdentNumber="0x00000203">
+          <ModuleInfo CategoryRef="CAT_REF_MODULES_DIGITAL">
+            <Name TextId="T_ID_MODULE_NAME_DX#C" />
+            <InfoText TextId="T_ID_INFO_TEXT_DX#C" />
+            <OrderNumber Value="EX600-DX#C" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_DX#C" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DIGITAL_INPUT" UseAsBits="true" />
+                </Input>
+              </IOData>
+              <RecordDataList>
+                <ParameterRecordDataItem Index="1" Length="8" TransferSequence="1">
+                  <Name TextId="T_ID_PRM_UNIT_PARAMETER" />
+                  <Const Data="0x00,0x80,0x01,0x01,0x00,0x00,0x00,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="7" DefaultValue="1" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_SHORT_CIRCUIT_POWER" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="7" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_INRUSH_CURRENT_FILTER" />
+                  <Ref ValueItemTarget="ID_VALUE_FILTERING_TIME" DataType="BitArea" ByteOffset="2" BitOffset="0" BitLength="2" DefaultValue="1" AllowedValues="0 1 2 3" Changeable="true" Visible="true" TextId="T_ID_PRM_INPUT_FILTERING_TIME" />
+                  <Ref ValueItemTarget="ID_VALUE_EXTENTION_TIME" DataType="BitArea" ByteOffset="3" BitOffset="0" BitLength="2" DefaultValue="1" AllowedValues="0 1 2 3" Changeable="true" Visible="true" TextId="T_ID_PRM_INPUT_EXTENTION_TIME" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="T_ID_SUBMOD_NAME_DX#C" />
+                <InfoText TextId="T_ID_SUBMOD_INFO_DX#C" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_MODULE_DX#C1" ModuleIdentNumber="0x0000020D">
+          <ModuleInfo CategoryRef="CAT_REF_MODULES_DIGITAL">
+            <Name TextId="T_ID_MODULE_NAME_DX#C1" />
+            <InfoText TextId="T_ID_INFO_TEXT_DX#C1" />
+            <OrderNumber Value="EX600-DX#C1" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_DX#C1" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DIGITAL_INPUT" UseAsBits="true" />
+                </Input>
+              </IOData>
+              <RecordDataList>
+                <ParameterRecordDataItem Index="1" Length="8" TransferSequence="1">
+                  <Name TextId="T_ID_PRM_UNIT_PARAMETER" />
+                  <Const Data="0x00,0x80,0x01,0x01,0x00,0x00,0x00,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="7" DefaultValue="1" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_SHORT_CIRCUIT_POWER" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="7" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_INRUSH_CURRENT_FILTER" />
+                  <Ref ValueItemTarget="ID_VALUE_FILTERING_TIME" DataType="BitArea" ByteOffset="2" BitOffset="0" BitLength="2" DefaultValue="1" AllowedValues="0 1 2 3" Changeable="true" Visible="true" TextId="T_ID_PRM_INPUT_FILTERING_TIME" />
+                  <Ref ValueItemTarget="ID_VALUE_EXTENTION_TIME" DataType="BitArea" ByteOffset="3" BitOffset="0" BitLength="2" DefaultValue="1" AllowedValues="0 1 2 3" Changeable="true" Visible="true" TextId="T_ID_PRM_INPUT_EXTENTION_TIME" />
+                </ParameterRecordDataItem>
+                <ParameterRecordDataItem Index="2" Length="1" TransferSequence="2">
+                  <Name TextId="T_ID_PRM_MONITOR_OPEN_CIRCUIT" />
+                  <Const Data="0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="0" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="1" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL1" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="2" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL2" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="3" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL3" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="4" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL4" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="5" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL5" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="6" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL6" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="7" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL7" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="T_ID_SUBMOD_NAME_DX#C" />
+                <InfoText TextId="T_ID_SUBMOD_INFO_DX#C" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_MODULE_DX#D" ModuleIdentNumber="0x00000205">
+          <ModuleInfo CategoryRef="CAT_REF_MODULES_DIGITAL">
+            <Name TextId="T_ID_MODULE_NAME_DX#D" />
+            <InfoText TextId="T_ID_INFO_TEXT_DX#D" />
+            <OrderNumber Value="EX600-DX#D" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_DX#D" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DIGITAL_INPUT" UseAsBits="true" />
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DIGITAL_INPUT" UseAsBits="true" />
+                </Input>
+              </IOData>
+              <RecordDataList>
+                <ParameterRecordDataItem Index="1" Length="8" TransferSequence="1">
+                  <Name TextId="T_ID_PRM_UNIT_PARAMETER" />
+                  <Const Data="0x00,0x80,0x01,0x01,0x00,0x00,0x00,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="7" DefaultValue="1" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_SHORT_CIRCUIT_POWER" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="7" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_INRUSH_CURRENT_FILTER" />
+                  <Ref ValueItemTarget="ID_VALUE_FILTERING_TIME" DataType="BitArea" ByteOffset="2" BitOffset="0" BitLength="2" DefaultValue="1" AllowedValues="0 1 2 3" Changeable="true" Visible="true" TextId="T_ID_PRM_INPUT_FILTERING_TIME" />
+                  <Ref ValueItemTarget="ID_VALUE_EXTENTION_TIME" DataType="BitArea" ByteOffset="3" BitOffset="0" BitLength="2" DefaultValue="1" AllowedValues="0 1 2 3" Changeable="true" Visible="true" TextId="T_ID_PRM_INPUT_EXTENTION_TIME" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="T_ID_SUBMOD_NAME_DX#D" />
+                <InfoText TextId="T_ID_SUBMOD_INFO_DX#D" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_MODULE_DX#E" ModuleIdentNumber="0x00000215">
+          <ModuleInfo CategoryRef="CAT_REF_MODULES_DIGITAL">
+            <Name TextId="T_ID_MODULE_NAME_DX#E" />
+            <InfoText TextId="T_ID_INFO_TEXT_DX#E" />
+            <OrderNumber Value="EX600-DX#E" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_DX#E" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DIGITAL_INPUT" UseAsBits="true" />
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DIGITAL_INPUT" UseAsBits="true" />
+                </Input>
+              </IOData>
+              <RecordDataList>
+                <ParameterRecordDataItem Index="1" Length="8" TransferSequence="1">
+                  <Name TextId="T_ID_PRM_UNIT_PARAMETER" />
+                  <Const Data="0x00,0x80,0x01,0x01,0x00,0x00,0x00,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="7" DefaultValue="1" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_SHORT_CIRCUIT_POWER" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="7" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_INRUSH_CURRENT_FILTER" />
+                  <Ref ValueItemTarget="ID_VALUE_FILTERING_TIME" DataType="BitArea" ByteOffset="2" BitOffset="0" BitLength="2" DefaultValue="1" AllowedValues="0 1 2 3" Changeable="true" Visible="true" TextId="T_ID_PRM_INPUT_FILTERING_TIME" />
+                  <Ref ValueItemTarget="ID_VALUE_EXTENTION_TIME" DataType="BitArea" ByteOffset="3" BitOffset="0" BitLength="2" DefaultValue="1" AllowedValues="0 1 2 3" Changeable="true" Visible="true" TextId="T_ID_PRM_INPUT_EXTENTION_TIME" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="T_ID_SUBMOD_NAME_DX#E" />
+                <InfoText TextId="T_ID_SUBMOD_INFO_DX#E" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_MODULE_DX#F" ModuleIdentNumber="0x00000217">
+          <ModuleInfo CategoryRef="CAT_REF_MODULES_DIGITAL">
+            <Name TextId="T_ID_MODULE_NAME_DX#F" />
+            <InfoText TextId="T_ID_INFO_TEXT_DX#F" />
+            <OrderNumber Value="EX600-DX#F" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_DX#F" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DIGITAL_INPUT" UseAsBits="true" />
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DIGITAL_INPUT" UseAsBits="true" />
+                </Input>
+              </IOData>
+              <RecordDataList>
+                <ParameterRecordDataItem Index="1" Length="8" TransferSequence="1">
+                  <Name TextId="T_ID_PRM_UNIT_PARAMETER" />
+                  <Const Data="0x00,0x80,0x01,0x01,0x00,0x00,0x00,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="7" DefaultValue="1" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_SHORT_CIRCUIT_POWER" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="7" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_INRUSH_CURRENT_FILTER" />
+                  <Ref ValueItemTarget="ID_VALUE_FILTERING_TIME" DataType="BitArea" ByteOffset="2" BitOffset="0" BitLength="2" DefaultValue="1" AllowedValues="0 1 2 3" Changeable="true" Visible="true" TextId="T_ID_PRM_INPUT_FILTERING_TIME" />
+                  <Ref ValueItemTarget="ID_VALUE_EXTENTION_TIME" DataType="BitArea" ByteOffset="3" BitOffset="0" BitLength="2" DefaultValue="1" AllowedValues="0 1 2 3" Changeable="true" Visible="true" TextId="T_ID_PRM_INPUT_EXTENTION_TIME" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="T_ID_SUBMOD_NAME_DX#F" />
+                <InfoText TextId="T_ID_SUBMOD_INFO_DX#F" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_MODULE_DY#B" ModuleIdentNumber="0x00000209">
+          <ModuleInfo CategoryRef="CAT_REF_MODULES_DIGITAL">
+            <Name TextId="T_ID_MODULE_NAME_DY#B" />
+            <InfoText TextId="T_ID_INFO_TEXT_DY#B" />
+            <OrderNumber Value="EX600-DY#B" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_DY#B" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DIGITAL_OUTPUT" UseAsBits="true" />
+                </Output>
+              </IOData>
+              <RecordDataList>
+                <ParameterRecordDataItem Index="1" Length="8" TransferSequence="1">
+                  <Name TextId="T_ID_PRM_UNIT_PARAMETER" />
+                  <Const Data="0x10,0x40,0x00,0x00,0x00,0x00,0x00,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="6" DefaultValue="1" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_SHORT_CIRCUIT_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_AUTO_MANUAL" DataType="Bit" ByteOffset="0" BitOffset="4" DefaultValue="1" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_RESTART_AFTER_SHORT_CIRCUIT" />
+                </ParameterRecordDataItem>
+                <ParameterRecordDataItem Index="2" Length="1" TransferSequence="2">
+                  <Name TextId="T_ID_PRM_MONITOR_OPEN_CIRCUIT" />
+                  <Const Data="0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="0" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="1" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL1" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="2" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL2" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="3" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL3" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="4" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL4" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="5" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL5" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="6" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL6" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="7" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL7" />
+                </ParameterRecordDataItem>
+                <ParameterRecordDataItem Index="3" Length="2" TransferSequence="3">
+                  <Name TextId="T_ID_PRM_FAULT_MODE" />
+                  <Const Data="0x00,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="0" BitOffset="0" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL0" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="0" BitOffset="2" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL1" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="0" BitOffset="4" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL2" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="0" BitOffset="6" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL3" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="1" BitOffset="0" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL4" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="1" BitOffset="2" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL5" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="1" BitOffset="4" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL6" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="1" BitOffset="6" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL7" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="T_ID_SUBMOD_NAME_DY#B" />
+                <InfoText TextId="T_ID_SUBMOD_INFO_DY#B" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_MODULE_DY#E" ModuleIdentNumber="0x00000219">
+          <ModuleInfo CategoryRef="CAT_REF_MODULES_DIGITAL">
+            <Name TextId="T_ID_MODULE_NAME_DY#E" />
+            <InfoText TextId="T_ID_INFO_TEXT_DY#E" />
+            <OrderNumber Value="EX600-DY#E" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_DY#E" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DIGITAL_OUTPUT" UseAsBits="true" />
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DIGITAL_OUTPUT" UseAsBits="true" />
+                </Output>
+              </IOData>
+              <RecordDataList>
+                <ParameterRecordDataItem Index="1" Length="8" TransferSequence="1">
+                  <Name TextId="T_ID_PRM_UNIT_PARAMETER" />
+                  <Const Data="0x10,0x40,0x00,0x00,0x00,0x00,0x00,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="6" DefaultValue="1" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_SHORT_CIRCUIT_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_AUTO_MANUAL" DataType="Bit" ByteOffset="0" BitOffset="4" DefaultValue="1" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_RESTART_AFTER_SHORT_CIRCUIT" />
+                </ParameterRecordDataItem>
+                <ParameterRecordDataItem Index="2" Length="2" TransferSequence="2">
+                  <Name TextId="T_ID_PRM_MONITOR_OPEN_CIRCUIT" />
+                  <Const Data="0x00,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="0" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="1" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL1" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="2" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL2" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="3" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL3" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="4" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL4" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="5" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL5" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="6" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL6" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="7" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL7" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="0" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL8" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="1" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL9" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="2" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL10" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="3" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL11" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="4" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL12" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="5" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL13" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="6" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL14" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="7" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL15" />
+                </ParameterRecordDataItem>
+                <ParameterRecordDataItem Index="3" Length="4" TransferSequence="3">
+                  <Name TextId="T_ID_PRM_FAULT_MODE" />
+                  <Const Data="0x00,0x00,0x00,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="0" BitOffset="0" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL0" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="0" BitOffset="2" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL1" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="0" BitOffset="4" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL2" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="0" BitOffset="6" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL3" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="1" BitOffset="0" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL4" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="1" BitOffset="2" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL5" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="1" BitOffset="4" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL6" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="1" BitOffset="6" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL7" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="2" BitOffset="0" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL8" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="2" BitOffset="2" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL9" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="2" BitOffset="4" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL10" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="2" BitOffset="6" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL11" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="3" BitOffset="0" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL12" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="3" BitOffset="2" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL13" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="3" BitOffset="4" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL14" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="3" BitOffset="6" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL15" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="T_ID_SUBMOD_NAME_DY#E" />
+                <InfoText TextId="T_ID_SUBMOD_INFO_DY#E" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_MODULE_DY#F" ModuleIdentNumber="0x0000021B">
+          <ModuleInfo CategoryRef="CAT_REF_MODULES_DIGITAL">
+            <Name TextId="T_ID_MODULE_NAME_DY#F" />
+            <InfoText TextId="T_ID_INFO_TEXT_DY#F" />
+            <OrderNumber Value="EX600-DY#F" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_DY#F" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DIGITAL_OUTPUT" UseAsBits="true" />
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DIGITAL_OUTPUT" UseAsBits="true" />
+                </Output>
+              </IOData>
+              <RecordDataList>
+                <ParameterRecordDataItem Index="1" Length="8" TransferSequence="1">
+                  <Name TextId="T_ID_PRM_UNIT_PARAMETER" />
+                  <Const Data="0x10,0x40,0x00,0x00,0x00,0x00,0x00,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="6" DefaultValue="1" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_SHORT_CIRCUIT_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_AUTO_MANUAL" DataType="Bit" ByteOffset="0" BitOffset="4" DefaultValue="1" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_RESTART_AFTER_SHORT_CIRCUIT" />
+                </ParameterRecordDataItem>
+                <ParameterRecordDataItem Index="2" Length="3" TransferSequence="2">
+                  <Name TextId="T_ID_PRM_MONITOR_OPEN_CIRCUIT" />
+                  <Const Data="0x00,0x00,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="0" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="1" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL1" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="2" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL2" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="3" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL3" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="4" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL4" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="5" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL5" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="6" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL6" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="7" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL7" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="0" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL8" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="1" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL9" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="2" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL10" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="3" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL11" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="4" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL12" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="5" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL13" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="6" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL14" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="7" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL15" />
+                </ParameterRecordDataItem>
+                <ParameterRecordDataItem Index="3" Length="6" TransferSequence="3">
+                  <Name TextId="T_ID_PRM_FAULT_MODE" />
+                  <Const Data="0x00,0x00,0x00,0x00,0x00,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="0" BitOffset="0" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL0" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="0" BitOffset="2" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL1" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="0" BitOffset="4" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL2" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="0" BitOffset="6" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL3" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="1" BitOffset="0" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL4" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="1" BitOffset="2" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL5" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="1" BitOffset="4" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL6" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="1" BitOffset="6" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL7" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="2" BitOffset="0" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL8" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="2" BitOffset="2" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL9" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="2" BitOffset="4" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL10" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="2" BitOffset="6" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL11" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="3" BitOffset="0" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL12" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="3" BitOffset="2" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL13" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="3" BitOffset="4" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL14" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="3" BitOffset="6" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL15" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="T_ID_SUBMOD_NAME_DY#F" />
+                <InfoText TextId="T_ID_SUBMOD_INFO_DY#F" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_MODULE_DM#E" ModuleIdentNumber="0x0000021D">
+          <ModuleInfo CategoryRef="CAT_REF_MODULES_DIGITAL">
+            <Name TextId="T_ID_MODULE_NAME_DM#E" />
+            <InfoText TextId="T_ID_INFO_TEXT_DM#E" />
+            <OrderNumber Value="EX600-DM#E" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_DM#E" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DIGITAL_INPUT" UseAsBits="true" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DIGITAL_OUTPUT" UseAsBits="true" />
+                </Output>
+              </IOData>
+              <RecordDataList>
+                <ParameterRecordDataItem Index="1" Length="8" TransferSequence="1">
+                  <Name TextId="T_ID_PRM_UNIT_PARAMETER" />
+                  <Const Data="0x10,0xC0,0x01,0x01,0x00,0x00,0x00,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="7" DefaultValue="1" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_SHORT_CIRCUIT_POWER" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="6" DefaultValue="1" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_SHORT_CIRCUIT_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_AUTO_MANUAL" DataType="Bit" ByteOffset="0" BitOffset="4" DefaultValue="1" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_RESTART_AFTER_SHORT_CIRCUIT" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="7" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_INRUSH_CURRENT_FILTER" />
+                  <Ref ValueItemTarget="ID_VALUE_FILTERING_TIME" DataType="BitArea" ByteOffset="2" BitOffset="0" BitLength="2" DefaultValue="1" AllowedValues="0 1 2 3" Changeable="true" Visible="true" TextId="T_ID_PRM_INPUT_FILTERING_TIME" />
+                  <Ref ValueItemTarget="ID_VALUE_EXTENTION_TIME" DataType="BitArea" ByteOffset="3" BitOffset="0" BitLength="2" DefaultValue="1" AllowedValues="0 1 2 3" Changeable="true" Visible="true" TextId="T_ID_PRM_INPUT_EXTENTION_TIME" />
+                </ParameterRecordDataItem>
+                <ParameterRecordDataItem Index="2" Length="2" TransferSequence="2">
+                  <Name TextId="T_ID_PRM_MONITOR_OPEN_CIRCUIT" />
+                  <Const Data="0x00,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="0" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL0_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="1" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL1_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="2" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL2_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="3" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL3_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="4" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL4_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="5" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL5_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="6" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL6_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="7" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL7_OUT" />
+                </ParameterRecordDataItem>
+                <ParameterRecordDataItem Index="3" Length="4" TransferSequence="3">
+                  <Name TextId="T_ID_PRM_FAULT_MODE" />
+                  <Const Data="0x00,0x00,0x00,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="2" BitOffset="0" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL0_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="2" BitOffset="2" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL1_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="2" BitOffset="4" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL2_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="2" BitOffset="6" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL3_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="3" BitOffset="0" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL4_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="3" BitOffset="2" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL5_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="3" BitOffset="4" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL6_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="3" BitOffset="6" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL7_OUT" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="T_ID_SUBMOD_NAME_DM#E" />
+                <InfoText TextId="T_ID_SUBMOD_INFO_DM#E" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_MODULE_DM#F" ModuleIdentNumber="0x0000021F">
+          <ModuleInfo CategoryRef="CAT_REF_MODULES_DIGITAL">
+            <Name TextId="T_ID_MODULE_NAME_DM#F" />
+            <InfoText TextId="T_ID_INFO_TEXT_DM#F" />
+            <OrderNumber Value="EX600-DM#F" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_DM#F" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DIGITAL_INPUT" UseAsBits="true" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned8" TextId="T_ID_DIGITAL_OUTPUT" UseAsBits="true" />
+                </Output>
+              </IOData>
+              <RecordDataList>
+                <ParameterRecordDataItem Index="1" Length="8" TransferSequence="1">
+                  <Name TextId="T_ID_PRM_UNIT_PARAMETER" />
+                  <Const Data="0x10,0xC0,0x01,0x01,0x00,0x00,0x00,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="7" DefaultValue="1" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_SHORT_CIRCUIT_POWER" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="6" DefaultValue="1" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_SHORT_CIRCUIT_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_AUTO_MANUAL" DataType="Bit" ByteOffset="0" BitOffset="4" DefaultValue="1" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_RESTART_AFTER_SHORT_CIRCUIT" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="7" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_INRUSH_CURRENT_FILTER" />
+                  <Ref ValueItemTarget="ID_VALUE_FILTERING_TIME" DataType="BitArea" ByteOffset="2" BitOffset="0" BitLength="2" DefaultValue="1" AllowedValues="0 1 2 3" Changeable="true" Visible="true" TextId="T_ID_PRM_INPUT_FILTERING_TIME" />
+                  <Ref ValueItemTarget="ID_VALUE_EXTENTION_TIME" DataType="BitArea" ByteOffset="3" BitOffset="0" BitLength="2" DefaultValue="1" AllowedValues="0 1 2 3" Changeable="true" Visible="true" TextId="T_ID_PRM_INPUT_EXTENTION_TIME" />
+                </ParameterRecordDataItem>
+                <ParameterRecordDataItem Index="2" Length="2" TransferSequence="2">
+                  <Name TextId="T_ID_PRM_MONITOR_OPEN_CIRCUIT" />
+                  <Const Data="0x00,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="0" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL0_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="1" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL1_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="2" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL2_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="3" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL3_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="4" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL4_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="5" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL5_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="6" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL6_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="7" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL7_OUT" />
+                </ParameterRecordDataItem>
+                <ParameterRecordDataItem Index="3" Length="4" TransferSequence="3">
+                  <Name TextId="T_ID_PRM_FAULT_MODE" />
+                  <Const Data="0x00,0x00,0x00,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="2" BitOffset="0" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL0_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="2" BitOffset="2" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL1_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="2" BitOffset="4" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL2_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="2" BitOffset="6" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL3_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="3" BitOffset="0" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL4_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="3" BitOffset="2" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL5_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="3" BitOffset="4" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL6_OUT" />
+                  <Ref ValueItemTarget="ID_VALUE_FAULT_IDLE_MODE_DIGITAL" DataType="BitArea" ByteOffset="3" BitOffset="6" BitLength="2" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_CHANNEL7_OUT" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="T_ID_SUBMOD_NAME_DM#F" />
+                <InfoText TextId="T_ID_SUBMOD_INFO_DM#F" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_MODULE_AXA" ModuleIdentNumber="0x00000220">
+          <ModuleInfo CategoryRef="CAT_REF_MODULES_ANALOG">
+            <Name TextId="T_ID_MODULE_NAME_AXA" />
+            <InfoText TextId="T_ID_INFO_TEXT_AXA" />
+            <OrderNumber Value="EX600-AXA" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_AXA" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned16" TextId="T_ID_ANALOG_INPUT" UseAsBits="false" />
+                  <DataItem DataType="Unsigned16" TextId="T_ID_ANALOG_INPUT" UseAsBits="false" />
+                </Input>
+              </IOData>
+              <RecordDataList>
+                <ParameterRecordDataItem Index="1" Length="8" TransferSequence="1">
+                  <Name TextId="T_ID_PRM_UNIT_PARAMETER" />
+                  <Const Data="0x00,0x8C,0x00,0x00,0x00,0x00,0x00,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="7" DefaultValue="1" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_SHORT_CIRCUIT_POWER" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="3" DefaultValue="1" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_OVER_RANGE" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="2" DefaultValue="1" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_LOWER_RANGE" />
+                  <Ref ValueItemTarget="ID_VALUE_DATA_FORMAT" DataType="Unsigned16" ByteOffset="4" DefaultValue="0" AllowedValues="0 1 2" Changeable="true" Visible="true" TextId="T_ID_PRM_DATA_FORMAT" />
+                </ParameterRecordDataItem>
+                <ParameterRecordDataItem Index="2" Length="12" TransferSequence="2">
+                  <Name TextId="T_ID_PRM_CHANNEL0" />
+                  <Const Data="0x00,0x00,0x03,0xE8,0x00,0x00,0x00,0x00,0x00,0x00,0x01,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="1" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_UPPER_LIMIT" />
+                  <Ref DataType="Unsigned16" ByteOffset="2" DefaultValue="1000" AllowedValues="0..65535" Changeable="true" Visible="true" TextId="T_ID_PRM_UPPER_LIMIT_VALUE" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="0" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_LOWER_LIMIT" />
+                  <Ref DataType="Unsigned16" ByteOffset="4" DefaultValue="0" AllowedValues="0..65535" Changeable="true" Visible="true" TextId="T_ID_PRM_LOWER_LIMIT_VALUE" />
+                  <Ref ValueItemTarget="ID_VALUE_FILTERING_MODE" DataType="BitArea" ByteOffset="10" BitOffset="0" BitLength="3" DefaultValue="1" AllowedValues="0 1 2 3" Changeable="true" Visible="true" TextId="T_ID_PRM_FILTERING_MODE" />
+                  <Ref ValueItemTarget="ID_VALUE_MEASUREMENT_RANGE" DataType="BitArea" ByteOffset="11" BitOffset="0" BitLength="3" DefaultValue="0" AllowedValues="0 1 2 3 4 5 6 7" Changeable="true" Visible="true" TextId="T_ID_PRM_MEASUREMENT_RANGE" />
+                </ParameterRecordDataItem>
+                <ParameterRecordDataItem Index="3" Length="12" TransferSequence="3">
+                  <Name TextId="T_ID_PRM_CHANNEL1" />
+                  <Const Data="0x00,0x00,0x03,0xE8,0x00,0x00,0x00,0x00,0x00,0x00,0x01,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="1" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_UPPER_LIMIT" />
+                  <Ref DataType="Unsigned16" ByteOffset="2" DefaultValue="1000" AllowedValues="0..65535" Changeable="true" Visible="true" TextId="T_ID_PRM_UPPER_LIMIT_VALUE" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="0" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_LOWER_LIMIT" />
+                  <Ref DataType="Unsigned16" ByteOffset="4" DefaultValue="0" AllowedValues="0..65535" Changeable="true" Visible="true" TextId="T_ID_PRM_LOWER_LIMIT_VALUE" />
+                  <Ref ValueItemTarget="ID_VALUE_FILTERING_MODE" DataType="BitArea" ByteOffset="10" BitOffset="0" BitLength="3" DefaultValue="1" AllowedValues="0 1 2 3" Changeable="true" Visible="true" TextId="T_ID_PRM_FILTERING_MODE" />
+                  <Ref ValueItemTarget="ID_VALUE_MEASUREMENT_RANGE" DataType="BitArea" ByteOffset="11" BitOffset="0" BitLength="3" DefaultValue="0" AllowedValues="0 1 2 3 4 5 6 7" Changeable="true" Visible="true" TextId="T_ID_PRM_MEASUREMENT_RANGE" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="T_ID_SUBMOD_NAME_AXA" />
+                <InfoText TextId="T_ID_SUBMOD_INFO_AXA" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_MODULE_AYA" ModuleIdentNumber="0x00000222">
+          <ModuleInfo CategoryRef="CAT_REF_MODULES_ANALOG">
+            <Name TextId="T_ID_MODULE_NAME_AYA" />
+            <InfoText TextId="T_ID_INFO_TEXT_AYA" />
+            <OrderNumber Value="EX600-AYA" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_AYA" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned16" TextId="T_ID_ANALOG_OUTPUT" UseAsBits="false" />
+                  <DataItem DataType="Unsigned16" TextId="T_ID_ANALOG_OUTPUT" UseAsBits="false" />
+                </Output>
+              </IOData>
+              <RecordDataList>
+                <ParameterRecordDataItem Index="1" Length="8" TransferSequence="1">
+                  <Name TextId="T_ID_PRM_UNIT_PARAMETER" />
+                  <Const Data="0x00,0x80,0x00,0x00,0x00,0x00,0x00,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="7" DefaultValue="1" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_SHORT_CIRCUIT_POWER" />
+                  <Ref ValueItemTarget="ID_VALUE_DATA_FORMAT" DataType="Unsigned16" ByteOffset="4" DefaultValue="0" AllowedValues="0 1 2 3" Changeable="true" Visible="true" TextId="T_ID_PRM_DATA_FORMAT" />
+                </ParameterRecordDataItem>
+                <ParameterRecordDataItem Index="2" Length="12" TransferSequence="2">
+                  <Name TextId="T_ID_PRM_CHANNEL0" />
+                  <Const Data="0x00,0x00,0x03,0xE8,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x03" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="1" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_UPPER_LIMIT" />
+                  <Ref DataType="Unsigned16" ByteOffset="2" DefaultValue="1000" AllowedValues="0..65535" Changeable="true" Visible="true" TextId="T_ID_PRM_UPPER_LIMIT_VALUE" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="0" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_LOWER_LIMIT" />
+                  <Ref DataType="Unsigned16" ByteOffset="4" DefaultValue="0" AllowedValues="0..65535" Changeable="true" Visible="true" TextId="T_ID_PRM_LOWER_LIMIT_VALUE" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="2" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_FAULT_MODE" />
+                  <Ref DataType="Unsigned16" ByteOffset="6" DefaultValue="0" AllowedValues="0..65535" Changeable="true" Visible="true" TextId="T_ID_PRM_FAULT_VALUE" />
+                  <Ref ValueItemTarget="ID_VALUE_MEASUREMENT_RANGE" DataType="BitArea" ByteOffset="11" BitOffset="0" BitLength="3" DefaultValue="3" AllowedValues="3 4 5 6 7" Changeable="true" Visible="true" TextId="T_ID_PRM_MEASUREMENT_RANGE" />
+                </ParameterRecordDataItem>
+                <ParameterRecordDataItem Index="3" Length="12" TransferSequence="3">
+                  <Name TextId="T_ID_PRM_CHANNEL1" />
+                  <Const Data="0x00,0x00,0x03,0xE8,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x03" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="1" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_UPPER_LIMIT" />
+                  <Ref DataType="Unsigned16" ByteOffset="2" DefaultValue="1000" AllowedValues="0..65535" Changeable="true" Visible="true" TextId="T_ID_PRM_UPPER_LIMIT_VALUE" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="0" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_LOWER_LIMIT" />
+                  <Ref DataType="Unsigned16" ByteOffset="4" DefaultValue="0" AllowedValues="0..65535" Changeable="true" Visible="true" TextId="T_ID_PRM_LOWER_LIMIT_VALUE" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="2" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_FAULT_MODE" />
+                  <Ref DataType="Unsigned16" ByteOffset="6" DefaultValue="0" AllowedValues="0..65535" Changeable="true" Visible="true" TextId="T_ID_PRM_FAULT_VALUE" />
+                  <Ref ValueItemTarget="ID_VALUE_MEASUREMENT_RANGE" DataType="BitArea" ByteOffset="11" BitOffset="0" BitLength="3" DefaultValue="3" AllowedValues="3 4 5 6 7" Changeable="true" Visible="true" TextId="T_ID_PRM_MEASUREMENT_RANGE" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="T_ID_SUBMOD_NAME_AYA" />
+                <InfoText TextId="T_ID_SUBMOD_INFO_AYA" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_MODULE_AMB" ModuleIdentNumber="0x00000223">
+          <ModuleInfo CategoryRef="CAT_REF_MODULES_ANALOG">
+            <Name TextId="T_ID_MODULE_NAME_AMB" />
+            <InfoText TextId="T_ID_INFO_TEXT_AMB" />
+            <OrderNumber Value="EX600-AMB" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_AMB" SubmoduleIdentNumber="0x00000000" API="0" FixedInSubslots="1">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned16" TextId="T_ID_ANALOG_INPUT" UseAsBits="false" />
+                  <DataItem DataType="Unsigned16" TextId="T_ID_ANALOG_INPUT" UseAsBits="false" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned16" TextId="T_ID_ANALOG_OUTPUT" UseAsBits="false" />
+                  <DataItem DataType="Unsigned16" TextId="T_ID_ANALOG_OUTPUT" UseAsBits="false" />
+                </Output>
+              </IOData>
+              <RecordDataList>
+                <ParameterRecordDataItem Index="1" Length="8" TransferSequence="1">
+                  <Name TextId="T_ID_PRM_UNIT_PARAMETER" />
+                  <Const Data="0x00,0x80,0x00,0x00,0x00,0x00,0x00,0x00" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="7" DefaultValue="1" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_SHORT_CIRCUIT_POWER" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="3" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_OVER_RANGE" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="2" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_LOWER_RANGE" />
+                  <Ref ValueItemTarget="ID_VALUE_DATA_FORMAT" DataType="Unsigned16" ByteOffset="4" DefaultValue="0" AllowedValues="0 1 2 3" Changeable="true" Visible="true" TextId="T_ID_PRM_DATA_FORMAT" />
+                </ParameterRecordDataItem>
+                <ParameterRecordDataItem Index="2" Length="12" TransferSequence="2">
+                  <Name TextId="T_ID_PRM_CHANNEL0_IN" />
+                  <Const Data="0x00,0x00,0x03,0xE8,0x00,0x00,0x00,0x00,0x00,0x00,0x01,0x05" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="1" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_UPPER_LIMIT" />
+                  <Ref DataType="Unsigned16" ByteOffset="2" DefaultValue="1000" AllowedValues="0..65535" Changeable="true" Visible="true" TextId="T_ID_PRM_UPPER_LIMIT_VALUE" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="0" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_LOWER_LIMIT" />
+                  <Ref DataType="Unsigned16" ByteOffset="4" DefaultValue="0" AllowedValues="0..65535" Changeable="true" Visible="true" TextId="T_ID_PRM_LOWER_LIMIT_VALUE" />
+                  <Ref ValueItemTarget="ID_VALUE_FILTERING_MODE" DataType="BitArea" ByteOffset="10" BitOffset="0" BitLength="3" DefaultValue="1" AllowedValues="0 1 2 3" Changeable="true" Visible="true" TextId="T_ID_PRM_FILTERING_MODE" />
+                  <Ref ValueItemTarget="ID_VALUE_MEASUREMENT_RANGE" DataType="BitArea" ByteOffset="11" BitOffset="0" BitLength="3" DefaultValue="5" AllowedValues="3 4 5 6 7" Changeable="true" Visible="true" TextId="T_ID_PRM_MEASUREMENT_RANGE" />
+                </ParameterRecordDataItem>
+                <ParameterRecordDataItem Index="3" Length="12" TransferSequence="3">
+                  <Name TextId="T_ID_PRM_CHANNEL1_IN" />
+                  <Const Data="0x00,0x00,0x03,0xE8,0x00,0x00,0x00,0x00,0x00,0x00,0x01,0x05" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="1" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_UPPER_LIMIT" />
+                  <Ref DataType="Unsigned16" ByteOffset="2" DefaultValue="1000" AllowedValues="0..65535" Changeable="true" Visible="true" TextId="T_ID_PRM_UPPER_LIMIT_VALUE" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="0" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_LOWER_LIMIT" />
+                  <Ref DataType="Unsigned16" ByteOffset="4" DefaultValue="0" AllowedValues="0..65535" Changeable="true" Visible="true" TextId="T_ID_PRM_LOWER_LIMIT_VALUE" />
+                  <Ref ValueItemTarget="ID_VALUE_FILTERING_MODE" DataType="BitArea" ByteOffset="10" BitOffset="0" BitLength="3" DefaultValue="1" AllowedValues="0 1 2 3" Changeable="true" Visible="true" TextId="T_ID_PRM_FILTERING_MODE" />
+                  <Ref ValueItemTarget="ID_VALUE_MEASUREMENT_RANGE" DataType="BitArea" ByteOffset="11" BitOffset="0" BitLength="3" DefaultValue="5" AllowedValues="3 4 5 6 7" Changeable="true" Visible="true" TextId="T_ID_PRM_MEASUREMENT_RANGE" />
+                </ParameterRecordDataItem>
+                <ParameterRecordDataItem Index="4" Length="12" TransferSequence="4">
+                  <Name TextId="T_ID_PRM_CHANNEL0_OUT" />
+                  <Const Data="0x00,0x00,0x03,0xE8,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x05" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="1" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_UPPER_LIMIT" />
+                  <Ref DataType="Unsigned16" ByteOffset="2" DefaultValue="1000" AllowedValues="0..65535" Changeable="true" Visible="true" TextId="T_ID_PRM_UPPER_LIMIT_VALUE" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="0" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_LOWER_LIMIT" />
+                  <Ref DataType="Unsigned16" ByteOffset="4" DefaultValue="0" AllowedValues="0..65535" Changeable="true" Visible="true" TextId="T_ID_PRM_LOWER_LIMIT_VALUE" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="2" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_FAULT_MODE" />
+                  <Ref DataType="Unsigned16" ByteOffset="6" DefaultValue="0" AllowedValues="0..65535" Changeable="true" Visible="true" TextId="T_ID_PRM_FAULT_VALUE" />
+                  <Ref ValueItemTarget="ID_VALUE_MEASUREMENT_RANGE" DataType="BitArea" ByteOffset="11" BitOffset="0" BitLength="3" DefaultValue="5" AllowedValues="3 4 5 6 7" Changeable="true" Visible="true" TextId="T_ID_PRM_MEASUREMENT_RANGE" />
+                </ParameterRecordDataItem>
+                <ParameterRecordDataItem Index="5" Length="12" TransferSequence="5">
+                  <Name TextId="T_ID_PRM_CHANNEL1_OUT" />
+                  <Const Data="0x00,0x00,0x03,0xE8,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x05" ByteOffset="0" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="1" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_UPPER_LIMIT" />
+                  <Ref DataType="Unsigned16" ByteOffset="2" DefaultValue="1000" AllowedValues="0..65535" Changeable="true" Visible="true" TextId="T_ID_PRM_UPPER_LIMIT_VALUE" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="1" BitOffset="0" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_MONITOR_LOWER_LIMIT" />
+                  <Ref DataType="Unsigned16" ByteOffset="4" DefaultValue="0" AllowedValues="0..65535" Changeable="true" Visible="true" TextId="T_ID_PRM_LOWER_LIMIT_VALUE" />
+                  <Ref ValueItemTarget="ID_VALUE_ENABLE_DISABLE" DataType="Bit" ByteOffset="0" BitOffset="2" DefaultValue="0" AllowedValues="0 1" Changeable="true" Visible="true" TextId="T_ID_PRM_FAULT_MODE" />
+                  <Ref DataType="Unsigned16" ByteOffset="6" DefaultValue="0" AllowedValues="0..65535" Changeable="true" Visible="true" TextId="T_ID_PRM_FAULT_VALUE" />
+                  <Ref ValueItemTarget="ID_VALUE_MEASUREMENT_RANGE" DataType="BitArea" ByteOffset="11" BitOffset="0" BitLength="3" DefaultValue="5" AllowedValues="3 4 5 6 7" Changeable="true" Visible="true" TextId="T_ID_PRM_MEASUREMENT_RANGE" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="T_ID_SUBMOD_NAME_AMB" />
+                <InfoText TextId="T_ID_SUBMOD_INFO_AMB" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+      </ModuleList>
+      <ValueList>
+        <ValueItem ID="ID_VALUE_ENABLE_DISABLE">
+          <Assignments>
+            <Assign Content="0" TextId="T_ID_VALUE_DISABLE" />
+            <Assign Content="1" TextId="T_ID_VALUE_ENABLE" />
+          </Assignments>
+        </ValueItem>
+        <ValueItem ID="ID_VALUE_AUTO_MANUAL">
+          <Assignments>
+            <Assign Content="0" TextId="T_ID_VALUE_MANUAL" />
+            <Assign Content="1" TextId="T_ID_VALUE_AUTO" />
+          </Assignments>
+        </ValueItem>
+        <ValueItem ID="ID_VALUE_FILTERING_TIME">
+          <Assignments>
+            <Assign Content="0" TextId="T_ID_VALUE_FILTERING_TIME_0P1MS" />
+            <Assign Content="1" TextId="T_ID_VALUE_FILTERING_TIME_1MS" />
+            <Assign Content="2" TextId="T_ID_VALUE_FILTERING_TIME_10MS" />
+            <Assign Content="3" TextId="T_ID_VALUE_FILTERING_TIME_20MS" />
+          </Assignments>
+        </ValueItem>
+        <ValueItem ID="ID_VALUE_EXTENTION_TIME">
+          <Assignments>
+            <Assign Content="0" TextId="T_ID_VALUE_EXTENTION_TIME_1MS" />
+            <Assign Content="1" TextId="T_ID_VALUE_EXTENTION_TIME_15MS" />
+            <Assign Content="2" TextId="T_ID_VALUE_EXTENTION_TIME_100MS" />
+            <Assign Content="3" TextId="T_ID_VALUE_EXTENTION_TIME_200MS" />
+          </Assignments>
+        </ValueItem>
+        <ValueItem ID="ID_VALUE_DATA_FORMAT">
+          <Assignments>
+            <Assign Content="0" TextId="T_ID_VALUE_DATA_FORMAT_OFFSET_BINARY" />
+            <Assign Content="1" TextId="T_ID_VALUE_DATA_FORMAT_SIGNED_MAGNITUDE" />
+            <Assign Content="2" TextId="T_ID_VALUE_DATA_FORMAT_2S_COMPLEMENT" />
+            <Assign Content="3" TextId="T_ID_VALUE_DATA_FORMAT_SCALED" />
+          </Assignments>
+        </ValueItem>
+        <ValueItem ID="ID_VALUE_FAULT_IDLE_MODE_DIGITAL">
+          <Assignments>
+            <Assign Content="0" TextId="T_ID_VALUE_FAULT_IDLE_MODE_DIGITAL_CLEAR" />
+            <Assign Content="1" TextId="T_ID_VALUE_FAULT_IDLE_MODE_DIGITAL_FORCED_ON" />
+            <Assign Content="2" TextId="T_ID_VALUE_FAULT_IDLE_MODE_DIGITAL_HOLD" />
+          </Assignments>
+        </ValueItem>
+        <ValueItem ID="ID_VALUE_FILTERING_MODE">
+          <Assignments>
+            <Assign Content="0" TextId="T_ID_VALUE_FILTERING_MODE_NONE" />
+            <Assign Content="1" TextId="T_ID_VALUE_FILTERING_MODE_2_VALUE_AVERAGE" />
+            <Assign Content="2" TextId="T_ID_VALUE_FILTERING_MODE_4_VALUE_AVERAGE" />
+            <Assign Content="3" TextId="T_ID_VALUE_FILTERING_MODE_8_VALUE_AVERAGE" />
+            <Assign Content="4" TextId="T_ID_VALUE_FILTERING_MODE_16_VALUE_AVERAGE" />
+            <Assign Content="5" TextId="T_ID_VALUE_FILTERING_MODE_32_VALUE_AVERAGE" />
+            <Assign Content="6" TextId="T_ID_VALUE_FILTERING_MODE_64_VALUE_AVERAGE" />
+          </Assignments>
+        </ValueItem>
+        <ValueItem ID="ID_VALUE_MEASUREMENT_RANGE">
+          <Assignments>
+            <Assign Content="0" TextId="T_ID_VALUE_MEASUREMENT_RANGE_-10_+10V" />
+            <Assign Content="1" TextId="T_ID_VALUE_MEASUREMENT_RANGE_-5_+5V" />
+            <Assign Content="2" TextId="T_ID_VALUE_MEASUREMENT_RANGE_-20_+20MA" />
+            <Assign Content="3" TextId="T_ID_VALUE_MEASUREMENT_RANGE_0_10V" />
+            <Assign Content="4" TextId="T_ID_VALUE_MEASUREMENT_RANGE_0_5V" />
+            <Assign Content="5" TextId="T_ID_VALUE_MEASUREMENT_RANGE_1_5V" />
+            <Assign Content="6" TextId="T_ID_VALUE_MEASUREMENT_RANGE_0_20MA" />
+            <Assign Content="7" TextId="T_ID_VALUE_MEASUREMENT_RANGE_4_20MA" />
+          </Assignments>
+        </ValueItem>
+      </ValueList>
+      <ChannelDiagList>
+        <ChannelDiagItem ErrorType="16">
+          <Name TextId="T_ID_CHANNEL_DIAG_UPPER_LIMIT" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="17">
+          <Name TextId="T_ID_CHANNEL_DIAG_LOWER_LIMIT" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="18">
+          <Name TextId="T_ID_CHANNEL_DIAG_COUNTER_OVER" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="28">
+          <Name TextId="T_ID_CHANNEL_DIAG_24V_D" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="29">
+          <Name TextId="T_ID_CHANNEL_DIAG_24V_C" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="30">
+          <Name TextId="T_ID_CHANNEL_DIAG_DISCONNECT" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="31">
+          <Name TextId="T_ID_CHANNEL_DIAG_FRAM" />
+        </ChannelDiagItem>
+      </ChannelDiagList>
+      <GraphicsList>
+        <GraphicItem ID="ID_Graph_1" GraphicFile="GSDML-0083-0008-EX600_N" />
+      </GraphicsList>
+      <CategoryList>
+        <CategoryItem ID="CAT_REF_MODULES_DIGITAL" TextId="T_ID_CAT_REF_MODULES_DIGITAL" />
+        <CategoryItem ID="CAT_REF_MODULES_ANALOG" TextId="T_ID_CAT_REF_MODULES_ANALOG" />
+        <CategoryItem ID="CAT_REF_MODULES_COUNTER" TextId="T_ID_CAT_REF_MODULES_COUNTER" />
+        <CategoryItem ID="CAT_REF_MODULES_SI" TextId="T_ID_CAT_REF_MODULES_SI" />
+      </CategoryList>
+      <ExternalTextList>
+        <PrimaryLanguage>
+          <!--Device Access Point information etc -->
+          <Text TextId="T_ID_DEV_DESCRIPTION" Value="EX600-SPN#" />
+          <Text TextId="T_ID_V2_DEV_DESCRIPTION" Value="This Device Access Point supports RT communication" />
+          <Text TextId="T_ID_DAP_V2" Value="EX600-SPN#" />
+          <Text TextId="T_ID_SS_INTERFACE" Value="X1" />
+          <Text TextId="T_ID_SS_PORT1" Value="P1" />
+          <Text TextId="T_ID_SS_PORT2" Value="P2" />
+          <Text TextId="T_ID_DAP_INTERFACE_MODULE" Value="Interface" />
+          <Text TextId="T_ID_PORT" Value="Port 1" />
+          <Text TextId="T_ID_PORT2" Value="Port 2" />
+          <!--Module category-->
+          <Text TextId="T_ID_CAT_REF_MODULES_DIGITAL" Value="Digital IO Units" />
+          <Text TextId="T_ID_CAT_REF_MODULES_ANALOG" Value="Analog IO Units" />
+          <Text TextId="T_ID_CAT_REF_MODULES_COUNTER" Value="Counter Unit" />
+          <Text TextId="T_ID_CAT_REF_MODULES_SI" Value="SI Unit" />
+          <Text TextId="T_ID_MIGRATION_DAP" Value="Migration" />
+          <!-- Vendor module texts -->
+          <Text TextId="T_ID_DIAG_INPUT" Value="Diagnosis Input" />
+          <Text TextId="T_ID_VALVE_OUTPUT" Value="Valve Output" />
+          <Text TextId="T_ID_DIGITAL_INPUT" Value="Digital Input" />
+          <Text TextId="T_ID_DIGITAL_OUTPUT" Value="Digital Output" />
+          <Text TextId="T_ID_ANALOG_INPUT" Value="Analog Input" />
+          <Text TextId="T_ID_ANALOG_OUTPUT" Value="Analogl Output" />
+          <Text TextId="T_ID_COUNTER_INPUT" Value="Counter Input" />
+          <Text TextId="T_ID_DIAG_BIT0" Value="Under Lower Limit" />
+          <Text TextId="T_ID_DIAG_BIT1" Value="Over Upper Limit" />
+          <Text TextId="T_ID_DIAG_BIT2" Value="Under Range" />
+          <Text TextId="T_ID_DIAG_BIT3" Value="Over Range" />
+          <Text TextId="T_ID_DIAG_BIT4" Value="Reserved" />
+          <Text TextId="T_ID_DIAG_BIT5" Value="Open Circuit" />
+          <Text TextId="T_ID_DIAG_BIT6" Value="Short Circuit (OUT)" />
+          <Text TextId="T_ID_DIAG_BIT7" Value="Short Circuit (IN)" />
+          <Text TextId="T_ID_DIAG_BIT8" Value="Pwr Output is Out of Range" />
+          <Text TextId="T_ID_DIAG_BIT9" Value="Pwr Control is Out of Range" />
+          <Text TextId="T_ID_DIAG_BIT10" Value="Reserved" />
+          <Text TextId="T_ID_DIAG_BIT11" Value="Unit Disconnection" />
+          <Text TextId="T_ID_DIAG_BIT12" Value="Connection Error" />
+          <Text TextId="T_ID_DIAG_BIT13" Value="Reserved" />
+          <Text TextId="T_ID_DIAG_BIT14" Value="Memory Error" />
+          <Text TextId="T_ID_DIAG_BIT15" Value="Parameter Read/Write Error" />
+          <Text TextId="T_ID_DIAG_BIT16" Value="Error in Unit 0" />
+          <Text TextId="T_ID_DIAG_BIT17" Value="Error in Unit 1" />
+          <Text TextId="T_ID_DIAG_BIT18" Value="Error in Unit 2" />
+          <Text TextId="T_ID_DIAG_BIT19" Value="Error in Unit 3" />
+          <Text TextId="T_ID_DIAG_BIT20" Value="Error in Unit 4" />
+          <Text TextId="T_ID_DIAG_BIT21" Value="Error in Unit 5" />
+          <Text TextId="T_ID_DIAG_BIT22" Value="Error in Unit 6" />
+          <Text TextId="T_ID_DIAG_BIT23" Value="Error in Unit 7" />
+          <Text TextId="T_ID_DIAG_BIT24" Value="Error in Unit 8" />
+          <Text TextId="T_ID_DIAG_BIT25" Value="Error in Unit 9" />
+          <Text TextId="T_ID_DIAG_BIT26" Value="Reserved" />
+          <Text TextId="T_ID_DIAG_BIT27" Value="Reserved" />
+          <Text TextId="T_ID_DIAG_BIT28" Value="Reserved" />
+          <Text TextId="T_ID_DIAG_BIT29" Value="Reserved" />
+          <Text TextId="T_ID_DIAG_BIT30" Value="Reserved" />
+          <Text TextId="T_ID_DIAG_BIT31" Value="Reserved" />
+          <Text TextId="T_ID_DIAG_BIT32" Value="Reserved" />
+          <Text TextId="T_ID_MODULE_NAME_VALVE32" Value="EX600-SPN (32 coils)" />
+          <Text TextId="T_ID_INFO_TEXT_VALVE32" Value="Valve Output (32DO)" />
+          <Text TextId="T_ID_SUBMOD_NAME_VALVE32" Value="EX600-SPN" />
+          <Text TextId="T_ID_SUBMOD_INFO_VALVE32" Value="Valve Output (32DO)" />
+          <Text TextId="T_ID_MODULE_NAME_VALVE32_DIAG" Value="EX600-SPN (32 coils, Status)" />
+          <Text TextId="T_ID_INFO_TEXT_VALVE32_DIAG" Value="Status (32DI)/Valve Output (32DO)" />
+          <Text TextId="T_ID_SUBMOD_NAME_VALVE32_DIAG" Value="EX600-SPN" />
+          <Text TextId="T_ID_SUBMOD_INFO_VALVE32_DIAG" Value="Status (32DI)/Valve Output (32DO)" />
+          <Text TextId="T_ID_MODULE_NAME_DX#B" Value="EX600-DX#B" />
+          <Text TextId="T_ID_INFO_TEXT_DX#B" Value="Digital Input (8DI)" />
+          <Text TextId="T_ID_SUBMOD_NAME_DX#B" Value="EX600-DX#B" />
+          <Text TextId="T_ID_SUBMOD_INFO_DX#B" Value="Digital Input (8DI)" />
+          <Text TextId="T_ID_MODULE_NAME_DX#C" Value="EX600-DX#C" />
+          <Text TextId="T_ID_INFO_TEXT_DX#C" Value="Digital Input (8DI)" />
+          <Text TextId="T_ID_SUBMOD_NAME_DX#C" Value="EX600-DX#C" />
+          <Text TextId="T_ID_SUBMOD_INFO_DX#C" Value="Digital Input (8DI)" />
+          <Text TextId="T_ID_MODULE_NAME_DX#C1" Value="EX600-DX#C1" />
+          <Text TextId="T_ID_INFO_TEXT_DX#C1" Value="Digital Input (8DI)" />
+          <Text TextId="T_ID_SUBMOD_NAME_DX#C1" Value="EX600-DX#C1" />
+          <Text TextId="T_ID_SUBMOD_INFO_DX#C1" Value="Digital Input (8DI)" />
+          <Text TextId="T_ID_MODULE_NAME_DX#D" Value="EX600-DX#D" />
+          <Text TextId="T_ID_INFO_TEXT_DX#D" Value="Digital Input (16DI)" />
+          <Text TextId="T_ID_SUBMOD_NAME_DX#D" Value="EX600-DX#D" />
+          <Text TextId="T_ID_SUBMOD_INFO_DX#D" Value="Digital Input (16DI)" />
+          <Text TextId="T_ID_MODULE_NAME_DX#E" Value="EX600-DX#E" />
+          <Text TextId="T_ID_INFO_TEXT_DX#E" Value="Digital Input (16DI)" />
+          <Text TextId="T_ID_SUBMOD_NAME_DX#E" Value="EX600-DX#E" />
+          <Text TextId="T_ID_SUBMOD_INFO_DX#E" Value="Digital Input (16DI)" />
+          <Text TextId="T_ID_MODULE_NAME_DX#F" Value="EX600-DX#F" />
+          <Text TextId="T_ID_INFO_TEXT_DX#F" Value="Digital Input (16DI)" />
+          <Text TextId="T_ID_SUBMOD_NAME_DX#F" Value="EX600-DX#F" />
+          <Text TextId="T_ID_SUBMOD_INFO_DX#F" Value="Digital Input (16DI)" />
+          <Text TextId="T_ID_MODULE_NAME_DY#B" Value="EX600-DY#B" />
+          <Text TextId="T_ID_INFO_TEXT_DY#B" Value="Digital Output (8DO)" />
+          <Text TextId="T_ID_SUBMOD_NAME_DY#B" Value="EX600-DY#B" />
+          <Text TextId="T_ID_SUBMOD_INFO_DY#B" Value="Digital Output (8DO)" />
+          <Text TextId="T_ID_MODULE_NAME_DY#E" Value="EX600-DY#E" />
+          <Text TextId="T_ID_INFO_TEXT_DY#E" Value="Digital Output (16DO)" />
+          <Text TextId="T_ID_SUBMOD_NAME_DY#E" Value="EX600-DY#E" />
+          <Text TextId="T_ID_SUBMOD_INFO_DY#E" Value="Digital Output (16DO)" />
+          <Text TextId="T_ID_MODULE_NAME_DY#F" Value="EX600-DY#F" />
+          <Text TextId="T_ID_INFO_TEXT_DY#F" Value="Digital Output (16DO)" />
+          <Text TextId="T_ID_SUBMOD_NAME_DY#F" Value="EX600-DY#F" />
+          <Text TextId="T_ID_SUBMOD_INFO_DY#F" Value="Digital Output (16DO)" />
+          <Text TextId="T_ID_MODULE_NAME_DM#E" Value="EX600-DM#E" />
+          <Text TextId="T_ID_INFO_TEXT_DM#E" Value="Digital Input/Output (8DIO)" />
+          <Text TextId="T_ID_SUBMOD_NAME_DM#E" Value="EX600-DM#E" />
+          <Text TextId="T_ID_SUBMOD_INFO_DM#E" Value="Digital Input/Output (8DIO)" />
+          <Text TextId="T_ID_MODULE_NAME_DM#F" Value="EX600-DM#F" />
+          <Text TextId="T_ID_INFO_TEXT_DM#F" Value="Digital Input/Output (8DIO)" />
+          <Text TextId="T_ID_SUBMOD_NAME_DM#F" Value="EX600-DM#F" />
+          <Text TextId="T_ID_SUBMOD_INFO_DM#F" Value="Digital Input/Output (8DIO)" />
+          <Text TextId="T_ID_MODULE_NAME_AXA" Value="EX600-AXA" />
+          <Text TextId="T_ID_INFO_TEXT_AXA" Value="Analog Input (2AI)" />
+          <Text TextId="T_ID_SUBMOD_NAME_AXA" Value="EX600-AXA" />
+          <Text TextId="T_ID_SUBMOD_INFO_AXA" Value="Analog Input (2AI)" />
+          <Text TextId="T_ID_MODULE_NAME_AYA" Value="EX600-AYA" />
+          <Text TextId="T_ID_INFO_TEXT_AYA" Value="Analog Output (2AO)" />
+          <Text TextId="T_ID_SUBMOD_NAME_AYA" Value="EX600-AYA" />
+          <Text TextId="T_ID_SUBMOD_INFO_AYA" Value="Analog Output (2AO)" />
+          <Text TextId="T_ID_MODULE_NAME_AMB" Value="EX600-AMB" />
+          <Text TextId="T_ID_INFO_TEXT_AMB" Value="Analog Input/Output (2AIO)" />
+          <Text TextId="T_ID_SUBMOD_NAME_AMB" Value="EX600-AMB" />
+          <Text TextId="T_ID_SUBMOD_INFO_AMB" Value="Analog Input/Output (2AIO)" />
+          <!--Parameter texts -->
+          <Text TextId="T_ID_PRM_CHANNEL0" Value="Channel 0" />
+          <Text TextId="T_ID_PRM_CHANNEL1" Value="Channel 1" />
+          <Text TextId="T_ID_PRM_CHANNEL2" Value="Channel 2" />
+          <Text TextId="T_ID_PRM_CHANNEL3" Value="Channel 3" />
+          <Text TextId="T_ID_PRM_CHANNEL4" Value="Channel 4" />
+          <Text TextId="T_ID_PRM_CHANNEL5" Value="Channel 5" />
+          <Text TextId="T_ID_PRM_CHANNEL6" Value="Channel 6" />
+          <Text TextId="T_ID_PRM_CHANNEL7" Value="Channel 7" />
+          <Text TextId="T_ID_PRM_CHANNEL8" Value="Channel 8" />
+          <Text TextId="T_ID_PRM_CHANNEL9" Value="Channel 9" />
+          <Text TextId="T_ID_PRM_CHANNEL10" Value="Channel 10" />
+          <Text TextId="T_ID_PRM_CHANNEL11" Value="Channel 11" />
+          <Text TextId="T_ID_PRM_CHANNEL12" Value="Channel 12" />
+          <Text TextId="T_ID_PRM_CHANNEL13" Value="Channel 13" />
+          <Text TextId="T_ID_PRM_CHANNEL14" Value="Channel 14" />
+          <Text TextId="T_ID_PRM_CHANNEL15" Value="Channel 15" />
+          <Text TextId="T_ID_PRM_CHANNEL16" Value="Channel 16" />
+          <Text TextId="T_ID_PRM_CHANNEL17" Value="Channel 17" />
+          <Text TextId="T_ID_PRM_CHANNEL18" Value="Channel 18" />
+          <Text TextId="T_ID_PRM_CHANNEL19" Value="Channel 19" />
+          <Text TextId="T_ID_PRM_CHANNEL20" Value="Channel 20" />
+          <Text TextId="T_ID_PRM_CHANNEL21" Value="Channel 21" />
+          <Text TextId="T_ID_PRM_CHANNEL22" Value="Channel 22" />
+          <Text TextId="T_ID_PRM_CHANNEL23" Value="Channel 23" />
+          <Text TextId="T_ID_PRM_CHANNEL24" Value="Channel 24" />
+          <Text TextId="T_ID_PRM_CHANNEL25" Value="Channel 25" />
+          <Text TextId="T_ID_PRM_CHANNEL26" Value="Channel 26" />
+          <Text TextId="T_ID_PRM_CHANNEL27" Value="Channel 27" />
+          <Text TextId="T_ID_PRM_CHANNEL28" Value="Channel 28" />
+          <Text TextId="T_ID_PRM_CHANNEL29" Value="Channel 29" />
+          <Text TextId="T_ID_PRM_CHANNEL30" Value="Channel 30" />
+          <Text TextId="T_ID_PRM_CHANNEL31" Value="Channel 31" />
+          <Text TextId="T_ID_PRM_CHANNEL0_IN" Value="Channel 0 (IN)" />
+          <Text TextId="T_ID_PRM_CHANNEL1_IN" Value="Channel 1 (IN)" />
+          <Text TextId="T_ID_PRM_CHANNEL2_IN" Value="Channel 2 (IN)" />
+          <Text TextId="T_ID_PRM_CHANNEL3_IN" Value="Channel 3 (IN)" />
+          <Text TextId="T_ID_PRM_CHANNEL4_IN" Value="Channel 4 (IN)" />
+          <Text TextId="T_ID_PRM_CHANNEL5_IN" Value="Channel 5 (IN)" />
+          <Text TextId="T_ID_PRM_CHANNEL6_IN" Value="Channel 6 (IN)" />
+          <Text TextId="T_ID_PRM_CHANNEL7_IN" Value="Channel 7 (IN)" />
+          <Text TextId="T_ID_PRM_CHANNEL0_OUT" Value="Channel 0 (OUT)" />
+          <Text TextId="T_ID_PRM_CHANNEL1_OUT" Value="Channel 1 (OUT)" />
+          <Text TextId="T_ID_PRM_CHANNEL2_OUT" Value="Channel 2 (OUT)" />
+          <Text TextId="T_ID_PRM_CHANNEL3_OUT" Value="Channel 3 (OUT)" />
+          <Text TextId="T_ID_PRM_CHANNEL4_OUT" Value="Channel 4 (OUT)" />
+          <Text TextId="T_ID_PRM_CHANNEL5_OUT" Value="Channel 5 (OUT)" />
+          <Text TextId="T_ID_PRM_CHANNEL6_OUT" Value="Channel 6 (OUT)" />
+          <Text TextId="T_ID_PRM_CHANNEL7_OUT" Value="Channel 7 (OUT)" />
+          <Text TextId="T_ID_PRM_UNIT_PARAMETER" Value="Unit Parameter" />
+          <Text TextId="T_ID_PRM_MONITOR_SHORT_CIRCUIT_POWER" Value="Monitor Short Circuit (Power)" />
+          <Text TextId="T_ID_PRM_MONITOR_SHORT_CIRCUIT_OUT" Value="Monitor Short Circuit (Out)" />
+          <Text TextId="T_ID_PRM_MONITOR_SHORT_CIRCUIT" Value="Monitor Short Circuit" />
+          <Text TextId="T_ID_PRM_MONITOR_OVER_RANGE" Value="Monitor Over Range" />
+          <Text TextId="T_ID_PRM_MONITOR_LOWER_RANGE" Value="Monitor Lower Range" />
+          <Text TextId="T_ID_PRM_MONITOR_INRUSH_CURRENT_FILTER" Value="Inrush Current Filter" />
+          <Text TextId="T_ID_PRM_RESTART_AFTER_SHORT_CIRCUIT" Value="Restart After Short Circuit" />
+          <Text TextId="T_ID_PRM_MONITOR_24V_C" Value="Monitor 24V_C" />
+          <Text TextId="T_ID_PRM_MONITOR_24V_D" Value="Monitor 24V_D" />
+          <Text TextId="T_ID_PRM_INPUT_FILTERING_TIME" Value="Input Filtering Time" />
+          <Text TextId="T_ID_PRM_INPUT_EXTENTION_TIME" Value="Input Extention Time" />
+          <Text TextId="T_ID_PRM_DATA_FORMAT" Value="Data Format" />
+          <Text TextId="T_ID_PRM_MONITOR_OPEN_CIRCUIT" Value="Monitor Open Circuit" />
+          <Text TextId="T_ID_PRM_MONITOR_COUNT" Value="Monitor Count" />
+          <Text TextId="T_ID_PRM_COUNT_VALUE" Value="Count Value" />
+          <Text TextId="T_ID_PRM_FAULT_MODE" Value="Fault Mode" />
+          <Text TextId="T_ID_PRM_MEASUREMENT_RANGE" Value="Measurement Range" />
+          <Text TextId="T_ID_PRM_FILTERING_MODE" Value="Filtering Mode" />
+          <Text TextId="T_ID_PRM_MONITOR_UPPER_LIMIT" Value="Monitor Upper Limit" />
+          <Text TextId="T_ID_PRM_UPPER_LIMIT_VALUE" Value="Upper Limit Value" />
+          <Text TextId="T_ID_PRM_MONITOR_LOWER_LIMIT" Value="Monitor Lower Limit" />
+          <Text TextId="T_ID_PRM_LOWER_LIMIT_VALUE" Value="Lower Limit Value" />
+          <Text TextId="T_ID_PRM_CUT_OFF_VALUE" Value="Cut-off Value" />
+          <Text TextId="T_ID_PRM_FAULT_VALUE" Value="Fault Value" />
+          <Text TextId="T_ID_VALUE_ENABLE" Value="Enable" />
+          <Text TextId="T_ID_VALUE_DISABLE" Value="Disable" />
+          <Text TextId="T_ID_VALUE_AUTO" Value="Auto" />
+          <Text TextId="T_ID_VALUE_MANUAL" Value="Manual" />
+          <Text TextId="T_ID_VALUE_DATA_FORMAT_OFFSET_BINARY" Value="Offset Binary" />
+          <Text TextId="T_ID_VALUE_DATA_FORMAT_SIGNED_MAGNITUDE" Value="Signed Magnitude" />
+          <Text TextId="T_ID_VALUE_DATA_FORMAT_2S_COMPLEMENT" Value="2's Complement" />
+          <Text TextId="T_ID_VALUE_DATA_FORMAT_SCALED" Value="Scaled" />
+          <Text TextId="T_ID_VALUE_-10_+10V" Value="-10...+10 V" />
+          <Text TextId="T_ID_VALUE_-5_+5V" Value="-5...+5 V" />
+          <Text TextId="T_ID_VALUE_-20_+20MA" Value="-20...+20 mA" />
+          <Text TextId="T_ID_VALUE_0_10V" Value="0...10 V" />
+          <Text TextId="T_ID_VALUE_0_5V" Value="0...5 V" />
+          <Text TextId="T_ID_VALUE_1_5V" Value="1...5 V" />
+          <Text TextId="T_ID_VALUE_0_20MA" Value="0...20 mA" />
+          <Text TextId="T_ID_VALUE_4_20MA" Value="4...20 mA" />
+          <Text TextId="T_ID_VALUE_FILTERING_TIME_0P1MS" Value="0.1 ms" />
+          <Text TextId="T_ID_VALUE_FILTERING_TIME_1MS" Value="1 ms" />
+          <Text TextId="T_ID_VALUE_FILTERING_TIME_10MS" Value="10 ms" />
+          <Text TextId="T_ID_VALUE_FILTERING_TIME_20MS" Value="20 ms" />
+          <Text TextId="T_ID_VALUE_EXTENTION_TIME_1MS" Value="1 ms" />
+          <Text TextId="T_ID_VALUE_EXTENTION_TIME_15MS" Value="15 ms" />
+          <Text TextId="T_ID_VALUE_EXTENTION_TIME_100MS" Value="100 ms" />
+          <Text TextId="T_ID_VALUE_EXTENTION_TIME_200MS" Value="200 ms" />
+          <Text TextId="T_ID_VALUE_FAULT_IDLE_MODE_DIGITAL_CLEAR" Value="Clear" />
+          <Text TextId="T_ID_VALUE_FAULT_IDLE_MODE_DIGITAL_FORCED_ON" Value="Forced On" />
+          <Text TextId="T_ID_VALUE_FAULT_IDLE_MODE_DIGITAL_HOLD" Value="Hold" />
+          <Text TextId="T_ID_VALUE_FILTERING_MODE_NONE" Value="None" />
+          <Text TextId="T_ID_VALUE_FILTERING_MODE_2_VALUE_AVERAGE" Value="2 Value Average" />
+          <Text TextId="T_ID_VALUE_FILTERING_MODE_4_VALUE_AVERAGE" Value="4 Value Average" />
+          <Text TextId="T_ID_VALUE_FILTERING_MODE_8_VALUE_AVERAGE" Value="8 Value Average" />
+          <Text TextId="T_ID_VALUE_FILTERING_MODE_16_VALUE_AVERAGE" Value="16 Value Average" />
+          <Text TextId="T_ID_VALUE_FILTERING_MODE_32_VALUE_AVERAGE" Value="32 Value Average" />
+          <Text TextId="T_ID_VALUE_FILTERING_MODE_64_VALUE_AVERAGE" Value="64 Value Average" />
+          <Text TextId="T_ID_VALUE_MEASUREMENT_RANGE_-10_+10V" Value="-10...+10 V" />
+          <Text TextId="T_ID_VALUE_MEASUREMENT_RANGE_-5_+5V" Value="-5...+5 V" />
+          <Text TextId="T_ID_VALUE_MEASUREMENT_RANGE_-20_+20MA" Value="-20...+20 mA" />
+          <Text TextId="T_ID_VALUE_MEASUREMENT_RANGE_0_10V" Value="0...10 V" />
+          <Text TextId="T_ID_VALUE_MEASUREMENT_RANGE_0_5V" Value="0...5 V" />
+          <Text TextId="T_ID_VALUE_MEASUREMENT_RANGE_1_5V" Value="1...5 V" />
+          <Text TextId="T_ID_VALUE_MEASUREMENT_RANGE_0_20MA" Value="0...20 mA" />
+          <Text TextId="T_ID_VALUE_MEASUREMENT_RANGE_4_20MA" Value="4...20 mA" />
+          <!---->
+          <Text TextId="T_ID_CHANNEL_DIAG_UPPER_LIMIT" Value="Analog upper limit over value" />
+          <Text TextId="T_ID_CHANNEL_DIAG_LOWER_LIMIT" Value="Analog lower limit under value" />
+          <Text TextId="T_ID_CHANNEL_DIAG_COUNTER_OVER" Value="ON/OFF counter over value" />
+          <Text TextId="T_ID_CHANNEL_DIAG_24V_D" Value="Pwr output is out of range" />
+          <Text TextId="T_ID_CHANNEL_DIAG_24V_C" Value="Pwr control is out of range" />
+          <Text TextId="T_ID_CHANNEL_DIAG_DISCONNECT" Value="Unit disconnection" />
+          <Text TextId="T_ID_CHANNEL_DIAG_FRAM" Value="Parameter read/write error" />
+        </PrimaryLanguage>
+      </ExternalTextList>
+    </ApplicationProcess>
+  </ProfileBody>
+</ISO15745Profile>

@@ -1,0 +1,1834 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-V2.25.xsd">
+  <ProfileHeader>
+    <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+    <ProfileRevision>1.00</ProfileRevision>
+    <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+    <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+    <ProfileClassID>Device</ProfileClassID>
+    <ISO15745Reference>
+      <ISO15745Part>4</ISO15745Part>
+      <ISO15745Edition>1</ISO15745Edition>
+      <ProfileTechnology>GSDML</ProfileTechnology>
+    </ISO15745Reference>
+  </ProfileHeader>
+  <ProfileBody>
+    <DeviceIdentity DeviceID="0x0604" VendorID="0x002A">
+      <InfoText TextId="Info device pn/pn coupler" />
+      <VendorName Value="SIEMENS" />
+    </DeviceIdentity>
+    <DeviceFunction>
+      <Family MainFamily="Gateway" ProductFamily="PN/PN Coupler" />
+    </DeviceFunction>
+    <ApplicationProcess>
+      <DeviceAccessPointList>
+        <DeviceAccessPointItem ID="DAP V1.0" FixedInSlots="0" PhysicalSlots="0..16" MinDeviceInterval="8" ModuleIdentNumber="0x00000001" DNS_CompatibleName="PN-PN-Coupler" ImplementationType="ERTEC200" ObjectUUID_LocalIndex="1" RequiredSchemaVersion="V1.0" DeviceAccessSupported="true">
+          <ModuleInfo CategoryRef="Migration dap">
+            <Name TextId="PN/PN Coupler V1.0" />
+            <InfoText TextId="Info PN/PN Coupler V1.0" />
+            <VendorName Value="SIEMENS" />
+            <OrderNumber Value="6ES7 158-3AD00-0XA0" />
+            <HardwareRelease Value="A1.0" />
+            <SoftwareRelease Value="V01.00.00" />
+          </ModuleInfo>
+          <IOConfigData MaxInputLength="292" MaxOutputLength="292" />
+          <UseableModules>
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="1" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="2" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="10" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="11" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="12" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="13" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="14" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="15" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="16" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="17" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="20" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="21" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="22" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="23" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="24" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="25" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="26" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="27" />
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DAP V1.0" SubmoduleIdentNumber="0x00000000">
+              <IOData IOCS_Length="1" IOPS_Length="1">
+              </IOData>
+              <RecordDataList>
+                <ParameterRecordDataItem Index="1" Length="4" TransferSequence="0">
+                  <Name TextId="General head parameters" />
+                  <Const Data="0x03,0x01,0x00,0x00" ByteOffset="0" />
+                  <Ref TextId="PS 1" Visible="true" DataType="Bit" BitOffset="0" ByteOffset="0" Changeable="true" DefaultValue="0" ValueItemTarget="PS1" />
+                  <Ref TextId="PS 2" Visible="true" DataType="Bit" BitOffset="1" ByteOffset="0" Changeable="true" DefaultValue="0" ValueItemTarget="PS2" />
+                  <Ref TextId="DIA" Visible="true" DataType="Bit" BitOffset="0" ByteOffset="1" Changeable="true" DefaultValue="0" ValueItemTarget="DIA" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="PN/PN Coupler V1.0" />
+                <InfoText TextId="Info PN/PN Coupler V1.0" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <Graphics>
+            <GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1" />
+          </Graphics>
+          <ApplicationRelations AR_BlockVersion="1" IOCR_BlockVersion="1" AlarmCR_BlockVersion="1" SubmoduleDataBlockVersion="1">
+            <TimingProperties SendClock="8 16 32" />
+          </ApplicationRelations>
+        </DeviceAccessPointItem>
+        <DeviceAccessPointItem ID="DAP V2.1 X1" FixedInSlots="0" PhysicalSlots="0..16" MinDeviceInterval="8" ModuleIdentNumber="0x00000001" DNS_CompatibleName="PN-PN-Coupler" ImplementationType="ERTEC200" ObjectUUID_LocalIndex="1" MultipleWriteSupported="true" RequiredSchemaVersion="V2.1" DeviceAccessSupported="true">
+          <ModuleInfo CategoryRef="PN/PN Coupler V1.0">
+            <Name TextId="PN/PN Coupler X1" />
+            <InfoText TextId="Info PN/PN Coupler X1 V1.0" />
+            <VendorName Value="SIEMENS" />
+            <OrderNumber Value="6ES7 158-3AD00-0XA0" />
+            <HardwareRelease Value="A1.0" />
+            <SoftwareRelease Value="V01.00.00" />
+          </ModuleInfo>
+          <SubslotList>
+            <SubslotItem TextId="IDT_SS_Interface_X1" SubslotNumber="32768" />
+            <SubslotItem TextId="IDT_SS_X1P1" SubslotNumber="32769" />
+            <SubslotItem TextId="IDT_SS_X1P2" SubslotNumber="32770" />
+          </SubslotList>
+          <IOConfigData MaxInputLength="292" MaxOutputLength="292" />
+          <UseableModules>
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="1" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="2" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="10" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="11" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="12" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="13" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="14" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="15" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="16" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="17" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="20" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="21" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="22" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="23" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="24" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="25" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="26" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="27" />
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DAP V2.1 X1" SubmoduleIdentNumber="0x00000000" Writeable_IM_Records="1 2 3">
+              <IOData IOCS_Length="1" IOPS_Length="1">
+              </IOData>
+              <RecordDataList>
+                <ParameterRecordDataItem Index="1" Length="4" TransferSequence="0">
+                  <Name TextId="General head parameters" />
+                  <Const Data="0x03,0x01,0x00,0x00" ByteOffset="0" />
+                  <Ref TextId="PS 1" Visible="true" DataType="Bit" BitOffset="0" ByteOffset="0" Changeable="true" DefaultValue="0" ValueItemTarget="PS1" />
+                  <Ref TextId="PS 2" Visible="true" DataType="Bit" BitOffset="1" ByteOffset="0" Changeable="true" DefaultValue="0" ValueItemTarget="PS2" />
+                  <Ref TextId="DIA" Visible="true" DataType="Bit" BitOffset="0" ByteOffset="1" Changeable="true" DefaultValue="0" ValueItemTarget="DIA" />
+                  <Ref TextId="GEO" Visible="false" DataType="BitArea" BitLength="2" BitOffset="0" ByteOffset="3" Changeable="false" DefaultValue="1" AllowedValues="1 2" ValueItemTarget="GEO" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="PN/PN Coupler X1" />
+                <InfoText TextId="Info PN/PN Coupler X1 V1.0" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem ID="IDS_V2.1 X1I" TextId="InterfaceNameX1" SubslotNumber="32768" SupportedMibs="MIB2" SupportedProtocols="SNMP;LLDP" SupportedRT_Classes="RT_CLASS_1" SubmoduleIdentNumber="0x00000001" IsochroneModeSupported="false" NetworkComponentDiagnosisSupported="true">
+              <ApplicationRelations>
+                <TimingProperties SendClock="8 16 32" />
+              </ApplicationRelations>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem ID="IDS_V2.1 X1P1" TextId="IDT_Port1" SubslotNumber="32769" MaxPortRxDelay="350" MaxPortTxDelay="158" SubmoduleIdentNumber="0x00000001" LinkStateDiagnosisCapability="Up+Down" />
+            <PortSubmoduleItem ID="IDS_V2.1 X1P2" TextId="IDT_Port2" SubslotNumber="32770" MaxPortRxDelay="350" MaxPortTxDelay="158" SubmoduleIdentNumber="0x00000001" LinkStateDiagnosisCapability="Up+Down" />
+          </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1" />
+          </Graphics>
+        </DeviceAccessPointItem>
+        <DeviceAccessPointItem ID="DAP V2.1 X2" FixedInSlots="0" PhysicalSlots="0..16" MinDeviceInterval="8" ModuleIdentNumber="0x00000001" DNS_CompatibleName="PN-PN-Coupler" ImplementationType="ERTEC200" ObjectUUID_LocalIndex="1" MultipleWriteSupported="true" RequiredSchemaVersion="V2.1" DeviceAccessSupported="true">
+          <ModuleInfo CategoryRef="PN/PN Coupler V1.0">
+            <Name TextId="PN/PN Coupler X2" />
+            <InfoText TextId="Info PN/PN Coupler X2 V1.0" />
+            <VendorName Value="SIEMENS" />
+            <OrderNumber Value="6ES7 158-3AD00-0XA0" />
+            <HardwareRelease Value="A1.0" />
+            <SoftwareRelease Value="V01.00.00" />
+          </ModuleInfo>
+          <SubslotList>
+            <SubslotItem TextId="IDT_SS_Interface_X2" SubslotNumber="33024" />
+            <SubslotItem TextId="IDT_SS_X2P1" SubslotNumber="33025" />
+            <SubslotItem TextId="IDT_SS_X2P2" SubslotNumber="33026" />
+          </SubslotList>
+          <IOConfigData MaxInputLength="292" MaxOutputLength="292" />
+          <UseableModules>
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="1" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="2" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="10" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="11" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="12" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="13" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="14" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="15" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="16" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="17" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="20" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="21" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="22" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="23" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="24" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="25" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="26" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="27" />
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DAP V2.1 X2" SubmoduleIdentNumber="0x00000000" Writeable_IM_Records="1 2 3">
+              <IOData IOCS_Length="1" IOPS_Length="1">
+              </IOData>
+              <RecordDataList>
+                <ParameterRecordDataItem Index="1" Length="4" TransferSequence="0">
+                  <Name TextId="General head parameters" />
+                  <Const Data="0x03,0x01,0x00,0x00" ByteOffset="0" />
+                  <Ref TextId="PS 1" Visible="true" DataType="Bit" BitOffset="0" ByteOffset="0" Changeable="true" DefaultValue="0" ValueItemTarget="PS1" />
+                  <Ref TextId="PS 2" Visible="true" DataType="Bit" BitOffset="1" ByteOffset="0" Changeable="true" DefaultValue="0" ValueItemTarget="PS2" />
+                  <Ref TextId="DIA" Visible="true" DataType="Bit" BitOffset="0" ByteOffset="1" Changeable="true" DefaultValue="0" ValueItemTarget="DIA" />
+                  <Ref TextId="GEO" Visible="false" DataType="BitArea" BitLength="2" BitOffset="0" ByteOffset="3" Changeable="false" DefaultValue="2" AllowedValues="1 2" ValueItemTarget="GEO" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="PN/PN Coupler X2" />
+                <InfoText TextId="Info PN/PN Coupler X2 V1.0" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem ID="IDS_V2.1 X2I" TextId="InterfaceNameX2" SubslotNumber="33024" SupportedMibs="MIB2" SupportedProtocols="SNMP;LLDP" SupportedRT_Classes="RT_CLASS_1" SubmoduleIdentNumber="0x00000001" IsochroneModeSupported="false" NetworkComponentDiagnosisSupported="true">
+              <ApplicationRelations>
+                <TimingProperties SendClock="8 16 32" />
+              </ApplicationRelations>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem ID="IDS_V2.1 X2P1" TextId="IDT_Port1" SubslotNumber="33025" MaxPortRxDelay="350" MaxPortTxDelay="158" SubmoduleIdentNumber="0x00000001" LinkStateDiagnosisCapability="Up+Down" />
+            <PortSubmoduleItem ID="IDS_V2.1 X2P2" TextId="IDT_Port2" SubslotNumber="33026" MaxPortRxDelay="350" MaxPortTxDelay="158" SubmoduleIdentNumber="0x00000001" LinkStateDiagnosisCapability="Up+Down" />
+          </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1" />
+          </Graphics>
+        </DeviceAccessPointItem>
+        <DeviceAccessPointItem ID="DAP X1 V2.2" FixedInSlots="0" PhysicalSlots="0..16" MinDeviceInterval="8" ModuleIdentNumber="0x00000002" DNS_CompatibleName="PN-PN-Coupler" ImplementationType="ERTEC200" ObjectUUID_LocalIndex="1" MultipleWriteSupported="true" ParameterizationSpeedupSupported="true" MaxSupportedRecordSize="8192" PowerOnToCommReady="2400" RequiredSchemaVersion="V2.2" DeviceAccessSupported="true">
+          <ModuleInfo CategoryRef="PN/PN Coupler V2.0">
+            <Name TextId="PN/PN Coupler X1" />
+            <InfoText TextId="Info PN/PN Coupler X1 V2.0" />
+            <VendorName Value="SIEMENS" />
+            <OrderNumber Value="6ES7 158-3AD01-0XA0" />
+            <HardwareRelease Value="A1.0" />
+            <SoftwareRelease Value="V02.00.00" />
+          </ModuleInfo>
+          <SubslotList>
+            <SubslotItem TextId="IDT_SS_Interface_X1" SubslotNumber="32768" />
+            <SubslotItem TextId="IDT_SS_X1P1" SubslotNumber="32769" />
+            <SubslotItem TextId="IDT_SS_X1P2" SubslotNumber="32770" />
+          </SubslotList>
+          <IOConfigData MaxInputLength="292" MaxOutputLength="292" />
+          <UseableModules>
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="1" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="2" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="10" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="11" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="12" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="13" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="14" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="15" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="16" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="17" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="20" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="21" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="22" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="23" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="24" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="25" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="26" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="27" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="50" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="51" />
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DAP X1 V2.2" SubmoduleIdentNumber="0x00000000" Writeable_IM_Records="1 2 3">
+              <IOData IOCS_Length="1" IOPS_Length="1">
+              </IOData>
+              <RecordDataList>
+                <ParameterRecordDataItem Index="1" Length="4" TransferSequence="0">
+                  <Name TextId="General head parameters" />
+                  <Const Data="0x03,0x01,0x00,0x00" ByteOffset="0" />
+                  <Ref TextId="PS 1" Visible="true" DataType="Bit" BitOffset="0" ByteOffset="0" Changeable="true" DefaultValue="0" ValueItemTarget="PS1" />
+                  <Ref TextId="PS 2" Visible="true" DataType="Bit" BitOffset="1" ByteOffset="0" Changeable="true" DefaultValue="0" ValueItemTarget="PS2" />
+                  <Ref TextId="DIA" Visible="true" DataType="Bit" BitOffset="0" ByteOffset="1" Changeable="true" DefaultValue="0" ValueItemTarget="DIA" />
+                  <Ref TextId="GEO" Visible="false" DataType="BitArea" BitLength="2" BitOffset="0" ByteOffset="3" Changeable="false" DefaultValue="1" AllowedValues="1 2" ValueItemTarget="GEO" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="PN/PN Coupler X1" />
+                <InfoText TextId="Info PN/PN Coupler X1 V2.0" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem ID="IDS_X1 V2.2I" TextId="InterfaceNameX1" SupportedRT_Classes="RT_CLASS_1;RT_CLASS_2;RT_CLASS_3" SupportedProtocols="SNMP;LLDP" SupportedMibs="MIB2" NetworkComponentDiagnosisSupported="true" DCP_HelloSupported="true" SubslotNumber="32768" SubmoduleIdentNumber="0x00008002">
+              <RT_Class3Properties MaxBridgeDelay="2920" MaxNumberIR_FrameData="128" />
+              <SynchronisationMode SupportedRole="SyncSlave" MaxLocalJitter="50" T_PLL_MAX="1000" SupportedSyncProtocols="PTCP" />
+              <ApplicationRelations>
+                <TimingProperties SendClock="8 16 32" ReductionRatio="1 2 4 8 16 32 64 128 256 512" />
+                <RT_Class3TimingProperties SendClock="8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120 124 128" ReductionRatioPow2="1 2 4 8 16" />
+              </ApplicationRelations>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem ID="IDS_X1 V2.2P1" TextId="IDT_Port1" SubslotNumber="32769" MaxPortRxDelay="374" MaxPortTxDelay="280" LinkStateDiagnosisCapability="Up+Down" PortDeactivationSupported="true" MAUTypes="16" SubmoduleIdentNumber="0x0000C000" />
+            <PortSubmoduleItem ID="IDS_X1 V2.2P2" TextId="IDT_Port2" SubslotNumber="32770" MaxPortRxDelay="374" MaxPortTxDelay="280" LinkStateDiagnosisCapability="Up+Down" PortDeactivationSupported="true" MAUTypes="16" SubmoduleIdentNumber="0x0000C000" />
+          </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1" />
+          </Graphics>
+        </DeviceAccessPointItem>
+        <DeviceAccessPointItem ID="DAP X2 V2.2" FixedInSlots="0" PhysicalSlots="0..16" MinDeviceInterval="8" ModuleIdentNumber="0x00000002" DNS_CompatibleName="PN-PN-Coupler" ImplementationType="ERTEC200" ObjectUUID_LocalIndex="1" MultipleWriteSupported="true" ParameterizationSpeedupSupported="true" MaxSupportedRecordSize="8192" PowerOnToCommReady="2600" RequiredSchemaVersion="V2.2" DeviceAccessSupported="true">
+          <ModuleInfo CategoryRef="PN/PN Coupler V2.0">
+            <Name TextId="PN/PN Coupler X2" />
+            <InfoText TextId="Info PN/PN Coupler X2 V2.0" />
+            <VendorName Value="SIEMENS" />
+            <OrderNumber Value="6ES7 158-3AD01-0XA0" />
+            <HardwareRelease Value="A1.0" />
+            <SoftwareRelease Value="V02.00.00" />
+          </ModuleInfo>
+          <SubslotList>
+            <SubslotItem TextId="IDT_SS_Interface_X2" SubslotNumber="33024" />
+            <SubslotItem TextId="IDT_SS_X2P1" SubslotNumber="33025" />
+            <SubslotItem TextId="IDT_SS_X2P2" SubslotNumber="33026" />
+          </SubslotList>
+          <IOConfigData MaxInputLength="292" MaxOutputLength="292" />
+          <UseableModules>
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="1" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="2" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="10" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="11" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="12" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="13" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="14" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="15" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="16" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="17" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="20" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="21" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="22" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="23" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="24" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="25" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="26" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="27" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="50" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="51" />
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DAP X2 V2.2" SubmoduleIdentNumber="0x00000000" Writeable_IM_Records="1 2 3">
+              <IOData IOCS_Length="1" IOPS_Length="1">
+              </IOData>
+              <RecordDataList>
+                <ParameterRecordDataItem Index="1" Length="4" TransferSequence="0">
+                  <Name TextId="General head parameters" />
+                  <Const Data="0x03,0x01,0x00,0x00" ByteOffset="0" />
+                  <Ref TextId="PS 1" Visible="true" DataType="Bit" BitOffset="0" ByteOffset="0" Changeable="true" DefaultValue="0" ValueItemTarget="PS1" />
+                  <Ref TextId="PS 2" Visible="true" DataType="Bit" BitOffset="1" ByteOffset="0" Changeable="true" DefaultValue="0" ValueItemTarget="PS2" />
+                  <Ref TextId="DIA" Visible="true" DataType="Bit" BitOffset="0" ByteOffset="1" Changeable="true" DefaultValue="0" ValueItemTarget="DIA" />
+                  <Ref TextId="GEO" Visible="false" DataType="BitArea" BitLength="2" BitOffset="0" ByteOffset="3" Changeable="false" DefaultValue="2" AllowedValues="1 2" ValueItemTarget="GEO" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="PN/PN Coupler X2" />
+                <InfoText TextId="Info PN/PN Coupler X2 V2.0" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem ID="IDS_X2 V2.2I" TextId="InterfaceNameX2" SupportedRT_Classes="RT_CLASS_1;RT_CLASS_2;RT_CLASS_3" SupportedProtocols="SNMP;LLDP" SupportedMibs="MIB2" NetworkComponentDiagnosisSupported="true" DCP_HelloSupported="true" SubslotNumber="33024" SubmoduleIdentNumber="0x00008002">
+              <RT_Class3Properties MaxBridgeDelay="2920" MaxNumberIR_FrameData="128" />
+              <SynchronisationMode SupportedRole="SyncSlave" MaxLocalJitter="50" T_PLL_MAX="1000" SupportedSyncProtocols="PTCP" />
+              <ApplicationRelations>
+                <TimingProperties SendClock="8 16 32" ReductionRatio="1 2 4 8 16 32 64 128 256 512" />
+                <RT_Class3TimingProperties SendClock="8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120 124 128" ReductionRatioPow2="1 2 4 8 16" />
+              </ApplicationRelations>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem ID="IDS_X2 V2.2P1" TextId="IDT_Port1" SubslotNumber="33025" MaxPortRxDelay="374" MaxPortTxDelay="280" LinkStateDiagnosisCapability="Up+Down" PortDeactivationSupported="true" MAUTypes="16" SubmoduleIdentNumber="0x0000C000" />
+            <PortSubmoduleItem ID="IDS_X2 V2.2P2" TextId="IDT_Port2" SubslotNumber="33026" MaxPortRxDelay="374" MaxPortTxDelay="280" LinkStateDiagnosisCapability="Up+Down" PortDeactivationSupported="true" MAUTypes="16" SubmoduleIdentNumber="0x0000C000" />
+          </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1" />
+          </Graphics>
+        </DeviceAccessPointItem>
+        <DeviceAccessPointItem ID="DAP X1 V3.0" FixedInSlots="0" PhysicalSlots="0..16" MinDeviceInterval="8" ModuleIdentNumber="0x00000003" DNS_CompatibleName="PN-PN-Coupler" ImplementationType="ERTEC200" ObjectUUID_LocalIndex="1" MultipleWriteSupported="true" ParameterizationSpeedupSupported="true" MaxSupportedRecordSize="8192" PowerOnToCommReady="2400" SharedDeviceSupported="true" RequiredSchemaVersion="V2.25" DeviceAccessSupported="true">
+          <ModuleInfo CategoryRef="PN/PN Coupler V3.0">
+            <Name TextId="PN/PN Coupler X1" />
+            <InfoText TextId="Info PN/PN Coupler X1 V3.0" />
+            <VendorName Value="SIEMENS" />
+            <OrderNumber Value="6ES7 158-3AD01-0XA0" />
+            <SoftwareRelease Value="V03.00.00" />
+          </ModuleInfo>
+          <SubslotList>
+            <SubslotItem TextId="IDT_SS_Interface_X1" SubslotNumber="32768" />
+            <SubslotItem TextId="IDT_SS_X1P1" SubslotNumber="32769" />
+            <SubslotItem TextId="IDT_SS_X1P2" SubslotNumber="32770" />
+          </SubslotList>
+          <IOConfigData MaxInputLength="1044" MaxOutputLength="1044" MaxDataLength="1096" />
+          <UseableModules>
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="1" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="2" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="10" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="11" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="12" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="13" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="14" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="15" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="16" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="17" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="20" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="21" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="22" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="23" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="24" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="25" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="26" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="27" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="52" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="53" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="54" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="55" />
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DAP X1 V3.0" SubmoduleIdentNumber="0x00000000" Writeable_IM_Records="1 2 3">
+              <IOData IOCS_Length="1" IOPS_Length="1">
+              </IOData>
+              <RecordDataList>
+                <ParameterRecordDataItem Index="1" Length="4" TransferSequence="0">
+                  <Name TextId="General head parameters" />
+                  <Const Data="0x00,0x00,0x00,0x00" ByteOffset="0" />
+                  <Ref TextId="PS 1" Visible="true" DataType="Bit" BitOffset="0" ByteOffset="0" Changeable="true" DefaultValue="0" ValueItemTarget="PS1" />
+                  <Ref TextId="PS 2" Visible="true" DataType="Bit" BitOffset="1" ByteOffset="0" Changeable="true" DefaultValue="0" ValueItemTarget="PS2" />
+                  <Ref TextId="DIA" Visible="true" DataType="Bit" BitOffset="0" ByteOffset="1" Changeable="true" DefaultValue="0" ValueItemTarget="DIA" />
+                  <Ref TextId="DDV" Visible="true" DataType="Bit" BitOffset="1" ByteOffset="1" Changeable="true" DefaultValue="0" ValueItemTarget="DDV" />
+                  <Ref TextId="GEO" Visible="false" DataType="BitArea" BitLength="2" BitOffset="0" ByteOffset="3" Changeable="false" DefaultValue="1" AllowedValues="1 2" ValueItemTarget="GEO" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="PN/PN Coupler X1" />
+                <InfoText TextId="Info PN/PN Coupler X1 V3.0" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem ID="IDS_X1 V3.0I" TextId="InterfaceNameX1" SupportedRT_Classes="RT_CLASS_1;RT_CLASS_2;RT_CLASS_3" SupportedProtocols="SNMP;LLDP" SupportedMibs="MIB2" NetworkComponentDiagnosisSupported="true" DCP_HelloSupported="true" SubslotNumber="32768" SubmoduleIdentNumber="0x00008002">
+              <RT_Class3Properties MaxBridgeDelay="2920" MaxNumberIR_FrameData="128" />
+              <SynchronisationMode SupportedRole="SyncSlave" MaxLocalJitter="50" T_PLL_MAX="1000" SupportedSyncProtocols="PTCP" />
+              <ApplicationRelations NumberOfAR="2">
+                <TimingProperties SendClock="8 16 32 64 128" ReductionRatio="1 2 4 8 16 32 64 128 256 512" />
+                <RT_Class3TimingProperties SendClock="8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120 124 128" ReductionRatioPow2="1 2 4 8 16" />
+              </ApplicationRelations>
+              <MediaRedundancy SupportedRole="Client" />
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem ID="IDS_X1 V3.0P1" TextId="IDT_Port1" SubslotNumber="32769" MaxPortRxDelay="374" MaxPortTxDelay="280" LinkStateDiagnosisCapability="Up+Down" PortDeactivationSupported="true" MAUTypes="16" SubmoduleIdentNumber="0x0000C000" SupportsRingportConfig="false" IsDefaultRingport="true" />
+            <PortSubmoduleItem ID="IDS_X1 V3.0P2" TextId="IDT_Port2" SubslotNumber="32770" MaxPortRxDelay="374" MaxPortTxDelay="280" LinkStateDiagnosisCapability="Up+Down" PortDeactivationSupported="true" MAUTypes="16" SubmoduleIdentNumber="0x0000C000" SupportsRingportConfig="false" IsDefaultRingport="true" />
+          </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1" />
+          </Graphics>
+        </DeviceAccessPointItem>
+        <DeviceAccessPointItem ID="DAP X2 V3.0" FixedInSlots="0" PhysicalSlots="0..16" MinDeviceInterval="8" ModuleIdentNumber="0x00000003" DNS_CompatibleName="PN-PN-Coupler" ImplementationType="ERTEC200" ObjectUUID_LocalIndex="1" MultipleWriteSupported="true" ParameterizationSpeedupSupported="true" MaxSupportedRecordSize="8192" PowerOnToCommReady="2600" SharedDeviceSupported="true" RequiredSchemaVersion="V2.25" DeviceAccessSupported="true">
+          <ModuleInfo CategoryRef="PN/PN Coupler V3.0">
+            <Name TextId="PN/PN Coupler X2" />
+            <InfoText TextId="Info PN/PN Coupler X2 V3.0" />
+            <VendorName Value="SIEMENS" />
+            <OrderNumber Value="6ES7 158-3AD01-0XA0" />
+            <SoftwareRelease Value="V03.00.00" />
+          </ModuleInfo>
+          <SubslotList>
+            <SubslotItem TextId="IDT_SS_Interface_X2" SubslotNumber="33024" />
+            <SubslotItem TextId="IDT_SS_X2P1" SubslotNumber="33025" />
+            <SubslotItem TextId="IDT_SS_X2P2" SubslotNumber="33026" />
+          </SubslotList>
+          <IOConfigData MaxInputLength="1044" MaxOutputLength="1044" MaxDataLength="1096" />
+          <UseableModules>
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="1" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="2" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="10" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="11" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="12" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="13" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="14" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="15" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="16" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="17" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="20" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="21" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="22" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="23" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="24" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="25" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="26" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="27" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="52" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="53" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="54" />
+            <ModuleItemRef AllowedInSlots="1..16" ModuleItemTarget="55" />
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DAP X2 V3.0" SubmoduleIdentNumber="0x00000000" Writeable_IM_Records="1 2 3">
+              <IOData IOCS_Length="1" IOPS_Length="1">
+              </IOData>
+              <RecordDataList>
+                <ParameterRecordDataItem Index="1" Length="4" TransferSequence="0">
+                  <Name TextId="General head parameters" />
+                  <Const Data="0x00,0x00,0x00,0x00" ByteOffset="0" />
+                  <Ref TextId="PS 1" Visible="true" DataType="Bit" BitOffset="0" ByteOffset="0" Changeable="true" DefaultValue="0" ValueItemTarget="PS1" />
+                  <Ref TextId="PS 2" Visible="true" DataType="Bit" BitOffset="1" ByteOffset="0" Changeable="true" DefaultValue="0" ValueItemTarget="PS2" />
+                  <Ref TextId="DIA" Visible="true" DataType="Bit" BitOffset="0" ByteOffset="1" Changeable="true" DefaultValue="0" ValueItemTarget="DIA" />
+                  <Ref TextId="DDV" Visible="true" DataType="Bit" BitOffset="1" ByteOffset="1" Changeable="true" DefaultValue="0" ValueItemTarget="DDV" />
+                  <Ref TextId="GEO" Visible="false" DataType="BitArea" BitLength="2" BitOffset="0" ByteOffset="3" Changeable="false" DefaultValue="2" AllowedValues="1 2" ValueItemTarget="GEO" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="PN/PN Coupler X2" />
+                <InfoText TextId="Info PN/PN Coupler X2 V3.0" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem ID="IDS_X2 V3.0I" TextId="InterfaceNameX2" SupportedRT_Classes="RT_CLASS_1;RT_CLASS_2;RT_CLASS_3" SupportedProtocols="SNMP;LLDP" SupportedMibs="MIB2" NetworkComponentDiagnosisSupported="true" DCP_HelloSupported="true" SubslotNumber="33024" SubmoduleIdentNumber="0x00008002">
+              <RT_Class3Properties MaxBridgeDelay="2920" MaxNumberIR_FrameData="128" />
+              <SynchronisationMode SupportedRole="SyncSlave" MaxLocalJitter="50" T_PLL_MAX="1000" SupportedSyncProtocols="PTCP" />
+              <ApplicationRelations NumberOfAR="2">
+                <TimingProperties SendClock="8 16 32 64 128" ReductionRatio="1 2 4 8 16 32 64 128 256 512" />
+                <RT_Class3TimingProperties SendClock="8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120 124 128" ReductionRatioPow2="1 2 4 8 16" />
+              </ApplicationRelations>
+              <MediaRedundancy SupportedRole="Client" />
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem ID="IDS_X2 V3.0P1" TextId="IDT_Port1" SubslotNumber="33025" MaxPortRxDelay="374" MaxPortTxDelay="280" LinkStateDiagnosisCapability="Up+Down" PortDeactivationSupported="true" MAUTypes="16" SubmoduleIdentNumber="0x0000C000" SupportsRingportConfig="false" IsDefaultRingport="true" />
+            <PortSubmoduleItem ID="IDS_X2 V3.0P2" TextId="IDT_Port2" SubslotNumber="33026" MaxPortRxDelay="374" MaxPortTxDelay="280" LinkStateDiagnosisCapability="Up+Down" PortDeactivationSupported="true" MAUTypes="16" SubmoduleIdentNumber="0x0000C000" SupportsRingportConfig="false" IsDefaultRingport="true" />
+          </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1" />
+          </Graphics>
+        </DeviceAccessPointItem>
+      </DeviceAccessPointList>
+      <ModuleList>
+        <ModuleItem ID="1" ModuleIdentNumber="0x000C0006">
+          <ModuleInfo CategoryRef="Mixed modules">
+            <Name TextId="6 Bytes Input / 12 Bytes Output" />
+            <InfoText TextId="Info 6 Bytes Input / 12 Bytes Output" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1" SubmoduleIdentNumber="0x00000000">
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned16" UseAsBits="true" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="6 Bytes Input / 12 Bytes Output" />
+                <InfoText TextId="Info 6 Bytes Input / 12 Bytes Output" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="2" ModuleIdentNumber="0x0006000C">
+          <ModuleInfo CategoryRef="Mixed modules">
+            <Name TextId="12 Bytes Input / 6 Bytes Output" />
+            <InfoText TextId="Info 12 Bytes Input / 6 Bytes Output" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="2" SubmoduleIdentNumber="0x00000000">
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned16" UseAsBits="true" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="12 Bytes Input / 6 Bytes Output" />
+                <InfoText TextId="Info 12 Bytes Input / 6 Bytes Output" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="20" ModuleIdentNumber="0x00010000">
+          <ModuleInfo CategoryRef="Output modules">
+            <Name TextId="1 Byte Output" />
+            <InfoText TextId="Info 1 Byte Output" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="20" SubmoduleIdentNumber="0x00000000">
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Output Consistency="All items consistency">
+                  <DataItem TextId="Output" DataType="Unsigned8" UseAsBits="true" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="1 Byte Output" />
+                <InfoText TextId="Info 1 Byte Output" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="21" ModuleIdentNumber="0x00020000">
+          <ModuleInfo CategoryRef="Output modules">
+            <Name TextId="2 Bytes Output" />
+            <InfoText TextId="Info 2 Bytes Output" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="21" SubmoduleIdentNumber="0x00000000">
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Output Consistency="All items consistency">
+                  <DataItem TextId="Output" DataType="Unsigned16" UseAsBits="true" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="2 Bytes Output" />
+                <InfoText TextId="Info 2 Bytes Output" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="22" ModuleIdentNumber="0x00040000">
+          <ModuleInfo CategoryRef="Output modules">
+            <Name TextId="4 Bytes Output" />
+            <InfoText TextId="Info 4 Bytes Output" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="22" SubmoduleIdentNumber="0x00000000">
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Output Consistency="All items consistency">
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="4 Bytes Output" />
+                <InfoText TextId="Info 4 Bytes Output" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="23" ModuleIdentNumber="0x00080000">
+          <ModuleInfo CategoryRef="Output modules">
+            <Name TextId="8 Bytes Output" />
+            <InfoText TextId="Info 8 Bytes Output" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="23" SubmoduleIdentNumber="0x00000000">
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Output Consistency="All items consistency">
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="8 Bytes Output" />
+                <InfoText TextId="Info 8 Bytes Output" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="24" ModuleIdentNumber="0x00100000">
+          <ModuleInfo CategoryRef="Output modules">
+            <Name TextId="16 Bytes Output" />
+            <InfoText TextId="Info 16 Bytes Output" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="24" SubmoduleIdentNumber="0x00000000">
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Output Consistency="All items consistency">
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="16 Bytes Output" />
+                <InfoText TextId="Info 16 Bytes Output" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="25" ModuleIdentNumber="0x00200000">
+          <ModuleInfo CategoryRef="Output modules">
+            <Name TextId="32 Bytes Output" />
+            <InfoText TextId="Info 32 Bytes Output" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="25" SubmoduleIdentNumber="0x00000000">
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Output Consistency="All items consistency">
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="32 Bytes Output" />
+                <InfoText TextId="Info 32 Bytes Output" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="26" ModuleIdentNumber="0x00400000">
+          <ModuleInfo CategoryRef="Output modules">
+            <Name TextId="64 Bytes Output" />
+            <InfoText TextId="Info 64 Bytes Output" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="26" SubmoduleIdentNumber="0x00000000">
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Output Consistency="All items consistency">
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="64 Bytes Output" />
+                <InfoText TextId="Info 64 Bytes Output" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="27" ModuleIdentNumber="0x00800000">
+          <ModuleInfo CategoryRef="Output modules">
+            <Name TextId="128 Bytes Output" />
+            <InfoText TextId="Info 128 Bytes Output" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="27" SubmoduleIdentNumber="0x00000000">
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Output Consistency="All items consistency">
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Output" DataType="Unsigned32" UseAsBits="true" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="128 Bytes Output" />
+                <InfoText TextId="Info 128 Bytes Output" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="10" ModuleIdentNumber="0x00000001">
+          <ModuleInfo CategoryRef="Input modules">
+            <Name TextId="1 Byte Input" />
+            <InfoText TextId="Info 1 Byte Input" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="10" SubmoduleIdentNumber="0x00000000">
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem TextId="Input" DataType="Unsigned8" UseAsBits="true" />
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="1 Byte Input" />
+                <InfoText TextId="Info 1 Byte Input" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="11" ModuleIdentNumber="0x00000002">
+          <ModuleInfo CategoryRef="Input modules">
+            <Name TextId="2 Bytes Input" />
+            <InfoText TextId="Info 2 Bytes Input" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="11" SubmoduleIdentNumber="0x00000000">
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem TextId="Input" DataType="Unsigned16" UseAsBits="true" />
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="2 Bytes Input" />
+                <InfoText TextId="Info 2 Bytes Input" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="12" ModuleIdentNumber="0x00000004">
+          <ModuleInfo CategoryRef="Input modules">
+            <Name TextId="4 Bytes Input" />
+            <InfoText TextId="Info 4 Bytes Input" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="12" SubmoduleIdentNumber="0x00000000">
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="4 Bytes Input" />
+                <InfoText TextId="Info 4 Bytes Input" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="13" ModuleIdentNumber="0x00000008">
+          <ModuleInfo CategoryRef="Input modules">
+            <Name TextId="8 Bytes Input" />
+            <InfoText TextId="Info 8 Bytes Input" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="13" SubmoduleIdentNumber="0x00000000">
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="8 Bytes Input" />
+                <InfoText TextId="Info 8 Bytes Input" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="14" ModuleIdentNumber="0x00000010">
+          <ModuleInfo CategoryRef="Input modules">
+            <Name TextId="16 Bytes Input" />
+            <InfoText TextId="Info 16 Bytes Input" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="14" SubmoduleIdentNumber="0x00000000">
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="16 Bytes Input" />
+                <InfoText TextId="Info 16 Bytes Input" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="15" ModuleIdentNumber="0x00000020">
+          <ModuleInfo CategoryRef="Input modules">
+            <Name TextId="32 Bytes Input" />
+            <InfoText TextId="Info 32 Bytes Input" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="15" SubmoduleIdentNumber="0x00000000">
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="32 Bytes Input" />
+                <InfoText TextId="Info 32 Bytes Input" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="16" ModuleIdentNumber="0x00000040">
+          <ModuleInfo CategoryRef="Input modules">
+            <Name TextId="64 Bytes Input" />
+            <InfoText TextId="Info 64 Bytes Input" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="16" SubmoduleIdentNumber="0x00000000">
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="64 Bytes Input" />
+                <InfoText TextId="Info 64 Bytes Input" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="17" ModuleIdentNumber="0x00000080">
+          <ModuleInfo CategoryRef="Input modules">
+            <Name TextId="128 Bytes Input" />
+            <InfoText TextId="Info 128 Bytes Input" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="17" SubmoduleIdentNumber="0x00000000">
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                  <DataItem TextId="Input" DataType="Unsigned32" UseAsBits="true" />
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="128 Bytes Input" />
+                <InfoText TextId="Info 128 Bytes Input" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="50" ModuleIdentNumber="0x80000002">
+          <ModuleInfo CategoryRef="DataRecord modules">
+            <Name TextId="DataRecord Write module" />
+            <InfoText TextId="Info DataRecord Write module" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="50" SubmoduleIdentNumber="0x00000000">
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem TextId="EB0" DataType="Unsigned8" UseAsBits="true" />
+                  <DataItem TextId="EB1" DataType="Unsigned8" UseAsBits="false" />
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="DataRecord Write module" />
+                <InfoText TextId="Info DataRecord Write module" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="51" ModuleIdentNumber="0xC0010003">
+          <ModuleInfo CategoryRef="DataRecord modules">
+            <Name TextId="DataRecord Read module" />
+            <InfoText TextId="Info DataRecord Read module" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="51" SubmoduleIdentNumber="0x00000000">
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem TextId="EW0" DataType="Unsigned16" UseAsBits="false" />
+                  <DataItem TextId="EB2" DataType="Unsigned8" UseAsBits="false" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem TextId="AB0" DataType="Unsigned8" UseAsBits="false" />
+                </Output>
+              </IOData>
+              <RecordDataList>
+                <ParameterRecordDataItem Length="4" Index="1">
+                  <Name TextId="General head parameters" />
+                  <Const Data="0x00,0x00,0x00,0x00" ByteOffset="0" />
+                  <Ref TextId="update alert" DataType="Bit" ByteOffset="0" BitOffset="0" DefaultValue="0" Visible="true" Changeable="true" ValueItemTarget="UPAL" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="DataRecord Read module" />
+                <InfoText TextId="Info DataRecord Read module" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="52" ModuleIdentNumber="0x80000002">
+          <ModuleInfo CategoryRef="DataRecord modules" SubCategory1Ref="STORAGE">
+            <Name TextId="DataRecord Write module STO" />
+            <InfoText TextId="Info DataRecord Write module STO" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="52" SubmoduleIdentNumber="0x00000000">
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem TextId="EB0" DataType="Unsigned8" UseAsBits="true" />
+                  <DataItem TextId="EB1" DataType="Unsigned8" UseAsBits="false" />
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="DataRecord Write module STO" />
+                <InfoText TextId="Info DataRecord Write module STO" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="53" ModuleIdentNumber="0xC0010005">
+          <ModuleInfo CategoryRef="DataRecord modules" SubCategory1Ref="STORAGE">
+            <Name TextId="DataRecord Read module STO" />
+            <InfoText TextId="Info DataRecord Read module STO" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="53" SubmoduleIdentNumber="0x00000000">
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem TextId="EW0" DataType="Unsigned16" UseAsBits="false" />
+                  <DataItem TextId="EW1" DataType="Unsigned16" />
+                  <DataItem TextId="EB2" DataType="Unsigned8" UseAsBits="false" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem TextId="AB0" DataType="Unsigned8" UseAsBits="false" />
+                </Output>
+              </IOData>
+              <RecordDataList>
+                <ParameterRecordDataItem Length="4" Index="1">
+                  <Name TextId="General head parameters" />
+                  <Const Data="0x00,0x00,0x00,0x00" ByteOffset="0" />
+                  <Ref TextId="update alert" DataType="Bit" ByteOffset="0" BitOffset="0" DefaultValue="0" Visible="true" Changeable="true" ValueItemTarget="UPAL" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="DataRecord Read module STO" />
+                <InfoText TextId="Info DataRecord Read module STO" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="54" ModuleIdentNumber="0xA0000001">
+          <ModuleInfo CategoryRef="DataRecord modules" SubCategory1Ref="PUBLISHER">
+            <Name TextId="DataRecord Write module PUB" />
+            <InfoText TextId="Info DataRecord Write module PUB" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="54" SubmoduleIdentNumber="0x00000000">
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem TextId="EB0" DataType="Unsigned8" />
+                </Input>
+              </IOData>
+              <RecordDataList>
+                <ParameterRecordDataItem Length="4" Index="1">
+                  <Name TextId="General head parameters" />
+                  <Const Data="0x00,0x02,0x00,0x00" ByteOffset="0" />
+                  <Ref TextId="record index" DataType="Unsigned16" ByteOffset="0" DefaultValue="2" Visible="true" Changeable="true" AllowedValues="2..32767" ValueItemTarget="record index" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="DataRecord Write module PUB" />
+                <InfoText TextId="Info DataRecord Write module PUB" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="55" ModuleIdentNumber="0xE0000003">
+          <ModuleInfo CategoryRef="DataRecord modules" SubCategory1Ref="PUBLISHER">
+            <Name TextId="DataRecord Read module PUB" />
+            <InfoText TextId="Info DataRecord Read module PUB" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="55" SubmoduleIdentNumber="0x00000000">
+              <IOData IOCS_Length="1" IOPS_Length="1">
+                <Input Consistency="All items consistency">
+                  <DataItem TextId="EW0" DataType="Unsigned16" />
+                  <DataItem TextId="EB2" DataType="Unsigned8" UseAsBits="false" />
+                </Input>
+              </IOData>
+              <RecordDataList>
+                <ParameterRecordDataItem Length="4" Index="1">
+                  <Name TextId="General head parameters" />
+                  <Const Data="0x00,0x00,0x00,0x00" ByteOffset="0" />
+                  <Ref TextId="update alert" DataType="Bit" ByteOffset="0" BitOffset="0" DefaultValue="0" Visible="true" Changeable="true" ValueItemTarget="UPAL" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="DataRecord Read module PUB" />
+                <InfoText TextId="Info DataRecord Read module PUB" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+      </ModuleList>
+      <ValueList>
+        <ValueItem ID="PS1">
+          <Help TextId="Help_PS1" />
+        </ValueItem>
+        <ValueItem ID="PS2">
+          <Help TextId="Help_PS2" />
+        </ValueItem>
+        <ValueItem ID="DIA">
+          <Help TextId="Help_DIA" />
+        </ValueItem>
+        <ValueItem ID="DDV">
+          <Help TextId="Help_DDV" />
+        </ValueItem>
+        <ValueItem ID="GEO" />
+        <ValueItem ID="UPAL">
+          <Help TextId="Help_UPAL" />
+        </ValueItem>
+        <ValueItem ID="record index">
+          <Help TextId="Help_record index" />
+        </ValueItem>
+        <ValueItem ID="Diag: Power supply failure">
+          <Assignments>
+            <Assign TextId="Failure power supply left" Content="1" />
+            <Assign TextId="Failure power supply right" Content="2" />
+          </Assignments>
+        </ValueItem>
+        <ValueItem ID="Diag: Project error">
+          <Assignments>
+            <Assign TextId="Error of other netside" Content="1" />
+            <Assign TextId="Difference between netsides" Content="2" />
+            <Assign TextId="No Input-data configured" Content="4" />
+          </Assignments>
+        </ValueItem>
+        <ValueItem ID="Diag: Data validity invalid">
+          <Assignments>
+            <Assign TextId="Data invalid" Content="1" />
+          </Assignments>
+        </ValueItem>
+      </ValueList>
+      <UnitDiagTypeList>
+        <UnitDiagTypeItem UserStructureIdentifier="1">
+          <Ref TextId="Power supply failure" DataType="Unsigned8" ByteOffset="0" DefaultValue="1" ValueItemTarget="Diag: Power supply failure" />
+        </UnitDiagTypeItem>
+        <UnitDiagTypeItem UserStructureIdentifier="2">
+          <Ref TextId="Projection fault" DataType="Unsigned8" ByteOffset="0" DefaultValue="1" ValueItemTarget="Diag: Project error" />
+        </UnitDiagTypeItem>
+        <UnitDiagTypeItem UserStructureIdentifier="3">
+          <Ref TextId="Data validity invalid" DataType="Unsigned8" ByteOffset="0" DefaultValue="1" ValueItemTarget="Diag: Data validity invalid" />
+        </UnitDiagTypeItem>
+      </UnitDiagTypeList>
+      <GraphicsList>
+        <GraphicItem ID="1" GraphicFile="GSDML-002A-0604-PNPNC-01" />
+      </GraphicsList>
+      <CategoryList>
+        <CategoryItem ID="Migration dap" TextId="Migration dap">
+          <InfoText TextId="Info Migration dap" />
+        </CategoryItem>
+        <CategoryItem ID="PN/PN Coupler V1.0" TextId="PN/PN Coupler V1.0">
+          <InfoText TextId="InfoCat PN/PN Coupler V1.0" />
+        </CategoryItem>
+        <CategoryItem ID="PN/PN Coupler V2.0" TextId="PN/PN Coupler V2.0">
+          <InfoText TextId="InfoCat PN/PN Coupler V2.0" />
+        </CategoryItem>
+        <CategoryItem ID="PN/PN Coupler V3.0" TextId="PN/PN Coupler V3.0">
+          <InfoText TextId="InfoCat PN/PN Coupler V3.0" />
+        </CategoryItem>
+        <CategoryItem ID="Input modules" TextId="Input modules">
+          <InfoText TextId="Info Input modules" />
+        </CategoryItem>
+        <CategoryItem ID="Output modules" TextId="Output modules">
+          <InfoText TextId="Info Output modules" />
+        </CategoryItem>
+        <CategoryItem ID="Mixed modules" TextId="Mixed modules">
+          <InfoText TextId="Info Mixed modules" />
+        </CategoryItem>
+        <CategoryItem ID="DataRecord modules" TextId="DataRecord modules">
+          <InfoText TextId="Info DataRecord modules" />
+        </CategoryItem>
+        <CategoryItem ID="PUBLISHER" TextId="PUBLISHER">
+          <InfoText TextId="Info PUBLISHER" />
+        </CategoryItem>
+        <CategoryItem ID="STORAGE" TextId="STORAGE">
+          <InfoText TextId="Info STORAGE" />
+        </CategoryItem>
+      </CategoryList>
+      <ExternalTextList>
+        <PrimaryLanguage>
+          <Text Value="PN-IO-01" TextId="InterfaceNameX1" />
+          <Text Value="PN-IO-02" TextId="InterfaceNameX2" />
+          <Text Value="PN/PN Coupler V1.0" TextId="PN/PN Coupler V1.0" />
+          <Text Value="PN/PN Coupler V2.0" TextId="PN/PN Coupler V2.0" />
+          <Text Value="PN/PN Coupler V3.0" TextId="PN/PN Coupler V3.0" />
+          <Text Value="Migration" TextId="Migration dap" />
+          <Text Value="PN/PN Coupler V1.0" TextId="InfoCat PN/PN Coupler V1.0" />
+          <Text Value="PN/PN Coupler V2.0" TextId="InfoCat PN/PN Coupler V2.0" />
+          <Text Value="PN/PN Coupler V3.0" TextId="InfoCat PN/PN Coupler V3.0" />
+          <Text Value="PN/PN Coupler V1.0 Migration" TextId="Info Migration dap" />
+          <Text Value="PN/PN Coupler X1" TextId="PN/PN Coupler X1" />
+          <Text Value="PN/PN Coupler X2" TextId="PN/PN Coupler X2" />
+          <Text Value="PN/PN Coupler" TextId="Info device pn/pn coupler" />
+          <Text Value="Coupler of two PROFINET networks, IP20; firmware V1.0" TextId="Info PN/PN Coupler V1.0" />
+          <Text Value="Coupler of two PROFINET networks, IP20; PROFINET interface and 2 ports; FW Update via bus; X1 (left side); firmware V1.0" TextId="Info PN/PN Coupler X1 V1.0" />
+          <Text Value="Coupler of two PROFINET networks, IP20; PROFINET interface and 2 ports; FW Update via bus; X2 (right side); firmware V1.0" TextId="Info PN/PN Coupler X2 V1.0" />
+          <Text Value="Coupler of two PROFINET networks, IP20; PROFINET interface and 2 ports; X1 (left side); FW Update via bus; port diagnostics; I&amp;M functionality; IRT and prioritized startup; firmware V2.0" TextId="Info PN/PN Coupler X1 V2.0" />
+          <Text Value="Coupler of two PROFINET networks, IP20; PROFINET interface and 2 ports; X2 (right side); FW Update via bus; port diagnostics; I&amp;M functionality; IRT and prioritized startup; firmware V2.0" TextId="Info PN/PN Coupler X2 V2.0" />
+          <Text Value="Coupler of two PROFINET networks, IP20; PROFINET interface and 2 ports; X1 (left side); FW Update via bus; port diagnostics; I&amp;M functionality; IRT and prioritized startup; firmware V3.0" TextId="Info PN/PN Coupler X1 V3.0" />
+          <Text Value="Coupler of two PROFINET networks, IP20; PROFINET interface and 2 ports; X2 (right side); FW Update via bus; port diagnostics; I&amp;M functionality; IRT and prioritized startup; firmware V3.0" TextId="Info PN/PN Coupler X2 V3.0" />
+          <Text Value="General head parameters" TextId="General head parameters" />
+          <Text Value="Input" TextId="Input" />
+          <Text Value="Output" TextId="Output" />
+          <Text Value="IN   1 Byte" TextId="1 Byte Input" />
+          <Text Value="IN   2 Bytes" TextId="2 Bytes Input" />
+          <Text Value="IN   4 Bytes" TextId="4 Bytes Input" />
+          <Text Value="IN   8 Bytes" TextId="8 Bytes Input" />
+          <Text Value="IN  16 Bytes" TextId="16 Bytes Input" />
+          <Text Value="IN  32 Bytes" TextId="32 Bytes Input" />
+          <Text Value="IN  64 Bytes" TextId="64 Bytes Input" />
+          <Text Value="IN 128 Bytes" TextId="128 Bytes Input" />
+          <Text Value="OUT   1 Byte" TextId="1 Byte Output" />
+          <Text Value="OUT   2 Bytes" TextId="2 Bytes Output" />
+          <Text Value="OUT   4 Bytes" TextId="4 Bytes Output" />
+          <Text Value="OUT   8 Bytes" TextId="8 Bytes Output" />
+          <Text Value="OUT  16 Bytes" TextId="16 Bytes Output" />
+          <Text Value="OUT  32 Bytes" TextId="32 Bytes Output" />
+          <Text Value="OUT  64 Bytes" TextId="64 Bytes Output" />
+          <Text Value="OUT 128 Bytes" TextId="128 Bytes Output" />
+          <Text Value="IN/OUT 12 Bytes / 6 Bytes" TextId="12 Bytes Input / 6 Bytes Output" />
+          <Text Value="IN/OUT 6 Bytes / 12 Bytes" TextId="6 Bytes Input / 12 Bytes Output" />
+          <Text Value="RD WRITE" TextId="DataRecord Write module" />
+          <Text Value="RD READ" TextId="DataRecord Read module" />
+          <Text Value="1 Byte Input" TextId="Info 1 Byte Input" />
+          <Text Value="2 Bytes Input" TextId="Info 2 Bytes Input" />
+          <Text Value="4 Bytes Input" TextId="Info 4 Bytes Input" />
+          <Text Value="8 Bytes Input" TextId="Info 8 Bytes Input" />
+          <Text Value="16 Bytes Input" TextId="Info 16 Bytes Input" />
+          <Text Value="32 Bytes Input" TextId="Info 32 Bytes Input" />
+          <Text Value="64 Bytes Input" TextId="Info 64 Bytes Input" />
+          <Text Value="128 Bytes Input" TextId="Info 128 Bytes Input" />
+          <Text Value="1 Byte Output" TextId="Info 1 Byte Output" />
+          <Text Value="2 Bytes Output" TextId="Info 2 Bytes Output" />
+          <Text Value="4 Bytes Output" TextId="Info 4 Bytes Output" />
+          <Text Value="8 Bytes Output" TextId="Info 8 Bytes Output" />
+          <Text Value="16 Bytes Output" TextId="Info 16 Bytes Output" />
+          <Text Value="32 Bytes Output" TextId="Info 32 Bytes Output" />
+          <Text Value="64 Bytes Output" TextId="Info 64 Bytes Output" />
+          <Text Value="128 Bytes Output" TextId="Info 128 Bytes Output" />
+          <Text Value="12 Bytes Input und 6 Bytes Output" TextId="Info 12 Bytes Input / 6 Bytes Output" />
+          <Text Value="6 Bytes Input und 12 Bytes Output" TextId="Info 6 Bytes Input / 12 Bytes Output" />
+          <Text Value="Module for Record Data Write" TextId="Info DataRecord Write module" />
+          <Text Value="Module for Record Data Read" TextId="Info DataRecord Read module" />
+          <Text Value="RD WRITE STO" TextId="DataRecord Write module STO" />
+          <Text Value="RD READ STO" TextId="DataRecord Read module STO" />
+          <Text Value="Module for Record Data Write up to 8 data records will be buffered" TextId="Info DataRecord Write module STO" />
+          <Text Value="Module for Record Data Read reads the oldest data record in the buffer" TextId="Info DataRecord Read module STO" />
+          <Text Value="RD WRITE PUB" TextId="DataRecord Write module PUB" />
+          <Text Value="RD READ PUB" TextId="DataRecord Read module PUB" />
+          <Text Value="Module for Record Data Write overwrites previous data record" TextId="Info DataRecord Write module PUB" />
+          <Text Value="Module for Record Data Read reads data record written last" TextId="Info DataRecord Read module PUB" />
+          <Text Value="X1" TextId="IDT_SS_Interface_X1" />
+          <Text Value="X2" TextId="IDT_SS_Interface_X2" />
+          <Text Value="X1 P1" TextId="IDT_SS_X1P1" />
+          <Text Value="X1 P2" TextId="IDT_SS_X1P2" />
+          <Text Value="X2 P1" TextId="IDT_SS_X2P1" />
+          <Text Value="X2 P2" TextId="IDT_SS_X2P2" />
+          <Text Value="Port 1" TextId="IDT_Port1" />
+          <Text Value="Port 2" TextId="IDT_Port2" />
+          <Text Value="Voltage control PS1" TextId="PS 1" />
+          <Text Value="Voltage control PS2" TextId="PS 2" />
+          <Text Value="Data validity display DIA" TextId="DIA" />
+          <Text Value="Diagnostic data validity" TextId="DDV" />
+          <Text Value="Geographical sign GEO" TextId="GEO" />
+          <Text Value="Failure of power supply " TextId="Power supply failure" />
+          <Text Value="Projection fault: " TextId="Projection fault" />
+          <Text Value="Data " TextId="Data validity invalid" />
+          <Text Value="left" TextId="Failure power supply left" />
+          <Text Value="right" TextId="Failure power supply right" />
+          <Text Value="Other subnet not projected" TextId="Error of other netside" />
+          <Text Value="Difference between netsides" TextId="Difference between netsides" />
+          <Text Value="DIA set, but no Input data configured" TextId="No Input-data configured" />
+          <Text Value=" invalid" TextId="Data invalid" />
+          <Text Value="EW0" TextId="EW0" />
+          <Text Value="EW1" TextId="EW1" />
+          <Text Value="EB0" TextId="EB0" />
+          <Text Value="EB1" TextId="EB1" />
+          <Text Value="EB2" TextId="EB2" />
+          <Text Value="AB0" TextId="AB0" />
+          <Text Value="Update interrupt" TextId="update alert" />
+          <Text Value="Record index" TextId="record index" />
+          <Text Value="IN" TextId="Input modules" />
+          <Text Value="OUT" TextId="Output modules" />
+          <Text Value="IN/OUT" TextId="Mixed modules" />
+          <Text Value="RECORD DATA" TextId="DataRecord modules" />
+          <Text Value="Input modules for PN/PN Coupler" TextId="Info Input modules" />
+          <Text Value="Output modules for PN/PN Coupler" TextId="Info Output modules" />
+          <Text Value="Input/output modules for PN/PN Coupler" TextId="Info Mixed modules" />
+          <Text Value="Data record modules for PN/PN coupler" TextId="Info DataRecord modules" />
+          <Text Value="PUBLISHER" TextId="PUBLISHER" />
+          <Text TextId="Info PUBLISHER" Value="Data record module with memory for 1 data record" />
+          <Text Value="STORAGE" TextId="STORAGE" />
+          <Text TextId="Info STORAGE" Value="Data record modules with memory for 8 data records" />
+          <Text Value="If this box is checked, the PN/PN coupler detects the failure of the power supply at the PS1 connector.&#xA;At any one time, power is supplied by only one of the two power supplies. If one of the two power supplies fails, the other automatically takes over.&#xA;Check this box only when a power supply is actually connected." TextId="Help_PS1" />
+          <Text Value="If this box is checked, the PN/PN coupler detects the failure of the power supply at the PS2 connector.&#xA;At any one time, power is supplied by only one of the two power supplies. If one of the two power supplies fails, the other automatically takes over.&#xA;Check this box only when a power supply is actually connected." TextId="Help_PS2" />
+          <Text Value="Based on the data validity indicator DIA, you can check whether or not the IO controller from the &quot;other&quot; subnet is still supplying valid data over the PN/PN coupler.&#xA;The validity of the data is always indicated in bit 0 of the least significant input byte of the PN/PN coupler:&#xA;Bit 0 = 1: received data is valid. All the user data is set to &quot;Good&quot;.&#xA;Bit 0 = 0: received data is invalid, for example, because an interface of the PN/PN coupler has a fault or because the IO controller in the &quot;other&quot; subnet has failed. At least one associate value of the user data is set to &quot;Bad&quot;.&#xA;Warning: If you activate the data validity indicator DIA, the first bit of the first configured input byte must not be used for input data!&#xA;We recommend that if you use the data validity indicator, you should avoid using the entire first byte of the input data for inputs!" TextId="Help_DIA" />
+          <Text Value="Enable the &quot;Diagnostics data validity&quot; check box if you want the data transferred by the PN/PN coupler to be checked for validity. Typically, diagnostics is active on one interface when the controller of the other interface of the PN/PN coupler is in STOP mode." TextId="Help_DDV" />
+          <Text Value="Activate this check box to enable the update interrupt for the module. Additional information on the update interrupt is available in the documentation on the device." TextId="Help_UPAL" />
+          <Text Value="Use the Record Index to set the data record number that you want to use when writing the data record. The module will accept only this data record number." TextId="Help_record index" />
+        </PrimaryLanguage>
+        <Language xml:lang="de">
+          <Text Value="PN-IO-01" TextId="InterfaceNameX1" />
+          <Text Value="PN-IO-02" TextId="InterfaceNameX2" />
+          <Text Value="PN/PN Coupler V1.0" TextId="PN/PN Coupler V1.0" />
+          <Text Value="PN/PN Coupler V2.0" TextId="PN/PN Coupler V2.0" />
+          <Text Value="PN/PN Coupler V3.0" TextId="PN/PN Coupler V3.0" />
+          <Text Value="Migration" TextId="Migration dap" />
+          <Text Value="Dezentrales Peripheriegerät zur Kopplung zweier PROFINET-Netze in Schutzart IP 20" TextId="InfoCat PN/PN Coupler V1.0" />
+          <Text Value="Dezentrales Peripheriegerät zur Kopplung zweier PROFINET-Netze in Schutzart IP 20" TextId="InfoCat PN/PN Coupler V2.0" />
+          <Text Value="Dezentrales Peripheriegerät zur Kopplung zweier PROFINET-Netze in Schutzart IP 20" TextId="InfoCat PN/PN Coupler V3.0" />
+          <Text Value="PN/PN Koppler V1.0 Migration" TextId="Info Migration dap" />
+          <Text Value="PN/PN Coupler X1" TextId="PN/PN Coupler X1" />
+          <Text Value="PN/PN Coupler X2" TextId="PN/PN Coupler X2" />
+          <Text Value="PN/PN Coupler" TextId="Info device pn/pn coupler" />
+          <Text Value="Koppler zweier PROFINET-Netze, IP20; Firmware V1.0" TextId="Info PN/PN Coupler V1.0" />
+          <Text Value="Koppler zweier PROFINET-Netze, IP20; PROFINET Schnittstelle und 2 Ports; X1 (linke Seite); FW-Update über Bus; Firmware V1.0" TextId="Info PN/PN Coupler X1 V1.0" />
+          <Text Value="Koppler zweier PROFINET-Netze, IP20; PROFINET Schnittstelle und 2 Ports; X2 (rechte Seite); FW-Update über Bus; Firmware V1.0" TextId="Info PN/PN Coupler X2 V1.0" />
+          <Text Value="Koppler zweier PROFINET-Netze, IP20; PROFINET Schnittstelle und 2 Ports; X1 (linke Seite); FW-Update über Bus; Portdiagnose; I&amp;M-Funktionalität; IRT und priorisierter Hochlauf; Firmware V2.0" TextId="Info PN/PN Coupler X1 V2.0" />
+          <Text Value="Koppler zweier PROFINET-Netze, IP20; PROFINET Schnittstelle und 2 Ports; X2 (rechte Seite); FW-Update über Bus; Portdiagnose; I&amp;M-Funktionalität; IRT und priorisierter Hochlauf; Firmware V2.0" TextId="Info PN/PN Coupler X2 V2.0" />
+          <Text Value="Koppler zweier PROFINET-Netze, IP20; PROFINET Schnittstelle und 2 Ports; X1 (linke Seite); FW-Update über Bus; Portdiagnose; I&amp;M-Funktionalität; IRT und priorisierter Hochlauf; shared Funktionalität; MRP; Firmware V3.0" TextId="Info PN/PN Coupler X1 V3.0" />
+          <Text Value="Koppler zweier PROFINET-Netze, IP20; PROFINET Schnittstelle und 2 Ports; X2 (rechte Seite); FW-Update über Bus; Portdiagnose; I&amp;M-Funktionalität; IRT und priorisierter Hochlauf; shared Funktionalität; MRP; Firmware V3.0" TextId="Info PN/PN Coupler X2 V3.0" />
+          <Text Value="Allgemeine Kopfparameter" TextId="General head parameters" />
+          <Text Value="Eingänge" TextId="Input" />
+          <Text Value="Ausgänge" TextId="Output" />
+          <Text Value="IN   1 Byte" TextId="1 Byte Input" />
+          <Text Value="IN   2 Byte" TextId="2 Bytes Input" />
+          <Text Value="IN   4 Byte" TextId="4 Bytes Input" />
+          <Text Value="IN   8 Byte" TextId="8 Bytes Input" />
+          <Text Value="IN  16 Byte" TextId="16 Bytes Input" />
+          <Text Value="IN  32 Byte" TextId="32 Bytes Input" />
+          <Text Value="IN  64 Byte" TextId="64 Bytes Input" />
+          <Text Value="IN 128 Byte" TextId="128 Bytes Input" />
+          <Text Value="OUT   1 Byte" TextId="1 Byte Output" />
+          <Text Value="OUT   2 Byte" TextId="2 Bytes Output" />
+          <Text Value="OUT   4 Byte" TextId="4 Bytes Output" />
+          <Text Value="OUT   8 Byte" TextId="8 Bytes Output" />
+          <Text Value="OUT  16 Byte" TextId="16 Bytes Output" />
+          <Text Value="OUT  32 Byte" TextId="32 Bytes Output" />
+          <Text Value="OUT  64 Byte" TextId="64 Bytes Output" />
+          <Text Value="OUT 128 Byte" TextId="128 Bytes Output" />
+          <Text Value="IN/OUT 12 Byte / 6 Byte" TextId="12 Bytes Input / 6 Bytes Output" />
+          <Text Value="IN/OUT 6 Byte / 12 Byte" TextId="6 Bytes Input / 12 Bytes Output" />
+          <Text Value="RD WRITE" TextId="DataRecord Write module" />
+          <Text Value="RD READ" TextId="DataRecord Read module" />
+          <Text Value="1 Byte Input" TextId="Info 1 Byte Input" />
+          <Text Value="2 Byte Input" TextId="Info 2 Bytes Input" />
+          <Text Value="4 Byte Input" TextId="Info 4 Bytes Input" />
+          <Text Value="8 Byte Input" TextId="Info 8 Bytes Input" />
+          <Text Value="16 Byte Input" TextId="Info 16 Bytes Input" />
+          <Text Value="32 Byte Input" TextId="Info 32 Bytes Input" />
+          <Text Value="64 Byte Input" TextId="Info 64 Bytes Input" />
+          <Text Value="128 Byte Input" TextId="Info 128 Bytes Input" />
+          <Text Value="1 Byte Output" TextId="Info 1 Byte Output" />
+          <Text Value="2 Byte Output" TextId="Info 2 Bytes Output" />
+          <Text Value="4 Byte Output" TextId="Info 4 Bytes Output" />
+          <Text Value="8 Byte Output" TextId="Info 8 Bytes Output" />
+          <Text Value="16 Byte Output" TextId="Info 16 Bytes Output" />
+          <Text Value="32 Byte Output" TextId="Info 32 Bytes Output" />
+          <Text Value="64 Byte Output" TextId="Info 64 Bytes Output" />
+          <Text Value="128 Byte Output" TextId="Info 128 Bytes Output" />
+          <Text Value="12 Byte Input und 6 Byte Output" TextId="Info 12 Bytes Input / 6 Bytes Output" />
+          <Text Value="6 Byte Input und 12 Byte Output" TextId="Info 6 Bytes Input / 12 Bytes Output" />
+          <Text Value="Modul für Record Data Write" TextId="Info DataRecord Write module" />
+          <Text Value="Modul für Record Data Read" TextId="Info DataRecord Read module" />
+          <Text Value="RD WRITE STO" TextId="DataRecord Write module STO" />
+          <Text Value="RD READ STO" TextId="DataRecord Read module STO" />
+          <Text Value="Modul für Record Data Write, bis zu 8 Datensätze werden gepuffert" TextId="Info DataRecord Write module STO" />
+          <Text Value="Modul für Record Data Read, liest den ältesten Datensatz im Puffer" TextId="Info DataRecord Read module STO" />
+          <Text Value="RD WRITE PUB" TextId="DataRecord Write module PUB" />
+          <Text Value="RD READ PUB" TextId="DataRecord Read module PUB" />
+          <Text Value="Modul für Record Data Write, überschreibt Vorgänger-Datensatz" TextId="Info DataRecord Write module PUB" />
+          <Text Value="Modul für Record Data Read, liest den zuletzt geschriebenen Datensatz" TextId="Info DataRecord Read module PUB" />
+          <Text Value="X1" TextId="IDT_SS_Interface_X1" />
+          <Text Value="X2" TextId="IDT_SS_Interface_X2" />
+          <Text Value="X1 P1" TextId="IDT_SS_X1P1" />
+          <Text Value="X1 P2" TextId="IDT_SS_X1P2" />
+          <Text Value="X2 P1" TextId="IDT_SS_X2P1" />
+          <Text Value="X2 P2" TextId="IDT_SS_X2P2" />
+          <Text Value="Port 1" TextId="IDT_Port1" />
+          <Text Value="Port 2" TextId="IDT_Port2" />
+          <Text Value="Spannungskontrolle PS 1" TextId="PS 1" />
+          <Text Value="Spannungskontrolle PS 2" TextId="PS 2" />
+          <Text Value="Datengültigkeitsanzeige DIA" TextId="DIA" />
+          <Text Value="Diagnose Datengültigkeit" TextId="DDV" />
+          <Text Value="Geographische Kennung GEO" TextId="GEO" />
+          <Text Value="Ausfall Spannungsversorgung " TextId="Power supply failure" />
+          <Text Value="Projektierungsfehler: " TextId="Projection fault" />
+          <Text Value="Daten " TextId="Data validity invalid" />
+          <Text Value="links" TextId="Failure power supply left" />
+          <Text Value="rechts" TextId="Failure power supply right" />
+          <Text Value="Anderes Teilnetz nicht projektiert" TextId="Error of other netside" />
+          <Text Value="Abweichende Projektierung der Teilnetze" TextId="Difference between netsides" />
+          <Text Value="DIA gesetzt, aber keine Eingangsdaten konfiguriert" TextId="No Input-data configured" />
+          <Text Value=" ungültig" TextId="Data invalid" />
+          <Text Value="EW0" TextId="EW0" />
+          <Text Value="EW1" TextId="EW1" />
+          <Text Value="EB0" TextId="EB0" />
+          <Text Value="EB1" TextId="EB1" />
+          <Text Value="EB2" TextId="EB2" />
+          <Text Value="AB0" TextId="AB0" />
+          <Text Value="Update-Alarm" TextId="update alert" />
+          <Text Value="Record-Index" TextId="record index" />
+          <Text Value="IN" TextId="Input modules" />
+          <Text Value="OUT" TextId="Output modules" />
+          <Text Value="IN/OUT" TextId="Mixed modules" />
+          <Text Value="RECORD DATA" TextId="DataRecord modules" />
+          <Text Value="Eingabemodule für PN/PN Coupler" TextId="Info Input modules" />
+          <Text Value="Ausgabemodule für PN/PN Coupler" TextId="Info Output modules" />
+          <Text Value="Ein-/Ausgabemodule für PN/PN Coupler" TextId="Info Mixed modules" />
+          <Text Value="Datensatzmodule für PN/PN Coupler" TextId="Info DataRecord modules" />
+          <Text Value="PUBLISHER" TextId="PUBLISHER" />
+          <Text Value="Datensatzmodule mit Speicher für 1 Datensatz" TextId="Info PUBLISHER" />
+          <Text Value="STORAGE" TextId="STORAGE" />
+          <Text Value="Datensatzmodule mit Speicher für 8 Datensätze" TextId="Info STORAGE" />
+          <Text Value="Wenn das Kontrollkästchen aktiviert ist, diagnostiziert der PN/PN Coupler den Ausfall der Spannungsversorgung am Anschluss PS1.&#xA;Von den beiden Spannungsversorgungen ist zu einem Zeitpunkt nur eine wirksam. Wenn einer der beiden Spannungsversorgungen ausfällt, wird automatisch die andere wirksam.&#xA;Aktivieren Sie das Kontrollkästchen nur dann, wenn tatsächlich eine Spannungsversorgung angeschlossen ist." TextId="Help_PS1" />
+          <Text Value="Wenn das Kontrollkästchen aktiviert ist, diagnostiziert der PN/PN Coupler den Ausfall der Spannungsversorgung am Anschluss PS2.&#xA;Von den beiden Spannungsversorgungen ist zu einem Zeitpunkt nur eine wirksam. Wenn einer der beiden Spannungsversorgungen ausfällt, wird automatisch die andere wirksam.&#xA;Aktivieren Sie das Kontrollkästchen nur dann, wenn tatsächlich eine Spannungsversorgung angeschlossen ist." TextId="Help_PS2" />
+          <Text Value="Mit Hilfe der Datengültigkeitsanzeige DIA stellen Sie fest, ob der über den PN/PN Coupler angeschlossene IO-Controller aus dem 'anderen' Subnetz gültige Daten liefert.&#xA;Angezeigt wird die Gültigkeit der Daten immer im Bit 0 des niederwertigsten Eingangsbytes des PN/PN Couplers: &#xA;Bit 0 = 1: empfangende Daten sind gültig. Alle Nutzdatenbegleiter stehen auf 'Good'.&#xA;Bit 0 = 0: empfangene Daten sind ungültig, z. B. weil eine Schnittstelle des PN/PN Couplers gestört ist oder weil der IO-Controller im 'anderen' Subnetz ausgefallen ist. Mindestens ein Nutzdatenbegleiter steht auf 'Bad'.&#xA;Warnung: Wenn Sie die Datengültigkeitsanzeige DIA aktivieren, dann dürfen Sie das erste Bit des ersten konfigurierten Eingangsbytes nicht für Eingangsdaten verwenden!&#xA;Wir empfehlen Ihnen bei Verwendung der Datengültigkeitsanzeige DIA, das gesamte erste Byte der Eingangsdaten nicht für Eingänge zu verwenden!" TextId="Help_DIA" />
+          <Text Value="Aktivieren Sie das Kontrollkästchen 'Diagnose Datengültigkeit', wenn die vom PN/PN Coupler übertragenen Daten auf Gültigkeit überprüft werden sollen.&#xA;Typischerweise wird die Diagnose an einer Schnittstelle aktiv, wenn sich der Controller der anderen Schnittstelle des PN/PN Couplers im Betriebszustand STOP befindet." TextId="Help_DDV" />
+          <Text Value="Wenn Sie das Kontrollkästchen aktivieren, wird der Update-Alarm für das Modul freigegeben.&#xA;Steht ein neuer Datensatz im Modul zum Lesen bereit, wird dies per Update-Alarm gemeldet." TextId="Help_UPAL" />
+          <Text Value="Mit dem Record-Index stellen Sie die Datensatznummer ein, die Sie nachfolgend beim Datensatz schreiben verwenden. Allein diese Datensatznummer wird vom Modul akzeptiert." TextId="Help_record index" />
+        </Language>
+        <Language xml:lang="fr">
+          <Text Value="PN-IO-01" TextId="InterfaceNameX1" />
+          <Text Value="PN-IO-02" TextId="InterfaceNameX2" />
+          <Text Value="Coupleur PN/PN V1.0" TextId="PN/PN Coupler V1.0" />
+          <Text Value="Coupleur PN/PN V2.0" TextId="PN/PN Coupler V2.0" />
+          <Text Value="Coupleur PN/PN V3.0" TextId="PN/PN Coupler V3.0" />
+          <Text Value="Migration" TextId="Migration dap" />
+          <Text Value="Coupleur PN/PN V1.0" TextId="InfoCat PN/PN Coupler V1.0" />
+          <Text Value="Coupleur PN/PN V2.0" TextId="InfoCat PN/PN Coupler V2.0" />
+          <Text Value="Coupleur PN/PN V3.0" TextId="InfoCat PN/PN Coupler V3.0" />
+          <Text Value="Coupleur PN/PN V1.0 Migration" TextId="Info Migration dap" />
+          <Text Value="Coupleur PN/PN X1" TextId="PN/PN Coupler X1" />
+          <Text Value="Coupleur PN/PN X2" TextId="PN/PN Coupler X2" />
+          <Text Value="Coupleur PN/PN" TextId="Info device pn/pn coupler" />
+          <Text Value="Coupleur pour deux réseaux PROFINET, IP20; Firmware V1.0" TextId="Info PN/PN Coupler V1.0" />
+          <Text Value="Coupleur pour deux réseaux PROFINET, IP20; Interface PROFINET et 2 ports; mise à jour matérielle via bus; X1 (côté gauche) ; Firmware V1.0" TextId="Info PN/PN Coupler X1 V1.0" />
+          <Text Value="Coupleur pour deux réseaux PROFINET, IP20; Interface PROFINET et 2 ports; mise à jour matérielle via bus; X2 (côté droit) ; Firmware V1.0" TextId="Info PN/PN Coupler X2 V1.0" />
+          <Text Value="Coupleur pour deux réseaux PROFINET, IP20; interface PROFINET et 2 ports; X1 (côté gauche); mise à jour matérielle via bus; diagnostic de port; fonctionnalité I&amp;M; IRT et démarrage priorisé; firmware V2.0" TextId="Info PN/PN Coupler X1 V2.0" />
+          <Text Value="Coupleur pour deux réseaux PROFINET, IP20; interface PROFINET et 2 ports; X2 (côté droit); mise à jour matérielle via bus; diagnostic de port; fonctionnalité I&amp;M; IRT et démarrage priorisé; firmware V2.0" TextId="Info PN/PN Coupler X2 V2.0" />
+          <Text Value="Coupleur pour deux réseaux PROFINET, IP20; interface PROFINET et 2 ports; X1 (côté gauche); mise à jour matérielle via bus; diagnostic de port; fonctionnalité I&amp;M; IRT et démarrage priorisé; firmware V3.0" TextId="Info PN/PN Coupler X1 V3.0" />
+          <Text Value="Coupleur pour deux réseaux PROFINET, IP20; interface PROFINET et 2 ports; X2 (côté droit); mise à jour matérielle via bus; diagnostic de port; fonctionnalité I&amp;M; IRT et démarrage priorisé; firmware V3.0" TextId="Info PN/PN Coupler X2 V3.0" />
+          <Text Value="Paramètres d'en-tête généraux" TextId="General head parameters" />
+          <Text Value="Entrées" TextId="Input" />
+          <Text Value="Sorties" TextId="Output" />
+          <Text Value="IN   1 octet" TextId="1 Byte Input" />
+          <Text Value="IN   2 octets" TextId="2 Bytes Input" />
+          <Text Value="IN   4 octets" TextId="4 Bytes Input" />
+          <Text Value="IN   8 octets" TextId="8 Bytes Input" />
+          <Text Value="IN  16 octets" TextId="16 Bytes Input" />
+          <Text Value="IN  32 octets" TextId="32 Bytes Input" />
+          <Text Value="IN  64 octets" TextId="64 Bytes Input" />
+          <Text Value="IN 128 octets" TextId="128 Bytes Input" />
+          <Text Value="OUT   1 octet" TextId="1 Byte Output" />
+          <Text Value="OUT   2 octets" TextId="2 Bytes Output" />
+          <Text Value="OUT   4 octets" TextId="4 Bytes Output" />
+          <Text Value="OUT   8 octets" TextId="8 Bytes Output" />
+          <Text Value="OUT  16 octets" TextId="16 Bytes Output" />
+          <Text Value="OUT  32 octets" TextId="32 Bytes Output" />
+          <Text Value="OUT  64 octets" TextId="64 Bytes Output" />
+          <Text Value="OUT 128 octets" TextId="128 Bytes Output" />
+          <Text Value="IN/OUT 12 octets / 6 octets" TextId="12 Bytes Input / 6 Bytes Output" />
+          <Text Value="IN/OUT 6 octets / 12 octets" TextId="6 Bytes Input / 12 Bytes Output" />
+          <Text Value="RD WRITE" TextId="DataRecord Write module" />
+          <Text Value="RD READ" TextId="DataRecord Read module" />
+          <Text Value="1 octet d'entrée" TextId="Info 1 Byte Input" />
+          <Text Value="2 octets d'entrée" TextId="Info 2 Bytes Input" />
+          <Text Value="4 octets d'entrée" TextId="Info 4 Bytes Input" />
+          <Text Value="8 octets d'entrée" TextId="Info 8 Bytes Input" />
+          <Text Value="16 octets d'entrée" TextId="Info 16 Bytes Input" />
+          <Text Value="32 octets d'entrée" TextId="Info 32 Bytes Input" />
+          <Text Value="64 octets d'entrée" TextId="Info 64 Bytes Input" />
+          <Text Value="128 octets d'entrée" TextId="Info 128 Bytes Input" />
+          <Text Value="1 octet de sortie" TextId="Info 1 Byte Output" />
+          <Text Value="2 octets de sortie" TextId="Info 2 Bytes Output" />
+          <Text Value="4 octets de sortie" TextId="Info 4 Bytes Output" />
+          <Text Value="8 octets de sortie" TextId="Info 8 Bytes Output" />
+          <Text Value="16 octets de sortie" TextId="Info 16 Bytes Output" />
+          <Text Value="32 octets de sortie" TextId="Info 32 Bytes Output" />
+          <Text Value="64 octets de sortie" TextId="Info 64 Bytes Output" />
+          <Text Value="128 octets de sortie" TextId="Info 128 Bytes Output" />
+          <Text Value="12 octets d'entrée et 6 octets de sortie" TextId="Info 12 Bytes Input / 6 Bytes Output" />
+          <Text Value="6 octets d'entrée et 12 octets de sortie" TextId="Info 6 Bytes Input / 12 Bytes Output" />
+          <Text Value="Module pour Record Data Write, jusqu'à 8 enregistrements sont enregistrés dans la mémoire tampon" TextId="Info DataRecord Write module" />
+          <Text Value="Module pour Record Data Read, lit le plus ancien enregistrement dans la mémoire tampon" TextId="Info DataRecord Read module" />
+          <Text Value="RD WRITE STO" TextId="DataRecord Write module STO" />
+          <Text Value="RD READ STO" TextId="DataRecord Read module STO" />
+          <Text Value="Module pour Record Data Write, jusqu'à 8 enregistrement mis en tampon" TextId="Info DataRecord Write module STO" />
+          <Text Value="Module pour Record Data Read, lit l'enregistrement le plus ancien dans le tampon" TextId="Info DataRecord Read module STO" />
+          <Text Value="RD WRITE PUB" TextId="DataRecord Write module PUB" />
+          <Text Value="RD READ PUB" TextId="DataRecord Read module PUB" />
+          <Text Value="Module pour Record Data Write, écrase l'enregsitrement précédent" TextId="Info DataRecord Write module PUB" />
+          <Text Value="Module pour Record Data Read, lit le dernier enregistrement écrit" TextId="Info DataRecord Read module PUB" />
+          <Text Value="X1" TextId="IDT_SS_Interface_X1" />
+          <Text Value="X2" TextId="IDT_SS_Interface_X2" />
+          <Text Value="X1 P1" TextId="IDT_SS_X1P1" />
+          <Text Value="X1 P2" TextId="IDT_SS_X1P2" />
+          <Text Value="X2 P1" TextId="IDT_SS_X2P1" />
+          <Text Value="X2 P2" TextId="IDT_SS_X2P2" />
+          <Text Value="Port 1" TextId="IDT_Port1" />
+          <Text Value="Port 2" TextId="IDT_Port2" />
+          <Text Value="Contrôle de tension PS1" TextId="PS 1" />
+          <Text Value="Contrôle de tension PS 2" TextId="PS 2" />
+          <Text Value="Signalisation de la validité des données DIA" TextId="DIA" />
+          <Text Value="Diagnostic validité des données" TextId="DDV" />
+          <Text Value="Identificateur géographique GEO" TextId="GEO" />
+          <Text Value="Défaillance de l'alimentation en tension " TextId="Power supply failure" />
+          <Text Value="Erreur de paramétrage: " TextId="Projection fault" />
+          <Text Value="Data " TextId="Data validity invalid" />
+          <Text Value="gauche" TextId="Failure power supply left" />
+          <Text Value="droit" TextId="Failure power supply right" />
+          <Text Value="Autre sous-réseau non configuré" TextId="Error of other netside" />
+          <Text Value="Configuration divergente des sous-réseaux" TextId="Difference between netsides" />
+          <Text Value="DIA activé, mais aucune donnée d'entrée n'est configurée" TextId="No Input-data configured" />
+          <Text Value=" invalid" TextId="Data invalid" />
+          <Text Value="EW0" TextId="EW0" />
+          <Text Value="EW1" TextId="EW1" />
+          <Text Value="EB0" TextId="EB0" />
+          <Text Value="EB1" TextId="EB1" />
+          <Text Value="EB2" TextId="EB2" />
+          <Text Value="AB0" TextId="AB0" />
+          <Text Value="Alarme de mise à jour" TextId="update alert" />
+          <Text Value="Record index" TextId="record index" />
+          <Text Value="IN" TextId="Input modules" />
+          <Text Value="OUT" TextId="Output modules" />
+          <Text Value="IN/OUT" TextId="Mixed modules" />
+          <Text Value="RECORD DATA" TextId="DataRecord modules" />
+          <Text Value="Modules d'entrées pour coupleur PN/PN" TextId="Info Input modules" />
+          <Text Value="Modules de sorties pour coupleur PN/PN" TextId="Info Output modules" />
+          <Text Value="Modules d'entrées/sorties pour coupler PN/PN" TextId="Info Mixed modules" />
+          <Text Value="Modules d'enregistrement pour coupleur PN/PN" TextId="Info DataRecord modules" />
+          <Text Value="PUBLISHER" TextId="PUBLISHER" />
+          <Text Value="Modules d'enregistrement pour 1 enregistrement" TextId="Info PUBLISHER" />
+          <Text Value="STORAGE" TextId="STORAGE" />
+          <Text Value="Modules d'enregistrement pour 8 enregistrement" TextId="Info STORAGE" />
+          <Text Value="Lorsque la case à cocher est activée, le coupleur PN/PN diagnostique la défaillance de l'alimentation en tension au connecteur PS1.&#xA;Seule une des deux alimentations en tension est active à un moment donné. Si une des deux alimentations en tension est défaillante, l'autre est automatiquement activée.&#xA;N'activez la case à cocher que si une alimentation en tension est réellement connectée." TextId="Help_PS1" />
+          <Text Value="Lorsque la case à cocher est activée, le coupleur PN/PN diagnostique la défaillance de l'alimentation en tension au connecteur PS2.&#xA;Seule une des deux alimentations en tension est active à un moment donné. Si une des deux alimentations en tension est défaillante, l'autre est automatiquement activée.&#xA;N'activez la case à cocher que si une alimentation en tension est réellement connectée." TextId="Help_PS2" />
+          <Text Value="L'affichage de la validité des données DIA vous permet de déterminer si l'IO Controller connecté via le coupleur PN/PN de l'&quot;autre&quot; sous-réseau livre encore des données valide.&#xA;La validité des données est toujours affichée dans le bit 0 du bit d'entrée de poids le plus faible du coupleur PN/PN :&#xA;Bit 0 = 1 : les données reçues sont valides. Les indicateurs de validité affichent &quot;Good&quot;.&#xA;Bit 0 = 0 : les données reçues sont invalides par ex. parce qu'une interface du coupleur PN/PN est perturbée ou parce que l'IO Controller est défaillant dans l'&quot;autre&quot; sous-réseau. Un indicateur de validité au moins indique &quot;Bad&quot;.&#xA;Avertissement: Si vous activez l'affichage de la validité des données DIA, vous ne devez pas utiliser le premier bit du premier octet d'entrée configuré pour les données d'entrée! &#xA; Nous vous recommandons en cas d'utilisation de l'affichage de la validité des données DIA de ne pas utiliser le premier octet des données d'entrée pour les entrées !" TextId="Help_DIA" />
+          <Text Value="Activez la case à cocher &quot;Diagnostic validité des données&quot; si la validité des données transmises par le coupleur PN/PN doivent être vérifiées. Normalement, le diagnostic est active sur une interface si le contrôleur de l'autre interface du coupleur PN/PN se trouve en état de fonctionnement Arrêt." TextId="Help_DDV" />
+          <Text Value="Si vous activez la case à cocher, l'alarme de mise à jour est validée pour le module. Vous trouverez plus d'information sur l'alarme de mise à jour dans la documentation de l'appareil." TextId="Help_UPAL" />
+          <Text Value="Vous sélectionnez ici le numéro d'enregistrement que vous souhaitez utiliser par la suite à l'écriture d'enregistrements. Seul ce suméro d'&#xD;&#xA;enregistrement est accepté par le module." TextId="Help_record index" />
+        </Language>
+        <Language xml:lang="es">
+          <Text Value="PN-IO-01" TextId="InterfaceNameX1" />
+          <Text Value="PN-IO-02" TextId="InterfaceNameX2" />
+          <Text Value="Acoplador PN/PN V1.0" TextId="PN/PN Coupler V1.0" />
+          <Text Value="Acoplador PN/PN V2.0" TextId="PN/PN Coupler V2.0" />
+          <Text Value="Acoplador PN/PN V3.0" TextId="PN/PN Coupler V3.0" />
+          <Text Value="Migración" TextId="Migration dap" />
+          <Text Value="Acoplador PN/PN V1.0" TextId="InfoCat PN/PN Coupler V1.0" />
+          <Text Value="Acoplador PN/PN V2.0" TextId="InfoCat PN/PN Coupler V2.0" />
+          <Text Value="Acoplador PN/PN V3.0" TextId="InfoCat PN/PN Coupler V3.0" />
+          <Text Value="Acoplador PN/PN V1.0 Migración" TextId="Info Migration dap" />
+          <Text Value="Acoplador PN/PN X1" TextId="PN/PN Coupler X1" />
+          <Text Value="Acoplador PN/PN X2" TextId="PN/PN Coupler X2" />
+          <Text Value="Acoplador PN/PN" TextId="Info device pn/pn coupler" />
+          <Text Value="Acoplador para dos redes PROFINET, IP20; Firmware V1.0" TextId="Info PN/PN Coupler V1.0" />
+          <Text Value="Acoplador para dos redes PROFINET, IP20; interfaz PROFINET y 2 puertos; actualización FW vía Bus; X1 (parte izquierda); Firmware V1.0" TextId="Info PN/PN Coupler X1 V1.0" />
+          <Text Value="Acoplador para dos redes PROFINET, IP20; interfaz PROFINET y 2 puertos; actualización FW vía Bus; X2 (parte derecha); Firmware V1.0" TextId="Info PN/PN Coupler X2 V1.0" />
+          <Text Value="Acoplador para dos redes PROFINET, IP20; interfaz PROFINET y 2 puertos; X1 (parte izquierda); actualización FW vía Bus; diagnóstico de puerto; funcionalidad I&amp;M; IRT y arranque prioritario; firmware V2.0" TextId="Info PN/PN Coupler X1 V2.0" />
+          <Text Value="Acoplador para dos redes PROFINET, IP20; interfaz PROFINET y 2 puertos; X2 (parte derecha); actualización FW vía Bus; diagnóstico de puerto; funcionalidad I&amp;M; IRT y arranque prioritario; firmware V2.0" TextId="Info PN/PN Coupler X2 V2.0" />
+          <Text Value="Acoplador para dos redes PROFINET, IP20; interfaz PROFINET y 2 puertos; X1 (parte izquierda); actualización FW vía Bus; diagnóstico de puerto; funcionalidad I&amp;M; IRT y arranque prioritario; firmware V3.0" TextId="Info PN/PN Coupler X1 V3.0" />
+          <Text Value="Acoplador para dos redes PROFINET, IP20; interfaz PROFINET y 2 puertos; X2 (parte derecha); actualización FW vía Bus; diagnóstico de puerto; funcionalidad I&amp;M; IRT y arranque prioritario; firmware V3.0" TextId="Info PN/PN Coupler X2 V3.0" />
+          <Text Value="Parámetros generales de cabecera" TextId="General head parameters" />
+          <Text Value="Entradas" TextId="Input" />
+          <Text Value="Salidas" TextId="Output" />
+          <Text Value="IN   1 Byte" TextId="1 Byte Input" />
+          <Text Value="IN   2 Bytes" TextId="2 Bytes Input" />
+          <Text Value="IN   4 Bytes" TextId="4 Bytes Input" />
+          <Text Value="IN   8 Bytes" TextId="8 Bytes Input" />
+          <Text Value="IN  16 Bytes" TextId="16 Bytes Input" />
+          <Text Value="IN  32 Bytes" TextId="32 Bytes Input" />
+          <Text Value="IN  64 Bytes" TextId="64 Bytes Input" />
+          <Text Value="IN 128 Bytes" TextId="128 Bytes Input" />
+          <Text Value="OUT   1 Byte" TextId="1 Byte Output" />
+          <Text Value="OUT   2 Bytes" TextId="2 Bytes Output" />
+          <Text Value="OUT   4 Bytes" TextId="4 Bytes Output" />
+          <Text Value="OUT   8 Bytes" TextId="8 Bytes Output" />
+          <Text Value="OUT  16 Bytes" TextId="16 Bytes Output" />
+          <Text Value="OUT  32 Bytes" TextId="32 Bytes Output" />
+          <Text Value="OUT  64 Bytes" TextId="64 Bytes Output" />
+          <Text Value="OUT 128 Bytes" TextId="128 Bytes Output" />
+          <Text Value="IN/OUT 12 Bytes / 6 Bytes" TextId="12 Bytes Input / 6 Bytes Output" />
+          <Text Value="IN/OUT 6 Bytes / 12 Bytes" TextId="6 Bytes Input / 12 Bytes Output" />
+          <Text Value="RD WRITE" TextId="DataRecord Write module" />
+          <Text Value="RD READ" TextId="DataRecord Read module" />
+          <Text Value="1 Byte de entrada" TextId="Info 1 Byte Input" />
+          <Text Value="2 Bytes de entrada" TextId="Info 2 Bytes Input" />
+          <Text Value="4 Bytes de entrada" TextId="Info 4 Bytes Input" />
+          <Text Value="8 Bytes de entrada" TextId="Info 8 Bytes Input" />
+          <Text Value="16 Bytes de entrada" TextId="Info 16 Bytes Input" />
+          <Text Value="32 Bytes de entrada" TextId="Info 32 Bytes Input" />
+          <Text Value="64 Bytes de entrada" TextId="Info 64 Bytes Input" />
+          <Text Value="128 Bytes de entrada" TextId="Info 128 Bytes Input" />
+          <Text Value="1 Byte de salida" TextId="Info 1 Byte Output" />
+          <Text Value="2 Bytes de salida" TextId="Info 2 Bytes Output" />
+          <Text Value="4 Bytes de salida" TextId="Info 4 Bytes Output" />
+          <Text Value="8 Bytes de salida" TextId="Info 8 Bytes Output" />
+          <Text Value="16 Bytes de salida" TextId="Info 16 Bytes Output" />
+          <Text Value="32 Bytes de salida" TextId="Info 32 Bytes Output" />
+          <Text Value="64 Bytes de salida" TextId="Info 64 Bytes Output" />
+          <Text Value="128 Bytes de salida" TextId="Info 128 Bytes Output" />
+          <Text Value="12 Bytes de entrada y 6 Bytes de salida" TextId="Info 12 Bytes Input / 6 Bytes Output" />
+          <Text Value="6 Bytes de entrada y 12 Bytes de salida" TextId="Info 6 Bytes Input / 12 Bytes Output" />
+          <Text Value="Módulo para Record Data Write, se guardan hasta 8 registros en búfer" TextId="Info DataRecord Write module" />
+          <Text Value="Módulo para Record Data Read, lee el último registro del búfer" TextId="Info DataRecord Read module" />
+          <Text Value="RD WRITE STO" TextId="DataRecord Write module STO" />
+          <Text Value="RD READ STO" TextId="DataRecord Read module STO" />
+          <Text Value="Módulo para Record Data Write, se guardan hasta 8 registros en búfer" TextId="Info DataRecord Write module STO" />
+          <Text Value="Módulo para Record Data Read, lee el registro más antiguo del búfer" TextId="Info DataRecord Read module STO" />
+          <Text Value="RD WRITE PUB" TextId="DataRecord Write module PUB" />
+          <Text Value="RD READ PUB" TextId="DataRecord Read module PUB" />
+          <Text Value="Módulo para Record Data Write, sobrescribe registro predecesor" TextId="Info DataRecord Write module PUB" />
+          <Text Value="Módulo para Record Data Read, lee el último registro escrito" TextId="Info DataRecord Read module PUB" />
+          <Text Value="X1" TextId="IDT_SS_Interface_X1" />
+          <Text Value="X2" TextId="IDT_SS_Interface_X2" />
+          <Text Value="X1 P1" TextId="IDT_SS_X1P1" />
+          <Text Value="X1 P2" TextId="IDT_SS_X1P2" />
+          <Text Value="X2 P1" TextId="IDT_SS_X2P1" />
+          <Text Value="X2 P2" TextId="IDT_SS_X2P2" />
+          <Text Value="Puerto 1" TextId="IDT_Port1" />
+          <Text Value="Puerto 2" TextId="IDT_Port2" />
+          <Text Value="Control de tensión PS1" TextId="PS 1" />
+          <Text Value="Control de tensión PS2" TextId="PS 2" />
+          <Text Value="Indicador de validez de datos DIA" TextId="DIA" />
+          <Text Value="Diagnóstico validez de datos" TextId="DDV" />
+          <Text Value="Identificador geográfico GEO" TextId="GEO" />
+          <Text Value="Fallo tensión de alimentación " TextId="Power supply failure" />
+          <Text Value="Error de configuración: " TextId="Projection fault" />
+          <Text Value="Data " TextId="Data validity invalid" />
+          <Text Value="izquierda" TextId="Failure power supply left" />
+          <Text Value="derecha" TextId="Failure power supply right" />
+          <Text Value="Otra subred no configurada" TextId="Error of other netside" />
+          <Text Value="Configuración divergente de las subredes" TextId="Difference between netsides" />
+          <Text Value="DIA activo, pero no hay datos de entrada configurados" TextId="No Input-data configured" />
+          <Text Value=" invalid" TextId="Data invalid" />
+          <Text Value="EW0" TextId="EW0" />
+          <Text Value="EW1" TextId="EW1" />
+          <Text Value="EB0" TextId="EB0" />
+          <Text Value="EB1" TextId="EB1" />
+          <Text Value="EB2" TextId="EB2" />
+          <Text Value="AB0" TextId="AB0" />
+          <Text Value="Alarma de actualización" TextId="update alert" />
+          <Text Value="Record index" TextId="record index" />
+          <Text Value="IN" TextId="Input modules" />
+          <Text Value="OUT" TextId="Output modules" />
+          <Text Value="IN/OUT" TextId="Mixed modules" />
+          <Text Value="RECORD DATA" TextId="DataRecord modules" />
+          <Text Value="Módulos de entradas para acoplador PN/PN" TextId="Info Input modules" />
+          <Text Value="Módulos de salidas para acoplador PN/PN" TextId="Info Output modules" />
+          <Text Value="Módulos de entradas/salidas para acoplador PN/PN" TextId="Info Mixed modules" />
+          <Text Value="Módulos de registro para acoplador PN/PN" TextId="Info DataRecord modules" />
+          <Text Value="PUBLISHER" TextId="PUBLISHER" />
+          <Text Value="Módulos de registro con memoria para 1 registro" TextId="Info PUBLISHER" />
+          <Text Value="STORAGE" TextId="STORAGE" />
+          <Text Value="Módulos de registro con memoria para 8 registros" TextId="Info STORAGE" />
+          <Text Value="Cuando está activada esta casilla de verificación, el acoplador PN/PN IO diagnostica la ausencia de alimentación eléctrica en la conexión PS1.&#xA;Nunca funciona más de una alimentaciónal mismo tiempo. Cuando falla una de ambas, se pone a funcionar la otra.&#xA;Active esta casilla de verificación tan solo si verdaderamente hay una alimentación conectada." TextId="Help_PS1" />
+          <Text Value="Cuando está activada esta casilla de verificación, el acoplador PN/PN IO diagnostica la ausencia de alimentación eléctrica en la conexión PS2.&#xA;Nunca funciona más de una alimentaciónal mismo tiempo. Cuando falla una de ambas, se pone a funcionar la otra.&#xA;Active esta casilla de verificación tan solo si verdaderamente hay una alimentación conectada." TextId="Help_PS2" />
+          <Text Value="El indicador de validez de los datos DIA permite determinar si el controlador IO conectado a través del acoplador PN/PN todavía suministra datos válidos desde la &quot;otra&quot; subred.&#xA;La validez de los datos se indica siempre en el bit 0 del byte de entrada menos significativo del acoplador PN/PN IO:&#xA;Bit 0 = 1: los datos recibidos son válidos. Todos los valores asiciados de los datos útiles tienen el valor &quot;Good&quot;.&#xA;Bit 0 = 0: los datos recibidos no son válidos, p. ej. porque una interfaz del acoplador PN/PN está averiada o porque falla el controlador IO de la &quot;otra&quot; subred. Como mínimo un valor asociado de los datos está a &quot;Bad&quot;.&#xA;Advertencia:&#xA;Si activa el indicador de validez de los datos DIA entonces no podrá utilizar el primer bit del primer byte de entrada para datos de entrada.&#xA;En caso de utilizar el indicador de validez de datos DIA, se recomienda no utilizar el primer byte de los datos de entrada para entradas." TextId="Help_DIA" />
+          <Text Value="Active la casilla de verificación &quot;Diagnóstico validez de datos&quot; si debe comprobarse la validez de los datos transferidos por el acoplador PN/PN. Por lo general, el diagnóstico se activa en una interfaz cuando el controlador de la otra interfaz del acoplador PN/PN está en estado operativo STOP. " TextId="Help_DDV" />
+          <Text Value="Si marca la casilla de verificación se habilita la alarma de actualización para el módulo. Para más información sobre la alarma de actualización, consultar la documentación del componente o equipo." TextId="Help_UPAL" />
+          <Text Value="Con el índice de registros se ajusta el número de registro que utilizará posteriormente al escribir el registro. El módulo sólo aceptará este número de registro." TextId="Help_record index" />
+        </Language>
+        <Language xml:lang="it">
+          <Text Value="PN-IO-01" TextId="InterfaceNameX1" />
+          <Text Value="PN-IO-02" TextId="InterfaceNameX2" />
+          <Text Value="Coupler PN/PN V1.0" TextId="PN/PN Coupler V1.0" />
+          <Text Value="Coupler PN/PN V2.0" TextId="PN/PN Coupler V2.0" />
+          <Text Value="Coupler PN/PN V3.0" TextId="PN/PN Coupler V3.0" />
+          <Text Value="Migrazione" TextId="Migration dap" />
+          <Text Value="Coupler PN/PN V1.0" TextId="InfoCat PN/PN Coupler V1.0" />
+          <Text Value="Coupler PN/PN V2.0" TextId="InfoCat PN/PN Coupler V2.0" />
+          <Text Value="Coupler PN/PN V3.0" TextId="InfoCat PN/PN Coupler V3.0" />
+          <Text Value="Coupler PN/PN V1.0 Migrazione" TextId="Info Migration dap" />
+          <Text Value="Coupler PN/PN X1" TextId="PN/PN Coupler X1" />
+          <Text Value="Coupler PN/PN X2" TextId="PN/PN Coupler X2" />
+          <Text Value="Coupler PN/PN" TextId="Info device pn/pn coupler" />
+          <Text Value="Accoppiatore per due reti PROFINET, IP20; firmware V1.0" TextId="Info PN/PN Coupler V1.0" />
+          <Text Value="Accoppiatore per due reti PROFINET, IP20; interfaccia PROFINET e 2 porte; aggiornamento FW mediante bus; X1 (lato sinistro); firmware V1.0" TextId="Info PN/PN Coupler X1 V1.0" />
+          <Text Value="Accoppiatore per due reti PROFINET, IP20; interfaccia PROFINET e 2 porte; aggiornamento FW mediante bus; X2 (lato destro); firmware V1.0" TextId="Info PN/PN Coupler X2 V1.0" />
+          <Text Value="Accoppiatore per due reti PROFINET, IP20; interfaccia PROFINET e 2 porte; X1 (lato sinistro); aggiornamento FW mediante bus; diagnostica di porta; funzionalità I&amp;M; comunicazione IRT e l'avvio prioritario; firmware V2.0" TextId="Info PN/PN Coupler X1 V2.0" />
+          <Text Value="Accoppiatore per due reti PROFINET, IP20; interfaccia PROFINET e 2 porte; X2 (lato destro); aggiornamento FW mediante bus; diagnostica di porta; funzionalità I&amp;M; comunicazione IRT e l'avvio prioritario; firmware V2.0" TextId="Info PN/PN Coupler X2 V2.0" />
+          <Text Value="Accoppiatore per due reti PROFINET, IP20; interfaccia PROFINET e 2 porte; X1 (lato sinistro); aggiornamento FW mediante bus; diagnostica di porta; funzionalità I&amp;M; comunicazione IRT e l'avvio prioritario; firmware V3.0" TextId="Info PN/PN Coupler X1 V3.0" />
+          <Text Value="Accoppiatore per due reti PROFINET, IP20; interfaccia PROFINET e 2 porte; X2 (lato destro); aggiornamento FW mediante bus; diagnostica di porta; funzionalità I&amp;M; comunicazione IRT e l'avvio prioritario; firmware V3.0" TextId="Info PN/PN Coupler X2 V3.0" />
+          <Text Value="Parametri di intestazione generici" TextId="General head parameters" />
+          <Text Value="Ingressi" TextId="Input" />
+          <Text Value="Uscite" TextId="Output" />
+          <Text Value="IN   1 byte" TextId="1 Byte Input" />
+          <Text Value="IN   2 byte" TextId="2 Bytes Input" />
+          <Text Value="IN   4 byte" TextId="4 Bytes Input" />
+          <Text Value="IN   8 byte" TextId="8 Bytes Input" />
+          <Text Value="IN  16 byte" TextId="16 Bytes Input" />
+          <Text Value="IN  32 byte" TextId="32 Bytes Input" />
+          <Text Value="IN  64 byte" TextId="64 Bytes Input" />
+          <Text Value="IN 128 byte" TextId="128 Bytes Input" />
+          <Text Value="OUT   1 byte" TextId="1 Byte Output" />
+          <Text Value="OUT   2 byte" TextId="2 Bytes Output" />
+          <Text Value="OUT   4 byte" TextId="4 Bytes Output" />
+          <Text Value="OUT   8 byte" TextId="8 Bytes Output" />
+          <Text Value="OUT  16 byte" TextId="16 Bytes Output" />
+          <Text Value="OUT  32 byte" TextId="32 Bytes Output" />
+          <Text Value="OUT  64 byte" TextId="64 Bytes Output" />
+          <Text Value="OUT 128 byte" TextId="128 Bytes Output" />
+          <Text Value="IN/OUT 12 byte / 6 byte" TextId="12 Bytes Input / 6 Bytes Output" />
+          <Text Value="IN/OUT 6 byte / 12 byte" TextId="6 Bytes Input / 12 Bytes Output" />
+          <Text Value="RD WRITE" TextId="DataRecord Write module" />
+          <Text Value="RD READ" TextId="DataRecord Read module" />
+          <Text Value="1 byte di ingresso" TextId="Info 1 Byte Input" />
+          <Text Value="2 byte di ingresso" TextId="Info 2 Bytes Input" />
+          <Text Value="4 byte di ingresso" TextId="Info 4 Bytes Input" />
+          <Text Value="8 byte di ingresso" TextId="Info 8 Bytes Input" />
+          <Text Value="16 byte di ingresso" TextId="Info 16 Bytes Input" />
+          <Text Value="32 byte di ingresso" TextId="Info 32 Bytes Input" />
+          <Text Value="64 byte di ingresso" TextId="Info 64 Bytes Input" />
+          <Text Value="128 byte di ingresso" TextId="Info 128 Bytes Input" />
+          <Text Value="1 byte di uscita" TextId="Info 1 Byte Output" />
+          <Text Value="2 byte di uscita" TextId="Info 2 Bytes Output" />
+          <Text Value="4 byte di uscita" TextId="Info 4 Bytes Output" />
+          <Text Value="8 byte di uscita" TextId="Info 8 Bytes Output" />
+          <Text Value="16 byte di uscita" TextId="Info 16 Bytes Output" />
+          <Text Value="32 byte di uscita" TextId="Info 32 Bytes Output" />
+          <Text Value="64 byte di uscita" TextId="Info 64 Bytes Output" />
+          <Text Value="128 byte di uscita" TextId="Info 128 Bytes Output" />
+          <Text Value="12 byte di ingresso e 6 byte di uscita" TextId="Info 12 Bytes Input / 6 Bytes Output" />
+          <Text Value="6 byte di ingresso e 12 byte di uscita" TextId="Info 6 Bytes Input / 12 Bytes Output" />
+          <Text Value="Modulo per Record Data Write, vengono bufferizzati fino a 8 set di dati" TextId="Info DataRecord Write module" />
+          <Text Value="Modulo per Record Data Read, legge il set di dati meno recenti del buffer" TextId="Info DataRecord Read module" />
+          <Text Value="RD WRITE STO" TextId="DataRecord Write module STO" />
+          <Text Value="RD READ STO" TextId="DataRecord Read module STO" />
+          <Text Value="Modulo per Record Data Write, vengono bufferizzati fino a 8 set di dati" TextId="Info DataRecord Write module STO" />
+          <Text Value="Modulo per Record Data Read, legge il set di dati meno recente del buffer" TextId="Info DataRecord Read module STO" />
+          <Text Value="RD WRITE PUB" TextId="DataRecord Write module PUB" />
+          <Text Value="RD READ PUB" TextId="DataRecord Read module PUB" />
+          <Text Value="Modulo per Record Data Write, sovrascrive il set di dati precedente" TextId="Info DataRecord Write module PUB" />
+          <Text Value="Modulo per Record Data Read, legge il set di dati per ultimo scritto" TextId="Info DataRecord Read module PUB" />
+          <Text Value="X1" TextId="IDT_SS_Interface_X1" />
+          <Text Value="X2" TextId="IDT_SS_Interface_X2" />
+          <Text Value="X1 P1" TextId="IDT_SS_X1P1" />
+          <Text Value="X1 P2" TextId="IDT_SS_X1P2" />
+          <Text Value="X2 P1" TextId="IDT_SS_X2P1" />
+          <Text Value="X2 P2" TextId="IDT_SS_X2P2" />
+          <Text Value="Porta 1" TextId="IDT_Port1" />
+          <Text Value="Porta 2" TextId="IDT_Port2" />
+          <Text Value="Controllo tensione PS1" TextId="PS 1" />
+          <Text Value="Controllo tensione PS2" TextId="PS 2" />
+          <Text Value="Indicazione validità dati DIA" TextId="DIA" />
+          <Text Value="Diagnostica validità dati" TextId="DDV" />
+          <Text Value="ID geografico GEO" TextId="GEO" />
+          <Text Value="Guasto all'alimentazione di tensione " TextId="Power supply failure" />
+          <Text Value="Errore di progettazione: " TextId="Projection fault" />
+          <Text Value="Data " TextId="Data validity invalid" />
+          <Text Value="a sinistra" TextId="Failure power supply left" />
+          <Text Value="a destra" TextId="Failure power supply right" />
+          <Text Value="Altra sotto-rete non progettata" TextId="Error of other netside" />
+          <Text Value="Progettazione divergente delle sotto-reti" TextId="Difference between netsides" />
+          <Text Value="DIA attivata ma nessun dato di ingresso configurato" TextId="No Input-data configured" />
+          <Text Value=" invalid" TextId="Data invalid" />
+          <Text Value="EW0" TextId="EW0" />
+          <Text Value="EW1" TextId="EW1" />
+          <Text Value="EB0" TextId="EB0" />
+          <Text Value="EB1" TextId="EB1" />
+          <Text Value="EB2" TextId="EB2" />
+          <Text Value="AB0" TextId="AB0" />
+          <Text Value="Interrupt di aggiornamento" TextId="update alert" />
+          <Text Value="Record index" TextId="record index" />
+          <Text Value="IN" TextId="Input modules" />
+          <Text Value="OUT" TextId="Output modules" />
+          <Text Value="IN/OUT" TextId="Mixed modules" />
+          <Text Value="RECORD DATA" TextId="DataRecord modules" />
+          <Text Value="Moduli ingressi per coupler PN/PN" TextId="Info Input modules" />
+          <Text Value="Moduli uscite per coupler PN/PN" TextId="Info Output modules" />
+          <Text Value="Moduli ingressi/uscite per coupler PN/PN" TextId="Info Mixed modules" />
+          <Text Value="Moduli per set di dati per accoppiatore PN/PN" TextId="Info DataRecord modules" />
+          <Text Value="PUBLISHER" TextId="PUBLISHER" />
+          <Text Value="Moduli per set di dati con memoria per 1 set di dati" TextId="Info PUBLISHER" />
+          <Text Value="STORAGE" TextId="STORAGE" />
+          <Text Value="Moduli per set di dati con memoria per 8 set di dati" TextId="Info STORAGE" />
+          <Text Value="Quando questa casella di controllo è attivata, il Coupler PN/PN emette segnalazioni di diagnostica in caso di guasto dell'alimentatore di tensione sull'interfaccia PS1.&#xA;&#xD;&#xA;Soltanto uno dei due alimentatori di tensione è operante in un determinato momento: In caso di guasto ad uno di essi, entra automaticamente in funzione quello finora disattivo.&#xA;Attivare questa casella di controllo soltanto quando l'alimentatore di tensione è veramente collegato." TextId="Help_PS1" />
+          <Text Value="Quando questa casella di controllo è attivata, il Coupler PN/PN emette segnalazioni di diagnostica in caso di guasto dell'alimentatore di tensione sull'interfaccia PS2.&#xA;&#xD;&#xA;Soltanto uno dei due alimentatori di tensione è operante in un determinato momento: In caso di guasto ad uno di essi, entra automaticamente in funzione quello finora disattivo.&#xA;Attivare questa casella di controllo soltanto quando l'alimentatore di tensione è veramente collegato." TextId="Help_PS2" />
+          <Text Value="Consente di determinare se l'IO-Controller collegato tramite il Coupler PN/PN, invia dati ancora validi dall'altra sottorete.&#xA;La validità dei dati viene sempre visualizzata nel bit 0 del byte di ingresso di valore inferiore dell' IO-Couplers PN/PN:&#xA;Bit 0 = 1: i dati ricevuti sono validi. Tutte le variabili dei dati utili si trovano su &quot;Good&quot;.&#xA;Bit 0 = 0: i dati ricevuti non sono validi, p. es. perché un'interfaccia del Coupler PN/PN è disturbata oppure perché l'IO-Controller &quot;nell'altra&quot; sottorete ha subito un guasto. Almeno un dato utile si trova su &quot;Bad&quot;.&#xA;Avviso:&#xA;Se è stata attivata la funzione di diagnostica &quot;Indica la validità dei dati DIA&quot;, l'impiego per i dati di ingresso del primo bit del primo byte di ingresso configurato non è consentito.&#xA;In caso di impiego della  funzione di diagnostica &quot;Indica la validità dei dati DIA&quot;,si sconsiglia l'utilizzo per gli ingressi di tutto il primo byte dei dati di ingresso" TextId="Help_DIA" />
+          <Text Value="Attivare la casella di controllo &quot;Diagnostica validità dati&quot; per verificare la validità dei dati trasferiti dal PN/PN Coupler. Normalmente questa diagnostica si attiva in un'interfaccia quando il Controller dell'altra interfaccia del PN/PN Coupler si trova in stato di funzionamento STOP." TextId="Help_DDV" />
+          <Text Value="Se si attiva la casella di controllo, l'interrupt di aggiornamento viene abilitato per il modulo. Per ulteriori informazioni sull'interrupt di aggiornamento consultare la documentazione sul sistema." TextId="Help_UPAL" />
+          <Text Value="L'indice di set di dati consente di impostare il numero di set di dati che viene utilizzato successivamente nel scrivere il set di dati. Solo questo numero di set di dati viene accettato dal modulo." TextId="Help_record index" />
+        </Language>
+      </ExternalTextList>
+    </ApplicationProcess>
+  </ProfileBody>
+</ISO15745Profile>

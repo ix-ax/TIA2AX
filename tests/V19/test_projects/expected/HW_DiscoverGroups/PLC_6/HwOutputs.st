@@ -1,0 +1,4 @@
+TYPE
+	HwOutputs : STRUCT
+	END_STRUCT;
+END_TYPE

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- ===========================================================================================-->
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-V2.34.xsd">
+  <ProfileHeader>
+    <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+    <ProfileRevision>1.00</ProfileRevision>
+    <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+    <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+    <ProfileClassID>Device</ProfileClassID>
+    <ISO15745Reference>
+      <ISO15745Part>4</ISO15745Part>
+      <ISO15745Edition>1</ISO15745Edition>
+      <ProfileTechnology>GSDML</ProfileTechnology>
+    </ISO15745Reference>
+  </ProfileHeader>
+ <!-- Header  ok -->
+  <ProfileBody>
+    <DeviceIdentity VendorID="0x02C3" DeviceID="0x0008">
+      <InfoText TextId="T_ID_DEV_DESCRIPTION"/>
+      <VendorName Value="SCHUNK GmbH + Co. KG"/> 
+    </DeviceIdentity>
+    <DeviceFunction>
+      <Family MainFamily="Drives" ProductFamily="SFP"/>
+    </DeviceFunction>
+    <ApplicationProcess>
+      <!-- ============================================================================================ -->
+      <!--   List of Device Access Points (DAP) DAP V2.x war DAP																		-->
+      <!-- ============================================================================================ -->
+      <DeviceAccessPointList>
+      	<DeviceAccessPointItem ID="DAP" PhysicalSlots="0..2" AddressAssignment="DCP" ModuleIdentNumber="0x80010000" MinDeviceInterval="8" ImplementationType="NP40" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="true" NumberOfDeviceAccessAR="2" WebServer="http:///" MultipleWriteSupported="true" NameOfStationNotTransferable="true" ParameterizationSpeedupSupported="true" LLDP_NoD_Supported="true" CheckDeviceID_Allowed="true" ResetToFactoryModes="2 8" RequiredSchemaVersion="V2.25" PNIO_Version="V2.33" DNS_CompatibleName="Schunk-Profinet">
+      	   <ModuleInfo>
+            <Name TextId="TEXT_MASTERMODUL"/>
+            <InfoText TextId="MASTERMODUL_DISCRIPTION"/>
+            <VendorName Value="SCHUNK GmbH + Co. KG"/>
+            <OrderNumber Value=""/>
+          </ModuleInfo>
+          <CertificationInfo ConformanceClass="C" ApplicationClass="" NetloadClass="III"/>
+          <SubslotList>
+            <SubslotItem SubslotNumber="32768" TextId="TEXT_SS_INTERFACE"/>
+            <SubslotItem SubslotNumber="32769" TextId="TEXT_SS_PORT1"/>
+            <SubslotItem SubslotNumber="32770" TextId="TEXT_SS_PORT2"/>
+          </SubslotList>
+          
+          <IOConfigData MaxInputLength="512" MaxOutputLength="512"/>
+          
+          <UseableModules>
+		<!--Input -->
+          	<ModuleItemRef ModuleItemTarget="I4" AllowedInSlots="1" UsedInSlots="1"/>
+           	<!--Output -->
+             <ModuleItemRef ModuleItemTarget="O4" AllowedInSlots="2" UsedInSlots="2"/>
+          </UseableModules>
+                   	
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DAP" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3" MayIssueProcessAlarm="false" IM5_Supported="true">
+              <IOData/>
+                <ModuleInfo>
+                <Name TextId="TEXT_MASTERMODUL"/>
+                <InfoText TextId="MASTERMODUL_DISCRIPTION"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+
+          <SystemDefinedSubmoduleList>
+           	<InterfaceSubmoduleItem ID="Interface" SubslotNumber="32768" SubmoduleIdentNumber="0x00000002" SupportedRT_Classes="RT_CLASS_1;RT_CLASS_3" TextId="TEXT_INTERFACE" SupportedProtocols="SNMP;LLDP" PTP_BoundarySupported="true" DCP_BoundarySupported="true" DelayMeasurementSupported="true">
+              <RT_Class3Properties StartupMode="Legacy;Advanced" ForwardingMode="Relative" MaxNumberIR_FrameData="128" MaxBridgeDelay="2760"/>
+              <SynchronisationMode SupportedRole="SyncSlave" T_PLL_MAX="1000" SupportedSyncProtocols="PTCP"/>
+              <ApplicationRelations StartupMode="Legacy;Advanced">
+                <TimingProperties SendClock="8 16 32 64 128" ReductionRatio="1 2 4 8 16 32 64 128 256 512"/>
+                <RT_Class3TimingProperties SendClock="8 16 32 64 128" ReductionRatio="1 2 4 8 16"/>
+              </ApplicationRelations>
+              <MediaRedundancy SupportedRole="Client"/>
+            </InterfaceSubmoduleItem>
+          	 <PortSubmoduleItem ID="Port_1" SubslotNumber="32769" SubmoduleIdentNumber="0x00000003" MAUTypes="16" TextId="TEXT_PORT1" MaxPortRxDelay="209" MaxPortTxDelay="129" PortDeactivationSupported="true" LinkStateDiagnosisCapability="Up+Down" SupportsRingportConfig="true" IsDefaultRingport="true" CheckMAUTypeSupported="true" CheckMAUTypeDifferenceSupported="true">
+               <MAUTypeList>
+                <MAUTypeItem Value="16" AdjustSupported="true"/>
+              </MAUTypeList>
+             </PortSubmoduleItem>
+            <PortSubmoduleItem ID="Port_2" SubslotNumber="32770" SubmoduleIdentNumber="0x00000003" MAUTypes="16" TextId="TEXT_PORT2" MaxPortRxDelay="209" MaxPortTxDelay="129" PortDeactivationSupported="true" LinkStateDiagnosisCapability="Up+Down" SupportsRingportConfig="true" IsDefaultRingport="true" CheckMAUTypeSupported="true" CheckMAUTypeDifferenceSupported="true">
+              <MAUTypeList>
+                <MAUTypeItem Value="16" AdjustSupported="true"/>
+              </MAUTypeList>
+            </PortSubmoduleItem>
+          </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+          </Graphics>
+        </DeviceAccessPointItem>
+      </DeviceAccessPointList>
+
+      <!-- ============================================================================================ -->
+      <!--   List of modules                                                                            -->
+      <!-- ============================================================================================ -->
+      <ModuleList>
+      
+       <!-- ProzessDataChannel  4_PD -->
+      	<!-- ============================================================================================ -->      	    
+        <ModuleItem ID="I4" ModuleIdentNumber="0x00000040">
+          <ModuleInfo CategoryRef="CATEGORY_INPUT_MODULES">
+            <Name TextId="PI_4"/>
+            <InfoText TextId="TEXT_INFO_TEXT_INPUT_MODUL"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_INPUT 4" SubmoduleIdentNumber="0x00000001" FixedInSubslots="1" MayIssueProcessAlarm="false">
+              <IOData>
+	          <Input Consistency="All items consistency">
+                 	<DataItem DataType="Unsigned32" TextId="PI_1"/>
+                 	<DataItem DataType="Integer32" TextId="PI_2"/>
+                 	<DataItem DataType="Integer32" TextId="PI_3"/>
+                 	<DataItem DataType="Integer32" TextId="PI_4"/>                 	
+                 </Input>
+             </IOData>
+		             
+             <ModuleInfo>
+                <Name TextId="PI_4"/>
+                <InfoText TextId="TEXT_SUBMOD_INFO_ELEMENT_GROUP_INPUT"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+      	     	   	      	
+        <ModuleItem ID="O4" ModuleIdentNumber="0x00000048">
+          <ModuleInfo CategoryRef="CATEGORY_OUTPUT_MODULES">
+            <Name TextId="PO_4"/>
+            <InfoText TextId="TEXT_INFO_TEXT_OUTPUT_MODUL"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_SUBMOD_OUTPUT 4" SubmoduleIdentNumber="0x00000001" FixedInSubslots="1" MayIssueProcessAlarm="false">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="PO_1"/>
+                  <DataItem DataType="Integer32" TextId="PO_2"/>
+                  <DataItem DataType="Integer32" TextId="PO_3"/>
+                  <DataItem DataType="Integer32" TextId="PO_4"/>
+                </Output>
+              </IOData>
+             
+             <ModuleInfo>
+                <Name TextId="PO_4"/>
+                <InfoText TextId="TEXT_SUBMOD_INFO_ELEMENT_GROUP_OUTPUT"/>
+		</ModuleInfo>
+          </VirtualSubmoduleItem>
+         </VirtualSubmoduleList>
+        </ModuleItem>   
+       </ModuleList>   
+<!-- =========================================================================================== -->
+    
+<!-- ===========================================================================================-->
+<!-- List of graphics 																															-->			
+<!-- ===========================================================================================-->
+	<GraphicsList>
+		<GraphicItem ID="1" GraphicFile="GSDML-02C3-0008-SFP-01"/>
+	</GraphicsList>
+<!-- ========================================================================================= -->
+<!--   List of categorys                                                                         																		  -->
+<!-- ========================================================================================= -->
+      <CategoryList>
+      		<CategoryItem ID="CATEGORY_INPUT_MODULES" TextId="TEXT_CATEGORY_INPUT_MODULES"/>
+      		<CategoryItem ID="CATEGORY_OUTPUT_MODULES" TextId="TEXT_CATEGORY_OUTUT_MODULES"/>
+      </CategoryList>
+<!-- ========================================================================================= -->
+<!--   ExternalTextList                                                                          																		  -->
+<!-- ========================================================================================= -->
+      <ExternalTextList>
+		<PrimaryLanguage>
+			<Text TextId="T_ID_DEV_DESCRIPTION" Value="SCHUNK PROFINET IRT 2-Port"/>
+          		
+          		<!--Device Access Point information etc -->
+          		<Text TextId="TEXT_MASTERMODUL" Value="DEVICE SFP"/>
+			<Text TextId="MASTERMODUL_DISCRIPTION" Value="Supports RT, IRT and non-cyclic communications"/>
+          		<Text TextId="TEXT_SS_INTERFACE" Value="X1"/>
+          		<Text TextId="TEXT_SS_PORT1" Value="P1"/>
+          		<Text TextId="TEXT_SS_PORT2" Value="P2"/>
+          		<Text TextId="TEXT_INTERFACE" Value="Interface"/>
+          		<Text TextId="TEXT_PORT1" Value="Port 1"/>
+          		<Text TextId="TEXT_PORT2" Value="Port 2"/>
+          
+          		<!--Vendor module category-->
+          		<Text TextId="TEXT_CATEGORY_INPUT_MODULES" Value="Input"/>
+          		<Text TextId="TEXT_CATEGORY_OUTUT_MODULES" Value="Output"/>
+       
+	    		<!-- Vendor module texts -->
+
+          		<Text TextId="TEXT_INFO_TEXT_INPUT_MODUL" Value="INPUT Modul"/>
+          		<Text TextId="TEXT_INFO_TEXT_OUTPUT_MODUL" Value="OUTPUT Modul"/>
+          		          		
+         		<Text TextId="TEXT_SUBMOD_INFO_ELEMENT_GROUP_INPUT" Value="DI element group"/>
+         		<Text TextId="TEXT_SUBMOD_INFO_ELEMENT_GROUP_OUTPUT" Value="DO element group"/>         		
+          		<Text TextId="PO_1" Value="OUT 1 Double Word"/>
+          		<Text TextId="PO_2" Value="OUT 2 Double Word"/>
+          		<Text TextId="PO_3" Value="OUT 3 Double Words"/>
+          		<Text TextId="PO_4" Value="OUT 4 Double Words"/>
+          		<Text TextId="PI_1" Value="IN 1 Double Word"/>
+          		<Text TextId="PI_2" Value="IN 2 Double Word"/>
+          		<Text TextId="PI_3" Value="IN 3 Double Words"/>
+          		<Text TextId="PI_4" Value="IN 4 Double Words"/>
+          		         
+		</PrimaryLanguage>
+      </ExternalTextList>
+    </ApplicationProcess>
+  </ProfileBody>
+</ISO15745Profile>

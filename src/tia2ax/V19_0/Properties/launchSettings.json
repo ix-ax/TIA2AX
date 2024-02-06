@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "tia2ax": {
+      "commandName": "Project",
+      "commandLineArgs": "-x D:\\github\\ix-ax\\TiaProjects\\HW_Plc1518V3_Desoutter\\HW_Plc1518V3_Desoutter.ap19 -o D:\\github\\ix-ax\\Export"
+    }
+  }
+}

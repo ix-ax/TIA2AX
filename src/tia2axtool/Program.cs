@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using CommandLine;
+using Microsoft.Win32;
 using System.Diagnostics;
 using System.Reflection;
 using System.Security.AccessControl;
@@ -7,28 +8,61 @@ namespace tia2axtool
 {
     internal class Program
     {
-        private const string LibraryKey = "SOFTWARE\\Siemens\\Automation\\Openness\\18.0\\PublicAPI\\18.0.0.0";
-        private const string LibraryName = "Siemens.Engineering";
-
         static void Main(string[] args)
         {
-            string libraryPath = GetLibraryFilePath();
-            if (!string.IsNullOrEmpty(libraryPath))
-            {
-                // This is a workaround to get the local dll for the Openness
-                var entry = new FileInfo(Assembly.GetEntryAssembly().Location);
-                var folder = entry.Directory.FullName;
-                File.Copy(libraryPath, Path.Combine(folder, LibraryName + ".dll"), true);
-                File.Copy(libraryPath.Replace("dll", "xml"), Path.Combine(folder, LibraryName + ".xml"), true);
 
-                // This is a workaround to make a .net48 assembly work as dotnet tool
+            Parser.Default.ParseArguments<Options>(args)
+                .WithParsed(o =>
+                {
+                    string LibraryKey = "";
+                    string LibraryName = "";
+                    string exeName = "";
 
-                var exePath = Path.Combine(folder, "V18_0_tia2ax.exe");
-                Process.Start(new ProcessStartInfo(exePath) { Arguments = string.Join(" ", args) });
-            }
+                    if (o.TiaSourceProject.EndsWith("ap18"))
+                    {
+                        LibraryKey = "SOFTWARE\\Siemens\\Automation\\Openness\\18.0\\PublicAPI\\18.0.0.0";
+                        LibraryName = "Siemens.Engineering";
+                        exeName = "V18_0_tia2ax.exe";
+                    }
+
+                    else if (o.TiaSourceProject.EndsWith("ap19"))
+                    {
+                        LibraryKey = "SOFTWARE\\Siemens\\Automation\\Openness\\19.0\\PublicAPI\\19.0.0.0";
+                        LibraryName = "Siemens.Engineering";
+                        exeName = "V19_0_tia2ax.exe";
+                    }
+                    else
+                    {
+                        Console.WriteLine("Not supported version!");
+                    }
+
+                    try
+                    {
+                        string libraryPath = GetLibraryFilePath(LibraryKey, LibraryName);
+                        if (!string.IsNullOrEmpty(libraryPath))
+                        {
+                            // This is a workaround to get the local dll for the Openness
+                            var entry = new FileInfo(Assembly.GetEntryAssembly().Location);
+                            var folder = entry.Directory.FullName;
+                            File.Copy(libraryPath, Path.Combine(folder, LibraryName + ".dll"), true);
+                            File.Copy(libraryPath.Replace("dll", "xml"), Path.Combine(folder, LibraryName + ".xml"), true);
+
+                            // This is a workaround to make a .net48 assembly work as dotnet tool
+
+                            var exePath = Path.Combine(folder, exeName);
+                            Process.Start(new ProcessStartInfo(exePath) { Arguments = string.Join(" ", args) });
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e);
+                        throw;
+                    }
+                });
+
         }
 
-        private static string GetLibraryFilePath()
+        private static string GetLibraryFilePath(string LibraryKey, string LibraryName)
         {
             using (var baseKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64))
             {
@@ -42,6 +76,19 @@ namespace tia2axtool
                 }
             }
             return null;
+        }
+
+        internal class Options
+        {
+            [Option('x', "tia-source-project", Required = true, HelpText = "TIA portal source project")]
+            public string TiaSourceProject { get; set; }
+
+            [Option('o', "output-folder", Required = true,
+                HelpText = "Output project folder where generator emits result.")]
+            public string OutputProjectFolder { get; set; }
+
+            [Option('h', "hwid-only", Required = false, HelpText = "Export only hardware idntifiers")]
+            public bool HwIdOnly { get; set; }
         }
     }
 }

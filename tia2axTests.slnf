@@ -2,7 +2,7 @@
   "solution": {
     "path": "tia2ax.sln",
     "projects": [
-      "tests\\tia2axIntegrationTests\\tia2axIntegrationTests.csproj"
+      "tests\\V18\\tia2axIntegrationTests\\tia2axIntegrationTests.csproj"
     ]
   }
 }
