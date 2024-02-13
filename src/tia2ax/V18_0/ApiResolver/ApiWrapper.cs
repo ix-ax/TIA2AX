@@ -716,7 +716,7 @@ namespace Tia2Ax.Interfaces
         /// <summary>
         /// Export all PLCs
         /// </summary>
-        public void ExportAllPLCs(string exportDirectory, bool hwidOnly, ProjectItem projectItem)
+        public void ExportAllPLCs(string exportDirectory, bool IO, bool HWID, ProjectItem projectItem)
         {
             DeleteFolder(exportDirectory);
             Directory.CreateDirectory(exportDirectory);
@@ -725,7 +725,7 @@ namespace Tia2Ax.Interfaces
                 string exportDir = String.IsNullOrEmpty(exportDirectory) ? Path.Combine(Environment.CurrentDirectory, plcItem.Name) : Path.Combine(exportDirectory, plcItem.Name);
                 Directory.CreateDirectory(exportDir);
 
-                if (!hwidOnly)
+                if (IO)
                 {
                     ExportMappingItems(plcItem, exportDir, ExportItemType.HwInput);
                     ExportMappingItems(plcItem, exportDir, ExportItemType.HwOutput);
@@ -736,8 +736,10 @@ namespace Tia2Ax.Interfaces
                     ExportConfiguration(exportDir);
                     ExportProgram(exportDir);
                 }
-
-                ExportHwIdentifiers(plcItem, exportDir);
+                if (HWID)
+                {
+                    ExportHwIdentifiers(plcItem, exportDir);
+                }
             }
         }
 

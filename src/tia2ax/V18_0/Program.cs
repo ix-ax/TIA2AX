@@ -44,7 +44,7 @@ namespace tia2ax
 
                 var creator = new Tia2AxServices(traceWriter, apiWrapper);
                 creator.OpenProject(options.TiaSourceProject);
-                creator.GetPlcList(options.OutputProjectFolder,options.HwIdOnly);
+                creator.GetPlcList(options.OutputProjectFolder, options.IO, options.HwId);
             }
         }
 
@@ -60,8 +60,11 @@ namespace tia2ax
             HelpText = "Output project folder where generator emits result.")]
         public string OutputProjectFolder { get; set; }
 
-        [Option('h', "hwid-only", Required = false, HelpText = "Export only hardware idntifiers")]
-        public bool HwIdOnly { get; set; }
+        [Option('i', "io", Required = false, HelpText = "Export IO addresses")]
+        public bool IO { get; set; }
+
+        [Option('h', "hwid", Required = false, HelpText = "Export hardware identifiers")]
+        public bool HwId { get; set; }
 
 
     }
